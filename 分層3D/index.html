@@ -1,0 +1,1111 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0a0a0b"><link rel="modulepreload" href="./assets/5f1c9ae07c.js"><title>松風閣｜立體裱框預覽（樣品）・手機改善預覽</title><style>
+:root{color-scheme:dark;--bg:#0a0a0b;--bg2:#111113;--panel:#141416;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);--text:#efeae0;--muted:#8f8b82;--dim:#615e57;--brass:#d6ae68;--brass2:#f0cf94;--pine:#86a38f;--r:14px}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font-family:"SF Pro Text","PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}.serif{font-family:"Noto Serif TC","Songti TC","Source Han Serif TC","PMingLiU",serif}button,input{font:inherit;color:inherit}button{cursor:pointer;background:none;border:0;padding:0}button:focus-visible,input:focus-visible,summary:focus-visible,label:focus-visible{outline:2px solid var(--brass);outline-offset:2px}/* top bar */.top{height:58px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--line);background:linear-gradient(#0d0d0e,#0a0a0b)}.brand{display:flex;align-items:baseline;gap:12px}.brand b{font-family:"Noto Serif TC","Songti TC",serif;font-weight:600;font-size:19px;letter-spacing:.32em;color:var(--text)}.brand small{font-size:10px;letter-spacing:.3em;color:var(--dim);text-transform:uppercase}.top .tag{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--muted);letter-spacing:.14em}.top .tag i{width:6px;height:6px;border-radius:50%;background:var(--pine);box-shadow:0 0 0 3px rgba(134,163,143,.18)}/* layout */.shell{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 404px}.stagewrap{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0}.stage{position:relative;flex:1;min-height:300px;overflow:hidden;touch-action:none;background:#0d0d0e;cursor:grab}.stage:active{cursor:grabbing}.stage canvas{width:100%;height:100%;display:block;opacity:0;transition:opacity 1s ease .1s}body.ready .stage canvas{opacity:1}.stage:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 120px rgba(0,0,0,.35)}.loader{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:16px;color:var(--muted);font-size:12px;letter-spacing:.28em;pointer-events:none;transition:opacity .6s ease;z-index:3}.loader:before{content:"";width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line2);border-top-color:var(--brass);animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}body.ready .loader{opacity:0}.stage-chip{position:absolute;left:24px;top:22px;display:flex;align-items:center;gap:10px;padding:8px 14px 8px 12px;border-radius:999px;background:rgba(10,10,11,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);font-size:12px;letter-spacing:.12em;color:var(--text);pointer-events:none;z-index:2}.stage-chip i{width:7px;height:7px;border-radius:50%;background:var(--brass);box-shadow:0 0 10px var(--brass)}.stage-chip span{color:var(--muted)}/* bottom dock */.dockrow{flex:none;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:14px 24px 16px;background:linear-gradient(#0d0d0e,#0a0a0b);border-top:1px solid var(--line)}.dims{display:flex;flex-direction:column;gap:1px;min-width:0}.dims small{font-size:10px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase}.dims b{font-weight:500;font-size:15px;letter-spacing:.04em;white-space:nowrap;font-variant-numeric:tabular-nums}.dims b em{font-style:normal;color:var(--muted);font-weight:400;font-size:12px;margin-left:3px}.dock{display:flex;gap:4px;padding:5px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.4)}.dock button{display:flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;font-size:13px;letter-spacing:.08em;color:var(--muted);transition:background .2s,color .2s}.dock button svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}.dock button:hover{color:var(--text);background:rgba(255,255,255,.06)}.dock button[aria-pressed=true]{background:var(--text);color:#141416;font-weight:600}.hint{display:flex;align-items:center;justify-content:flex-end;gap:9px;font-size:12px;color:var(--dim);letter-spacing:.1em;text-align:right}.hint svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none}.status{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);max-width:min(560px,86%);padding:9px 16px;border-radius:10px;background:rgba(10,10,11,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line2);font-size:12.5px;color:var(--text);text-align:center;z-index:4;pointer-events:none}.status:empty{display:none}/* side panel */.panel{min-height:0;overflow-y:auto;background:var(--panel);border-left:1px solid var(--line);scrollbar-width:thin;scrollbar-color:#2a2a2d transparent}.panel::-webkit-scrollbar{width:8px}.panel::-webkit-scrollbar-thumb{background:#2a2a2d;border-radius:8px}.step{padding:26px 28px 24px;border-bottom:1px solid var(--line)}.step-h{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}.step-h .n{font-size:11px;letter-spacing:.26em;color:var(--brass);font-weight:600;font-variant-numeric:tabular-nums}.step-h h2{margin:0;font-family:"Noto Serif TC","Songti TC",serif;font-weight:600;font-size:20px;letter-spacing:.1em}.lab{display:flex;justify-content:space-between;align-items:baseline;margin:20px 0 10px;font-size:12px;letter-spacing:.14em;color:var(--muted)}.lab:first-of-type{margin-top:0}.lab b{font-weight:500;color:var(--text);letter-spacing:.04em;font-variant-numeric:tabular-nums}.micro{font-size:11.5px;color:var(--dim);line-height:1.7;margin:10px 0 0;letter-spacing:.04em}.drop{display:flex;align-items:center;gap:16px;width:100%;padding:18px 18px;border:1px dashed var(--line2);border-radius:var(--r);background:rgba(255,255,255,.025);cursor:pointer;transition:border-color .2s,background .2s}.drop:hover{border-color:var(--brass);background:rgba(214,174,104,.06)}.drop .ic{width:44px;height:44px;border-radius:12px;background:rgba(214,174,104,.12);display:grid;place-items:center;flex:none}.drop .ic svg{width:22px;height:22px;stroke:var(--brass);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.drop b{display:block;font-weight:600;font-size:15px;letter-spacing:.06em}.drop span{font-size:12px;color:var(--muted)}.dimrow{display:grid;grid-template-columns:1fr 22px 1fr;align-items:end;gap:6px}.field{display:flex;flex-direction:column;gap:6px}.field small{font-size:10.5px;letter-spacing:.2em;color:var(--dim)}.field div{position:relative}.field input{width:100%;padding:12px 38px 12px 14px;border-radius:10px;border:1px solid var(--line);background:#0c0c0d;color:var(--text);font-size:16px;font-variant-numeric:tabular-nums;transition:border-color .2s}.field input:hover{border-color:var(--line2)}.field input:focus{border-color:var(--brass);outline:none}.field i{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-style:normal;font-size:12px;color:var(--dim)}.dimrow .x{text-align:center;color:var(--dim);padding-bottom:12px}input[type=number]{-moz-appearance:textfield;appearance:textfield}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{padding:7px 13px;border-radius:999px;border:1px solid var(--line);font-size:12.5px;color:var(--muted);transition:all .2s;font-variant-numeric:tabular-nums}.chip:hover{border-color:var(--line2);color:var(--text)}.chip[aria-pressed=true]{background:rgba(214,174,104,.14);border-color:rgba(214,174,104,.6);color:var(--brass2)}/* switch */.sw{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;font-size:13.5px;cursor:pointer;color:var(--text)}.sw small{display:block;color:var(--dim);font-size:11.5px;letter-spacing:.02em}.sw input{position:absolute;opacity:0;pointer-events:none}.sw .t{width:42px;height:24px;border-radius:999px;background:#2a2a2d;position:relative;flex:none;transition:background .25s}.sw .t:after{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#bdb8ad;transition:transform .25s,background .25s}.sw input:checked+.t{background:rgba(214,174,104,.35)}.sw input:checked+.t:after{transform:translateX(18px);background:var(--brass2)}.sw input:focus-visible+.t{outline:2px solid var(--brass);outline-offset:2px}/* range */input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:24px;background:transparent;margin:0}input[type=range]::-webkit-slider-runnable-track{height:3px;border-radius:3px;background:linear-gradient(90deg,var(--brass) var(--p,0%),#2a2a2d var(--p,0%))}input[type=range]::-moz-range-track{height:3px;border-radius:3px;background:#2a2a2d}input[type=range]::-moz-range-progress{height:3px;border-radius:3px;background:var(--brass)}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#f1e6cf;border:0;margin-top:-7.5px;box-shadow:0 0 0 4px rgba(214,174,104,.16),0 2px 6px rgba(0,0,0,.5);transition:box-shadow .2s}input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#f1e6cf;border:0;box-shadow:0 0 0 4px rgba(214,174,104,.16)}input[type=range]:hover::-webkit-slider-thumb{box-shadow:0 0 0 7px rgba(214,174,104,.2),0 2px 6px rgba(0,0,0,.5)}/* frame card */.fcard{display:flex;align-items:center;gap:16px;padding:14px;border-radius:var(--r);border:1px solid rgba(214,174,104,.55);background:linear-gradient(135deg,rgba(214,174,104,.1),rgba(214,174,104,.02));position:relative}.fcard canvas{width:84px;height:62px;flex:none;border-radius:8px;background:#0c0c0d;border:1px solid var(--line)}.fcard b{display:block;font-family:"Noto Serif TC","Songti TC",serif;font-weight:600;font-size:17px;letter-spacing:.08em}.fcard span{display:block;font-size:12px;color:var(--muted);margin-top:2px;letter-spacing:.04em}.fcard .ok{position:absolute;right:12px;top:12px;width:20px;height:20px;border-radius:50%;background:var(--brass);display:grid;place-items:center}.fcard .ok svg{width:12px;height:12px;stroke:#1a1305;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.fsoon{margin-top:10px;padding:13px 14px;border-radius:var(--r);border:1px dashed var(--line);font-size:12px;color:var(--dim);text-align:center;letter-spacing:.08em}/* swatches */.sws{display:flex;gap:11px;flex-wrap:wrap}.sw1{width:38px;height:38px;border-radius:50%;border:1px solid var(--line2);position:relative;transition:transform .2s;flex:none}.sw1:hover{transform:scale(1.08)}.sw1[aria-pressed=true]{box-shadow:0 0 0 2px var(--panel),0 0 0 3.5px var(--brass)}.sw1.custom{background:conic-gradient(#f66,#fd6,#6f8,#6df,#86f,#f6c,#f66);overflow:hidden}.sw1.custom input{position:absolute;inset:-6px;width:60px;height:60px;opacity:0;cursor:pointer}.sw1.custom[aria-pressed=true]{box-shadow:0 0 0 2px var(--panel),0 0 0 3.5px var(--brass)}.names{font-size:12px;color:var(--text);letter-spacing:.06em;font-weight:400}.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:12px;background:#0c0c0d;border:1px solid var(--line)}.seg button{padding:9px 6px;border-radius:9px;font-size:12.5px;color:var(--muted);letter-spacing:.08em;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}.seg button svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.seg button:hover{color:var(--text)}.seg button[aria-pressed=true]{background:#26262a;color:var(--brass2);box-shadow:inset 0 0 0 1px rgba(214,174,104,.4)}/* summary + save */.sum{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:13px;margin:0}.sum dt{color:var(--dim);letter-spacing:.1em;font-size:12px}.sum dd{margin:0;text-align:right;color:var(--text);font-variant-numeric:tabular-nums}.cta{width:100%;margin-top:22px;padding:15px 20px;border-radius:12px;background:linear-gradient(135deg,#e7c682,#c79a50);color:#1b1407;font-weight:700;font-size:15px;letter-spacing:.16em;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 24px rgba(214,174,104,.22);transition:transform .2s,box-shadow .2s,filter .2s}.cta:hover{transform:translateY(-1px);filter:brightness(1.06);box-shadow:0 12px 32px rgba(214,174,104,.32)}.cta svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.fine{font-size:11.5px;color:var(--dim);line-height:1.8;margin:14px 0 0;letter-spacing:.03em}/* proofing drawer */details.proof{padding:6px 28px 28px}details.proof summary{list-style:none;cursor:pointer;padding:16px 0 6px;font-size:12px;letter-spacing:.18em;color:var(--dim);display:flex;justify-content:space-between;align-items:center}details.proof summary::-webkit-details-marker{display:none}details.proof summary:after{content:"＋";font-size:15px;color:var(--dim)}details.proof[open] summary:after{content:"－"}details.proof .seg{margin-top:12px}details.proof .seg.two{grid-template-columns:repeat(2,1fr)}.ghost{width:100%;margin-top:6px;padding:11px;border-radius:10px;border:1px solid var(--line);font-size:12.5px;color:var(--muted);letter-spacing:.08em}.ghost:hover{color:var(--text);border-color:var(--line2)}/* comparison overlay (proofing modes) */#comparison,#comparisonNote{display:none}#comparison{border-right:1px solid var(--line2)!important;background:#0d0d0e}#comparisonLabel,#comparisonNote{color:var(--muted)!important;letter-spacing:.1em}#comparisonFrame{border-radius:10px}dialog{max-height:90vh;overflow:auto;max-width:85vw;border:1px solid var(--line2);border-radius:14px;padding:22px;background:#17171a;color:var(--text)}dialog p{color:var(--muted);font-size:13px}dialog img{max-height:70vh;max-width:100%;border-radius:8px}dialog::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(4px)}dialog button{margin-top:10px;padding:10px 18px;border-radius:10px;border:1px solid var(--line2)}.error{position:absolute;inset:0;display:grid;place-items:center;padding:30px;color:#e9a48f;background:#17120f;text-align:center}.hint span{white-space:nowrap}@media(max-width:1240px){.hint{display:none}}@media(max-width:960px){ body{overflow:auto;display:block} .top{padding:0 18px;height:52px;position:sticky;top:0;z-index:20} .brand small,.top .tag{display:none} .shell{display:block} .stagewrap{height:auto} .stage{flex:none;height:min(62vh,560px);min-height:340px} body.room .stage{height:auto;aspect-ratio:3/2;min-height:0} .stage-chip{left:14px;top:14px;font-size:11px} .dockrow{grid-template-columns:1fr;gap:12px;padding:12px 14px 16px;justify-items:center} .dims{align-items:center;order:2;text-align:center} .dock{order:1;max-width:100%;overflow-x:auto} .dock button{padding:9px 14px} .hint{display:none} .status{bottom:auto;top:62px} .panel{border-left:0;overflow:visible} .step{padding:24px 20px 22px} details.proof{padding:6px 20px 28px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}/* room mode */.modeseg{position:absolute;right:22px;top:20px;z-index:5;display:flex;padding:4px;border-radius:999px;background:rgba(10,10,11,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line)}.modeseg button{padding:8px 16px;border-radius:999px;font-size:12.5px;letter-spacing:.1em;color:var(--muted);white-space:nowrap;transition:all .2s}.modeseg button:hover{color:var(--text)}.modeseg button[aria-pressed=true]{background:var(--text);color:#141416;font-weight:600}#roomCanvas{position:absolute;left:0;top:0;display:none;cursor:grab;touch-action:none}#roomCanvas:active{cursor:grabbing}body.room #roomCanvas{display:block}body.room .stage>canvas:not(#roomCanvas):not(#roomSpr):not(#roomShd){visibility:hidden}body.room .dock,body.room .hint,body.room #comparison,body.room #comparisonNote{display:none!important}.roomtip{display:none;align-items:center;justify-content:center;gap:10px;font-size:12.5px;color:var(--muted);letter-spacing:.08em;white-space:nowrap}.roomtip svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none}body.room .roomtip{display:flex}body:not(.room) .onlyroom,body.room .only3d{display:none}.rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.rm{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:3/2;border:1px solid var(--line);padding:0;display:block;transition:transform .2s}.rm:hover{transform:translateY(-1px)}.rm img{width:100%;height:100%;object-fit:cover;display:block}.rm span{position:absolute;left:0;right:0;bottom:0;padding:16px 10px 7px;font-size:12px;color:#fff;letter-spacing:.08em;text-align:left;background:linear-gradient(transparent,rgba(0,0,0,.65))}.rm[aria-pressed=true]{box-shadow:0 0 0 2px var(--panel),0 0 0 3.5px var(--brass)}.zoombtns{position:absolute;right:22px;top:70px;display:none;flex-direction:column;gap:6px;z-index:5}body.room .zoombtns{display:flex}.zoombtns button{width:40px;height:40px;border-radius:50%;background:rgba(10,10,11,.6);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:18px;line-height:1;color:var(--text)}.zoombtns button:hover{border-color:var(--line2)}@media(max-width:960px){.modeseg{right:14px;top:12px}.modeseg button{padding:7px 12px;font-size:12px}.zoombtns{right:14px;top:62px}.roomtip{white-space:normal;text-align:center}}/* 拖曳效能：蓋在動態畫面上的元件不用毛玻璃（每個影格都要重新模糊） */.stage-chip,.modeseg,.zoombtns button,.status{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}.stage-chip,.modeseg{background:rgba(10,10,11,.78)}.zoombtns button{background:rgba(10,10,11,.78)}.brand img{display:block;height:32px;width:auto}@media(max-width:960px){.brand img{height:26px}}/* 房間模式：框單獨一層，拖曳時只移動這一層（交給 GPU，不重畫） */#roomSpr{position:absolute;left:0;top:0;width:auto;height:auto;pointer-events:none;display:none;will-change:transform;z-index:1;opacity:1}body.room #roomSpr{display:block}#roomShd{position:absolute;left:0;top:0;width:auto;height:auto;pointer-events:none;display:none;will-change:transform;z-index:1}body.room #roomShd{display:block}#roomSpr{z-index:2}.roomlabel{position:absolute;left:0;top:0;display:none;z-index:3;pointer-events:none;padding:5px 12px;border-radius:999px;background:rgba(12,12,13,.66);color:#f1ece2;font-size:12.5px;font-weight:500;letter-spacing:.04em;white-space:nowrap;will-change:transform}body.room .roomlabel{display:block}/* 手機：長按畫面不要跳出選單／反白 */.stage,.stage *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}@media(max-width:600px){.roomlabel{font-size:8px;padding:2px 6px;letter-spacing:0;font-weight:500}}/* 手機：控制鈕（款式標籤、模式切換、＋／－）放在畫面上方的列，不蓋在房間照片上 */.stage-chip{z-index:5}@media(max-width:960px){ .stagewrap{padding-top:58px;background:#0a0a0b} .stage-chip{top:12px;left:14px} .modeseg{top:12px;right:14px} body.room .stage-chip{display:none} .zoombtns{flex-direction:row;left:14px;right:auto;top:12px;gap:8px} .zoombtns button{width:42px;height:42px}}/* 手機：房間模式舞台加高（約 4:5），照片放大到鋪滿，上下不補邊 */@media(max-width:600px){body.room .stage{aspect-ratio:auto;height:min(125vw,62vh);min-height:300px}}/* 載入完成前：按鈕與面板變灰、不能按（body.live 由程式最後加上） */body:not(.live) .modeseg,body:not(.live) .dockrow,body:not(.live) .zoombtns,body:not(.live) .panel{opacity:.38;filter:grayscale(1);pointer-events:none}.modeseg,.dockrow,.zoombtns,.panel{transition:opacity .4s ease,filter .4s ease}.sw{position:relative}
+/* 房間縮放鈕（＋／－）：奶白底深色字、加大加粗，深色背景上一眼看得到 */
+.zoombtns button{width:46px;height:46px;background:var(--text)!important;color:#141416;border:0;font-size:28px;font-weight:600;line-height:1;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+.zoombtns button:active{background:var(--brass2)!important}
+/* 手機可讀性：淡色說明字加亮（原本對比只有 2.8:1）、小字放大、按鈕加高到好按 */
+:root{--dim:#8c887e}
+.dims small,.field small,.step-h .n,.stage-chip{font-size:12px}.micro,.fine,.sw small{font-size:12.5px}
+@media(max-width:960px){
+ .zoombtns{top:6px;gap:12px}
+ .modeseg{top:5px}.modeseg button{padding:10px 15px;font-size:13px}
+ .chip{padding:11px 15px}.sw1{width:44px;height:44px}.seg button{padding:13px 6px}.dock button{padding:12px 13px}
+ input[type=range]{height:36px}
+}
+@media(max-width:600px){.roomlabel{font-size:11px;padding:3px 9px}}
+#backTop{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;padding:11px 20px;border-radius:999px;background:rgba(10,10,11,.9);border:1px solid var(--line2);color:var(--text);font-size:13.5px;letter-spacing:.08em;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+
+/* Codex preview: only layout and dimension confirmation; camera controls unchanged. */
+.mobile-nav{display:none}
+.size-check{margin:14px 0 0;padding:12px;border:1px solid #8f703d;border-radius:10px;background:#252017}
+.size-check p{margin:0;color:#f0cf94;font-size:13px;line-height:1.7}
+.size-check button,.size-link{margin-top:10px;border:1px solid var(--brass);border-radius:9px;padding:10px 14px;min-height:44px;color:var(--brass2);font-weight:600}
+.size-check[data-confirmed=true]{border-color:#527361;background:#17241c}
+.size-check[data-confirmed=true] p{color:#b7dcc5}
+.size-check button:disabled{opacity:.65;cursor:default}
+.cta:disabled{opacity:.5;box-shadow:none;filter:none;transform:none;cursor:default}
+.save-help{font-size:13px;color:var(--brass2);margin:10px 0 0}
+[hidden]{display:none!important}
+@media(max-width:960px){
+ html{height:100%;overflow:hidden}
+ body{height:100vh;height:100dvh;overflow:hidden;display:flex;flex-direction:column}
+ .top{position:relative;height:42px;padding:0 16px}
+ .brand img{height:24px}
+ .shell{flex:1;min-height:0;display:flex;flex-direction:column}
+ .stagewrap{flex:none;height:auto;padding-top:54px}
+ .stage,body.room .stage{flex:none;aspect-ratio:auto;height:clamp(150px,32vh,340px);height:clamp(150px,32dvh,340px);min-height:0}
+ .stage-chip{font-size:12px;padding:8px 10px;left:12px;top:10px;letter-spacing:0}
+ .stage-chip span{display:none}
+ .modeseg{right:10px;top:5px}.modeseg button{padding:10px 12px;letter-spacing:0}
+ .zoombtns{left:12px;top:5px;gap:8px}.zoombtns button{width:44px;height:44px}
+ .dockrow{display:flex;justify-content:center;gap:8px;padding:6px 10px;min-height:44px}
+ .dock{padding:2px;gap:0;box-shadow:none;flex:none}
+ .dock button{padding:9px 7px;font-size:12px;gap:3px;letter-spacing:0}
+ .dock button svg{width:14px;height:14px}
+ .dims{order:0;align-items:flex-start;text-align:left;gap:0}
+ .dims small{font-size:11px;letter-spacing:0;line-height:1.35}
+ .dims b{font-size:12px;letter-spacing:0;line-height:1.5}.dims b em{font-size:11px}
+ .roomtip{display:none!important}
+ .mobile-nav{flex:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:#141416}
+ .mobile-nav button{min-height:46px;padding:8px 3px;font-size:13px;color:#b8b3a9;border-bottom:3px solid transparent}
+ .mobile-nav button[aria-pressed=true]{color:var(--brass2);border-bottom-color:var(--brass);background:#282319;font-weight:600}
+ .panel{flex:1;min-height:0;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;padding-bottom:env(safe-area-inset-bottom,0px)}
+ .panel .step{padding:16px 18px 22px}.step-h{margin-bottom:12px}.step-h h2{font-size:18px}
+ .panel .step:not(.mobile-active){display:none}
+ .panel:not([data-active-step="3"]) details.proof{display:none}
+ #backTop{display:none!important}
+ .drop{padding:12px;gap:12px}.drop b{font-size:15px;letter-spacing:0}
+ .drop span{overflow-wrap:anywhere}.drop .ic{width:36px;height:36px}
+ .panel .micro{color:#b8b3a9}
+ .size-check button{width:100%}
+ body:not(.live) .mobile-nav{opacity:.38;pointer-events:none}
+}
+@media(max-width:960px) and (max-height:600px){
+ .top{height:34px}.brand img{height:21px}
+ .stagewrap{padding-top:50px}
+ .stage,body.room .stage{height:clamp(90px,25vh,160px);height:clamp(90px,25dvh,160px)}
+ .dockrow{min-height:38px;padding-top:3px;padding-bottom:3px}
+ .mobile-nav button{min-height:44px}
+}
+
+.preview-toggle{display:none}
+@media(max-width:960px){
+ .top{min-height:44px}
+ .preview-toggle{display:block;padding:8px 12px;min-height:44px;color:var(--brass2);font-size:13px;border-left:1px solid var(--line2)}
+ body.preview-expanded .panel{display:none}
+ body.preview-expanded .stagewrap{flex:1;min-height:0;display:flex}
+ body.preview-expanded .stage,body.preview-expanded.room .stage{flex:1;height:auto;min-height:0}
+}
+
+/* Landscape phones: keep a usable settings area beside the preview. */
+@media(min-width:640px) and (max-width:960px) and (max-height:500px){
+ .shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,44%);grid-template-rows:46px minmax(0,1fr)}
+ .stagewrap{grid-column:1;grid-row:1 / 3;min-height:0;display:flex;height:100%}
+ .stage,body.room .stage{flex:1;height:auto;min-height:0}
+ .mobile-nav{grid-column:2;grid-row:1}
+ .mobile-nav button{padding:8px 1px;font-size:12px;white-space:nowrap}
+ .panel{grid-column:2;grid-row:2;height:100%;min-height:0}
+ .panel .step{padding:14px}
+ body.preview-expanded .stagewrap{grid-column:1 / 3}
+ body.preview-expanded .mobile-nav{display:none}
+}
+
+/* 手機上方控制列對齊：header 的「放大預覽」、下方那一列的「＋／－」「立體展牆／掛在房間」、款式標籤，統一高度 44px、垂直置中、右邊貼齊同一條線（右邊距 12px） */
+@media(max-width:960px){
+ .top{padding-right:12px}
+ .preview-toggle{display:flex;align-items:center;justify-content:center;height:32px;min-height:32px;padding:0 14px;border:1px solid var(--line2);border-radius:999px;line-height:1}
+ .modeseg{right:12px;top:5px;height:44px;padding:3px;align-items:stretch}
+ .modeseg button{display:flex;align-items:center;justify-content:center;padding:0 14px;line-height:1}
+ .zoombtns{left:12px;top:5px}
+ .stage-chip{top:5px;left:12px;height:44px;padding-top:0;padding-bottom:0;align-items:center}
+}
+
+/* 「立體展牆／掛在房間」：原本被選中時字變粗（400→600）而且整個樣式都做 0.2 秒過渡，手機上看起來像按鈕在微微放大縮小。
+   現在兩顆字重固定，只讓底色與字色淡入淡出，大小與字形不再變動 */
+.modeseg button,.modeseg button[aria-pressed=true]{font-weight:500;transition:background-color .2s,color .2s}
+button.fcard{width:100%;margin-top:10px;text-align:left;font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button.fcard:first-child{margin-top:0}button.fcard[aria-pressed="false"]{border-color:var(--line);background:none}button.fcard[aria-pressed="false"] .ok{display:none}button.fcard:focus-visible{outline:2px solid var(--brass);outline-offset:2px}.acr{margin-top:0}.acr #acrMore{margin-top:16px;padding:16px 16px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}.acr #acrMore[hidden]{display:none}.acr .lab{margin-top:0}.acr .seg{margin-top:10px}.acrbtn{display:block;width:100%;margin-top:16px;text-align:left;font:inherit;color:var(--text);background:none;border:1px solid var(--line2);border-radius:10px;padding:11px 13px;cursor:pointer;-webkit-tap-highlight-color:transparent;min-height:48px}.acrbtn small{display:block;color:var(--dim);font-size:11.5px;margin-top:2px;letter-spacing:.02em}.acrbtn[aria-pressed=true]{border-color:var(--brass);background:rgba(214,174,104,.10)}.acrbtn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}.acrnote{margin:12px 0 0;font-size:12px;line-height:1.7;color:var(--muted)}#acrSplit{position:absolute;top:0;bottom:0;width:44px;margin-left:-22px;z-index:6;display:none;cursor:ew-resize;touch-action:none}#acrSplit.on{display:block}#acrSplit:before{content:"";position:absolute;left:21px;top:0;bottom:0;width:2px;background:rgba(240,207,148,.9);box-shadow:0 0 0 1px rgba(0,0,0,.35)}#acrSplit i{position:absolute;left:5px;top:50%;width:34px;height:34px;margin-top:-17px;border-radius:50%;background:#f1e6cf;box-shadow:0 0 0 4px rgba(214,174,104,.25),0 2px 8px rgba(0,0,0,.55)}#acrSplit i:before,#acrSplit i:after{content:"";position:absolute;top:11px;border:6px solid transparent}#acrSplit i:before{left:2px;border-right-color:#3a3328}#acrSplit i:after{right:2px;border-left-color:#3a3328}#acrSplit span{position:absolute;top:70px;font-size:11.5px;letter-spacing:.04em;white-space:nowrap;padding:3px 8px;border-radius:999px;background:rgba(10,10,11,.72);color:var(--text)}#acrSplit .l{right:30px}#acrSplit .r{left:30px}body.room #acrSplit,body.room .acrbtn,body.room #exBtn{display:none!important}#exBtn{position:absolute;left:14px;bottom:14px;z-index:6;display:flex;align-items:center;gap:8px;padding:10px 16px;min-height:44px;border-radius:999px;border:1px solid var(--line2);background:rgba(10,10,11,.78);color:var(--text);font:inherit;font-size:13px;letter-spacing:.08em;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent}#exBtn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}#exBtn[aria-pressed=true]{background:var(--text);color:#141416;font-weight:600}#exBtn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}.acrlab{position:absolute;left:0;top:0;z-index:5;pointer-events:none;margin:-11px 0 0 10px;padding:3px 9px 3px 14px;border-radius:999px;font-size:12px;letter-spacing:.06em;color:var(--text);background:rgba(10,10,11,.78);border:1px solid rgba(240,207,148,.55);white-space:nowrap}.acrlab:before{content:"";position:absolute;left:4px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:var(--brass2)}
+.acr{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.acr>label.sw{margin-top:0;padding:16px 16px;gap:14px;border:1.5px solid var(--brass);border-radius:14px;background:linear-gradient(135deg,rgba(214,174,104,.16),rgba(214,174,104,.05));box-shadow:0 0 0 3px rgba(214,174,104,.10);min-height:68px;transition:background .25s,box-shadow .25s}
+.acr>label.sw:hover{background:linear-gradient(135deg,rgba(214,174,104,.24),rgba(214,174,104,.09))}
+.acr>label.sw>span:first-child{font-size:16px;font-weight:600;letter-spacing:.04em;color:var(--brass2)}
+.acr>label.sw>span:first-child:before{content:"";display:inline-block;width:20px;height:20px;margin:-3px 8px -3px 0;vertical-align:middle;border:2px solid var(--brass2);border-radius:5px;background:linear-gradient(135deg,transparent 40%,rgba(240,207,148,.55) 42%,rgba(240,207,148,.55) 52%,transparent 54%)}
+.acr>label.sw small{margin-top:5px;font-size:13px;font-weight:400;letter-spacing:.02em;color:var(--muted,#aaa498);line-height:1.5}
+.acr>label.sw .t{width:54px;height:30px;background:#3a3a3e;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.28)}
+.acr>label.sw .t:after{left:3px;top:3px;width:24px;height:24px}
+.acr>label.sw input:checked+.t{background:var(--brass);box-shadow:none}
+.acr>label.sw input:checked+.t:after{transform:translateX(24px);background:#fff}
+.acr>label.sw:has(input:checked){background:linear-gradient(135deg,rgba(214,174,104,.30),rgba(214,174,104,.12));box-shadow:0 0 0 3px rgba(214,174,104,.22)}
+.acr .seg.two{grid-template-columns:repeat(2,1fr)}
+.acr .seg button{font-size:14px;min-height:46px}
+.stephint{margin:-8px 0 16px;font-size:13px;line-height:1.6;color:#b8b3a9;letter-spacing:.04em}.nextbtn{display:block;width:100%;margin-top:22px;min-height:48px;padding:12px 16px;border-radius:12px;border:1px solid rgba(214,174,104,.55);background:rgba(214,174,104,.1);color:var(--brass2);font:inherit;font-size:15px;font-weight:600;letter-spacing:.06em;cursor:pointer;-webkit-tap-highlight-color:transparent}.nextbtn:active{background:rgba(214,174,104,.22)}
+/* 嵌入模式：只留 3D 舞台，透明背景 */
+html.embed{color-scheme:light!important}
+html.embed,html.embed body{background:transparent!important;margin:0;height:100%;overflow:hidden}
+html.embed body>*:not(.shell){display:none!important}
+html.embed .shell{display:block!important;position:fixed;inset:0;padding:0;margin:0;width:auto;height:auto;max-width:none;background:none}
+html.embed .shell>*:not(.stagewrap){display:none!important}
+html.embed .stagewrap{position:absolute;inset:0;width:100%;height:100%;min-height:0;margin:0;padding:0;border:0;background:none;box-shadow:none;border-radius:0}
+html.embed #stage{position:absolute;inset:0;width:100%;height:100%;min-height:0;border-radius:0;border:0;background:transparent!important;box-shadow:none;touch-action:pan-y;cursor:grab}
+html.embed .stagewrap>*:not(#stage){display:none!important}
+/* 父頁已做整個 iframe 淡入，內層不再重複淡入。 */
+html.embed .stage canvas{opacity:1!important;transition:none!important}
+html.embed #stage:before,html.embed #stage:after{display:none!important}
+html.embed #stage>*:not(canvas:first-child):not(.acrlab):not(.acrlines){display:none!important}
+html.embed .acrlab{background:transparent!important;color:#1c1d1b!important;border:0!important;box-shadow:none!important;padding:0 0 0 14px!important;font:700 15px/1 'Noto Sans TC',Inter,sans-serif!important;letter-spacing:.02em;text-shadow:0 0 6px #faf9f5,0 0 6px #faf9f5;white-space:nowrap}
+html.embed .acrlines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:7;overflow:hidden}html.embed .acrlines path{fill:none;stroke:#53544f;stroke-width:1;vector-effect:non-scaling-stroke}html.embed .acrlines circle{fill:#1c1d1b;stroke:#faf9f5;stroke-width:1}html.embed .acrlab{z-index:8;margin:0;pointer-events:none;padding:3px 5px!important;background:#faf9f5ed!important;border-radius:2px;font-size:14px!important}
+html.embed .acrlab:before{content:none!important;position:absolute;left:0;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#1c1d1b}
+</style><header class="top"><div class="brand"><img src="./assets/ec89d08b4e.svg" alt="松風閣畫廊 SONG FONG GALLERY"></div><button class="preview-toggle" id="previewToggle" type="button" aria-expanded="false" aria-controls="stage">放大預覽</button><div class="tag"><i></i>立體裱框預覽</div></header><div class="shell"><section class="stagewrap"><div class="stage" id="stage"><div class="loader">正在布置展間</div><div id="comparison" style="position:absolute;left:0;top:0;width:50%;height:100%;align-items:center;justify-content:center;pointer-events:none"><span id="comparisonLabel" style="position:absolute;top:64px;font-size:12px">你的原照片</span><div id="comparisonFrame" style="position:relative;overflow:hidden;width:90%;aspect-ratio:717/348"><img id="comparisonImage" src="./assets/38e19b4855.png" data-front="./assets/38e19b4855.png" data-cut="./assets/5e71ab5b68.jpg" style="width:100%;height:auto" alt="實物框角原照片"></div></div><div id="comparisonNote" style="position:absolute;left:50%;top:64px;width:50%;text-align:center;font-size:12px;pointer-events:none">照片材質重建 · 可拖曳旋轉</div><canvas id="roomFg" style="display:none" aria-hidden="true"></canvas><canvas id="roomCanvas" aria-label="掛在房間的預覽，可拖曳移動畫框"></canvas></div><div class="stage-chip" id="stageChip"><i></i>未選框<span>請從右側選一款</span></div><div class="modeseg" id="modeSeg" role="group" aria-label="預覽方式"><button data-mode="3d" aria-pressed="true">立體展牆</button><button data-mode="room" aria-pressed="false">掛在房間</button></div><div class="zoombtns"><button id="zin" aria-label="放大房間">＋</button><button id="zout" aria-label="縮小房間">－</button><button id="roomFit" aria-label="顯示完整房間照片" title="顯示完整房間照片" style="font-size:13px;width:66px;border-radius:12px">完整照片</button></div><div class="status" id="status" role="status"></div><div class="dockrow"><div class="dims"><small id="dimensionBadge">示範含框尺寸・待確認</small><b id="outer2">—</b></div><div class="dock" role="group" aria-label="視角"><button id="front" aria-pressed="false"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="1"/><rect x="8.5" y="7.5" width="7" height="9"/></svg>正面</button><button id="angle" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M4 7l11-3v15L4 21z"/><path d="M15 4l5 2v11l-5 2"/></svg>斜面</button><button id="detail" aria-pressed="false"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M8 10.5h5M10.5 8v5"/></svg>轉角特寫</button></div><div class="roomtip"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M12 3l-3 3m3-3l3 3M12 21l-3-3m3 3l3-3M3 12l3-3m-3 3l3 3M21 12l-3-3m3 3l-3 3"/></svg><span>拖曳移動畫框　＋／－ 縮放房間</span></div><div class="hint"><svg viewBox="0 0 24 24"><path d="M9 11V5.5a1.5 1.5 0 013 0V11m0-1.5a1.5 1.5 0 013 0V11m0-.5a1.5 1.5 0 013 0V16a6 6 0 01-6 6h-1a6 6 0 01-5-2.7L4 15.2a1.5 1.5 0 012.4-1.8L9 16"/></svg><span>拖曳轉動　滾輪／雙指縮放</span></div></div></section><nav class="mobile-nav" aria-label="調整項目"><button type="button" data-step="0" aria-pressed="true" aria-controls="edit-step-0">作品</button><button type="button" data-step="1" aria-pressed="false" aria-controls="edit-step-1">框</button><button type="button" data-step="2" aria-pressed="false" aria-controls="edit-step-2">卡紙</button><button type="button" data-step="3" aria-pressed="false" aria-controls="edit-step-3">壓克力</button><button type="button" data-step="4" aria-pressed="false" aria-controls="edit-step-4">牆面</button><button type="button" data-step="5" aria-pressed="false" aria-controls="edit-step-5">存圖</button></nav><aside class="panel" data-active-step="0"><div class="step mobile-active" id="edit-step-0"><div class="step-h"><span class="n">01</span><h2>你的作品</h2></div><p class="stephint">先放你的作品、填實際尺寸。已先放一幅示範畫，可以直接換掉。</p><label class="drop" for="upload"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 16V5m0 0l-4 4m4-4l4 4"/><path d="M5 15v3a2 2 0 002 2h10a2 2 0 002-2v-3"/></svg></span><span><b>放入自己的作品</b><span>JPG・PNG・WebP，20MB 以內</span></span></label><input id="upload" type="file" accept="image/jpeg,image/png,image/webp" hidden><p class="micro">照片只在這個頁面處理，不會傳到伺服器。</p><p class="micro" id="upmsg" role="status"></p><div class="lab" style="margin-top:22px"><span>作品實際尺寸（公分）</span></div><div class="dimrow"><div class="field"><small>寬 W</small><div><input id="width" type="number" min="5" max="200" step="any" value="30" aria-label="作品寬度（公分）"><i>cm</i></div></div><div class="x">×</div><div class="field"><small>高 H</small><div><input id="height" type="number" min="5" max="200" step="any" value="40" aria-label="作品高度（公分）"><i>cm</i></div></div></div><div class="size-check" id="sizeCheck" data-confirmed="false"><p id="sizeState" role="status">目前是示範尺寸，照片無法判斷實際大小。請依實物填寫寬、高，再確認。</p><button id="confirmSize" type="button">確認以上是作品實際尺寸</button></div><label class="sw" for="lock"><span>鎖定作品比例<small>改寬度，高度跟著算</small></span><input id="lock" type="checkbox" checked><span class="t"></span></label><div class="lab" style="margin-top:20px"><span>快速設定長邊（公分）</span></div><div class="chips" id="sizeChips" aria-label="快速設定長邊（公分）"><button class="chip" data-long="20" aria-pressed="false">20</button><button class="chip" data-long="30" aria-pressed="false">30</button><button class="chip" data-long="40" aria-pressed="true">40</button><button class="chip" data-long="60" aria-pressed="false">60</button><button class="chip" data-long="90" aria-pressed="false">90</button><button class="chip" data-long="120" aria-pressed="false">120</button></div><label class="sw" for="floatOn" style="margin-top:22px"><span>加浮板<small>白板厚 0.45 公分＋背後兩條 2 公分木條，讓作品浮起來</small></span><input id="floatOn" type="checkbox"><span class="t"></span></label><p class="micro">木條寬約 4 公分；長度與位置依影片示意。</p><p class="micro" id="floatWarn" role="alert" hidden style="color:#e9a48f"></p><label class="sw" for="boardOn" style="margin-top:22px"><span>加木板<small>作品後面墊一塊 4 公厘木板；海報、拼圖這類通常都要加</small></span><input id="boardOn" type="checkbox"><span class="t"></span></label><div id="kabanBox" hidden><label class="sw" for="kabanOn" style="margin-top:22px"><span>加卡板<small>原木條圍成的一圈（寬 0.7 公分），放在框裡面，讓框內變深；作品退到卡板底，木板蓋在卡板背面</small></span><input id="kabanOn" type="checkbox"><span class="t"></span></label><div id="kabanCtl" hidden><div class="lab" style="margin-top:14px"><span>卡板高度（公分）</span></div><div class="chips" id="kabanH" aria-label="卡板高度（公分）"><button class="chip" type="button" data-kh="3" aria-pressed="false">3</button><button class="chip" type="button" data-kh="4.5" aria-pressed="true">4.5</button></div></div></div><div class="lab" style="margin-top:20px"><label for="artT">作品厚度（公分）</label><b id="artTV">薄紙（不計厚度）</b></div><input id="artT" type="range" min="0" max="6" step="0.1" value="0"><p class="micro">海報不用調；拼圖、畫布、泡棉板這類有厚度的作品，往右拉。</p><button class="nextbtn" type="button" data-next="1">下一步：選框 →</button></div><div class="step" id="edit-step-1"><div class="step-h"><span class="n">02</span><h2>選框</h2></div><p class="stephint">先選一款框，或維持不加框。</p><div id="frameList" role="group" aria-label="框款"><button class="fcard" type="button" data-frame="none" aria-pressed="true"><div><b>不加框</b><span>先看作品本身，再從下面選一款框</span></div><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button><button class="fcard" type="button" data-frame="brown" aria-pressed="false"><canvas id="thumb_brown" width="168" height="124" aria-label="1.5吋咖框條斷面圖"></canvas><div><b>1.5吋咖</b><span>實木框</span><span>框寬 4.4　框厚 3.2 cm</span></div><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button><button class="fcard" type="button" data-frame="red" aria-pressed="false"><canvas id="thumb_red" width="168" height="124" aria-label="1.2吋紅木框條斷面圖"></canvas><div><b>1.2吋紅木</b><span>實木框</span><span>框寬 3.5　框厚 2.8 cm</span></div><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button><button class="fcard" type="button" data-frame="coffee12" aria-pressed="false"><canvas id="thumb_coffee12" width="168" height="124" aria-label="1.2吋咖框條斷面圖"></canvas><div><b>1.2吋咖</b><span>實木框</span><span>框寬 3.5　框厚 2.8 cm</span></div><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button><button class="fcard" type="button" data-frame="pomelo12" aria-pressed="false"><canvas id="thumb_pomelo12" width="168" height="124" aria-label="1.2吋柚框條斷面圖"></canvas><div><b>1.2吋柚</b><span>實木框</span><span>框寬 3.5　框厚 2.8 cm</span></div><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button><button class="fcard" type="button" data-frame="l1933g" aria-pressed="false"><canvas id="thumb_l1933g" width="168" height="124" aria-label="上1933 金 L框條斷面圖"></canvas><div><b>上1933 金</b><span>L框</span><span>正面總寬 0.8　總高 6.3 cm</span></div><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button><button class="fcard" type="button" data-frame="l1933s" aria-pressed="false"><canvas id="thumb_l1933s" width="168" height="124" aria-label="上1933 銀 L框條斷面圖"></canvas><div><b>上1933 銀</b><span>L框</span><span>正面總寬 0.8　總高 6.3 cm</span></div><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button><button class="fcard" type="button" data-frame="a1919" aria-pressed="false"><canvas id="thumb_a1919" width="168" height="124" aria-label="上A1919 古銅銀 L框條斷面圖"></canvas><div><b>上A1919 古銅銀</b><span>L框</span><span>正面總寬 2.1　總高 3.4 cm</span></div><span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></button></div><div class="fsoon">更多框款，陸續加入</div><div id="growCtl" hidden><div class="lab" style="margin-top:22px"><label for="grow">框拉大（各邊）</label><b id="growV">不拉大</b></div><input id="grow" type="range" min="0" max="20" step="0.5" value="0"><label class="sw" for="growLock" style="margin-top:14px"><span>鎖住作品<small>作品大小不動，只有框和木板變大，才看得出立體</small></span><input id="growLock" type="checkbox" checked><span class="t"></span></label><p class="micro">框拉大時，木板和卡紙會跟著變大；浮板跟著作品。</p></div><button class="nextbtn" type="button" data-next="2">下一步：卡紙 →</button></div><div class="step" id="edit-step-2"><div class="step-h"><span class="n">03</span><h2>卡紙</h2></div><p class="stephint">想在畫的外面留一圈紙邊，就打開「加卡紙」；不要就維持關閉。</p><label class="sw" for="matOn"><span>加卡紙<small>畫的外面留一圈紙邊，每邊最少 2 公分</small></span><input id="matOn" type="checkbox"><span class="t"></span></label><div id="matCtl" hidden><div class="lab" style="margin-top:18px"><label for="mat">卡紙外拉</label><b id="matValue">—</b></div><input id="mat" type="range" min="2" max="20" step="0.5" value="4"><label class="sw" for="matSame" style="margin-top:14px"><span>四邊一樣寬<small>關掉就能分別填上、下、左、右</small></span><input id="matSame" type="checkbox" checked><span class="t"></span></label><div id="matSides" hidden><div class="dimrow" style="margin-top:14px"><div class="field"><small>上</small><div><input id="matT" type="number" min="2" max="20" step="any" value="4" aria-label="卡紙上邊（公分）"><i>cm</i></div></div><div class="x"></div><div class="field"><small>下</small><div><input id="matB" type="number" min="2" max="20" step="any" value="4" aria-label="卡紙下邊（公分）"><i>cm</i></div></div></div><div class="dimrow" style="margin-top:10px"><div class="field"><small>左</small><div><input id="matL" type="number" min="2" max="20" step="any" value="4" aria-label="卡紙左邊（公分）"><i>cm</i></div></div><div class="x"></div><div class="field"><small>右</small><div><input id="matR" type="number" min="2" max="20" step="any" value="4" aria-label="卡紙右邊（公分）"><i>cm</i></div></div></div><p class="micro">每邊 2～20 公分，可以各填各的。</p></div></div><div class="lab" style="margin-top:22px"><span>卡紙顏色</span><span class="names" id="matName">象牙白</span></div><div class="sws" id="matSw" style="opacity:.35;pointer-events:none"><button class="sw1" aria-label="象牙白" data-mat="0xe9dfcb" data-name="象牙白" aria-pressed="true" style="background:#e9dfcb"></button><button class="sw1" aria-label="純白" data-mat="0xf6f4ee" data-name="純白" aria-pressed="false" style="background:#f6f4ee"></button><button class="sw1" aria-label="暖灰" data-mat="0xb9b2a4" data-name="暖灰" aria-pressed="false" style="background:#b9b2a4"></button><button class="sw1" aria-label="墨黑" data-mat="0x1d1d1f" data-name="墨黑" aria-pressed="false" style="background:#1d1d1f"></button><button class="sw1" aria-label="松綠" data-mat="0x35503f" data-name="松綠" aria-pressed="false" style="background:#35503f"></button></div><button class="nextbtn" type="button" data-next="3">下一步：壓克力 →</button></div><div class="step" id="edit-step-3"><div class="step-h"><span class="n">04</span><h2>壓克力</h2></div><p class="stephint">想加壓克力保護作品，就打開下面的開關。</p><div class="acr" id="acrBox"><label class="sw" for="glass"><span>加壓克力<small>整個罩住的透明罩，或框內一片壓克力</small></span><input id="glass" type="checkbox"><span class="t"></span></label><div id="acrMore" hidden><div class="lab"><span>形式</span><b id="acrKindV">框內壓克力片</b></div><div class="seg two" id="acrKind" role="group" aria-label="壓克力形式"><button type="button" data-k="sheet" aria-pressed="true">框內壓克力片</button><button type="button" data-k="box" aria-pressed="false">壓克力罩</button></div><p class="acrnote" id="acrKindNote">從前往後是壓克力、作品、選配浮板、木板，外圍是框。壓克力貼在作品上，從正面只看得到反光，按畫面下方的「拆開看層次」就看得到它在哪。</p><div class="lab" style="margin-top:18px"><label for="glassI">反光強度</label><b id="glassIV">中</b></div><input id="glassI" type="range" min="0" max="100" step="1" value="30" aria-describedby="acrNote"><button id="acrCmp" class="acrbtn" type="button" aria-pressed="false"><span class="acrbtn-a">左右對照</span><small>拖中間的線，看加與不加壓克力差在哪</small></button><p class="acrnote" id="acrNote">壓克力比玻璃輕、不易碎，大幅作品較安心；表面較軟、容易吸灰，擦拭請用軟布，不要用酒精或氨水類清潔劑。預覽的反光是示意，實際反光會依現場光線不同。</p></div></div><button class="nextbtn" type="button" data-next="4">下一步：牆面與光線 →</button></div><div class="step" id="edit-step-4"><div class="step-h"><span class="n">05</span><h2>牆面與光線</h2></div><p class="stephint">選牆面或房間，再調燈光方向。</p><div class="onlyroom"><div class="lab"><span>房間</span><span class="names" id="roomName">—</span></div><div class="rooms" id="roomGrid"></div><div class="lab" style="margin-top:20px"><span>用自己的空間</span></div><div class="seg two"><button type="button" id="mineCam">拍照</button><button type="button" id="minePick">從相簿選</button></div><input id="mineCamIn" type="file" accept="image/*" capture="environment" hidden><input id="minePickIn" type="file" accept="image/*" hidden><p class="micro">拍一面想掛畫的牆。照片只在這個頁面處理，不會傳到伺服器。拍完要在照片上點兩個位置、填這段的實際長度，畫才會是真實大小。</p><p class="micro" id="mineMsg" role="status"></p><p class="micro" id="roomNote">比例僅供參考，實際以現場為準。</p></div><div class="only3d"><div class="lab"><span>牆面</span><span class="names" id="wallName">墨黑展牆</span></div><div class="sws" id="wallSw"></div></div><div class="lab" style="margin-top:24px"><span>燈光方向</span></div><div class="seg" id="lightSeg"><button data-lx="-35" aria-pressed="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><path d="M9 9l9 9"/></svg>左上</button><button data-lx="0" aria-pressed="false"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><path d="M12 9v10"/></svg>正上</button><button data-lx="35" aria-pressed="false"><svg viewBox="0 0 24 24"><circle cx="18" cy="6" r="2.5"/><path d="M15 9l-9 9"/></svg>右上</button></div><div class="lab" style="margin-top:24px"><label for="shadow">陰影濃度</label><b id="shadowValue">中</b></div><input id="shadow" type="range" min="0" max="100" step="1" value="50"><button class="nextbtn" type="button" data-next="5">下一步：確認與下載 →</button></div><div class="step" id="edit-step-5" style="border-bottom:0"><div class="step-h"><span class="n">06</span><h2>確認與下載</h2></div><dl class="sum"><dt>尺寸狀態</dt><dd id="summarySizeState">示範尺寸，尚未確認</dd><dt>框款</dt><dd id="sumFrame">未選框</dd><dt>框寬／厚</dt><dd id="sumFrameDim">—</dd><dt>作品尺寸</dt><dd id="artdim">—</dd><dt>含框尺寸</dt><dd id="outer">—</dd><dt>框拉大</dt><dd id="sumGrow">不拉大</dd><dt>卡紙</dt><dd id="sumMat">不加</dd><dt>浮板</dt><dd id="sumFloat">不加</dd><dt>木板</dt><dd id="sumBoard">不加</dd><dt>卡板</dt><dd id="sumKaban">不加</dd><dt>作品厚度</dt><dd id="sumArtT">薄紙（不計）</dd><dt>壓克力</dt><dd id="sumGlaze">不加</dd></dl><p id="saveHelp" class="save-help">請先到「作品」確認實際尺寸，再存圖。</p><button class="size-link" id="goToSize" type="button">前往確認作品尺寸</button><button class="cta" id="save" disabled><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4"/><path d="M5 19h14"/></svg>下載模擬圖</button><p class="fine">模擬圖僅供參考，實際木色、紋路與尺寸以實品為準。</p></div><details class="proof"><summary>與實物對照（校對用）</summary><div class="seg two"><button id="corner" aria-pressed="false">框角對照</button><button id="cut" aria-pressed="false">切面對照</button></div><button class="ghost" id="reference">對照實物照片</button><p class="fine">外觀樣品。正面使用實拍木紋與原照片光影；轉動後的側面及曲線仍依照片估製，未達精密掃描；尺寸以作品可見範圍模擬，施工壓邊尚未計入。</p></details></aside></div><button id="backTop" type="button" hidden>↑ 回到畫框</button><dialog id="photo"><img src="./assets/38e19b4855.png" alt="番薯提供的1.5吋咖框角正面照片"><br><p>你拍的切面：用來重建弧面與放畫凹槽</p><img src="./assets/5e71ab5b68.jpg" alt="番薯提供的第2張切面照片"><p>你拍的斜側面：用來核對外側平面與厚度</p><img src="./assets/f3a1936f38.jpg" alt="番薯提供的第8張側面照片"><br><button id="close">關閉照片</button></dialog><script type="module">
+/* 重試時使用新的模組網址，避免 Safari 沿用第一次的失敗快取。 */
+const retryToken=new URLSearchParams(location.search).get('retry');
+const T=await import('./assets/5f1c9ae07c.js'+(retryToken?'?retry='+encodeURIComponent(retryToken):''));
+const EMBED=new URLSearchParams(location.search).has('embed');if(EMBED)document.documentElement.classList.add('embed');
+/* 首頁固定咖框：直接讀原Canvas無損貼圖，免在手機重算木紋。 */
+const startupTextures={};
+if(EMBED){
+ const {default:cache}=await import('./assets/startup-textures.js?v=20261117');
+ await Promise.all(Object.entries(cache).map(async([key,d])=>{
+  const im=new Image();im.src=d.png;await im.decode();
+  const c=document.createElement('canvas');c.width=d.width;c.height=d.height;c.getContext('2d').drawImage(im,0,0);
+  const t=new T.CanvasTexture(c);t.wrapS=d.wrapS;t.wrapT=d.wrapT;t.flipY=d.flipY;t.anisotropy=Math.min(d.anisotropy,16);t.colorSpace=d.colorSpace;t.userData=d.userData;startupTextures[key]=t;
+ }));
+}
+
+function embZoom(){const r=document.getElementById('stage').getBoundingClientRect();return r.height&&r.width/r.height<.9?.6:.92}
+const $=id=>document.getElementById(id),stage=$('stage');
+// 下載：Claude 網頁會擋掉一般下載（沒登入的人更不能），所以改成跳出模擬圖，手機長按、電腦按右鍵就能存
+function saveFile(name,url){let d=$('savedlg');if(!d){d=document.createElement('dialog');d.id='savedlg';d.innerHTML='<p id="savetip"></p><img id="saveimg" alt="" style="-webkit-touch-callout:default;-webkit-user-select:auto;user-select:auto"><br><button id="saveclose">關閉</button>';document.body.appendChild(d);$('saveclose').onclick=()=>d.close()}$('savetip').textContent=matchMedia('(pointer:coarse)').matches?'長按下面的圖片，選「加入照片」或「儲存圖片」，就會存進手機。':'在下面的圖片上按右鍵，選「另存圖片」。';const im=$('saveimg');im.src=url;im.alt=name;if(!d.open)d.showModal()}
+let dimensionsConfirmed=false,pendingDimension=null;
+let renderer;try{renderer=new T.WebGLRenderer({antialias:true,preserveDrawingBuffer:true,alpha:EMBED})}catch(e){stage.insertAdjacentHTML('beforeend','<div class="error">這個瀏覽器未能啟用立體預覽，請換用支援 WebGL 的瀏覽器。</div>');throw e}
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.08;if(EMBED)renderer.setClearColor(0x000000,0);stage.prepend(renderer.domElement);if(EMBED){renderer.domElement.addEventListener('webglcontextlost',()=>parent.postMessage({type:'layers3d-error'},location.origin));}
+const scene=new T.Scene();scene.background=new T.Color('#e8e8df');const camera=new T.PerspectiveCamera(28,1,1,4000);const group=new T.Group();scene.add(group);scene.add(new T.HemisphereLight(0xfff8e9,0x736856,1.4));const light=new T.DirectionalLight(0xfff4df,2.0);light.position.set(-35,60,90);light.castShadow=true;light.shadow.mapSize.set(2048,2048);Object.assign(light.shadow.camera,{left:-140,right:140,top:140,bottom:-140,near:1,far:500});light.shadow.bias=-.0004;scene.add(light);const fill=new T.DirectionalLight(0xe4edff,.45);fill.position.set(50,0,50);scene.add(fill);
+const wall=new T.Mesh(new T.PlaneGeometry(1,1),new T.ShadowMaterial({opacity:.14}));wall.position.z=-.55;wall.receiveShadow=true;scene.add(wall);
+// Neutral studio environment: reflections respond to rotation rather than being painted on.
+const studio=new T.Scene();studio.background=new T.Color(0x6b6963);
+const room=new T.Mesh(new T.BoxGeometry(220,200,220),new T.MeshBasicMaterial({color:0x77746c,side:T.BackSide}));studio.add(room);
+for(const [x,y,z,sx,sy,power] of [[-65,45,90,35,85,3.0],[45,75,65,70,20,1.8],[75,-25,65,12,65,.7]]){const card=new T.Mesh(new T.PlaneGeometry(sx,sy),new T.MeshBasicMaterial({color:new T.Color().setScalar(power),side:T.DoubleSide}));card.position.set(x,y,z);card.lookAt(0,0,0);studio.add(card)}
+const pmrem=new T.PMREMGenerator(renderer);const environment=pmrem.fromScene(studio,.04);scene.environment=environment.texture;pmrem.dispose();
+const raw=new Image();raw.src='./assets/2dc98cf4da.jpg';await raw.decode();
+const frontPhoto=new Image();frontPhoto.src='./assets/38e19b4855.png';await frontPhoto.decode();
+const source=document.createElement('canvas');source.width=717;source.height=348;const sx=source.getContext('2d');sx.drawImage(frontPhoto,0,0,717,348);const src=sx.getImageData(0,0,717,348).data;const hiPhoto=new Image();hiPhoto.src='./assets/5a9a481fd1.jpg';await hiPhoto.decode();const HW=hiPhoto.naturalWidth,HH=hiPhoto.naturalHeight;const hiCanvas=document.createElement('canvas');hiCanvas.width=HW;hiCanvas.height=HH;const hix=hiCanvas.getContext('2d');hix.drawImage(hiPhoto,0,0);const hiSrc=hix.getImageData(0,0,HW,HH).data;const HQ={O:[1046, 21],I:[1031, 599],RI:[1436, 1028],RO:[2009, 1036],LI:[598, 994],LO:[18, 971]};const HPXCM=93;
+function stripData(side,trim,hi,F){const W=1536,H=512,out=new ImageData(W,H),S=hi?hiSrc:(F?F.src:src),SW=hi?HW:(F&&F.sw||717),SH=hi?HH:(F&&F.sh||348);const L=(p,q,v)=>[p[0]+(q[0]-p[0])*v,p[1]+(q[1]-p[1])*v];for(let y=0;y<H;y++){const v=y/(H-1);let ax,ay,bx,by;if(hi){if(side==='right'){[ax,ay]=L(HQ.I,HQ.O,v);[bx,by]=L(HQ.RI,HQ.RO,v)}else{[ax,ay]=L(HQ.LI,HQ.LO,v);[bx,by]=L(HQ.I,HQ.O,v)}}else if(F){if(side==='right'){[ax,ay]=L(F.q.I,F.q.O,v);[bx,by]=L(F.q.RI,F.q.RO,v)}else{[ax,ay]=L(F.q.LI,F.q.LO,v);[bx,by]=L(F.q.I,F.q.O,v)}}else if(side==='right'){ax=350+4*v;ay=198-183*v;bx=481+187*v;by=324+5*v}else{ax=219-182*v;ay=318-6*v;bx=350+4*v;by=198-183*v}for(let x=0;x<W;x++){const u=trim?(.035+.93*x/(W-1)):x/(W-1),px=(ax+(bx-ax)*u)*(F&&F.sw?F.sw/717:1),py=(ay+(by-ay)*u)*(F&&F.sh?F.sh/348:1),ix=Math.floor(px),iy=Math.floor(py),fx=px-ix,fy=py-iy,di=(y*W+x)*4;for(let k=0;k<3;k++){const at=(xx,yy)=>S[(Math.min(SH-1,Math.max(0,yy))*SW+Math.min(SW-1,Math.max(0,xx)))*4+k];out.data[di+k]=at(ix,iy)*(1-fx)*(1-fy)+at(ix+1,iy)*fx*(1-fy)+at(ix,iy+1)*(1-fx)*fy+at(ix+1,iy+1)*fx*fy}out.data[di+3]=255}}return out}
+function boxBlur(d,W,H,rx,ry){const a=new Float32Array(W*H*4),b=new Float32Array(W*H*4);for(let y=0;y<H;y++)for(let k=0;k<3;k++){let sum=0;for(let x=-rx;x<=rx;x++)sum+=d[(y*W+Math.min(W-1,Math.max(0,x)))*4+k];for(let x=0;x<W;x++){a[(y*W+x)*4+k]=sum/(2*rx+1);sum+=d[(y*W+Math.min(W-1,x+rx+1))*4+k]-d[(y*W+Math.max(0,x-rx))*4+k]}}for(let x=0;x<W;x++)for(let k=0;k<3;k++){let sum=0;for(let y=-ry;y<=ry;y++)sum+=a[(Math.min(H-1,Math.max(0,y))*W+x)*4+k];for(let y=0;y<H;y++){b[(y*W+x)*4+k]=sum/(2*ry+1);sum+=a[(Math.min(H-1,y+ry+1)*W+x)*4+k]-a[(Math.max(0,y-ry)*W+x)*4+k]}}return b}
+function photoStrip(side,trim=false,F){const W=1536,H=512,c=document.createElement('canvas');c.width=W;c.height=H;const ctx=c.getContext('2d');let out;if(trim&&USE_HI&&(!F||F.id==='brown')){const A=stripData(side,true,true),B=stripData(side,true,false),bl=boxBlur(A.data,W,H,120,26);out=ctx.createImageData(W,H);for(let i=0;i<W*H*4;i+=4){for(let k=0;k<3;k++){const r=Math.min(1.7,Math.max(.55,A.data[i+k]/Math.max(8,bl[i+k])));out.data[i+k]=Math.min(255,B.data[i+k]*r)}out.data[i+3]=255}}else{out=stripData(side,trim,false,F);if(F&&F.id==='red')refineRedWood(out,W,H);else if(F&&F.flatten)flattenAlong(out,W,H,F.gain||1,F.sat||1,F.sharp||0,F.brush||0,F.tint,F.contrast||1);}ctx.putImageData(out,0,0);const t=new T.CanvasTexture(c);t.colorSpace=T.SRGBColorSpace;t.flipY=false;if(trim)t.wrapS=T.MirroredRepeatWrapping;t.anisotropy=renderer.capabilities.getMaxAnisotropy();return t}
+// 1.2吋咖／柚：照片沿框條長度有打光明暗，實物同一支條子顏色是均勻的；只把「沿長度方向」的大片明暗拉平，橫剖面各列的明暗（凸邊、凹槽、斜面）與細木紋原樣保留。
+function flattenAlong(out,W,H,gain=1,sat=1,sharp=0,brush=0,tint=null,contrast=1){
+ const d=out.data,low=boxBlur(d,W,H,150,1);
+ for(let y=0;y<H;y++){
+  let m=0,n=0;for(let x=0;x<W;x+=4){const j=(y*W+x)*4;m+=.299*low[j]+.587*low[j+1]+.114*low[j+2];n++}m/=n;
+  for(let x=0;x<W;x++){const j=(y*W+x)*4,l=Math.max(1,.299*low[j]+.587*low[j+1]+.114*low[j+2]),g=Math.min(1.45,Math.max(.7,m/l));
+   {const r=d[j]*g*gain,gg=d[j+1]*g*gain,bb=d[j+2]*g*gain,ly=.299*r+.587*gg+.114*bb;d[j]=Math.max(0,Math.min(255,ly+(r-ly)*sat));d[j+1]=Math.max(0,Math.min(255,ly+(gg-ly)*sat));d[j+2]=Math.max(0,Math.min(255,ly+(bb-ly)*sat))}}
+ }
+ // 色相校正：正面照片打了白光、有反光，木面會偏灰偏粉；你拍的外側面照片反光少，更接近肉眼看到的木頭色。這裡只把「整支木頭的平均色相與彩度」拉到外側面照片的水準（Lab a／b），明暗與細節不動。
+ if(tint){const f=u=>{u/=255;return u>.04045?Math.pow((u+.055)/1.055,2.4):u/12.92},g=u=>{u=u<=.0031308?12.92*u:1.055*Math.pow(u,1/2.4)-.055;return Math.max(0,Math.min(255,u*255))},h=t=>t>.008856?Math.cbrt(t):7.787*t+16/116,hi=t=>t>.206893?t*t*t:(t-16/116)/7.787;
+  const toLab=(r,gg,b)=>{const R=f(r),G=f(gg),B=f(b),X=(R*.4124+G*.3576+B*.1805)/.95047,Y=R*.2126+G*.7152+B*.0722,Z=(R*.0193+G*.1192+B*.9505)/1.08883;return[116*h(Y)-16,500*(h(X)-h(Y)),200*(h(Y)-h(Z))]};
+  const toRgb=(L,a,b)=>{const fy=(L+16)/116,fx=fy+a/500,fz=fy-b/200,X=hi(fx)*.95047,Y=hi(fy),Z=hi(fz)*1.08883;return[g(X*3.2406-Y*1.5372-Z*.4986),g(-X*.9689+Y*1.8758+Z*.0415),g(X*.0557-Y*.204+Z*1.057)]};
+  let sa=0,sb=0,n=0;for(let k=0;k<W*H*4;k+=24){const l=toLab(d[k],d[k+1],d[k+2]);sa+=l[1];sb+=l[2];n++}sa/=n;sb/=n;
+  const ka=Math.max(.7,Math.min(1.4,tint.a/Math.max(1,sa))),kb=Math.max(.5,Math.min(1.4,tint.b/Math.max(1,sb)));
+  for(let k=0;k<W*H*4;k+=4){const l=toLab(d[k],d[k+1],d[k+2]),c=toRgb(l[0],l[1]*ka,l[2]*kb);d[k]=c[0];d[k+1]=c[1];d[k+2]=c[2]}}
+ if(contrast!==1){let m=0,n=0;for(let k=0;k<W*H*4;k+=24){m+=.299*d[k]+.587*d[k+1]+.114*d[k+2];n++}m/=n;for(let k=0;k<W*H*4;k+=4)for(let c=0;c<3;c++){const v=m+(d[k+c]-m)*contrast;d[k+c]=v<0?0:v>255?255:v}}
+ if(sharp){const lo=boxBlur(d,W,H,4,1);for(let k=0;k<W*H*4;k+=4)for(let c=0;c<3;c++){const v=d[k+c]+sharp*(d[k+c]-lo[k+c]);d[k+c]=v<0?0:v>255?255:v}}
+ // 刷紋：照片裡咖框面有一道道細長的銀白刷痕（沿框條長度方向）；解析度被拉伸後糊掉，這裡用固定種子的細長亮痕補回同樣的質感（形狀為示意，位置不是逐條照抄）
+ if(brush){let sd=20261103;const rnd=()=>(sd=(Math.imul(sd,1664525)+1013904223)>>>0)/4294967296;const cnt=Math.round(300*brush);
+  for(let n=0;n<cnt;n++){const y=Math.floor(8+rnd()*(H-16)),len=60+rnd()*420,x0=Math.floor(rnd()*W),amp=(8+rnd()*30)*brush,th=rnd()<.3?2:1;
+   for(let t=0;t<th;t++){const yy=y+t;if(yy>=H)break;for(let u=0;u<len;u++){const x=(x0+u)%W,taper=Math.sin(Math.PI*u/len),j=(yy*W+x)*4,a2=amp*Math.pow(taper,.6)*(th===2&&t===1?.5:1)*(.75+.25*Math.sin(u*.21+n));
+    d[j]=Math.min(255,d[j]+a2*1.0);d[j+1]=Math.min(255,d[j+1]+a2*.94);d[j+2]=Math.min(255,d[j+2]+a2*.9)}}}}
+}
+// Retain photographed relief and real pores. Suppress only broad local glare;
+// do not average all rows together or synthesize wood grain.
+function refineRedWood(out,W,H){
+ const d=out.data,low=boxBlur(d,W,H,90,2),lum=(a,j)=>.299*a[j]+.587*a[j+1]+.114*a[j+2];
+ let cr=0,cg=0,cb=0,cn=0;
+ for(let j=0;j<d.length;j+=32){const l=lum(d,j);if(l>35&&l<105&&d[j]-d[j+2]>45){cr+=d[j];cg+=d[j+1];cb+=d[j+2];cn++}}
+ const cl=.299*cr+.587*cg+.114*cb,woodRatio=cl>0?[cr/cl,cg/cl,cb/cl]:[1.65,.8,.55];
+ for(let y=0;y<H;y++){
+  const row=[];for(let x=0;x<W;x+=8){const j=(y*W+x)*4;row.push({l:lum(low,j),j})}row.sort((a,b)=>a.l-b.l);
+  const med=row[Math.floor(row.length*.45)].l;
+  let rr=0,gg=0,bb=0,n=0;
+  for(let z=Math.floor(row.length*.15);z<Math.floor(row.length*.45);z++){const j=row[z].j;rr+=low[j];gg+=low[j+1];bb+=low[j+2];n++}
+  const ref=[rr/n,gg/n,bb/n],rl=.299*ref[0]+.587*ref[1]+.114*ref[2];
+  for(let x=0;x<W;x++){
+   const j=(y*W+x)*4,l=lum(d,j),m=Math.max(1,lum(low,j)),ex=Math.max(0,m-med*1.08);
+   let base=m-ex*.65;
+   // Broad face: remove photographed milky reflection, retain narrow moulding highlights.
+   const face=1-Math.min(1,Math.max(0,(y/H-.55)/.17));
+   base-=Math.max(0,base-80)*.65*face;
+   const nl=Math.max(0,base+(l-m)*1.05),glare=Math.min(.85,Math.max(0,(m-65)/60))*face;
+   for(let k=0;k<3;k++){
+    const ratio=d[j+k]/Math.max(1,l),wood=woodRatio[k]*.85+ref[k]/Math.max(1,rl)*.15;
+    d[j+k]=Math.max(0,Math.min(255,nl*(ratio*(1-glare)+wood*glare)));
+   }
+  }
+ }
+}
+function grainBoost(ctx,W,H){let seed=20261030;const rnd=()=>(seed=(seed*1664525+1013904223)>>>0)/4294967296;const smooth=(arr,r)=>{const o=new Float32Array(arr.length);for(let i=0;i<arr.length;i++){let a=0,n=0;for(let k=-r;k<=r;k++){const j=Math.min(arr.length-1,Math.max(0,i+k));a+=arr[j];n++}o[i]=a/n}return o};const mk=(n,r)=>{const a=new Float32Array(n);for(let i=0;i<n;i++)a[i]=rnd()-.5;const b=smooth(a,r);let m=0;for(const v of b)m=Math.max(m,Math.abs(v));return b.map(v=>v/m)};const fine=mk(H,1),mid=mk(H,4),slow=mk(Math.ceil(W/90)+2,2),slow2=mk(Math.ceil(W/230)+2,2);const img=ctx.getImageData(0,0,W,H),d=img.data;for(let y=0;y<H;y++){for(let x=0;x<W;x++){const m1=.55+.45*slow[Math.floor(x/90+y*.021)%slow.length],m2=.55+.45*slow2[Math.floor(x/230+y*.007)%slow2.length];const n=(fine[y]*.5+mid[y]*.5)*m1*m2;const f=1+.16*n+.03*(rnd()-.5);const i=(y*W+x)*4;d[i]=Math.min(255,d[i]*f);d[i+1]=Math.min(255,d[i+1]*f);d[i+2]=Math.min(255,d[i+2]*f)}}ctx.putImageData(img,0,0)}
+const USE_HI=true;
+function hiLen(side,v){const L=(p,q)=>[p[0]+(q[0]-p[0])*v,p[1]+(q[1]-p[1])*v];const A=side==='right'?L(HQ.I,HQ.O):L(HQ.LI,HQ.LO),B=side==='right'?L(HQ.RI,HQ.RO):L(HQ.I,HQ.O);return Math.hypot(B[0]-A[0],B[1]-A[1])/HPXCM}
+function photoLen(side,v){const Q=FR.q,L=(p,q)=>[p[0]+(q[0]-p[0])*v,p[1]+(q[1]-p[1])*v],A=side==='right'?L(Q.I,Q.O):L(Q.LI,Q.LO),B=side==='right'?L(Q.RI,Q.RO):L(Q.I,Q.O);return Math.hypot(B[0]-A[0],B[1]-A[1])/FR.S}
+// Photographic front material: retains original grain, color AND photographed highlights.
+// It is not a measured relightable PBR scan. Rear/side geometry remains estimated.
+const rightWood=EMBED?startupTextures.right:photoStrip('right'),leftWood=EMBED?startupTextures.left:photoStrip('left');
+let frameMaterial=new T.MeshBasicMaterial({map:rightWood,toneMapped:false});let leftMaterial=new T.MeshBasicMaterial({map:leftWood,toneMapped:false});const sheenMaterial=(map,rough=.42,spec=.45)=>new T.MeshPhysicalMaterial({color:0x000000,emissive:0xffffff,emissiveMap:map,roughness:rough,metalness:0,specularIntensity:spec,toneMapped:false});// Rails repeat the same photographed strip several times: remove short blemishes (dings) and the
+// photographed lighting drift along the grain, so repeats read as one continuous piece of wood.
+function cleanRail(tex,T=12){
+ const c=tex.image,W=c.width,H=c.height,x=c.getContext('2d'),im=x.getImageData(0,0,W,H),d=im.data,lum=new Float32Array(W*H);
+ for(let i=0;i<W*H;i++)lum[i]=.299*d[i*4]+.587*d[i*4+1]+.114*d[i*4+2];
+ const hblur=(src,r)=>{const out=new Float32Array(W*H),acc=new Float64Array(W+1);for(let y=0;y<H;y++){const o=y*W;acc[0]=0;for(let k=0;k<W;k++)acc[k+1]=acc[k]+src[o+k];for(let k=0;k<W;k++){const a=Math.max(0,k-r),b=Math.min(W,k+r+1);out[o+k]=(acc[b]-acc[a])/(b-a)}}return out};
+ const gain=new Float32Array(W*H).fill(1);
+ // 1) dings: short along the grain, so they stand out from the row's own horizontal average
+ let cur=lum;
+ for(let pass=0;pass<3;pass++){
+  const bl=hblur(cur,110),dev=new Float32Array(W*H);
+  for(let i=0;i<W*H;i++){const e=Math.abs(cur[i]-bl[i]);dev[i]=e>T?Math.min(1,(e-T)/T):0}
+  // grow the mask a little so the soft rim of a ding goes too
+  const grown=new Float32Array(W*H);for(let y=0;y<H;y++)for(let k=0;k<W;k++){let m=0;for(let dy=-2;dy<=2;dy++){const yy=y+dy;if(yy<0||yy>=H)continue;for(let dx=-4;dx<=4;dx+=2){const xx=k+dx;if(xx<0||xx>=W)continue;const v=dev[yy*W+xx];if(v>m)m=v}}grown[y*W+k]=m}
+  const next=new Float32Array(W*H);for(let i=0;i<W*H;i++)next[i]=cur[i]+(bl[i]-cur[i])*grown[i];
+  cur=next;
+ }
+ // 2) lighting drift along the rail: bring each row's slow brightness variation back to the row mean
+ const lp=hblur(hblur(cur,150),150);
+ for(let y=0;y<H;y++){let m=0;for(let k=0;k<W;k++)m+=lp[y*W+k];m/=W;for(let k=0;k<W;k++){const i=y*W+k;gain[i]=Math.max(.7,Math.min(1.4,m/Math.max(8,lp[i])))}}
+ for(let i=0;i<W*H;i++){const l0=Math.max(4,lum[i]),l1=Math.max(0,cur[i]*gain[i]),r=l1/l0;for(let k=0;k<3;k++)d[i*4+k]=Math.max(0,Math.min(255,d[i*4+k]*r))}
+ x.putImageData(im,0,0);tex.needsUpdate=true;return tex;
+}
+let fullRightMaterial=sheenMaterial(EMBED?startupTextures.fullRight:acrFixInner(cleanRail(photoStrip('right',true))));let fullLeftMaterial=sheenMaterial(EMBED?startupTextures.fullLeft:acrFixInner(cleanRail(photoStrip('left',true))));
+// Use intact middle wood, excluding photographed raw edges and edge glare.
+// Match the side's average wood tint to the front; retain local photographed grain.
+function cleanSideTexture(image,box,front,height,inset=true,keepColor=false){
+ const [bx,by,bw,bh]=box,sx=bx+bw*(inset?.06:0),sy=by+bh*(inset?.28:0),sw=bw*(inset?.88:1),sh=bh*(inset?.55:1);
+ const cv=document.createElement('canvas');cv.width=Math.max(1,Math.round(sw));cv.height=Math.max(1,Math.round(sh));const x=cv.getContext('2d');x.drawImage(image,sx,sy,sw,sh,0,0,cv.width,cv.height);
+ const data=x.getImageData(0,0,cv.width,cv.height),d=data.data,target=front.image.getContext('2d').getImageData(0,0,front.image.width,front.image.height).data;
+ const average=(a)=>{let R=0,G=0,B=0,n=0;for(let i=0;i<a.length;i+=16){const l=.299*a[i]+.587*a[i+1]+.114*a[i+2];if(l>20&&l<150){R+=a[i];G+=a[i+1];B+=a[i+2];n++}}return[R/n,G/n,B/n]};
+ const A=average(d),B=average(target),gain=keepColor?B.map((v,i)=>Math.pow(Math.max(.5,Math.min(1.5,v/Math.max(1,A[i]))),1)):B.map((v,i)=>Math.max(.65,Math.min(1.5,v/Math.max(1,A[i]))));
+ for(let i=0;i<d.length;i+=4)for(let k=0;k<3;k++)d[i+k]=Math.min(255,d[i+k]*gain[k]);x.putImageData(data,0,0);
+ const t=new T.CanvasTexture(cv);t.colorSpace=T.SRGBColorSpace;t.wrapS=T.MirroredRepeatWrapping;t.flipY=false;t.anisotropy=renderer.capabilities.getMaxAnisotropy();t.userData.woodLengthCm=sw/sh*height;cleanRail(t);return t;
+}
+const brownSide1=new Image();brownSide1.src='./assets/brown_side1_strip.jpg';await brownSide1.decode();
+const sideWood=EMBED?startupTextures.side:cleanSideTexture(brownSide1,[0,.2,1575,236.25],fullLeftMaterial.emissiveMap,3.2,false,true);let sideMaterial=sheenMaterial(sideWood);
+const otherSide=new Image();otherSide.src='./assets/brown_side2_strip.jpg';await otherSide.decode();const otherTexture=EMBED?startupTextures.other:cleanSideTexture(otherSide,[.25,.25,1543.5,220.5],fullRightMaterial.emissiveMap,3.2,false,true);let otherSideMaterial=sheenMaterial(otherTexture);
+const cutPhoto=new Image();cutPhoto.src='./assets/5e71ab5b68.jpg';await cutPhoto.decode();const cutTexture=new T.Texture(cutPhoto);cutTexture.colorSpace=T.SRGBColorSpace;cutTexture.flipY=false;cutTexture.needsUpdate=true;let endMaterial=new T.MeshBasicMaterial({map:cutTexture,toneMapped:false,side:T.DoubleSide});
+let seed=1337;const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
+const artCanvas=document.createElement('canvas');artCanvas.width=750;artCanvas.height=1000;const ac=artCanvas.getContext('2d');ac.fillStyle='#d4c8a6';ac.fillRect(0,0,750,1000);ac.fillStyle='#e6dbc0';ac.beginPath();ac.arc(490,240,125,0,Math.PI*2);ac.fill();for(let i=0;i<5;i++){ac.fillStyle=['#a5ad94','#8d9d87','#708775','#536d5d','#3c574a'][i];ac.beginPath();ac.moveTo(0,500+i*75);for(let x=0;x<=750;x+=10)ac.lineTo(x,490+i*75+Math.sin(x/150+i*1.9)*80+Math.cos(x/85+i)*20);ac.lineTo(750,1000);ac.lineTo(0,1000);ac.fill()}let artTex=new T.CanvasTexture(artCanvas);artTex.colorSpace=T.SRGBColorSpace;
+let meshes=[],w=30,h=40,mL=0,mR=0,mT=0,mB=0,ratio=.75,view='angle',zoom=1;let matColor=0xe9dfcb,lightX=-35;const POOL={};let paperBumpP=null,paperColorP=null;function poolM(k,mk,up){let x=POOL[k];if(!x)x=POOL[k]=mk();if(up)up(x);return x}let rotX=.12,rotY=-.27;const target=new T.Vector3();let radius=100;const cornerGroup=new T.Group();scene.add(cornerGroup);cornerGroup.position.set(0,5.3,1.6);let cornerMeshes=[];
+// Cross-section: inner lip, broad curved face, groove, outer bead, outer wall. Centimetres.
+// End-grain outline traced from photo 2, right cut face (x485..674,y551..648).
+// Scale normalized to the confirmed 4.4 cm width / 3.2 cm total height.
+const tracedPixels=[[485,569],[505,560],[530,554],[555,552],[580,555],[605,561],[628,567],[638,568],[646,567],[647,559],[651,553],[657,551],[663,554],[669,564],[674,576]];
+let controls=tracedPixels.map(([x,y])=>[(x-485)/189*4.4,(648-y)/97*3.2]);
+function makeProfile(controls,FW_,reb){const profile=[];for(let i=0;i<controls.length-1;i++){const a=controls[i],b=controls[i+1],prev=controls[Math.max(i-1,0)],next=controls[Math.min(i+2,controls.length-1)];const d=b[0]-a[0],slope0=(b[1]-prev[1])/(b[0]-prev[0]),slope1=(next[1]-a[1])/(next[0]-a[0]);for(let j=0;j<6;j++){const t=j/6,t2=t*t,t3=t2*t;const z=(2*t3-3*t2+1)*a[1]+(t3-2*t2+t)*d*slope0+(-2*t3+3*t2)*b[1]+(t3-t2)*d*slope1;profile.push([a[0]+t*d,Math.max(Math.min(a[1],b[1]),Math.min(Math.max(a[1],b[1]),z))])}}profile.push(controls.at(-1),[FW_,0],[reb[0],0],[reb[0],reb[1]],[0,reb[1]],controls[0]);return profile}
+let profile=makeProfile(controls,4.4,[.86,1.58]);
+
+// ===== 框款清單：棕框（原本那支）與紅框 1.2吋紅木（官網 W3.5／H2.8） =====
+// q＝正面照片裡的角點（717×348 座標）；cm＝斷面照片對應；controls＝斷面控制點（公分）；reb＝放畫凹槽（寬、深）
+const FRAMES={
+ brown:{id:'brown',name:'1.5吋咖',kind:'實木框',W:4.4,H:3.2,S:29.7,cx0:354,cy0:329,q:{I:[350,198],O:[354,15],RI:[481,324],RO:[668,329],LI:[219,318],LO:[37,312]},front:'./assets/38e19b4855.png',cutSrc:'./assets/5e71ab5b68.jpg',cutW:720,cutH:1280,cm:{x0:485,xw:189,y0:648,ys:-97/3.2},cutTop:'-142%',cutLabel:'你拍的第 2 張切面（局部放大）',reb:[.86,1.58],controls,profile,thumb:['#9a5240','#5d2b21','#2f140e'],note:'框寬 4.4　框厚 3.2 cm',dim:'4.4／3.2 公分',ref:['./assets/38e19b4855.png','./assets/5e71ab5b68.jpg','./assets/f3a1936f38.jpg'],refAlt:['番薯提供的1.5吋咖框角正面照片','番薯提供的第2張切面照片','番薯提供的第8張側面照片']},
+ red:{id:'red',name:'1.2吋紅木',kind:'實木框',W:3.5,H:2.8,S:30,cx0:358.4,cy0:323.7,q:{I:[360.1,149.4],O:[358.4,6.6],RI:[544.5,326],RO:[699.5,325.5],LI:[178,331],LO:[17.5,337]},front:'./assets/red12_front.jpg',cutSrc:'./assets/red12_cut.jpg',cutW:1434,cutH:696,cm:{x0:1088.78,xw:273.14,y0:266.19,ys:58.485},cutTop:'0',cutLabel:'你拍的切面照片',reb:[.713,1.373],controls:[[0,2.605],[0.211,2.681],[0.47,2.724],[0.729,2.746],[1.037,2.768],[1.442,2.768],[1.701,2.757],[1.831,2.692],[2.025,2.649],[2.22,2.584],[2.35,2.541],[2.495,2.53],[2.609,2.53],[2.706,2.605],[2.803,2.714],[2.933,2.757],[3.063,2.789],[3.16,2.8],[3.257,2.768],[3.322,2.735],[3.387,2.638],[3.451,2.551],[3.5,2.454]],side1:{src:'./assets/red12_side1_clean.png',box:[0,208,2172,304]},side2:{src:'./assets/red12_side2_clean.png',box:[0,190,2172,341]},sideTint:0xd8c4bb,thumb:['#b0553f','#6a2b1f','#341510'],note:'框寬 3.5　框厚 2.8 cm',dim:'3.5／2.8 公分',ref:['./assets/red12_front.jpg','./assets/red12_cut.jpg','./assets/red12_side1.jpg'],refAlt:['番薯提供的1.2吋紅木框角正面照片','番薯提供的切面照片','番薯提供的外側面照片']},
+ coffee12:{id:'coffee12',name:'1.2吋咖',kind:'實木框',W:3.5,H:2.8,S:23.5,cx0:350,cy0:329.5,q:{"I":[350,141],"O":[350,25],"RI":[547.5,328.5],"RO":[664,327.5],"LI":[157.5,331.5],"LO":[39,331]},front:'./assets/coffee12_front.jpg',cutSrc:'./assets/coffee12_cut.jpg',cutW:800,cutH:450,cm:{"x0":258,"xw":457,"y0":400,"ys":-114.29},cutTop:'0',cutLabel:'你拍的切面照片',reb:[.713,1.373],controls:[[0,2.415],[0.211,2.502],[0.47,2.572],[0.729,2.607],[1.037,2.651],[1.442,2.66],[1.701,2.634],[1.831,2.616],[2.025,2.581],[2.22,2.52],[2.35,2.52],[2.495,2.564],[2.609,2.616],[2.706,2.677],[2.803,2.748],[2.933,2.791],[3.063,2.8],[3.16,2.774],[3.257,2.73],[3.322,2.704],[3.387,2.66],[3.451,2.599],[3.5,2.52]],side1:{src:'./assets/coffee12_side1.jpg',box:[0,0,1570,190]},side2:{src:'./assets/coffee12_side2.jpg',box:[0,0,1580,195]},sideInset:false,flatten:true,gain:.62,sat:1,contrast:1.25,sharp:.4,brush:.5,tint:{a:13.2,b:17.6},thumb:["#8a5a3c", "#5a3524", "#2e1a10"],note:'框寬 3.5　框厚 2.8 cm',dim:'3.5／2.8 公分',ref:['./assets/coffee12_front.jpg','./assets/coffee12_cut.jpg','./assets/coffee12_side1.jpg'],refAlt:['番薯提供的1.2吋咖框角正面照片','番薯提供的切面照片','番薯提供的外側面照片']},
+ pomelo12:{id:'pomelo12',name:'1.2吋柚',kind:'實木框',W:3.5,H:2.8,S:23.5,cx0:356.5,cy0:325,q:{"I":[355,131],"O":[356.5,9],"RI":[550,328.5],"RO":[670,330],"LI":[152.5,322.5],"LO":[31.5,321.5]},front:'./assets/pomelo12_front.jpg',cutSrc:'./assets/pomelo12_cut.jpg',cutW:800,cutH:500,cm:{"x0":172,"xw":513,"y0":442,"ys":-131.43},cutTop:'0',cutLabel:'你拍的切面照片',reb:[.713,1.373],controls:[[0,2.404],[0.211,2.496],[0.47,2.579],[0.729,2.625],[1.037,2.648],[1.442,2.64],[1.701,2.617],[1.831,2.61],[2.025,2.579],[2.22,2.503],[2.35,2.511],[2.495,2.572],[2.609,2.633],[2.706,2.701],[2.803,2.747],[2.933,2.792],[3.063,2.8],[3.16,2.8],[3.257,2.792],[3.322,2.754],[3.387,2.701],[3.451,2.686],[3.5,2.686]],side1:{src:'./assets/pomelo12_side1.jpg',box:[0,0,1700,235]},side2:{src:'./assets/pomelo12_side2.jpg',box:[0,0,1620,195]},sideInset:false,flatten:true,gain:.93,sat:.78,contrast:1.3,tint:{a:15,b:38},thumb:["#c98f4e", "#96622f", "#5c3a1c"],note:'框寬 3.5　框厚 2.8 cm',dim:'3.5／2.8 公分',ref:['./assets/pomelo12_front.jpg','./assets/pomelo12_cut.jpg','./assets/pomelo12_side1.jpg'],refAlt:['番薯提供的1.2吋柚框角正面照片','番薯提供的切面照片','番薯提供的外側面照片']}
+};
+FRAMES.red.profile=makeProfile(FRAMES.red.controls,3.5,FRAMES.red.reb);
+for(const k of ['coffee12','pomelo12'])FRAMES[k].profile=makeProfile(FRAMES[k].controls,3.5,FRAMES[k].reb);
+// Studio-card reflections made the four rails read bright/dark unevenly; keep only a faint sheen on the brown frame.
+for(const m of [fullRightMaterial,fullLeftMaterial,sideMaterial,otherSideMaterial])m.specularIntensity=.12;
+FRAMES.brown.set={frameMaterial:leftMaterial,leftMaterial,fullRightMaterial:fullLeftMaterial,fullLeftMaterial,sideMaterial,otherSideMaterial,endMaterial};
+const KB={on:false,h:4.5};// 卡板在框「裡面」：前端頂著框唇背面（z=內側高），往背面方向延伸 KB.h；超出框背面的部分（KB.h-內側高）會凸在框後面。作品與木板都改放到卡板底。
+function kabanOn(){return KB.on&&!NOF&&!!FR&&!!FR.frontLip}
+function kabanZ(){return kabanOn()?FR.innerH-KB.h:0}
+function kabanBack(){return kabanOn()?Math.max(0,KB.h-FR.innerH):0}
+// 番薯 11/6 14:5x 確認：加卡板時，木板蓋在卡板背面外面（像盒子的底），不在圈裡面
+function kabanBoardOut(){return kabanOn()&&$('boardOn').checked?.4:0}
+let FR=FRAMES.brown,FW=0,FH=3.2,RZ=1.58,frameTok=0,NOF=true,artT=0;
+function repairedFrontTexture(image,reference){
+ const old=reference.image,W=old.width,H=old.height,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');x.drawImage(image,0,0,W,H);
+ const out=x.getImageData(0,0,W,H),a=out.data,b=old.getContext('2d').getImageData(0,0,W,H).data;
+ // Keep the accepted photographed wood colour and profile shading; use the retouch only for clean surface detail.
+ for(let y=0;y<H;y++){const sumA=[0,0,0],sumB=[0,0,0];for(let xx=0;xx<W;xx++){const i=(y*W+xx)*4;for(let k=0;k<3;k++){sumA[k]+=a[i+k];sumB[k]+=b[i+k]}}const gain=sumB.map((v,k)=>Math.max(.5,Math.min(2,v/Math.max(1,sumA[k]))));for(let xx=0;xx<W;xx++){const i=(y*W+xx)*4;for(let k=0;k<3;k++)a[i+k]=Math.min(255,a[i+k]*gain[k])}}
+ x.putImageData(out,0,0);const t=reference.clone();t.image=c;t.needsUpdate=true;return t;
+}
+// The retouched red front reads lighter and flatter than the photographed wood: pull brightness down and
+// restore contrast around each channel's mean so hue stays the photographed red.
+const RED_GRADE=[.77,1.2];
+function gradeWood(tex,gain,contrast){
+ const c=tex.image,W=c.width,H=c.height,x=c.getContext('2d'),im=x.getImageData(0,0,W,H),d=im.data,m=[0,0,0];
+ for(let i=0;i<W*H;i++)for(let k=0;k<3;k++)m[k]+=d[i*4+k];for(let k=0;k<3;k++)m[k]/=W*H;
+ for(let i=0;i<W*H;i++)for(let k=0;k<3;k++)d[i*4+k]=Math.max(0,Math.min(255,(m[k]+(d[i*4+k]-m[k])*contrast)*gain));
+ x.putImageData(im,0,0);tex.needsUpdate=true;return tex;
+}
+// 紅框凹槽／外緣照片裡是深紅褐（約 84/40/32），不是黑；調暗後暗處被壓到接近黑，這裡把太暗的像素往深紅褐拉回，亮處不動。
+function liftShadows(tex,floor=[84,40,32]){
+ const c=tex.image,W=c.width,H=c.height,x=c.getContext('2d'),im=x.getImageData(0,0,W,H),d=im.data,fl=.299*floor[0]+.587*floor[1]+.114*floor[2];
+ for(let i=0;i<W*H*4;i+=4){const l=.299*d[i]+.587*d[i+1]+.114*d[i+2];if(l<fl){const t=Math.pow((fl-l)/fl,1.3);for(let k=0;k<3;k++)d[i+k]=d[i+k]+(floor[k]-d[i+k])*t}}
+ x.putImageData(im,0,0);tex.needsUpdate=true;return tex;
+}
+// ===== 上1933 金／銀：11/6番薯逐圖確認，正面總寬0.8、下底寬3.3、總高6.3、內側高5.3、薄牆寬2.5／高1；薄牆在背面端 =====
+const L_WALL=.8,L_FOOT_T=1,L_FOOT_W=3.3,L_H=6.3;
+async function brushTex(kind,face='lip'){
+ const i=new Image();i.src=kind==='a'?'./assets/a1919_lip_photo.jpg?v=20261106-recrop':'./assets/l1933'+kind+'_'+face+'_photo.jpg';await i.decode();
+ const t=new T.Texture(i);t.colorSpace=T.SRGBColorSpace;t.wrapS=T.RepeatWrapping;t.wrapT=T.ClampToEdgeWrapping;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());t.needsUpdate=true;return t;
+}
+async function makeLSet(c){
+ // Front finish and outer wall are different surfaces. A1919's outer wall is
+ // satin black in IMG_6858.MOV (12–18s), not another bronze face.
+ const bz=c.metal==='a',lipTx=await brushTex(c.metal,'lip'),sideTx=bz?null:await brushTex(c.metal,'side');
+ const physical=m=>{m.userData.spotP=1;m.userData.lFinish=true;return m};
+ // These finishes already respond to the real scene lights. Skip the legacy
+ // additive warm overlay intended for the self-lit wood photos (spotPatch).
+ const photo=(tx,r,env)=>{const bump=tx.clone();bump.colorSpace=T.NoColorSpace;bump.needsUpdate=true;return physical(new T.MeshPhysicalMaterial({map:tx,color:c.metal==='s'?0xd8e4ff:bz?0xb2c3e8:0xffffff,metalness:bz?.68:.48,roughness:r,specularIntensity:.5,bumpMap:bump,bumpScale:bz?.0008:.0005,envMapIntensity:env,toneMapped:true,side:T.DoubleSide}))};
+ const black=()=>physical(new T.MeshPhysicalMaterial({color:0x121315,metalness:.05,roughness:.65,clearcoat:.12,clearcoatRoughness:.5,envMapIntensity:.6,side:T.DoubleSide}));
+ const mm=bz?black():photo(sideTx,.48,1.35),lip=photo(lipTx,bz?.5:.48,bz?1.1:1.35);
+ // The photographed bronze finish continues around the eased edge.
+ const edge=bz?lip.clone():lip;
+ if(bz){edge.color.setHex(0xffffff);edge.metalness=.2;edge.roughness=.78;edge.specularIntensity=.15;edge.envMapIntensity=.15;}
+ return{lMetal:mm,lLip:lip,lEdge:edge,lBlack:black()};
+}
+{const e=L_FOOT_W-L_WALL,P=[[-e,0],[L_WALL,0],[L_WALL,L_H],[0,L_H],[0,L_FOOT_T],[-e,L_FOOT_T]];
+ for(const [id,nm,k] of [['l1933g','上1933 金','g'],['l1933s','上1933 銀','s']])FRAMES[id]={id,name:nm,kind:'L框',mat:'L框',L:true,metal:k,W:L_WALL,H:L_H,reb:[L_WALL,L_FOOT_T],controls:[[0,0],[1,0]],profile:P,tprofile:P.map(([d,z])=>[d+e,z]),TW:L_FOOT_W,thumb:k==='g'?['#e8c56a','#b88a2e','#6b4a12']:['#f0f0ea','#a9a9a2','#5b5b57'],note:'正面總寬 0.8　總高 6.3 cm',dim:'0.8／6.3 公分',front:'',cutSrc:'',cutW:1,cutH:1,ref:[],refAlt:[]}}
+// ===== 上1919 古銅銀：11/6番薯逐圖確認，正面總寬2.1、下底寬1.5、總高3.4、內側高2.7、薄牆寬0.6／高0.7；薄牆在正面端 =====
+{const W=2.1,H=3.4,FT=.7,e=.6,P=[[e,0],[W,0],[W,H],[0,H],[0,H-FT],[e,H-FT]];
+ FRAMES.a1919={id:'a1919',name:'上A1919 古銅銀',kind:'L框',mat:'L框',L:true,frontLip:true,lipH:FT,innerH:2.7,bodyW:1.5,lipW:e,metal:'a',W,H,reb:[W,0],controls:[[0,0],[1,0]],profile:P,tprofile:P,TW:W,defT:1.7,maxT:2.7,emisRGB:[.62,.54,.44],thumb:['#a98b6a','#7a5c42','#3a2a1c'],note:'正面總寬 2.1　總高 3.4 cm',dim:'2.1／3.4 公分',front:'',cutSrc:'',cutW:1,cutH:1,ref:[],refAlt:[]}}
+
+async function loadFrameSet(c){
+ if(c.set)return c.set;
+ if(c.L){c.set=await makeLSet(c);return c.set}
+ const li=u=>{const i=new Image();i.src=u;return i.decode().then(()=>i)};
+ const [fp,cp,s1,s2]=await Promise.all([li(c.front),li(c.cutSrc),li(c.side1.src),li(c.side2.src)]);
+ const sc=document.createElement('canvas');c.sw=c.id!=='brown'?fp.naturalWidth:717;c.sh=c.id!=='brown'?fp.naturalHeight:348;sc.width=c.sw;sc.height=c.sh;const sxx=sc.getContext('2d');sxx.drawImage(fp,0,0,c.sw,c.sh);c.src=sxx.getImageData(0,0,c.sw,c.sh).data;
+ const wood=(side,trim)=>photoStrip(side,trim,c);
+ const baseR=wood('right',true),baseL=wood('left',true);
+ let fullR,fullL;
+ if(c.id==='red'){const [repairR,repairL]=await Promise.all([li('./assets/red12_front_right_clean.png'),li('./assets/red12_front_left_clean.png')]);fullR=sheenMaterial(gradeWood(repairedFrontTexture(repairR,baseR),RED_GRADE[0],RED_GRADE[1]));fullL=sheenMaterial(gradeWood(repairedFrontTexture(repairL,baseL),RED_GRADE[0],RED_GRADE[1]))}
+ else{const fx=t=>{acrFixInner(t);t.needsUpdate=true;return t};fullR=sheenMaterial(fx(baseR),c.rough,c.spec);fullL=sheenMaterial(fx(baseL),c.rough,c.spec)}
+ // 同 1.5吋咖標準：抹小疤、壓平沿木紋光影；四邊共用同一張（左）；反光降到 .12
+ for(const m of [fullR,fullL]){cleanRail(m.emissiveMap);m.specularIntensity=.12}
+ fullR=fullL;
+ const sm=sheenMaterial(cleanSideTexture(s1,c.side1.box||[0,0,s1.naturalWidth,s1.naturalHeight],fullL.emissiveMap,c.H,c.sideInset!==false)),om=sheenMaterial(cleanSideTexture(s2,c.side2.box||[0,0,s2.naturalWidth,s2.naturalHeight],fullR.emissiveMap,c.H,c.sideInset!==false));
+ if(c.id==='red')for(const m of new Set([fullR,fullL,sm,om]))liftShadows(m.emissiveMap);
+ const ct=new T.Texture(cp);ct.colorSpace=T.SRGBColorSpace;ct.flipY=false;ct.needsUpdate=true;
+ c.set={frameMaterial:new T.MeshBasicMaterial({map:wood('right'),toneMapped:false}),leftMaterial:new T.MeshBasicMaterial({map:wood('left'),toneMapped:false}),fullRightMaterial:fullR,fullLeftMaterial:fullL,sideMaterial:sm,otherSideMaterial:om,endMaterial:new T.MeshBasicMaterial({map:ct,toneMapped:false,side:T.DoubleSide})};
+ return c.set;
+}
+function drawThumb(c,fr){if(!c)return;const x=c.getContext('2d'),W=c.width,H=c.height,pad=16;let sx=(W-2*pad)/(fr.TW||fr.W),sy=(H-2*pad)/fr.H;if(fr.L)sx=sy=Math.min(sx,sy);x.clearRect(0,0,W,H);x.beginPath();(fr.tprofile||fr.profile).forEach(([d,z],i)=>{const px=pad+d*sx,py=H-pad-z*sy;i?x.lineTo(px,py):x.moveTo(px,py)});x.closePath();const g=x.createLinearGradient(pad,pad,W-pad,H-pad);g.addColorStop(0,fr.thumb[0]);g.addColorStop(.5,fr.thumb[1]);g.addColorStop(1,fr.thumb[2]);x.fillStyle=g;x.fill();x.lineWidth=1.6;x.lineJoin='round';x.strokeStyle='rgba(255,214,170,.6)';x.stroke()}
+async function applyFrame(id,init){
+ if(id==='none'){frameTok++;NOF=true;FW=0;window.kabanSync&&kabanSync();document.querySelectorAll('#frameList button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.frame===id));$('stageChip').innerHTML='<i></i>未選框<span>請從右側選一款</span>';$('artT').max=6;$('sumFrame').textContent='未選框';$('sumFrameDim').textContent='—';{const pf=document.querySelector('.proof');if(pf)pf.style.display='';window.__lastL=false}$('status').textContent='';if(!init)build();if(typeof updateDimensionState==='function')updateDimensionState();return}
+ const c=FRAMES[id];if(!c)return;const tok=++frameTok;
+ if(!c.set&&!init)$('status').textContent='正在載入框款…';
+ try{await loadFrameSet(c)}catch(e){$('status').textContent='這個框款載入失敗，請重新整理再試。';console.warn('frame load failed',e);return}
+ if(tok!==frameTok)return;
+ NOF=false;FR=c;FW=c.W;FH=c.H;RZ=c.L?c.reb[1]+.075:c.reb[1];({frameMaterial,leftMaterial,fullRightMaterial,fullLeftMaterial,sideMaterial,otherSideMaterial,endMaterial}=c.set);profile=c.profile;controls=c.controls;
+ document.querySelectorAll('#frameList button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.frame===id));
+ $('stageChip').innerHTML='<i></i>'+c.name+'<span>'+c.kind+'</span>';
+ window.kabanSync&&kabanSync();$('sumFrame').textContent=c.name+'・'+(c.mat||'實木');$('sumFrameDim').textContent=c.dim;$('sumFrameDim').previousElementSibling.textContent=c.L?'正面總寬／總高':'框寬／厚';
+ document.querySelectorAll('#photo img').forEach((im,i)=>{if(c.ref[i]){im.src=c.ref[i];im.alt=c.refAlt[i]}});
+ {const pic=$('comparisonImage');pic.dataset.front=c.front;pic.dataset.cut=c.cutSrc;pic._u=null;pic.alt=c.name+'框角原照片'}
+ {const pf=document.querySelector('.proof');if(pf)pf.style.display=c.L?'none':'';if(c.L&&(view==='corner'||view==='cut'))view='angle';if(!!c.L!==!!window.__lastL&&window.growSet)growSet(c.L?.35:0);window.__lastL=!!c.L}
+ // L 框是用來裝有厚度的畫布：作品厚度還是 0（薄紙）時，先放 4 公分，畫面離前緣約 1.2 公分（對照番薯 IMG_6841／6842 實物照）；他自己拉過就不動
+ {const r=$('artT'),pv=+r.value;r.max=c.maxT||6;if(c.L&&(!pv||pv>(c.maxT||6))){r.value=c.defT||4;r.dispatchEvent(new Event('input',{bubbles:true}))}}
+ if(!init){$('status').textContent='';build()}
+ if(typeof updateDimensionState==='function')updateDimensionState();
+}
+$('frameList').addEventListener('click',e=>{const b=e.target.closest('button[data-frame]');if(b&&b.getAttribute('aria-pressed')!=='true')applyFrame(b.dataset.frame)});
+
+
+// ---- 壓克力：反光由「視線方向」算出來，轉動時會跟著動；窗戶、柔光、亮邊都是程式畫的示意，不是現場實拍。 ----
+// uKind：0＝框內壓克力片　1＝罩的大面　2＝罩的切邊（壓克力的邊會亮、偏冰藍白）
+const ACR={u:{uI:{value:.3},uLX:{value:-35},uWipe:{value:-1},uRes:{value:new T.Vector2(1,1)},uSide:{value:1},uEx:{value:0},uRoom:{value:0}},cmp:false,split:.5,mode:'off',kind:'sheet',ex:0,exT:0,dim:null,labels:null};
+function acrylicMaterial(kind=0){return new T.ShaderMaterial({uniforms:Object.assign({},ACR.u,{uKind:{value:kind}}),transparent:true,depthWrite:false,side:T.DoubleSide,blending:T.CustomBlending,blendEquation:T.AddEquation,blendSrc:T.OneFactor,blendDst:T.OneMinusSrcAlphaFactor,
+vertexShader:'varying vec3 vW;varying vec3 vN;varying vec2 vUv;void main(){vec4 wp=modelMatrix*vec4(position,1.);vW=wp.xyz;vN=normalize(mat3(modelMatrix)*normal);vUv=uv;gl_Position=projectionMatrix*viewMatrix*wp;}',
+fragmentShader:`uniform float uI;uniform float uLX;uniform float uWipe;uniform vec2 uRes;uniform float uSide;uniform float uKind;uniform float uEx;uniform float uRoom;varying vec3 vW;varying vec3 vN;varying vec2 vUv;
+float hs(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float vn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hs(i),hs(i+vec2(1,0)),f.x),mix(hs(i+vec2(0,1)),hs(i+vec2(1,1)),f.x),f.y);}
+float bx(vec2 p,vec2 h,float f){vec2 d=abs(p)-h;return 1.-smoothstep(-f,f,max(d.x,d.y));}
+// 一片柔光窗（經緯度座標）：邊緣羽化、上亮下柔，中間一道細細的十字窗格；沒有樹影雜訊（雜訊移動時會閃、會髒）
+float acrWin(float az,float el,vec2 c,vec2 h){
+ vec2 p=vec2(mod(az-c.x+3.14159,6.28318)-3.14159,el-c.y);
+ vec2 d=abs(p)/h;
+ float m=1.-smoothstep(.66,1.02,max(d.x,d.y));if(m<.002)return 0.;
+ float mull=1.-.55*(1.-smoothstep(.005,.016,min(abs(p.x),abs(p.y))));
+ return m*mull*(.8+.45*smoothstep(-1.,1.,p.y/h.y));}
+void main(){
+ if(uWipe>=0.&&(gl_FragCoord.x/uRes.x)*uSide<uWipe*uSide)discard;
+ vec3 V=normalize(vW-cameraPosition);vec3 N=normalize(vN);if(dot(N,V)>0.)N=-N;
+ float c=clamp(dot(-V,N),0.,1.);
+ if(uKind>1.5){
+  // 切邊：壓克力的邊會把光導過去，看起來是一條發亮、偏冰藍的線；越斜看越亮
+  float g=1.-abs(vUv.y*2.-1.);float gl=.55+.45*pow(1.-c,1.2);
+  vec3 ec=vec3(.88,.99,1.)*(.60+.40*g)*gl*(1.05+.7*uI);
+  float a=.78;gl_FragColor=vec4(ec*a,a);return;
+ }
+ vec3 R=reflect(V,N);
+ // 反射率：基礎 20%、斜看拉高到接近 95%（壓克力片看起來有一層膜，轉到哪都在）
+ float F=.20+.75*pow(1.-c,2.);
+ // 整圈房間（經緯度全景）：反射視線落在哪個方向，就看到那個方向的窗、天花燈、天色或地板，所以任何角度都有東西可反
+ float az=atan(R.x,R.z)-uLX*.004,el=asin(clamp(R.y,-1.,1.));
+ // 窗戶反光：柔邊的窗＋中間一道細窗格，上下三排鋪滿整個房間（每排 8 扇、上下錯開），轉到哪個角度都有窗光掃過；亮度壓低、不加霧
+ float L=.03+1.0*smoothstep(.72,1.05,el);
+ for(int i=0;i<24;i++){float fi=float(i),row=floor(fi/8.),col=fi-row*8.,h1=hs(vec2(fi,3.1)),h2=hs(vec2(fi,7.7)),h3=hs(vec2(fi,1.3));
+  float ca=-3.14159+(col+.5+.5*mod(row,2.))*.7854+(h1-.5)*.12;
+  float ce=-.62+row*.56+(h2-.5)*.08;
+  L+=1.25*(row<.5?.7:1.)*acrWin(az,el,vec2(ca,ce),vec2(.30+h3*.05,.25+h1*.04));}
+ vec3 col=vec3(1.,.985,.95)*L*F*uI*4.5;
+ col=col/(1.+col);
+ if(uKind>.5){
+  // 罩的大面：有厚度，前後兩面各反一次（兩個淡淡的窗影）＋一點點冰藍的底色，從斜邊看過去會比較濃
+  float a=.04+.10*pow(1.-c,2.);
+  gl_FragColor=vec4(col*.09+vec3(.74,.90,.95)*a*.55,a);return;
+ }
+ // 框內壓克力片：平常只有反光；「拆開看層次」時加一點冰藍底色，讓人看得到它是一片透明板
+ float ta=.16*uEx;
+ if(uRoom>.5){
+  // A soft reflected light, retained when this transparent render is composited onto a room.
+  float sweep=(uLX>0.?1.-vUv.x:vUv.x)+vUv.y*.55;
+  float band=smoothstep(.19,.30,sweep)*(1.-smoothstep(.46,.59,sweep));
+  float rim=exp(-pow((sweep-.63)/.022,2.));
+  col=vec3(1.,.985,.95)*(band*1.55+rim*.24)*uI;
+ }
+ float ra=clamp(max(col.r,max(col.g,col.b))*.7,0.,.6);
+ gl_FragColor=vec4(col*.7+vec3(.74,.90,.95)*ta*.6,max(ra,ta));
+}`})}
+function acrSync(noWipe){const u=ACR.u,ex=ACR.ex;u.uRoom.value=noWipe?1:0;u.uLX.value=lightX;u.uEx.value=ex;
+ // 拆開看層次：目前有的層才佔位（外框、壓克力、卡紙、作品、木板），每層間隔 5 公分；壓克力罩要整個移到最前面才不會穿過畫框
+ const S=5,sheet=ACR.mode==='sheet',lay=[];if(ACR.mode==='box')lay.push('acr');if(!NOF)lay.push('frame');if(sheet)lay.push('acr');if(matOn())lay.push('mat');lay.push('art');const hasFloat=$('floatOn').checked;if(hasFloat)lay.push('float');const hasBoard=$('boardOn').checked;if(hasBoard)lay.push('board');
+ const EO={};lay.forEach((k,i)=>EO[k]=((lay.length-1)/2-i)*S);if(ACR.mode==='box')EO.acr+=(NOF?RZ:FH)+2;ACR.lay=lay;ACR.EO=EO;
+ for(const o of group.children){if(o.userData.z0===undefined)o.userData.z0=o.position.z;let off=0;const nm=o.name;
+  if(nm==='glass'){o.visible=sheet;off=EO.acr||0}
+  else if(nm==='acrbox'){o.visible=ACR.mode==='box';off=EO.acr||0}
+  else if(nm==='acrboard'){o.visible=hasBoard;off=EO.board||0}
+  else if(nm==='floatPanel'||nm==='floatRail'){o.visible=hasFloat;off=EO.float||0}
+  else if(nm==='matPaper'||nm==='matBevel')off=EO.mat||0;
+  else if(nm==='artwork')off=EO.art;
+  else if(nm==='artbody'){o.visible=artT>.04||$('boardOn').checked||hasFloat;off=EO.art}
+  else off=EO.frame||0;
+  const content=['matPaper','matBevel','artwork','artbody','acrboard','floatPanel','floatRail'].includes(nm);
+  o.position.z=o.userData.z0+off*ex+(content&&sheet?-.4:0)}
+ if(hasFloat){const back=RZ-.015-Math.max(artT,.06)-2.45-(hasBoard?.4:0)+(sheet?-.4:0);wall.position.z=Math.min(-.55-kabanBack()-kabanBoardOut(),back-.08)}else wall.position.z=-.55-kabanBack()-kabanBoardOut();
+ if(ex>.01||EMBED)wall.visible=false;
+ const lb=ACR.labels;if(lb&&ACR.dim){const show=ex>.02&&!noWipe&&!document.body.classList.contains('room'),r=stage.getBoundingClientRect();camera.updateMatrixWorld(true);
+  const sh=sheet?-.4:0,Z={frame:FH*.5,acr:sheet?RZ-.15:(NOF?RZ:FH)+1.3,mat:RZ+.06+sh,art:RZ+.005+sh,float:RZ-.015-Math.max(artT,.06)-1.225+sh,board:RZ-.215-Math.max(artT,.06)-(hasFloat?2.45:0)+sh};
+  if(EMBED){
+   // Attach callouts to actual material geometry, after the exploded offsets above.
+   const names={frame:'',acr:sheet?'glass':'acrbox',mat:'matPaper',art:'artwork',float:'floatPanel',board:'acrboard'},items=[];
+   group.updateMatrixWorld(true);
+   for(const L of lb){const idx=lay.indexOf(L.k),on=show&&idx>=0;L.el.style.display=on?'block':'none';if(!on)continue;
+    const meshes=group.children.filter(o=>o.visible&&o.geometry&&o.name===names[L.k]);
+    const bounds=new T.Box3();for(const o of meshes)bounds.union(new T.Box3().setFromObject(o));
+    if(bounds.isEmpty()){L.el.style.display='none';continue}
+    // For the frame, anchor on the right rail rather than in the empty opening.
+    const span=bounds.getSize(new T.Vector3()),frac=.78-idx*.145;
+    const a=new T.Vector3(bounds.max.x-Math.min(span.x*.025,.3),bounds.min.y+span.y*frac,bounds.max.z);
+    if(L.k==='frame'){
+     // A moulded rail is not a solid box: choose a real triangle on its surface.
+     let best=Infinity;const center=new T.Vector3(),v0=new T.Vector3(),v1=new T.Vector3(),v2=new T.Vector3(),target=a.clone();
+     for(const o of meshes){const g=o.geometry,pos=g.attributes.position,ind=g.index,count=ind?ind.count:pos.count;
+      for(let j=0;j<count;j+=3){v0.fromBufferAttribute(pos,ind?ind.getX(j):j);v1.fromBufferAttribute(pos,ind?ind.getX(j+1):j+1);v2.fromBufferAttribute(pos,ind?ind.getX(j+2):j+2);center.copy(v0).add(v1).add(v2).multiplyScalar(1/3).applyMatrix4(o.matrixWorld);const d=center.distanceToSquared(target);if(d<best){best=d;a.copy(center)}}
+     }
+    }
+    const v=a.clone().project(camera),x=(v.x+1)*r.width/2,y=(1-v.y)*r.height/2;
+    L.el.textContent=(idx+1)+' '+(L.k==='acr'&&ACR.mode==='box'?'壓克力罩':L.tx);
+    items.push({L,x,y});
+   }
+   const svg=ACR.callouts;svg.style.display=show?'block':'none';svg.setAttribute('viewBox','0 0 '+r.width+' '+r.height);
+   const sorted=items.slice().sort((a,b)=>a.y-b.y),gap=34,pad=18;
+   const textW=Math.max(0,...items.map(o=>o.L.el.offsetWidth));
+   const col=Math.max(12,Math.min(r.width-textW-12,Math.max(0,...items.map(o=>o.x))+28));
+   sorted.forEach((o,i)=>{o.ty=Math.max(pad+i*gap,Math.min(r.height-pad-(sorted.length-1-i)*gap,o.y))});
+   for(let i=1;i<sorted.length;i++)sorted[i].ty=Math.max(sorted[i].ty,sorted[i-1].ty+gap);
+   // Keep every callout outside the projected artwork, including while rotating.
+   const art=group.children.find(o=>o.name==='artwork'&&o.visible);let protect='';
+   if(art){
+    art.geometry.computeBoundingBox();const b=art.geometry.boundingBox;
+    const points=[[b.min.x,b.min.y],[b.max.x,b.min.y],[b.max.x,b.max.y],[b.min.x,b.max.y]].map(([x,y])=>{const v=art.localToWorld(new T.Vector3(x,y,b.max.z)).project(camera);return [(v.x+1)*r.width/2,(1-v.y)*r.height/2]});
+    protect=points.map(p=>p.join(',')).join(' ');
+   }
+   // The foreground wooden rails hide part of the artwork's projected rectangle.
+   // Restore only those rails so their own callout stays attached to the frame.
+   const hull=ps=>{ps.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);const cross=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);const low=[],up=[];for(const p of ps){while(low.length>1&&cross(low.at(-2),low.at(-1),p)<=0)low.pop();low.push(p)}for(const p of ps.slice().reverse()){while(up.length>1&&cross(up.at(-2),up.at(-1),p)<=0)up.pop();up.push(p)}low.pop();up.pop();return low.concat(up)};
+   const railMasks=art&&camera.position.z>art.position.z?group.children.filter(o=>o.visible&&o.geometry&&o.name==='').map(o=>{
+    o.geometry.computeBoundingBox();const b=o.geometry.boundingBox,ps=[];
+    for(const x of [b.min.x,b.max.x])for(const y of [b.min.y,b.max.y])for(const z of [b.min.z,b.max.z]){const v=o.localToWorld(new T.Vector3(x,y,z)).project(camera);ps.push([(v.x+1)*r.width/2,(1-v.y)*r.height/2])}
+    return '<polygon class="rail-mask" points="'+hull(ps).map(p=>p.join(',')).join(' ')+'" fill="white" stroke="black" stroke-width="6" stroke-linejoin="round"/>';
+   }).join(''):'';
+   svg.innerHTML='<defs><mask id="artClear" maskUnits="userSpaceOnUse" x="0" y="0" width="'+r.width+'" height="'+r.height+'" style="mask-type:luminance"><rect width="100%" height="100%" fill="white"/>'+(protect?'<polygon points="'+protect+'" fill="black" stroke="black" stroke-width="12" stroke-linejoin="round"/>':'')+railMasks+'</mask></defs><g mask="url(#artClear)">'+sorted.map(({L,x,y,ty})=>{
+    L.el.style.transform='translate('+col.toFixed(1)+'px,'+(ty-L.el.offsetHeight/2).toFixed(1)+'px)';
+    L.el.dataset.anchor=JSON.stringify({x,y});
+    return '<path d="M '+x+' '+y+' L '+(col-12)+' '+ty+' H '+(col-4)+'"/><circle cx="'+x+'" cy="'+y+'" r="3"/>';
+   }).join('')+'</g>';
+  }else{
+   for(const L of lb){const idx=lay.indexOf(L.k),on=show&&idx>=0;L.el.style.display=on?'block':'none';if(on){L.el.textContent=L.k==='acr'&&ACR.mode==='box'?'壓克力罩':L.tx;const v=new T.Vector3(ACR.dim.x,(.9-idx*.45)*ACR.dim.y,Z[L.k]+EO[L.k]*ex).project(camera);L.el.style.transform='translate('+((v.x+1)/2*r.width).toFixed(1)+'px,'+((1-v.y)/2*r.height).toFixed(1)+'px)'}}
+  }
+ }
+
+ if(noWipe||!ACR.cmp){u.uWipe.value=-1;return}const sz=new T.Vector2();renderer.getDrawingBufferSize(sz);u.uRes.value.copy(sz);u.uWipe.value=ACR.split;u.uSide.value=1}
+// 壓克力罩：罩住畫框的透明盒（背面貼牆不封）。大小與厚度是示意：每邊比畫框多約 0.8 公分空隙＋0.5 公分壓克力。
+// 傳統框的圖面多出0.5公分藏在框唇下；L框與無框的圖面須和作品本體同寬高。
+function acrArtGeo(w,h){const e=NOF||FR.L?0:1,g=new T.PlaneGeometry(w+e,h+e),uv=g.attributes.uv;for(let i=0;i<uv.count;i++){uv.setX(i,(uv.getX(i)-.5)*(w+e)/w+.5);uv.setY(i,(uv.getY(i)-.5)*(h+e)/h+.5)}uv.needsUpdate=true;return g}
+// 咖框開口內緣那一條灰線：框條貼圖最靠內緣的 0～26 列是照片裡白紙反光的灰痕，改用同一欄、第 32～44 列的木色補上（11/3 番薯要求；只動咖框正面用的這兩條貼圖，「框角對照」用的原照片不動）
+function acrFixInner(tex){const c=tex&&tex.image;if(!c||!c.getContext)return tex;const x=c.getContext('2d'),W=c.width,Y1=32,R0=32,R1=44,n=R1-R0,top=x.getImageData(0,0,W,Y1),ref=x.getImageData(0,R0,W,n).data,d=top.data;
+ for(let i=0;i<W;i++){let r=0,g=0,b=0;for(let y=0;y<n;y++){const k=(y*W+i)*4;r+=ref[k];g+=ref[k+1];b+=ref[k+2]}r/=n;g/=n;b/=n;
+  for(let y=0;y<Y1;y++){const w=y<=14?1:Math.max(0,1-(y-14)/16),k=(y*W+i)*4;d[k]=d[k]*(1-w)+r*w;d[k+1]=d[k+1]*(1-w)+g*w;d[k+2]=d[k+2]*(1-w)+b*w}}
+ x.putImageData(top,0,0);tex.needsUpdate=true;return tex}
+function acrSheetMats(){const S=poolM('glass',()=>acrylicMaterial(0)),E=poolM('acrE',()=>acrylicMaterial(2));return[E,E,E,E,S,S]}
+function acrBox(add,iw,ih){const g=.8,t=.5,hx=iw/2+FW+g,hy=ih/2+FW+g,zb=-.5-kabanBack()-kabanBoardOut(),zf=(NOF?RZ:FH)+g,L=zf-zb,zc=(zb+zf)/2;
+ const P=poolM('acrP',()=>acrylicMaterial(1)),E=poolM('acrE',()=>acrylicMaterial(2));
+ const mk=(w,h,d,x,y,z,big)=>{const mm=add(new T.Mesh(new T.BoxGeometry(w,h,d),[0,1,2,3,4,5].map(i=>big.includes(i)?P:E)));mm.position.set(x,y,z);mm.name='acrbox';mm.renderOrder=3;return mm};
+ mk(2*hx+2*t,2*hy+2*t,t,0,0,zf+t/2,[4,5]);
+ mk(t,2*hy,L,-(hx+t/2),0,zc,[0,1]);mk(t,2*hy,L,hx+t/2,0,zc,[0,1]);
+ mk(2*hx,t,L,0,hy+t/2,zc,[2,3]);mk(2*hx,t,L,0,-(hy+t/2),zc,[2,3]);
+ // 木板（作品背後那一整塊，從背面看就是它）；尺寸、厚度是示意
+ const bw=kabanOn()?1.2:(NOF?0:FR.L?-.3:1),bd=add(new T.Mesh(new T.BoxGeometry(iw+bw,ih+bw,.4),boardMats('',iw+1,ih+1)));bd.position.set(0,0,RZ-1);bd.name='acrboard';
+ ACR.dim={x:iw/2+FW+.8,y:ih/2+FW}}
+// 作品厚度：厚度本體貼在作品畫面後面，木板再往後退同樣的厚度（z0 是各片自己的原始位置，拆開看與壓克力位移都以它為準）
+// 浮板：白色板 0.45 cm＋背面兩條高 2 cm、寬約 4 cm 木條。
+// 木條長度與位置依影片估製，白板跟作品同大小；整組在拆層時一起移動。
+function boardMats(K,RW,RH){const F=poolM('acrW'+K,()=>{const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d'),d=g.createImageData(256,256);for(let j=0;j<256;j++){const row=(Math.random()-.5)*46;for(let i=0;i<256;i++){const v=128+row+(Math.random()-.5)*34,k=(j*256+i)*4;d.data[k]=d.data[k+1]=d.data[k+2]=v;d.data[k+3]=255}}g.putImageData(d,0,0);const t=new T.CanvasTexture(c);t.wrapS=t.wrapT=T.RepeatWrapping;return new T.MeshStandardMaterial({color:0xd6cdbf,roughness:.5,bumpMap:t,bumpScale:.025})},x=>x.bumpMap.repeat.set(RW/6,RH/6));const E=(k,src,r)=>poolM(k+K,()=>{const t=new T.Texture(),im=new Image();im.onload=()=>{t.image=im;t.needsUpdate=true};im.src=src;t.wrapS=t.wrapT=T.MirroredRepeatWrapping;t.colorSpace=T.SRGBColorSpace;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());return new T.MeshStandardMaterial({map:t,roughness:.85})},m=>m.map.repeat.set(r[0],r[1]));const V=E('acrWV','./assets/board_edge_v.jpg',[1,RH/13]),H=E('acrWH','./assets/board_edge_h.jpg',[RW/13,1]);return[V,V,H,H,F,F]}
+function woodTex(seed,kind){
+ let a=seed;const rnd=()=>{a=(a*1664525+1013904223)>>>0;return a/4294967296};
+ const c=document.createElement('canvas'),side=kind==='side';c.width=128;c.height=side?1024:128;const g=c.getContext('2d'),H=c.height;
+ if(side){
+  g.fillStyle='#d9b87e';g.fillRect(0,0,128,H);
+  for(let i=0;i<16;i++){const x=rnd()*128,wd=8+rnd()*28,al=.04+rnd()*.08,col=rnd()<.55?'125,82,38':'250,226,176',gr=g.createLinearGradient(x-wd,0,x+wd,0);gr.addColorStop(0,'rgba('+col+',0)');gr.addColorStop(.5,'rgba('+col+','+al+')');gr.addColorStop(1,'rgba('+col+',0)');g.fillStyle=gr;g.fillRect(x-wd,0,wd*2,H)}
+  for(let i=0;i<170;i++){const x=rnd()*128,al=.04+rnd()*.15,ph=rnd()*6,amp=.5+rnd()*2.4,fq=.003+rnd()*.011;g.strokeStyle='rgba('+(98+rnd()*34|0)+','+(60+rnd()*22|0)+',28,'+al+')';g.lineWidth=.4+rnd()*1.4;g.beginPath();for(let y=0;y<=H;y+=12)g.lineTo(x+Math.sin(y*fq+ph)*amp,y);g.stroke()}
+  for(let i=0;i<520;i++){const x=rnd()*128,y=rnd()*H,l=3+rnd()*12;g.strokeStyle='rgba(90,55,25,'+(.08+rnd()*.16)+')';g.lineWidth=.6+rnd()*.5;g.beginPath();g.moveTo(x,y);g.lineTo(x+(rnd()-.5),y+l);g.stroke()}
+  const kx=20+rnd()*88,ky=150+rnd()*(H-300);for(let r=2;r<22;r+=2.6){g.strokeStyle='rgba(95,58,26,'+(.34-r*.012)+')';g.lineWidth=1.2;g.beginPath();g.ellipse(kx,ky,r*.9,r*3.1,0,0,6.2832);g.stroke()}
+  g.fillStyle='rgba(80,46,20,.5)';g.beginPath();g.ellipse(kx,ky,2,5.5,0,0,6.2832);g.fill();
+ }else{
+  g.fillStyle='#d3ad70';g.fillRect(0,0,128,H);
+  const cx=40+rnd()*50,cy=150+rnd()*60;for(let r=6;r<260;r+=3+rnd()*5){g.strokeStyle='rgba('+(110+rnd()*20|0)+',68,30,'+(.18+rnd()*.3)+')';g.lineWidth=.7+rnd()*1.5;g.beginPath();g.arc(cx,cy,r,0,6.2832);g.stroke()}
+  for(let i=0;i<3;i++){const an=rnd()*6.28;g.strokeStyle='rgba(70,42,18,.28)';g.lineWidth=.8;g.beginPath();g.moveTo(cx,cy);g.lineTo(cx+Math.cos(an)*300,cy+Math.sin(an)*300);g.stroke()}
+  for(let i=0;i<260;i++){g.fillStyle='rgba(80,50,22,'+(.06+rnd()*.12)+')';g.fillRect(rnd()*128,rnd()*H,1+rnd()*1.5,1+rnd()*1.5)}
+ }
+ const t=new T.CanvasTexture(c);t.colorSpace=T.SRGBColorSpace;t.wrapS=t.wrapT=T.MirroredRepeatWrapping;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());return t;
+}
+function buildL(add,iw,ih){
+ // A 0.25mm eased front edge catches light; overall W/H and the rebate stay fixed.
+ const b=.025,H=FR.H,W=FR.W,ft=FR.reb[1],e=FR.TW-W;
+ // A1919's measured broad face is at the front. Its 0.6cm lip projects
+ // inward from the 1.5cm rear body; 1933 keeps its wide foot at the back.
+ const P=FR.frontLip?[[FR.lipW,0],[W,0],[W,H-b],[W-b,H],[b,H],[0,H-b],[0,H-FR.lipH],[FR.lipW,H-FR.lipH]]:[[-e,0],[W,0],[W,H-b],[W-b,H],[b,H],[0,H-b],[0,ft],[-e,ft]],n=P.length,segMat=[0,1,3,2,3,0,0,0],mats=[poolM('lBlack',()=>FR.set.lBlack),FR.set.lMetal,FR.set.lLip,FR.set.lEdge];
+ const cum=[0];for(let i=0;i<n;i++){const A=P[i],B=P[(i+1)%n];cum.push(cum[i]+Math.hypot(B[0]-A[0],B[1]-A[1]))}
+ for(let side=0;side<4;side++){
+  const ends=d=>{const xx=iw/2+d,yy=ih/2+d;return side===0?[[-xx,yy],[xx,yy]]:side===1?[[xx,yy],[xx,-yy]]:side===2?[[xx,-yy],[-xx,-yy]]:[[-xx,-yy],[-xx,yy]]};
+  const od=[[0,1],[1,0],[0,-1],[-1,0]][side],pos=[],nor=[],uv=[],idx=[],geo=new T.BufferGeometry();
+  for(let i=0;i<n;i++){
+   const A=P[i],B=P[(i+1)%n],len=Math.hypot(B[0]-A[0],B[1]-A[1])||1,a=(B[1]-A[1])/len,b=-(B[0]-A[0])/len,base=pos.length/3;
+   for(const [pt,cv] of [[A,cum[i]],[B,cum[i+1]]]){const e=ends(pt[0]);for(let k=0;k<2;k++){pos.push(e[k][0],e[k][1],pt[1]);nor.push(od[0]*a,od[1]*a,b);const outer=i===1,period=FR.metal==='a'?10:outer?18:FR.metal==='g'?3.8:8.1,cross=outer?FR.H:FR.W;uv.push(e[k][side%2?1:0]/period,(cv-cum[i])/cross)}}
+   idx.push(base,base+2,base+1,base+1,base+2,base+3);geo.addGroup(i*6,6,segMat[i]);
+  }
+  geo.setAttribute('position',new T.Float32BufferAttribute(pos,3));geo.setAttribute('normal',new T.Float32BufferAttribute(nor,3));geo.setAttribute('uv',new T.Float32BufferAttribute(uv,2));geo.setIndex(idx);
+  const m=add(new T.Mesh(geo,mats));m.castShadow=m.receiveShadow=true;
+ }
+}
+// 卡板：原木條圍成的一圈，放在框裡面、貼著框內側壁，前端頂著框唇（番薯 11/6 範例圖 IMG_6843／6844）。斷面寬 0.7、高 3 或 4.5 公分，四角 45 度斜切，不畫魔鬼氈。
+// 外側貼框內壁（x=薄牆寬 0.6），所以內緣比框唇內緣再縮進 0.1；材質貼圖取自 IMG_6847 的木紋面（assets/kaban_wood.jpg，約 15.3×3.7 公分）。
+function buildKaban(add,iw,ih){
+ const e=FR.lipW,k=.7,z0=kabanZ(),z1=FR.innerH,P=[[e-k,z0],[e,z0],[e,z1],[e-k,z1]],n=P.length,PER=15.3,CR=3.7;
+ const mat=poolM('kaban',()=>{const t=new T.Texture(),im=new Image();im.onload=()=>{t.image=im;t.needsUpdate=true;render()};im.src='./assets/kaban_wood.jpg';t.wrapS=t.wrapT=T.MirroredRepeatWrapping;t.colorSpace=T.SRGBColorSpace;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());return new T.MeshStandardMaterial({map:t,roughness:.82,metalness:0,side:T.DoubleSide})});
+ const cum=[0];for(let i=0;i<n;i++){const A=P[i],B=P[(i+1)%n];cum.push(cum[i]+Math.hypot(B[0]-A[0],B[1]-A[1]))}
+ for(let side=0;side<4;side++){
+  const ends=d=>{const xx=iw/2+d,yy=ih/2+d;return side===0?[[-xx,yy],[xx,yy]]:side===1?[[xx,yy],[xx,-yy]]:side===2?[[xx,-yy],[-xx,-yy]]:[[-xx,-yy],[-xx,yy]]};
+  const od=[[0,1],[1,0],[0,-1],[-1,0]][side],pos=[],nor=[],uv=[],idx=[],geo=new T.BufferGeometry();
+  for(let i=0;i<n;i++){
+   const A=P[i],B=P[(i+1)%n],len=Math.hypot(B[0]-A[0],B[1]-A[1])||1,a=(B[1]-A[1])/len,b=-(B[0]-A[0])/len,base=pos.length/3;
+   for(const [pt,cv] of [[A,cum[i]],[B,cum[i+1]]]){const e=ends(pt[0]);for(let q=0;q<2;q++){pos.push(e[q][0],e[q][1],pt[1]);nor.push(od[0]*a,od[1]*a,b);uv.push(e[q][side%2?1:0]/PER,(cv-cum[i])/CR)}}
+   idx.push(base,base+2,base+1,base+1,base+2,base+3);
+  }
+  geo.setAttribute('position',new T.Float32BufferAttribute(pos,3));geo.setAttribute('normal',new T.Float32BufferAttribute(nor,3));geo.setAttribute('uv',new T.Float32BufferAttribute(uv,2));geo.setIndex(idx);
+  const m=add(new T.Mesh(geo,mat));m.name='kaban';m.castShadow=m.receiveShadow=true;
+ }
+}
+function makeFloat(add,cx,cy){
+ const aw=w+(NOF||FR.L?0:1),ah=h+(NOF||FR.L?0:1);
+ const fm=boardMats('F',aw,ah);fm[4].color.setHex(0xeeeae0);
+ const panel=add(new T.Mesh(new T.BoxGeometry(aw,ah,.45),fm));panel.name='floatPanel';panel.position.set(cx,cy,0);panel.castShadow=panel.receiveShadow=true;
+ const rw=Math.min(4,aw*.22),rh=ah*.60,dx=Math.min(aw*.25,(aw-rw)/2);
+ const cut=poolM('floatCut',()=>{const t=woodTex(7,'end');return new T.MeshStandardMaterial({map:t,bumpMap:t,bumpScale:.02,roughness:.95})});
+ [-dx,dx].forEach((x,i)=>{
+  const wood=poolM('floatWood'+i,()=>{const t=woodTex(311+i*977,'side');return new T.MeshStandardMaterial({map:t,bumpMap:t,bumpScale:.03,roughness:.8})},m=>{m.map.repeat.set(1,rh/30);m.bumpMap.repeat.set(1,rh/30)});
+  const rail=add(new T.Mesh(new T.BoxGeometry(rw,rh,2),[wood,wood,cut,cut,wood,wood]));rail.name='floatRail';rail.position.set(cx+x,cy,0);rail.castShadow=rail.receiveShadow=true;
+ });
+}
+function placeArtT(){const t=Math.max(artT,.06),f=$('floatOn').checked,L=!NOF&&FR.L,bo=$('boardOn').checked,dz=L?FR.reb[1]+kabanZ()+(bo&&!kabanOn()?.4:0)+(f?2.45:0)+t+.015-RZ:((!NOF&&f)?Math.max(0,2.865+t-RZ):0),rear=RZ-.015-t-1.6+dz;for(const o of group.children){const n=o.name;if(n==='artwork'||n==='matPaper'||n==='matBevel'||n==='glass'){if(o.userData.zb===undefined)o.userData.zb=o.userData.z0!==undefined?o.userData.z0:o.position.z;o.userData.z0=o.userData.zb+dz}else if(n==='artbody'){o.scale.z=t;o.userData.z0=rear+t/2}else if(n==='floatPanel')o.userData.z0=rear-.225;else if(n==='floatRail')o.userData.z0=rear-.45-1;else if(n==='acrboard')o.userData.z0=NOF?rear-(f?2.45:0)-.2:L?FR.reb[1]+kabanZ()+(kabanOn()?-.2:.2)-1.6:-1.4}{const fw=$('floatWarn'),face=L?FR.reb[1]+kabanZ()+(bo&&!kabanOn()?.4:0)+(f?2.45:0)+t:2.87+t;if(fw){const limit=L&&FR.frontLip?FR.innerH:FH,bad=!NOF&&(L?face>limit+.001:(f&&face>FH+.001));fw.hidden=!bad;if(bad)fw.textContent=L&&FR.frontLip?'提醒：這款框'+(kabanOn()?'加卡板後':'')+'的內側高只有 '+(limit-kabanZ())+' 公分，作品、木板與浮板合計高 '+(face-kabanZ()).toFixed(1)+' 公分，已超過內側可放範圍。':'提醒：這款框厚只有 '+FH+' 公分，放進去後作品面離框背約 '+face.toFixed(1)+' 公分，會超出框的前緣，實際要換更厚的框才放得下。'}}}
+
+function frameSideUvs(geo,side){
+ const edge=(controls.length-1)*6,oldPos=geo.attributes.position,oldUv=geo.attributes.uv,n=oldPos.count,pos=[...oldPos.array],uv=[...oldUv.array],idx=[...geo.index.array],mat=side<2?otherSideMaterial:sideMaterial,map=mat.emissiveMap||mat.map,L=map.userData.woodLengthCm||20;
+ for(let k=0;k<2;k++){const i=edge*2+k;pos.push(oldPos.getX(i),oldPos.getY(i),oldPos.getZ(i));uv.push(k*((side%2?ihForSide():iwForSide())+2*FW)/L,oldPos.getZ(i)/FH)}
+ for(let j=edge+1;j<profile.length;j++)for(let k=0;k<2;k++){const i=j*2+k;uv[i*2]=k*((side%2?ihForSide():iwForSide())+2*profile[j][0])/L;uv[i*2+1]=profile[j][1]/FH}
+ for(let j=edge*6;j<idx.length;j++){if(idx[j]===edge*2)idx[j]=n;else if(idx[j]===edge*2+1)idx[j]=n+1}
+ geo.setAttribute('position',new T.Float32BufferAttribute(pos,3));geo.setAttribute('uv',new T.Float32BufferAttribute(uv,2));geo.setIndex(idx);geo.deleteAttribute('normal');geo.computeVertexNormals();
+}
+let G=0,growLock=true;function GG(){return NOF?0:G}
+function matOn(){return mL+mR+mT+mB>0}
+function iwForSide(){return w+mL+mR+2*GG()}function ihForSide(){return h+mT+mB+2*GG()}
+function build(){for(const obj of cornerMeshes){cornerGroup.remove(obj);obj.geometry.dispose()}cornerMeshes=[];for(const obj of meshes){group.remove(obj);obj.geometry.dispose();}meshes=[];window.syncGrowUi&&syncGrowUi();const add=obj=>{group.add(obj);meshes.push(obj);return obj};const iw=w+mL+mR+2*GG(),ih=h+mT+mB+2*GG(),iw0=iw-2*GG(),ih0=ih-2*GG(),cx=(mL-mR)/2,cy=(mB-mT)/2;const extent=Math.max(iw,ih)*.85;Object.assign(light.shadow.camera,{left:-extent,right:extent,top:extent,bottom:-extent});light.shadow.camera.updateProjectionMatrix();
+if(!NOF&&FR.L)buildL(add,iw,ih);
+if(kabanOn())buildKaban(add,iw,ih);
+for(let side=0;side<4&&!NOF&&!FR.L;side++){let pos=[],uv=[],indices=[];for(let j=0;j<profile.length;j++){const [d,z]=profile[j],xx=iw/2+d,yy=ih/2+d;const rep=((side%2?ih:iw)+2*d)/(photoLen(side<2?'right':'left',.5)*.93);let ends=side===0?[[-xx,yy],[xx,yy]]:side===1?[[xx,yy],[xx,-yy]]:side===2?[[xx,-yy],[-xx,-yy]]:[[-xx,-yy],[-xx,yy]];for(let k=0;k<2;k++){pos.push(...ends[k],z);uv.push(k*rep,j>(controls.length-1)*6?z/FH:d/FW)}}for(let j=0;j<profile.length-1;j++){const a=j*2;indices.push(a,a+1,a+2,a+1,a+3,a+2)}const geo=new T.BufferGeometry();geo.setAttribute('position',new T.Float32BufferAttribute(pos,3));geo.setAttribute('uv',new T.Float32BufferAttribute(uv,2));geo.setIndex(indices);geo.computeVertexNormals();for(let j=0;j<profile.length-1;j++)geo.addGroup(j*6,6,j>=(controls.length-1)*6?1:0);const mesh=add(new T.Mesh(geo,[side<2?fullRightMaterial:fullLeftMaterial,side<2?otherSideMaterial:sideMaterial]));mesh.castShadow=true;mesh.receiveShadow=true;
+if(side===0||side===3){const cornerGeo=geo.clone();{const uvA=cornerGeo.attributes.uv;for(let i=0;i<uvA.count;i++)uvA.setX(i,i%2)}const values=cornerGeo.attributes.position;for(let j=0;j<profile.length;j++){const d=profile[j][0],z=profile[j][1],v=d/FW,Q=FR.q,QL=(a,b)=>[Q[a][0]+(Q[b][0]-Q[a][0])*v,Q[a][1]+(Q[b][1]-Q[a][1])*v];let points;if(side===0)points=[QL('I','O'),QL('RI','RO')];else points=[QL('LI','LO'),QL('I','O')];for(let k=0;k<2;k++){const X=(points[k][0]-FR.cx0)/FR.S,Y=(FR.cy0-points[k][1])/FR.S;values.setXYZ(j*2+k,X,Y-5.3,z-1.6)}}values.needsUpdate=true;cornerGeo.computeVertexNormals();const cm=new T.Mesh(cornerGeo,[side===0?frameMaterial:leftMaterial,side===0?otherSideMaterial:sideMaterial]);cornerGroup.add(cm);cornerMeshes.push(cm);cm.castShadow=true;cm.receiveShadow=true;
+// Close the two exposed cut ends using the photographed raw end grain.
+const end=side===0?1:0;const outline=profile.slice(0,-1);const triangles=T.ShapeUtils.triangulateShape(outline.map(([d,z])=>new T.Vector2(d,z)),[]);const cp=[],cu=[];for(let j=0;j<outline.length;j++){const d=outline[j][0],z=outline[j][1];cp.push(values.getX(j*2+end),values.getY(j*2+end),values.getZ(j*2+end));cu.push((FR.cm.x0+d/FW*FR.cm.xw)/FR.cutW,(FR.cm.y0+z*FR.cm.ys)/FR.cutH)}const cg=new T.BufferGeometry();cg.setAttribute('position',new T.Float32BufferAttribute(cp,3));cg.setAttribute('uv',new T.Float32BufferAttribute(cu,2));cg.setIndex(triangles.flat());cg.computeVertexNormals();const cap=new T.Mesh(cg,endMaterial);cornerGroup.add(cap);cornerMeshes.push(cap);
+}
+frameSideUvs(geo,side);
+}
+
+
+
+// Fine, non-directional paper fibres; texture scale is in centimetres, independent of artwork size.
+if(!paperBumpP){
+ const n=1024,c=document.createElement('canvas');c.width=c.height=n;
+ const g=c.getContext('2d'),d=g.createImageData(n,n);let seed=731;
+ const rnd=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
+ for(let y=0;y<n;y++)for(let x=0;x<n;x++){const k=(y*n+x)*4,v=128+(rnd()-.5)*24;d.data[k]=d.data[k+1]=d.data[k+2]=v;d.data[k+3]=255}
+ g.putImageData(d,0,0);
+ const tooth=document.createElement('canvas');tooth.width=tooth.height=128;const tg=tooth.getContext('2d'),td=tg.createImageData(128,128);
+ for(let i=0;i<td.data.length;i+=4){const v=80+rnd()*96;td.data[i]=td.data[i+1]=td.data[i+2]=v;td.data[i+3]=255}tg.putImageData(td,0,0);g.globalAlpha=.45;g.drawImage(tooth,0,0,n,n);g.globalAlpha=1;g.lineCap='round';
+ for(let i=0;i<42000;i++){const x=rnd()*n,y=rnd()*n,a=rnd()*Math.PI*2,l=1+rnd()*7;g.strokeStyle=rnd()<.5?'rgba(220,220,220,.10)':'rgba(35,35,35,.09)';g.lineWidth=.35+rnd()*.65;g.beginPath();g.moveTo(x,y);g.quadraticCurveTo(x+Math.cos(a+.4)*l*.5,y+Math.sin(a+.4)*l*.5,x+Math.cos(a)*l,y+Math.sin(a)*l);g.stroke()}
+ paperBumpP=new T.CanvasTexture(c);
+ const cc=document.createElement('canvas');cc.width=cc.height=n;const cg=cc.getContext('2d'),cd=g.getImageData(0,0,n,n);
+ for(let i=0;i<cd.data.length;i+=4){const v=Math.max(242,Math.min(255,249+(cd.data[i]-128)*.30));cd.data[i]=cd.data[i+1]=cd.data[i+2]=v}
+ cg.putImageData(cd,0,0);paperColorP=new T.CanvasTexture(cc);paperColorP.colorSpace=T.SRGBColorSpace;
+ for(const t of [paperBumpP,paperColorP]){t.wrapS=t.wrapT=T.RepeatWrapping;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());t.repeat.set(1/8,1/8)}
+}
+const paperBump=paperBumpP;
+const shape=new T.Shape();shape.moveTo(-iw/2,-ih/2);shape.lineTo(iw/2,-ih/2);shape.lineTo(iw/2,ih/2);shape.lineTo(-iw/2,ih/2);shape.closePath();
+const SC=(!growLock&&GG()>0)?Math.min(iw/iw0,ih/ih0):1;
+if(matOn()){const hole=new T.Path();hole.moveTo((cx-w/2-.35)*SC,(cy-h/2-.35)*SC);hole.lineTo((cx-w/2-.35)*SC,(cy+h/2+.35)*SC);hole.lineTo((cx+w/2+.35)*SC,(cy+h/2+.35)*SC);hole.lineTo((cx+w/2+.35)*SC,(cy-h/2-.35)*SC);hole.closePath();shape.holes.push(hole);const mat=add(new T.Mesh(new T.ExtrudeGeometry(shape,{depth:.12,bevelEnabled:false}),poolM('paper',()=>new T.MeshStandardMaterial({color:matColor,roughness:1,map:paperColorP,bumpMap:paperBump,bumpScale:.018}),x=>x.color.setHex(matColor))));mat.name='matPaper';mat.position.z=RZ+.01;mat.receiveShadow=true;mat.castShadow=true;
+const bevelPos=[],bevelIndices=[];const corners=[[-1,-1],[1,-1],[1,1],[-1,1]];for(let i=0;i<4;i++){const a=corners[i],b=corners[(i+1)%4],start=bevelPos.length/3;bevelPos.push(cx+a[0]*(w/2+.35),cy+a[1]*(h/2+.35),RZ+.13,cx+b[0]*(w/2+.35),cy+b[1]*(h/2+.35),RZ+.13,cx+b[0]*w/2,cy+b[1]*h/2,RZ+.01,cx+a[0]*w/2,cy+a[1]*h/2,RZ+.01);bevelIndices.push(start,start+1,start+2,start,start+2,start+3)}const bg=new T.BufferGeometry();bg.setAttribute('position',new T.Float32BufferAttribute(bevelPos,3));bg.setIndex(bevelIndices);bg.setAttribute('uv',new T.Float32BufferAttribute(bevelPos.flatMap((v,i)=>i%3===0?[v,bevelPos[i+1]]:[]),2));bg.computeVertexNormals();const bevel=add(new T.Mesh(bg,poolM('bevel',()=>new T.MeshStandardMaterial({color:0xe8e3d4,roughness:1,map:paperColorP,bumpMap:paperBump,bumpScale:.008,side:T.DoubleSide}))));bevel.name='matBevel';bevel.castShadow=true;bevel.receiveShadow=true;
+}
+// 作品畫面不打光、不過色調映射：顏色要跟客人的原圖一樣（打光後會偏亮偏紅）
+const art=add(new T.Mesh(acrArtGeo(w,h),poolM('art',()=>new T.MeshBasicMaterial({map:artTex,toneMapped:false}),x=>{x.map=artTex})));art.name='artwork';art.position.set(cx,cy,RZ+.005);art.receiveShadow=true;
+const artBody=add(new T.Mesh(new T.BoxGeometry(w+(NOF||FR.L?0:1),h+(NOF||FR.L?0:1),1),poolM('artbody',()=>new T.MeshStandardMaterial({color:0xd9cfbc,roughness:.92}))));artBody.name='artbody';artBody.position.set(cx,cy,RZ-.015);
+const glass=add(new T.Mesh(new T.BoxGeometry(iw+(NOF?0:FR.L?-.3:1),ih+(NOF?0:FR.L?-.3:1),.3),acrSheetMats()));glass.position.z=RZ-.15;glass.visible=$('glass').checked;glass.name='glass';acrBox(add,iw,ih);makeFloat(add,cx,cy);if(SC!==1){for(const o of meshes)if(['artwork','artbody','matBevel','floatPanel','floatRail'].includes(o.name)){o.scale.x*=SC;o.scale.y*=SC;o.position.x*=SC;o.position.y*=SC}}for(const obj of meshes)obj.position.z-=1.6;group.position.z=1.6;radius=Math.max(iw+(2*FW),ih+(2*FW))*2.05;placeArtT();applyView();$('outer').textContent=`${(iw+(2*FW)).toFixed(1)} × ${(ih+(2*FW)).toFixed(1)} cm`;$('outer2').innerHTML=`${(iw+(2*FW)).toFixed(1)} × ${(ih+(2*FW)).toFixed(1)}<em>cm</em>`;$('artdim').textContent=`${+w.toFixed(1)} × ${+h.toFixed(1)} cm`;syncChips();}
+function applyView(){$('status').textContent=['corner','cut'].includes(view)?'左邊是原照片，右邊是套用實拍材質的立體框。正面含原照片光影，弧面與凹槽依第2張切面描繪，細部尺寸未經量測。':'';target.set(0,0,0);light.position.set(view==='corner'?0:lightX,60,90);fill.position.set(view==='corner'?0:50,0,50);group.visible=!['corner','cut'].includes(view);cornerGroup.visible=['corner','cut'].includes(view);if(view==='front'){rotX=0;rotY=0}else if(view==='angle'){rotX=.13;rotY=-.38}else if(view==='detail'){rotX=-.16;rotY=.30;target.set(-(w+mL+mR+2*GG())/2,(h+mT+mB+2*GG())/2,0)}else if(view==='corner'){rotX=0;rotY=0;target.set(0,5.3,1.6)}else if(view==='cut'){rotX=-1.3;rotY=0;target.set(0,5.3,1.6)};zoom=view==='detail'?2.3:1;for(const id of ['front','angle','detail','corner','cut'])$(id).setAttribute('aria-pressed',id===view);render()}
+
+function render(){if(EMBED&&scene.background)scene.background=null;const box=stage.getBoundingClientRect();if(!box.width||!box.height)return;const comparison=['corner','cut'].includes(view);const pic=$('comparisonImage');{const u=view==='cut'?pic.dataset.cut:pic.dataset.front;if(pic._u!==u){pic._u=u;pic.src=u}}pic.style.position=view==='cut'?'absolute':'static';pic.style.top=view==='cut'?FR.cutTop:'0';{const tx=view==='cut'?FR.cutLabel:'你的原照片',el=$('comparisonLabel');if(el.textContent!==tx)el.textContent=tx}const rw=comparison?box.width/2:box.width;renderer.domElement.style.width=rw+'px';renderer.domElement.style.marginLeft=comparison?'50%':'0';$('comparison').style.display=comparison?'flex':'none';$('comparisonNote').style.display=comparison?'block':'none';{const pr=renderer.getPixelRatio();if(renderer.domElement.width!==Math.floor(rw*pr)||renderer.domElement.height!==Math.floor(box.height*pr))renderer.setSize(rw,box.height,false)}const aspect=rw/box.height;const span=(comparison?Math.max(13,26.8/aspect):Math.max((w+mL+mR+2*GG()+(2*FW))/aspect,h+mT+mB+2*GG()+(2*FW))*1.22)/zoom;camera.aspect=aspect;camera.updateProjectionMatrix();const dist=(span/2)/Math.tan(camera.fov*Math.PI/360);const qInv=new T.Quaternion().setFromEuler(new T.Euler(rotX,rotY,0,'XYZ')).invert();camera.up.set(0,1,0).applyQuaternion(qInv);camera.position.copy(target).add(new T.Vector3(0,0,dist).applyQuaternion(qInv));camera.lookAt(target);if(EMBED){/* 首頁嵌入：框轉到側面時，靠近鏡頭的那一端會被透視放大、超出畫面被切掉。這裡量出框的8個角在鏡頭裡的位置，必要時把鏡頭往後退，讓整個框留在畫面內（正面沒超出時 need≤0，完全不動） */camera.updateMatrixWorld(true);group.updateMatrixWorld(true);const bb=new T.Box3(),tb=new T.Box3();for(const o of group.children){if(o.visible){tb.setFromObject(o);if(!tb.isEmpty())bb.union(tb)}}if(!bb.isEmpty()){const th=Math.tan(camera.fov*Math.PI/360),K=.99;let need=0;const c8=new T.Vector3();for(let i=0;i<8;i++){c8.set(i&1?bb.max.x:bb.min.x,i&2?bb.max.y:bb.min.y,i&4?bb.max.z:bb.min.z).applyMatrix4(camera.matrixWorldInverse);const d=-c8.z;need=Math.max(need,Math.abs(c8.y)/(K*th)-d,Math.abs(c8.x)/(K*th*aspect)-d)}if(need>0){camera.position.copy(target).add(new T.Vector3(0,0,dist+need).applyQuaternion(qInv));camera.lookAt(target)}}}group.rotation.set(0,0,0);cornerGroup.rotation.set(0,0,0);cornerGroup.updateMatrixWorld(true);const center=cornerGroup.localToWorld(new T.Vector3());stage.dataset.pivotWorld=JSON.stringify(center.toArray());stage.dataset.profileRebate=FR.reb[0]+'x'+FR.reb[1];stage.dataset.profileSource='photo2-right-cut';wall.visible=!comparison&&!EMBED;acrSync();renderer.render(scene,camera)}
+
+for(const id of ['front','angle','detail','corner','cut'])$(id).onclick=()=>{view=id;applyView()};$('reference').onclick=()=>$('photo').showModal();$('close').onclick=()=>$('photo').close();
+function commitDimensions(changedId){let nw=Number($('width').value),nh=Number($('height').value);if($('lock').checked){if(changedId==='width')nh=nw/ratio;else if(changedId==='height')nw=nh*ratio}if(!Number.isFinite(nw)||!Number.isFinite(nh)||nw<5||nw>200||nh<5||nh>200){$('width').value=+w.toFixed(2);$('height').value=+h.toFixed(2);upMsg('作品寬、高都須為 5～200 公分；已保留上一次尺寸。',false);return false}w=nw;h=nh;ratio=w/h;$('width').value=+w.toFixed(2);$('height').value=+h.toFixed(2);build();return true}
+for(const id of ['width','height'])$(id).onchange=()=>commitDimensions(id);
+// 卡紙：開關＋一條滑桿（四邊一樣）＋上下左右四格（分別填）。每邊最少 2 公分、最多 20 公分；0 與 2 之間不存在，所以沒有「空拉」的區段
+let lastMat=4;
+function syncMatUi(){const on=matOn(),same=$('matSame').checked;$('matOn').checked=on;$('matCtl').hidden=!on;$('matSides').hidden=!on||same;$('mat').style.display=same?'':'none';
+ if(on){if(same)$('mat').value=mT;for(const [id,v] of [['matT',mT],['matB',mB],['matL',mL],['matR',mR]])if(document.activeElement!==$(id))$(id).value=v;
+  $('mat').style.setProperty('--p',(($('mat').value-$('mat').min)/($('mat').max-$('mat').min)*100)+'%')}
+ const eq=mL===mR&&mR===mT&&mT===mB,txt='上 '+mT+'・下 '+mB+'・左 '+mL+'・右 '+mR+' 公分';
+ $('matValue').textContent=eq?mT+' 公分':txt;$('sumMat').textContent=!on?'不加':eq?'四邊各 '+mT+' 公分':txt;
+ {const sw=$('matSw');sw.style.opacity=on?'':'.35';sw.style.pointerEvents=on?'':'none'}}
+syncMatUi();
+const setMat=(t,b,l,r)=>{mT=t;mB=b;mL=l;mR=r;syncMatUi();queueMatBuild()};
+$('matOn').addEventListener('change',()=>{if($('matOn').checked){const v=lastMat||4;setMat(v,v,v,v)}else{if(matOn())lastMat=Math.max(mT,2);setMat(0,0,0,0)}});
+$('mat').oninput=()=>{const v=Number($('mat').value);lastMat=v;setMat(v,v,v,v)};
+$('matSame').addEventListener('change',()=>{if($('matSame').checked){const v=Math.min(20,Math.max(2,Math.round((mT+mB+mL+mR)/4*2)/2));lastMat=v;setMat(v,v,v,v)}else syncMatUi()});
+for(const [id,k] of [['matT','T'],['matB','B'],['matL','L'],['matR','R']]){
+ const put=n=>{if(k==='T')mT=n;else if(k==='B')mB=n;else if(k==='L')mL=n;else mR=n};
+ $(id).addEventListener('input',()=>{const n=Number($(id).value);if($(id).value!==''&&isFinite(n)&&n>=2&&n<=20){put(n);syncMatUi();queueMatBuild()}});
+ $(id).addEventListener('change',()=>{let n=Number($(id).value);if(!isFinite(n)||$(id).value==='')n=2;n=Math.min(20,Math.max(2,n));$(id).value=n;put(n);finishMatBuild()})}
+$('glass').onchange=()=>{group.getObjectByName('glass').visible=$('glass').checked;render()};
+// 上傳結果寫在「放入自己的作品」那一格：手機上畫框在上方，原本的提示看不到、4 秒就消失
+function upMsg(t,ok){const e=$('upmsg');e.textContent=t;e.style.color=ok?'var(--brass2)':'#e9a48f'}
+function upDone(f,c){const ic=document.querySelector('.drop .ic'),t=document.createElement('canvas');t.width=t.height=88;const s=Math.max(88/c.width,88/c.height);t.getContext('2d').drawImage(c,(88-c.width*s)/2,(88-c.height*s)/2,c.width*s,c.height*s);t.style.cssText='width:100%;height:100%;display:block';ic.replaceChildren(t);ic.style.overflow='hidden';const nm=f.name.length>22?f.name.slice(0,19)+'…':f.name;document.querySelector('.drop b').textContent='已放入：'+nm;document.querySelector('.drop b+span').textContent='點一下可更換作品'}
+$('upload').onchange=async()=>{const f=$('upload').files[0];if(!f)return;if(f.size>20*1024*1024){$('status').textContent='請選擇 20MB 以下的作品照片。';upMsg('請選擇 20MB 以下的作品照片。',false);$('upload').value='';return}const url=URL.createObjectURL(f);try{const image=new Image();image.src=url;await image.decode();const c=document.createElement('canvas');const scale=Math.min(1,2048/Math.max(image.width,image.height));c.width=image.width*scale;c.height=image.height*scale;c.getContext('2d').drawImage(image,0,0,c.width,c.height);const nr=image.width/image.height;let nh=40,nw=nh*nr;if(nw>200){nw=200;nh=nw/nr}if(nw<5||nh<5)throw Error('ratio');const nt=new T.CanvasTexture(c);nt.colorSpace=T.SRGBColorSpace;artTex.dispose();artTex=nt;artTex.userSet=true;ratio=nr;w=nw;h=nh;pendingDimension=null;dimensionsConfirmed=false;updateDimensionState();$('width').value=+w.toFixed(2);$('height').value=+h.toFixed(2);build();$('status').textContent='已放入你的作品；照片僅在此頁處理。';upDone(f,c);upMsg('作品已放入。下方是示範尺寸，請改成實際寬、高，再按確認。',true)}catch(e){$('status').textContent='這張圖無法讀取或比例過長，請改用一般比例的 JPG、PNG 或 WebP。';upMsg('這張圖無法讀取或比例過長，請改用一般比例的 JPG、PNG 或 WebP。',false)}finally{URL.revokeObjectURL(url);$('upload').value=''}};
+(async()=>{try{const image=new Image();image.src='./assets/art.jpg';await image.decode();if(artTex.userSet)return;const c=document.createElement('canvas');c.width=image.width;c.height=image.height;c.getContext('2d').drawImage(image,0,0);const nr=image.width/image.height,nt=new T.CanvasTexture(c);nt.colorSpace=T.SRGBColorSpace;artTex.dispose();artTex=nt;ratio=nr;h=40;w=+(h*nr).toFixed(1);$('width').value=w;$('height').value=+h.toFixed(2);build()}catch(e){console.warn('demo art failed',e)}})();
+$('save').onclick=()=>{render();saveFile(`松風閣_${FR.name}_${w.toFixed(1)}x${h.toFixed(1)}cm.png`,renderer.domElement.toDataURL('image/png'))};
+const pointers=new Map();let prevPinch=0;stage.onpointerdown=e=>{stage.setPointerCapture(e.pointerId);pointers.set(e.pointerId,[e.clientX,e.clientY]);prevPinch=0};stage.onpointermove=e=>{if(!pointers.has(e.pointerId))return;const previous=pointers.get(e.pointerId);pointers.set(e.pointerId,[e.clientX,e.clientY]);if(pointers.size===2){const [a,b]=[...pointers.values()],d=Math.hypot(a[0]-b[0],a[1]-b[1]);if(prevPinch)zoom=T.MathUtils.clamp(zoom*d/prevPinch,.6,4);prevPinch=d}else{rotY=T.MathUtils.clamp(rotY+(e.clientX-previous[0])*.008,-1.45,1.45);rotX=T.MathUtils.clamp(rotX+(e.clientY-previous[1])*.008,-1.38,1.38)}render()};stage.onpointerup=stage.onpointercancel=e=>{pointers.delete(e.pointerId);prevPinch=0};stage.onwheel=e=>{if(EMBED)return;e.preventDefault();zoom=T.MathUtils.clamp(zoom*Math.exp(-e.deltaY*.001),.6,4);render()};new ResizeObserver(render).observe(stage);build();$('status').textContent='';window.frameSample={scene,group,camera,renderer,getDimensions:()=>({w,h,m:mT,mL,mR,mT,mB})};
+
+/* ---- 外觀層（10/30 重做）：只加場景／介面，攝影機與旋轉程式未動 ---- */
+const WALLS=[
+ {id:'ink',name:'墨黑展牆',c:'#46433f',e:'#0a0a0b',v:70},
+ {id:'white',name:'展間白牆',c:'#fbf9f4',e:'#d2cdc1',v:38},
+ {id:'stone',name:'暖灰牆',c:'#ecebe3',e:'#b1aea2',v:42},
+ {id:'sage',name:'灰綠牆',c:'#a9b49f',e:'#46523f',v:55},
+ {id:'indigo',name:'靛藍牆',c:'#6d7da8',e:'#212a47',v:60}];
+const h2r=h=>{const n=parseInt(h.slice(1),16);return[n>>16&255,n>>8&255,n&255]};
+const r2h=a=>'#'+a.map(v=>Math.max(0,Math.min(255,Math.round(v))).toString(16).padStart(2,'0')).join('');
+const mixc=(a,b,t)=>{const A=h2r(a),B=h2r(b);return r2h(A.map((v,i)=>v+(B[i]-v)*t))};
+function wallTexture(c,e){const W=1280,H=800,cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');const g=x.createRadialGradient(W*.5,H*.44,H*.04,W*.5,H*.5,W*.64);g.addColorStop(0,c);g.addColorStop(.45,mixc(c,e,.42));g.addColorStop(1,e);x.fillStyle=g;x.fillRect(0,0,W,H);const im=x.getImageData(0,0,W,H),d=im.data;let s=7;for(let i=0;i<d.length;i+=4){s=(Math.imul(s,1664525)+1013904223)>>>0;const n=((s>>>24)/255-.5)*7;d[i]+=n;d[i+1]+=n;d[i+2]+=n}x.putImageData(im,0,0);const t=new T.CanvasTexture(cv);t.colorSpace=T.SRGBColorSpace;return t}
+function applyShadow(){const v=Number($('shadow').value);wall.material.opacity=v/100*.55;$('shadowValue').textContent=v<34?'淡':v<67?'中':'濃';const r=$('shadow');r.style.setProperty('--p',v+'%')}
+function setWall(c,e,v,name){const old=scene.background;scene.background=wallTexture(c,e);if(old&&old.dispose)old.dispose();if(v!=null){$('shadow').value=v}applyShadow();$('wallName').textContent=name;render()}
+const wsw=$('wallSw');
+for(const w0 of WALLS){const b=document.createElement('button');b.className='sw1';b.dataset.id=w0.id;b.setAttribute('aria-label',w0.name);b.setAttribute('aria-pressed',w0.id==='ink');b.style.background=`radial-gradient(circle at 50% 38%,${w0.c},${w0.e})`;b.onclick=()=>{document.querySelectorAll('#wallSw .sw1').forEach(x=>x.setAttribute('aria-pressed',x===b));setWall(w0.c,w0.e,w0.v,w0.name)};wsw.appendChild(b)}
+{const d=document.createElement('div');d.className='sw1 custom';d.setAttribute('role','button');d.setAttribute('aria-label','自訂牆色');d.setAttribute('aria-pressed','false');d.innerHTML='<input type="color" value="#7a6f62" aria-label="自訂牆色">';d.querySelector('input').oninput=e=>{const hex=e.target.value;document.querySelectorAll('#wallSw .sw1').forEach(x=>x.setAttribute('aria-pressed',x===d));setWall(mixc(hex,'#ffffff',.08),mixc(hex,'#000000',.62),null,'自訂顏色')};wsw.appendChild(d)}
+$('shadow').addEventListener('input',()=>{applyShadow();render()});
+document.querySelectorAll('#lightSeg button').forEach(b=>b.onclick=()=>{lightX=Number(b.dataset.lx);document.querySelectorAll('#lightSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));light.position.set(view==='corner'?0:lightX,60,90);render()});
+document.querySelectorAll('#matSw .sw1').forEach(b=>b.onclick=()=>{matColor=Number(b.dataset.mat);$('matName').textContent=b.dataset.name;document.querySelectorAll('#matSw .sw1').forEach(x=>x.setAttribute('aria-pressed',x===b));build()});
+function syncChips(){const L=Math.max(w,h);document.querySelectorAll('#sizeChips .chip').forEach(c=>c.setAttribute('aria-pressed',Math.abs(Number(c.dataset.long)-L)<.06))}
+document.querySelectorAll('#sizeChips .chip').forEach(c=>c.onclick=()=>{const v=Number(c.dataset.long);let nw=w,nh=h;if(w>=h){nw=v;nh=v/ratio}else{nh=v;nw=v*ratio}if(nw<5||nh<5||nw>200||nh>200){$('status').textContent='這個尺寸超出 5～200 公分，請換一個。';return}w=nw;h=nh;$('width').value=+w.toFixed(2);$('height').value=+h.toFixed(2);build()});
+{const r=$('mat');const paint=()=>r.style.setProperty('--p',((r.value-r.min)/(r.max-r.min)*100)+'%');paint();r.addEventListener('input',paint)}
+for(const fr of Object.values(FRAMES))drawThumb($('thumb_'+fr.id),fr);
+let stT;new MutationObserver(()=>{clearTimeout(stT);const el=$('status');if(el.textContent&&!['corner','cut'].includes(view))stT=setTimeout(()=>{el.textContent=''},4200)}).observe($('status'),{childList:true,characterData:true,subtree:true});
+setWall(WALLS[0].c,WALLS[0].e,WALLS[0].v,WALLS[0].name);syncChips();
+requestAnimationFrame(()=>requestAnimationFrame(()=>{document.body.classList.add('ready');window.__readyMs=Math.round(performance.now())}));
+
+/* ---- 房間實景模式：把立體框「去背」成一張圖，貼進房間照片（攝影機／旋轉程式未動，只暫借變數再還原）---- */
+const ROOMS=[
+ // 比例依據是假設門高 204 公分，未實測，沒有可驗證的總誤差上限。ppc＝每公分占幾個照片像素
+ {id:'greywall',det:{zones:[{to:1086,x:100,y:120,w:600,h:420,amp:2.4},{x:60,y:1100,w:700,h:90,amp:1.6}]},ext:{l:[0,150],r:[1800,1700],t:[0,150],b:[1200,1110]},name:'灰牆長椅',src:'./assets/room_greywall.jpg',fg:{src:'./assets/fg_greywall.webp',x:351,y:769},ppc:4.08,ax:660,ay:490,lx:-35,sv:40,note:'房間比例為估算：依假設門高 204 公分換算，尚未實測，僅供搭配參考。'},
+ {id:'apartment',det:{zones:[{to:880,x:700,y:330,w:480,h:260,amp:2},{x:1000,y:1100,w:500,h:110,amp:.9}],top:{none:true}},ext:{l:[0,160],dl:{zones:[{to:640,x:0,y:130,w:300,h:420,amp:2.4},{to:875,x:0,y:130,w:300,h:330,amp:1.1},{x:1000,y:1100,w:500,h:110,amp:.9}],top:{none:true}},r:[1800,1700],t:[0,38],b:[1221,1150]},name:'公寓客廳',src:'./assets/room_apartment.jpg',fg:{src:'./assets/fg_apartment.webp',x:403,y:657},ppc:2.96,ax:925,ay:450,lx:0,sv:30,note:'房間比例為估算：依假設門高 204 公分換算，尚未實測，僅供搭配參考。'},
+ {id:'living',det:{zones:[{to:822,x:80,y:60,w:520,h:380,amp:2.2},{x:60,y:890,w:560,h:120,amp:1}]},ext:{l:[0,160],r:[0,160],t:[0,200],b:[1024,930],fr:340},name:'客廳',src:'./assets/0dd57700ee.jpg',fg:{src:'./assets/fg_living.webp',x:168,y:223},ppc:4.6,ax:740,ay:330,lx:0,sv:30,note:'房間比例為估算：依家具推算，尚未實測，僅供搭配參考。'},
+ {id:'gallery',det:{zones:[{to:797,x:60,y:300,w:520,h:380,amp:2.4},{x:60,y:850,w:700,h:150,amp:1.2}]},ext:{l:[0,200],r:[1536,1336],t:[130,260],b:[1024,940]},name:'白牆展間',src:'./assets/efb685344e.jpg',fg:{src:'./assets/fg_gallery.webp',x:398,y:726},ppc:2.7,ax:768,ay:392,lx:0,sv:25,note:'房間比例為估算：依家具推算，尚未實測，僅供搭配參考。'},
+ {id:'study',det:{zones:[{to:830,x:560,y:60,w:760,h:380,amp:2.4},{x:300,y:880,w:760,h:130,amp:1}]},ext:{l:[1536,1336],r:[1536,1336],t:[0,200],b:[1024,900]},name:'松綠書房',src:'./assets/ea2b7b3574.jpg',fg:{src:'./assets/fg_study.webp',x:334,y:402},ppc:3.6,ax:768,ay:330,lx:-35,sv:45,note:'房間比例為估算：依家具推算，尚未實測，僅供搭配參考。'},
+ {id:'dining',det:{zones:[{to:575,x:150,y:60,w:480,h:300,amp:2.2},{to:785,x:30,y:595,w:340,h:170,amp:1.8},{x:60,y:955,w:700,h:60,amp:1}]},ext:{l:[0,300],r:[0,300],t:[0,110],b:[1024,950],fr:340},name:'日式餐廳',src:'./assets/82c99d865f.jpg',fg:{src:'./assets/fg_dining.webp',x:384,y:0},ppc:4.0,ax:360,ay:330,lx:35,sv:35,note:'房間比例為估算：依家具推算，尚未實測，僅供搭配參考。'}];
+let matteSeq=0,mode='3d',roomIdx=0,roomZoom=1,roomPos={x:0,y:0},matte=null,roomT=0,roomDrag=null;
+for(const r of (EMBED?[]:ROOMS)){r.img=new Image();r.img.onload=()=>{try{const c=document.createElement('canvas');c.width=64;c.height=43;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(r.img,0,0,64,43);const px=Math.round(r.ax/r.img.naturalWidth*64),py=Math.round(r.ay/r.img.naturalHeight*43),d=x.getImageData(Math.max(0,px-4),Math.max(0,py-4),9,9).data;let R=0,G=0,B=0,n=d.length/4;for(let i=0;i<d.length;i+=4){R+=d[i];G+=d[i+1];B+=d[i+2]}r.wall=[R/n,G/n,B/n]}catch(_){r.wall=[200,195,185]}rc.sprKey='';if(mode==='room')drawRoom()};r.img.src=r.src;if(r.fg){r.fgImg=new Image();r.fgImg.onload=()=>{rc.key='';if(mode==='room')drawRoom()};r.fgImg.src=r.fg.src}}
+const roomCanvas=$('roomCanvas');
+function captureMatteOld(q=1.5){
+ const wallOp=wall.material.opacity;wall.material.opacity=0;const sv={view,rotX,rotY,zoom,bg:scene.background,pr:renderer.getPixelRatio(),tx:target.clone()};
+ view='front';rotX=0;rotY=0;zoom=1;target.set(0,0,0);group.visible=true;cornerGroup.visible=false;light.position.set(lightX,60,90);renderer.setPixelRatio(q);
+ const shots=[];
+ for(const c of [0xffffff,0x000000]){scene.background=new T.Color(c);renderNow();const cv=renderer.domElement,t=document.createElement('canvas');t.width=cv.width;t.height=cv.height;const x=t.getContext('2d',{willReadFrequently:true});x.drawImage(cv,0,0);shots.push(x.getImageData(0,0,t.width,t.height))}
+ wall.material.opacity=wallOp;scene.background=sv.bg;view=sv.view;rotX=sv.rotX;rotY=sv.rotY;zoom=sv.zoom;target.copy(sv.tx);renderer.setPixelRatio(sv.pr);
+ const cmp=['corner','cut'].includes(view);group.visible=!cmp;cornerGroup.visible=cmp;light.position.set(view==='corner'?0:lightX,60,90);
+ const [Wd,Bd]=shots,W=Wd.width,H=Wd.height,out=new ImageData(W,H),a=Wd.data,b=Bd.data,o=out.data;let x0=1e9,y0=1e9,x1=-1,y1=-1;
+ for(let i=0,p=0;i<W*H;i++,p+=4){const al=Math.max(0,Math.min(1,1-((a[p]-b[p])+(a[p+1]-b[p+1])+(a[p+2]-b[p+2]))/765));if(al>.003){const inv=1/al;o[p]=Math.min(255,b[p]*inv);o[p+1]=Math.min(255,b[p+1]*inv);o[p+2]=Math.min(255,b[p+2]*inv);o[p+3]=al*255}if(al>.985){const px=i%W,py=(i/W)|0;if(px<x0)x0=px;if(px>x1)x1=px;if(py<y0)y0=py;if(py>y1)y1=py}}
+ if(x1<0){matte=null;return}
+ const cv=document.createElement('canvas');cv.width=W;cv.height=H;cv.getContext('2d').putImageData(out,0,0);
+ const pyr=[cv];for(let i=1;i<5;i++){const p=pyr[i-1],n=document.createElement('canvas');n.width=Math.max(1,Math.round(p.width/2));n.height=Math.max(1,Math.round(p.height/2));const x=n.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(p,0,0,n.width,n.height);pyr.push(n)}
+ const bw=x1-x0+1;matte={id:++matteSeq,cv,pyr,W,H,bcx:(x0+x1)/2,bcy:(y0+y1)/2,bw,bh:y1-y0+1,pcm:bw/(w+mL+mR+2*GG()+(2*FW)),label:`${(w+mL+mR+2*GG()+(2*FW)).toFixed(1)} × ${(h+mT+mB+2*GG()+(2*FW)).toFixed(1)} cm`}
+}
+
+/* 擷取框：用第二個「透明背景」的畫面一次畫完，不用改動主畫面大小、不用逐點運算（約 5 毫秒） */
+let cap2=null;
+function capInit(){const c=document.createElement('canvas'),r=new T.WebGLRenderer({canvas:c,antialias:true,alpha:true,premultipliedAlpha:true,preserveDrawingBuffer:true});r.outputColorSpace=T.SRGBColorSpace;r.toneMapping=T.ACESFilmicToneMapping;r.toneMappingExposure=1.08;r.shadowMap.enabled=true;r.shadowMap.type=T.PCFSoftShadowMap;r.setClearColor(0x000000,0);const pm=new T.PMREMGenerator(r),env=pm.fromScene(studio,.04);pm.dispose();cap2={r,c,env,sm:{map:null,mapPass:null}}}
+const capLog=[];
+function captureMatte(q){
+ try{captureMatte2()}catch(e){capLog.push('cap2失敗:'+String(e&&e.message||e).slice(0,80));console.warn('capture2 failed, fallback',e);cap2=null;captureMatteOld(q||1.5)}
+}
+function captureMatte2(H=760){
+ if(!cap2)capInit();
+ const sv={view,rotX,rotY,zoom,tx:target.clone()};
+ view='front';rotX=0;rotY=0;zoom=1;target.set(0,0,0);group.visible=true;cornerGroup.visible=false;light.position.set(lightX,60,90);
+ renderSync();
+ const W=Math.max(2,Math.round(H*camera.aspect)),wallOp=wall.material.opacity,bg=scene.background,env=scene.environment,sh=light.shadow,keep={map:sh.map,mapPass:sh.mapPass};
+ let bb=null;
+ try{
+  wall.material.opacity=0;scene.background=null;scene.environment=cap2.env.texture;sh.map=cap2.sm.map;sh.mapPass=cap2.sm.mapPass;
+  cap2.r.setPixelRatio(1);if(cap2.c.width!==W||cap2.c.height!==H)cap2.r.setSize(W,H,false);
+  cap2.r.shadowMap.needsUpdate=true;acrSync(true);cap2.r.render(scene,camera);
+  const box=new T.Box3();for(let i=0;i<4;i++){const o=group.children[i];o.updateWorldMatrix(true,false);box.expandByObject(o)}
+  let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;for(const X of [box.min.x,box.max.x])for(const Y of [box.min.y,box.max.y])for(const Z of [box.min.z,box.max.z]){const p=new T.Vector3(X,Y,Z).project(camera),px=(p.x+1)/2*W,py=(1-p.y)/2*H;x0=Math.min(x0,px);x1=Math.max(x1,px);y0=Math.min(y0,py);y1=Math.max(y1,py)}
+  bb={x0,y0,x1,y1}
+ }finally{
+  cap2.sm.map=sh.map;cap2.sm.mapPass=sh.mapPass;sh.map=keep.map;sh.mapPass=keep.mapPass;scene.background=bg;scene.environment=env;wall.material.opacity=wallOp;
+  view=sv.view;rotX=sv.rotX;rotY=sv.rotY;zoom=sv.zoom;target.copy(sv.tx);const cmp=['corner','cut'].includes(view);group.visible=!cmp;cornerGroup.visible=cmp;light.position.set(view==='corner'?0:lightX,60,90);
+ }
+ const cv=document.createElement('canvas');cv.width=W;cv.height=H;cv.getContext('2d').drawImage(cap2.c,0,0);
+ const pyr=[cv];for(let i=1;i<5;i++){const p=pyr[i-1],n=document.createElement('canvas');n.width=Math.max(1,Math.round(p.width/2));n.height=Math.max(1,Math.round(p.height/2));const x=n.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(p,0,0,n.width,n.height);pyr.push(n)}
+ const bw=bb.x1-bb.x0;matte={id:++matteSeq,cv,pyr,W,H,bcx:(bb.x0+bb.x1)/2,bcy:(bb.y0+bb.y1)/2,bw,bh:bb.y1-bb.y0,pcm:bw/(w+mL+mR+2*GG()+(2*FW)),label:`${(w+mL+mR+2*GG()+(2*FW)).toFixed(1)} × ${(h+mT+mB+2*GG()+(2*FW)).toFixed(1)} cm`}
+}
+if('requestIdleCallback' in window)requestIdleCallback(()=>{try{if(!cap2)capInit()}catch(e){}},{timeout:5000});
+const EXTMODE='contain'; // 原照片完整顯示；不裁切、不鏡像補牆或地板。
+function roomGeom(cw,ch){const R=ROOMS[roomIdx],iw=R.img.naturalWidth||1536,ih=R.img.naturalHeight||1024,cv=EXTMODE==='cover'&&cw/ch>iw/ih,k=(cv?Math.max(cw/iw,ch/ih):Math.min(cw/iw,ch/ih))*roomZoom,ph=stage.clientWidth<600,fit=(c,full,an,top=0,cen=.5)=>(full<=c)?(c-full)/2:Math.min(top||0,Math.max(c-full,c*cen-an*k));return{k,ox:fit(cw,iw*k,R.ax),oy:fit(ch,ih*k,cv?(R.ay+ih/2)/2:R.ay,ph?ch*.3:0,ph?.6:.5),iw,ih}}
+// ===== 房間兩側／上下延伸：取一段乾淨的牆面或地板，鏡像來回、模糊、加顆粒與暗角，接在照片外側 =====
+function shrinkTo(src,sx,sy,sw,sh,w,h){let c=document.createElement('canvas');c.width=Math.max(1,Math.round(sw));c.height=Math.max(1,Math.round(sh));let cx=c.getContext('2d');cx.imageSmoothingQuality='high';cx.drawImage(src,sx,sy,sw,sh,0,0,c.width,c.height);
+ while(c.width>w*2||c.height>h*2){const n=document.createElement('canvas');n.width=Math.max(w,Math.ceil(c.width/2));n.height=Math.max(h,Math.ceil(c.height/2));const nx=n.getContext('2d');nx.imageSmoothingQuality='high';nx.drawImage(c,0,0,n.width,n.height);c=n}
+ const o=document.createElement('canvas');o.width=w;o.height=h;const ox=o.getContext('2d');ox.imageSmoothingQuality='high';ox.drawImage(c,0,0,w,h);return o}
+let _extNoise=null;function extNoise(){if(_extNoise)return _extNoise;const nz=document.createElement('canvas');nz.width=nz.height=128;const nx=nz.getContext('2d'),im=nx.createImageData(128,128);let sd=7;for(let i=0;i<im.data.length;i+=4){sd=(Math.imul(sd,1664525)+1013904223)>>>0;const v=sd>>>24;im.data[i]=im.data[i+1]=im.data[i+2]=v;im.data[i+3]=255}nx.putImageData(im,0,0);return _extNoise=nz}
+function smoothStops(gr,a0,a1,rgb){for(let i=0;i<=10;i++){const t=i/10,s=t*t*(3-2*t);gr.addColorStop(t,`rgba(${rgb},${(a0+(a1-a0)*s).toFixed(3)})`)}}
+// 延伸做法（2026-11-03 改）：舊做法把一小條照片縮成十幾個像素再一次放大、鏡像重複，放大後變成一格一格的馬賽克，
+// 又跟照片本身的牆面顆粒對不上。新做法＝①沿邊緣取一條、橫向平均成一條「顏色帶」，逐段 2 倍放大（不一次放大）鋪滿延伸區，
+// ②（有設定 det 的房間）再疊上一層從乾淨牆面取出的細緻質感（只留細節、去掉明暗），③暗角與顆粒。
+// v=false：沿 x 往左右延伸；v=true：沿 y 往上下延伸。a→b＝取樣範圍（照片像素，a 靠近照片邊緣），s0～s1＝另一軸的範圍，
+// K＝照片像素換成畫布像素的倍率，P0＝s0 在畫布上的位置，edge＝延伸起點（畫布座標，已往照片內縮一小段讓照片淡入蓋住），dir＝-1 往小、+1 往大，D＝要補的長度
+function growAlong(c,v,len){while((v?c.width:c.height)<len){const cur=v?c.width:c.height,nx=Math.min(len,cur*2),n=document.createElement('canvas');n.width=v?nx:c.width;n.height=v?c.height:nx;const q=n.getContext('2d');q.imageSmoothingQuality='high';q.drawImage(c,0,0,n.width,n.height);c=n}return c}
+function growTo(c,w,h){while(c.width<w||c.height<h){const n=document.createElement('canvas');n.width=Math.min(w,c.width*2);n.height=Math.min(h,c.height*2);const q=n.getContext('2d');q.imageSmoothingQuality='high';q.drawImage(c,0,0,n.width,n.height);c=n}return c}
+// 質感圖：取一塊乾淨牆面／地板，減掉它自己的柔和明暗（只剩細節，灰階、中灰＝不變）；再用「錯開半格混合」做成上下左右都能接起來的一塊（不用鏡像，不會出現對稱的接縫線）
+function detailTile(z,R){if(z._t)return z._t;const w=z.w,h=z.h,pc=document.createElement('canvas');pc.width=w;pc.height=h;const px=pc.getContext('2d',{willReadFrequently:true});px.drawImage(R.img,z.x,z.y,w,h,0,0,w,h);
+ const low=growTo(shrinkTo(pc,0,0,w,h,Math.max(2,Math.round(w/10)),Math.max(2,Math.round(h/10))),w,h),lc=document.createElement('canvas');lc.width=w;lc.height=h;const lx=lc.getContext('2d',{willReadFrequently:true});lx.drawImage(low,0,0,w,h);
+ const A=px.getImageData(0,0,w,h),B=lx.getImageData(0,0,w,h),amp=(z.amp||2.4)*1.25,dv=new Float32Array(w*h);for(let i=0;i<w*h;i++){const j=i*4;dv[i]=(.299*A.data[j]+.587*A.data[j+1]+.114*A.data[j+2]-(.299*B.data[j]+.587*B.data[j+1]+.114*B.data[j+2]))*amp}
+ const O=px.createImageData(w,h);for(let y=0;y<h;y++){const wy=Math.sin(Math.PI*y/h);for(let X=0;X<w;X++){const wa=Math.sin(Math.PI*X/w)*wy,a2=wa*wa,v=dv[y*w+X]*a2+dv[((y+(h>>1))%h)*w+(X+(w>>1))%w]*(1-a2),q=Math.max(0,Math.min(255,128+v)),j=(y*w+X)*4;O.data[j]=O.data[j+1]=O.data[j+2]=q;O.data[j+3]=255}}
+ px.putImageData(O,0,0);return z._t=pc}
+// det.zones：由上到下的區段（牆／腰牆／地板…），每段 {to:照片 y 到哪裡為止,x,y,w,h:取質感的乾淨區塊,amp:強度}；最後一段 to 不用寫
+// mirror：true＝直接把邊緣一段照片原尺寸左右鏡像接出去（窗景、百葉這類有結構又很規則的）
+function mirrorExt(x,src,v,a,b,s0,s1,K,P0,edge,dir,D,vig,R,det,mirror){
+ const lo=Math.min(a,b),hi=Math.max(a,b),n=Math.max(2,hi-lo),along=s1-s0,aLen=Math.max(2,Math.round(along*K));
+ const r0=dir>0?edge:edge-D,rect=v?[P0,r0,aLen,D]:[r0,P0,D,aLen];
+ x.save();x.beginPath();x.rect(rect[0],rect[1],rect[2],rect[3]);x.clip();x.imageSmoothingQuality='high';
+ if(mirror){const P=Math.max(8,n*K),cnt=Math.ceil(D/P)+1;
+  for(let i=0;i<cnt;i++){const sg=dir*(i%2?-1:1)*Math.sign(b-a),st=dir>0?edge+i*P:edge-(i+1)*P;x.save();
+   if(!v){x.translate(st-2,P0);if(sg<0){x.translate(P+4,0);x.scale(-1,1)}x.drawImage(src,lo,s0,n,along,0,0,P+4,aLen)}
+   else{x.translate(P0,st-2);if(sg<0){x.translate(0,P+4);x.scale(1,-1)}x.drawImage(src,s0,lo,along,n,0,0,aLen,P+4)}
+   x.restore()}
+ }else{
+  // ① 顏色帶：邊緣那一條沿邊方向取平均（對邊的方向壓成 4 像素寬，之後橫向拉開），逐段 2 倍放大
+  const cs=v?6:Math.max(8,Math.min(Math.round(aLen/20),512));let prof=shrinkTo(src,v?s0:lo,v?lo:s0,v?along:n,v?n:along,v?cs:4,v?4:cs);prof=growAlong(prof,v,aLen);
+  if(!v)x.drawImage(prof,0,0,4,prof.height,r0-2,P0,D+4,aLen);else x.drawImage(prof,0,0,prof.width,4,P0,r0-2,aLen,D+4);
+  // ② 質感：照片裡乾淨的牆／腰牆／地板各取一塊，只疊「細節」，每段只畫在自己那一段的高度
+  const Z=det&&(v?[dir<0?(det.top||det.zones[0]):(det.bottom||det.zones[det.zones.length-1])]:det.zones);if(Z&&Z.length){let y0=-1e5;Z.forEach((z,zi)=>{const y1=z.to==null?1e5:z.to;if(z.none){y0=y1;return}
+    const tc=document.createElement('canvas');tc.width=Math.max(1,Math.ceil(rect[2]));tc.height=Math.max(1,Math.ceil(rect[3]));const t=tc.getContext('2d'),pat=t.createPattern(detailTile(z,R),'repeat');
+    if(pat&&pat.setTransform){pat.setTransform(new DOMMatrix().scale(K));t.fillStyle=pat;t.fillRect(0,0,tc.width,tc.height);
+     if(!v){const ya=Math.max(-1e4,y0*K),yb=Math.min(1e5,y1*K),ft=Math.max(6,12*K);if(Zlen(Z)>1){const gr=t.createLinearGradient(0,ya-ft,0,yb+ft),L=yb+ft-(ya-ft),q=Math.min(.49,2*ft/L);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(q,'rgba(0,0,0,1)');gr.addColorStop(1-q,'rgba(0,0,0,1)');gr.addColorStop(1,'rgba(0,0,0,0)');t.globalCompositeOperation='destination-in';t.fillStyle=gr;t.fillRect(0,0,tc.width,tc.height)}}
+     x.globalCompositeOperation='overlay';x.drawImage(tc,rect[0],rect[1]);x.globalCompositeOperation='source-over'}
+    y0=y1})}
+ }
+ // ③ 暗角：越往外越暗，跟深色展間頁面融在一起
+ const g0=dir>0?edge:edge-D,g1=dir>0?edge+D:edge,gr=v?x.createLinearGradient(0,dir>0?g0:g1,0,dir>0?g1:g0):x.createLinearGradient(dir>0?g0:g1,0,dir>0?g1:g0,0);
+ smoothStops(gr,0,vig,'6,6,8');x.fillStyle=gr;x.fillRect(rect[0],rect[1],rect[2],rect[3]);
+ x.globalAlpha=.045;x.fillStyle=x.createPattern(extNoise(),'repeat');x.fillRect(rect[0],rect[1],rect[2],rect[3]);x.globalAlpha=1;x.restore()}
+function Zlen(Z){return Z.length}
+function fadeEdges(x,img,dx,dy,dw,dh,cw,ch,v,f0,f1){const t=document.createElement('canvas');t.width=cw;t.height=ch;const c=t.getContext('2d');c.drawImage(img,dx,dy,dw,dh);c.globalCompositeOperation='destination-in';
+ const lo=v?dy:dx,len=v?dh:dw;
+ // 一次畫成：中間不透明，兩端（需要淡出的那邊）漸層到透明
+ const gr=v?c.createLinearGradient(0,lo,0,lo+len):c.createLinearGradient(lo,0,lo+len,0);
+ if(f0){gr.addColorStop(0,'rgba(0,0,0,0)');for(let i=1;i<10;i++){const q=i/10,s=q*q*(3-2*q);gr.addColorStop(f0/len*q,`rgba(0,0,0,${s})`)}gr.addColorStop(f0/len,'rgba(0,0,0,1)')}else gr.addColorStop(0,'rgba(0,0,0,1)');
+ if(f1){gr.addColorStop(1-f1/len,'rgba(0,0,0,1)');for(let i=1;i<10;i++){const q=i/10,s=q*q*(3-2*q);gr.addColorStop(1-f1/len+f1/len*q,`rgba(0,0,0,${1-s})`)}gr.addColorStop(1,'rgba(0,0,0,0)')}else gr.addColorStop(1,'rgba(0,0,0,1)');
+ c.fillStyle=gr;c.fillRect(0,0,cw,ch);x.drawImage(t,0,0)}
+function paintRoomBg(x,R,g,cw,ch){x.imageSmoothingQuality='high';const W=g.iw*g.k,H=g.ih*g.k,L=g.ox,T=g.oy,Rr=cw-(L+W),B=ch-(T+H),K=g.k;
+ if(EXTMODE==='contain'){x.fillStyle='#0d0d0e';x.fillRect(0,0,cw,ch);x.drawImage(R.img,L,T,W,H);return}
+ if(L<=.5&&Rr<=.5&&T<=.5&&B<=.5){x.drawImage(R.img,L,T,W,H);return}
+ const hasH=L>.5||Rr>.5,hasV=T>.5||B>.5,E=Object.assign({l:[0,140],r:[g.iw,g.iw-140],t:[120,240],b:[g.ih,g.ih-100]},R.ext||{}),fL=Math.min(E.fl||150,W*.2),fR=Math.min(E.fr||150,W*.2),fV=Math.min(48,H*.06);
+ const r0=Math.max(0,Math.floor(T)),r1=Math.min(ch,Math.ceil(T+H)),ah=Math.max(1,r1-r0),A=document.createElement('canvas');A.width=cw;A.height=ah;const a=A.getContext('2d'),ey=T-r0;a.imageSmoothingQuality='high';
+ if(hasH){
+  if(L>.5&&EXTMODE!=='bars')mirrorExt(a,R.img,false,E.l[0],E.l[1],0,g.ih,K,ey,L+fL,-1,L+fL,.34,R,E.dl!==undefined?E.dl:R.det,E.ml);
+  if(Rr>.5&&EXTMODE!=='bars')mirrorExt(a,R.img,false,E.r[0],E.r[1],0,g.ih,K,ey,L+W-fR,1,cw-(L+W-fR),.34,R,E.dr!==undefined?E.dr:R.det,E.mr);
+  fadeEdges(a,R.img,L,ey,W,H,cw,ah,false,L>.5?fL:0,Rr>.5?fR:0)
+ }else a.drawImage(R.img,L,ey,W,H);
+ if(!hasV){x.drawImage(A,0,r0);return}
+ const rowA=y=>y*K+ey;
+ if(T>.5&&EXTMODE!=='bars')mirrorExt(x,A,true,rowA(E.t[0]),rowA(E.t[1]),0,cw,1,0,T+fV,-1,T+fV,.34,R,R.det);
+ if(B>.5&&EXTMODE!=='bars')mirrorExt(x,A,true,rowA(E.b[0]),rowA(E.b[1]),0,cw,1,0,T+H-fV,1,ch-(T+H-fV),.34,R,R.det);
+ fadeEdges(x,A,0,r0,cw,ah,cw,ch,true,T>.5?fV:0,B>.5?fV:0);
+}
+let rc={key:'',bg:null,spr:null,sprKey:'',cw:0,ch:0,k:1,ox:0,oy:0,dpr:1},roomRaf=0;
+function roomLayout(){const box=stage.getBoundingClientRect();if(!box.width||!box.height)return false;if(roomZoom<minZoom())roomZoom=minZoom();const dpr=Math.min(devicePixelRatio||1,box.width<900?3:2),cw=Math.round(box.width*dpr),ch=Math.round(box.height*dpr);if(roomCanvas.width!==cw||roomCanvas.height!==ch){roomCanvas.width=cw;roomCanvas.height=ch;rc.bgDirty=true}roomCanvas.style.width=box.width+'px';roomCanvas.style.height=box.height+'px';const g=roomGeom(cw,ch),R=ROOMS[roomIdx],key=[roomIdx,roomZoom,cw,ch,R.img.naturalWidth,R.ver||0].join();Object.assign(rc,{cw,ch,k:g.k,ox:g.ox,oy:g.oy,dpr});if(key!==rc.key){rc.key=key;const bg=document.createElement('canvas');bg.width=cw;bg.height=ch;paintRoomBg(bg.getContext('2d'),R,g,cw,ch);rc.bg=bg;rc.sprKey='';rc.bgDirty=true}return true}
+// 縮小後邊緣會變軟：縮完再做一次輕微銳化（3×3，只動不透明且四周都不透明的像素，不產生邊緣暗圈）
+function sharpenCv(cv,amt){const w=cv.width,h=cv.height;if(w<3||h<3)return;const x=cv.getContext('2d'),im=x.getImageData(0,0,w,h),d=im.data,o=new Uint8ClampedArray(d);
+ for(let y=1;y<h-1;y++)for(let X=1;X<w-1;X++){const i=(y*w+X)*4;if(o[i+3]<255||o[i-1]<255||o[i+7]<255||o[i-w*4+3]<255||o[i+w*4+3]<255)continue;
+  for(let c=0;c<3;c++){const j=i+c,sum=o[j-4-w*4]+o[j-w*4]+o[j+4-w*4]+o[j-4]+o[j]+o[j+4]+o[j-4+w*4]+o[j+w*4]+o[j+4+w*4];d[j]=o[j]+amt*(o[j]-sum/9)}}
+ x.putImageData(im,0,0)}
+function makeLayers(k,ui,full){
+ if(!matte)return null;const R=ROOMS[roomIdx],s=R.ppc/matte.pcm*k,ppc=R.ppc*k,wl=R.wall||[200,195,185],L=(.2126*wl[0]+.7152*wl[1]+.0722*wl[2])/255;
+ const sB=full?s:Math.min(s,1);
+ // 1) 框本體：解析度最高只到擷取圖的大小（再大用 CSS 放大），所以作品再大也不會變重
+ const lvl=Math.max(0,Math.min(matte.pyr.length-1,Math.floor(-Math.log2(sB)))),src=matte.pyr[lvl],dw=Math.max(1,Math.round(matte.W*sB)),dh=Math.max(1,Math.round(matte.H*sB));
+ const fr=document.createElement('canvas');fr.width=dw;fr.height=dh;const f=fr.getContext('2d');f.imageSmoothingQuality='high';f.drawImage(src,0,0,dw,dh);if(!slidingMat&&dw*dh<9e5)sharpenCv(fr,.8);f.globalCompositeOperation='source-atop';
+ const ox0=(matte.bcx-matte.bw/2)*sB,oy0=(matte.bcy-matte.bh/2)*sB,ow=matte.bw*sB,oh=matte.bh*sB,ins=FW*matte.pcm*sB;f.save();f.beginPath();f.rect(ox0,oy0,ow,oh);f.rect(ox0+ins,oy0+ins,ow-2*ins,oh-2*ins);f.clip('evenodd');
+ f.fillStyle=`rgba(${wl[0]|0},${wl[1]|0},${wl[2]|0},.05)`;f.fillRect(0,0,dw,dh);
+ f.fillStyle=`rgba(0,0,0,${((1-L)*.16).toFixed(3)})`;f.fillRect(0,0,dw,dh);
+ const lxn=Math.sign(lightX),g=lxn===0?f.createLinearGradient(0,0,0,dh):lxn<0?f.createLinearGradient(0,0,dw,dh):f.createLinearGradient(dw,0,0,dh);g.addColorStop(0,'rgba(255,246,228,.05)');g.addColorStop(1,'rgba(0,0,0,.10)');f.fillStyle=g;f.fillRect(0,0,dw,dh);
+ if(!window.__noiseCv){const nz=document.createElement('canvas');nz.width=nz.height=96;const nx=nz.getContext('2d'),im=nx.createImageData(96,96);let sd=11;for(let i=0;i<im.data.length;i+=4){sd=(Math.imul(sd,1664525)+1013904223)>>>0;const v=sd>>>24;im.data[i]=im.data[i+1]=im.data[i+2]=v;im.data[i+3]=255}nx.putImageData(im,0,0);window.__noiseCv=nz}
+ f.globalAlpha=.035;f.fillStyle=f.createPattern(window.__noiseCv,'repeat');f.fillRect(0,0,dw,dh);f.globalAlpha=1;f.restore();f.globalCompositeOperation='source-over';
+ // 2) 牆面陰影：另一層、只用 1/4 解析度畫（本來就是糊的），用 CSS 放大
+ const sf=full?1:.25,pad=Math.ceil(20*ppc)+6,sh=.4+Number($('shadow').value)/100*1.2,ox=-lightX/35*1.3*ppc*sf,ps=ppc*sf;
+ const sw=Math.max(1,Math.round(matte.W*s*sf)),shh=Math.max(1,Math.round(matte.H*s*sf)),small=document.createElement('canvas');small.width=sw;small.height=shh;{const x=small.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(matte.pyr[Math.max(0,Math.min(matte.pyr.length-1,Math.floor(-Math.log2(s*sf))))],0,0,sw,shh)}
+ const shd=document.createElement('canvas');shd.width=Math.ceil((matte.W*s+2*pad)*sf);shd.height=Math.ceil((matte.H*s+2*pad)*sf);const x=shd.getContext('2d'),dark=`rgba(${(wl[0]*.18)|0},${(wl[1]*.18)|0},${(wl[2]*.18)|0},1)`,BIG=6000,p0=pad*sf;
+ const pass=(dx,dy,blur,alpha)=>{x.save();x.shadowColor=dark;x.shadowBlur=blur;x.shadowOffsetX=dx+BIG;x.shadowOffsetY=dy;x.globalAlpha=Math.min(1,alpha*sh);x.drawImage(small,p0-BIG,p0);x.restore()};
+ pass(ox*.4,.5*ps,1.0*ps,.62);pass(ox,1.6*ps,4.5*ps,.45);pass(ox*1.6,3.2*ps,13*ps,.30);
+ return{fr,shd,s,pad,sf,bcx:matte.bcx,bcy:matte.bcy,bh:matte.bh,W:matte.W,H:matte.H,label:matte.label}
+}
+// roundRect 在舊版 Safari（iOS 16 以前）不存在，沒有的話用弧線手動畫
+function rrect(x,a,b,w,h,r){if(x.roundRect){x.roundRect(a,b,w,h,r);return}r=Math.min(r,w/2,h/2);x.moveTo(a+r,b);x.arcTo(a+w,b,a+w,b+h,r);x.arcTo(a+w,b+h,a,b+h,r);x.arcTo(a,b+h,a,b,r);x.arcTo(a,b,a+w,b,r);x.closePath()}
+// 下載用：把三層疊成一張圖（含尺寸標籤）
+function makeSprite(k,ui){
+ const Ly=makeLayers(k,ui,true);if(!Ly)return null;const W=Ly.shd.width,H=Ly.shd.height+Math.ceil(34*ui),sp=document.createElement('canvas');sp.width=W;sp.height=H;const x=sp.getContext('2d');
+ x.drawImage(Ly.shd,0,0);x.drawImage(Ly.fr,Ly.pad,Ly.pad);
+ const ax=Ly.pad+Ly.bcx*Ly.s,ay=Ly.pad+Ly.bcy*Ly.s,ty=ay+Ly.bh*Ly.s/2+Math.min(Ly.pad*.62,22*ui)+10*ui,fs=12.5*ui;
+ x.font=`500 ${fs}px "SF Pro Text","PingFang TC",system-ui,sans-serif`;x.textAlign='center';x.textBaseline='middle';const tw=x.measureText(Ly.label).width+22*ui,th=fs+13*ui;x.fillStyle='rgba(12,12,13,.62)';x.beginPath();rrect(x,ax-tw/2,ty-th/2,tw,th,th/2);x.fill();x.fillStyle='#f1ece2';x.fillText(Ly.label,ax,ty+.5*ui);
+ return{cv:sp,ax,ay}
+}
+function roomSprite(){if(!matte)return null;const key=[matte.id,roomIdx,rc.k,rc.dpr,$('shadow').value,lightX,ROOMS[roomIdx].wall?1:0].join();if(rc.spr&&rc.sprKey===key)return rc.spr;rc.spr=makeLayers(rc.k,rc.dpr,false);rc.sprKey=key;return rc.spr}
+const roomSpr=document.createElement('canvas');roomSpr.id='roomSpr';const roomShd=document.createElement('canvas');roomShd.id='roomShd';const roomLabel=document.createElement('div');roomLabel.className='roomlabel';stage.append(roomShd,roomSpr,roomLabel);let roomPlaceRaf=0;
+function placeSprite(){const Ly=rc.spr;if(!Ly||!rc.k)return;const dpr=rc.dpr;
+ if(rc.sprShown!==Ly){roomSpr.width=Ly.fr.width;roomSpr.height=Ly.fr.height;{const up=Math.max(1,Ly.s);roomSpr.style.width=Ly.fr.width*up/dpr+'px';roomSpr.style.height=Ly.fr.height*up/dpr+'px'}roomSpr.getContext('2d').drawImage(Ly.fr,0,0);
+  roomShd.width=Ly.shd.width;roomShd.height=Ly.shd.height;roomShd.style.width=(Ly.W*Ly.s+2*Ly.pad)/dpr+'px';roomShd.style.height=(Ly.H*Ly.s+2*Ly.pad)/dpr+'px';roomShd.getContext('2d').drawImage(Ly.shd,0,0);roomLabel.textContent=Ly.label;rc.sprShown=Ly}
+ const cx=roomPos.x*rc.k+rc.ox,cy=roomPos.y*rc.k+rc.oy,fx=cx-Ly.bcx*Ly.s,fy=cy-Ly.bcy*Ly.s;
+ roomSpr.style.transform=`translate3d(${Math.round(fx)/dpr}px,${Math.round(fy)/dpr}px,0)`;roomShd.style.transform=`translate3d(${Math.round(fx-Ly.pad)/dpr}px,${Math.round(fy-Ly.pad)/dpr}px,0)`;
+ roomLabel.style.transform=`translate3d(${cx/dpr}px,${(cy+Ly.bh*Ly.s/2)/dpr+12}px,0) translateX(-50%)`;bakeNow()}
+// 框與陰影一律直接畫進房間畫布（整數像素、1:1），不經過網頁圖層合成；拖動時只重畫「舊位置＋新位置」那一小塊
+let baked=false,bakeT=0,bakeR=null;
+// Composite the foreground only into the frame/shadow layer. The untouched room
+// must remain byte-identical outside that layer; repainting the entire matte
+// over the source photo mixes its antialiased edges twice and creates halos.
+function occludeRoomLayer(cv,k,ox,oy){const R=ROOMS[roomIdx];if(!R.fg||!R.fgImg?.naturalWidth)return cv;const x=cv.getContext('2d');x.save();x.globalCompositeOperation='source-atop';x.imageSmoothingQuality='high';x.drawImage(R.fgImg,ox+R.fg.x*k,oy+R.fg.y*k,R.fgImg.naturalWidth*k,R.fgImg.naturalHeight*k);x.restore();return cv}
+let occlusionLayer=null;
+function bakeNow(){const Ly=rc.spr;if(mode!=='room'||!Ly||!rc.k||rc.sprShown!==Ly||!rc.bg||rc.bgDirty){baked=false;bakeR=null;roomSpr.style.visibility='';roomShd.style.visibility='';return}
+ const cx=roomPos.x*rc.k+rc.ox,cy=roomPos.y*rc.k+rc.oy,fx=Math.round(cx-Ly.bcx*Ly.s),fy=Math.round(cy-Ly.bcy*Ly.s),up=Math.max(1,Ly.s),x=roomCanvas.getContext('2d');
+ const sx=Math.round(fx-Ly.pad),sy=Math.round(fy-Ly.pad),sw=Math.round(Ly.W*Ly.s+2*Ly.pad),sh=Math.round(Ly.H*Ly.s+2*Ly.pad),fw=Math.round(Ly.fr.width*up),fh=Math.round(Ly.fr.height*up);
+ let a=Math.min(sx,fx),b=Math.min(sy,fy),c=Math.max(sx+sw,fx+fw),d=Math.max(sy+sh,fy+fh);
+ const key=rc.bg.width+'x'+rc.bg.height+'|'+rc.cw+'x'+rc.ch;
+ if(baked&&bakeR&&bakeR.key===key){a=Math.min(a,bakeR.a);b=Math.min(b,bakeR.b);c=Math.max(c,bakeR.c);d=Math.max(d,bakeR.d)}else{a=0;b=0;c=rc.cw;d=rc.ch}
+ a=Math.max(0,a);b=Math.max(0,b);c=Math.min(rc.cw,c);d=Math.min(rc.ch,d);
+ if(c>a&&d>b){x.clearRect(a,b,c-a,d-b);x.drawImage(rc.bg,a,b,c-a,d-b,a,b,c-a,d-b)}
+ if(!occlusionLayer)occlusionLayer=document.createElement('canvas');
+ occlusionLayer.width=sw;occlusionLayer.height=sh;const oc=occlusionLayer.getContext('2d');
+ oc.drawImage(Ly.shd,0,0,sw,sh);oc.drawImage(Ly.fr,fx-sx,fy-sy,fw,fh);
+ occludeRoomLayer(occlusionLayer,rc.k,rc.ox-sx,rc.oy-sy);x.drawImage(occlusionLayer,sx,sy);
+ bakeR={a:Math.min(sx,fx),b:Math.min(sy,fy),c:Math.max(sx+sw,fx+fw),d:Math.max(sy+sh,fy+fh),key};
+ roomSpr.style.visibility='hidden';roomShd.style.visibility='hidden';baked=true}
+function placeRoom(){if(!roomPlaceRaf)roomPlaceRaf=requestAnimationFrame(()=>{roomPlaceRaf=0;placeSprite()})}
+// 畫面停下來之後（放大、換房間、改尺寸、視窗變動），讓框的圖解析度剛好等於畫面上的大小（被放大超過 8% 或縮小超過 15% 就重擷取一次），不再用縮放來湊，邊緣才銳利
+let settleT=0;function armSettle(){clearTimeout(settleT);settleT=setTimeout(settleMatte,220)}
+function settleMatte(){settleT=0;if(mode!=='room'||!matte||!rc.k||slidingMat)return;const R=ROOMS[roomIdx],s=R.ppc*rc.k/matte.pcm;const asp=matte.W/matte.H,hmax=Math.floor(Math.min(2400,Math.sqrt(6.5e6/asp),4096/asp)),hn=Math.max(720,Math.min(hmax,Math.round(matte.H*s*2)));if(Math.abs(hn-matte.H)<matte.H*.08)return;try{captureMatte2(hn)}catch(e){capLog.push('settle失敗:'+String(e&&e.message||e).slice(0,80));console.warn('settle capture failed',e);return}rc.sprKey='';drawRoom()}
+function drawRoomNow(){roomRaf=0;$('roomFg').style.display='none';if(!roomLayout())return;if(rc.bgDirty){const ctx=roomCanvas.getContext('2d');ctx.clearRect(0,0,rc.cw,rc.ch);ctx.drawImage(rc.bg,0,0);rc.bgDirty=false;{const fc=$('roomFg'),R=ROOMS[roomIdx];if(fc.width!==rc.cw||fc.height!==rc.ch){fc.width=rc.cw;fc.height=rc.ch}fc.style.width=roomCanvas.style.width;fc.style.height=roomCanvas.style.height;const fx=fc.getContext('2d');fx.clearRect(0,0,rc.cw,rc.ch);if(R.fg&&R.fgImg&&R.fgImg.naturalWidth){fx.imageSmoothingQuality='high';fx.drawImage(R.fgImg,rc.ox+R.fg.x*rc.k,rc.oy+R.fg.y*rc.k,R.fgImg.naturalWidth*rc.k,R.fgImg.naturalHeight*rc.k)}}}roomSprite();placeSprite();armSettle()}
+function drawRoom(){if(!roomRaf)roomRaf=requestAnimationFrame(drawRoomNow)}
+let roomHiT=0,roomFastT=0,slidingMat=false;function scheduleRoom(mode2){if(mode2==='fast'){if(!roomFastT)roomFastT=setTimeout(()=>{roomFastT=0;captureMatte(.6);drawRoom()},90);clearTimeout(roomHiT);roomHiT=setTimeout(()=>{captureMatte(1.5);drawRoom()},320);return}clearTimeout(roomT);roomT=setTimeout(()=>{captureMatte(1.5);drawRoom()},mode2===true?0:140)}
+let matBuildTimer=0,matRebuild=false;
+function queueMatBuild(){/* 立體展牆：拉的途中約每 50 毫秒就跟著重建一次（不重設計時，所以不會等到停手才突然跳一大步）；房間模式每次重建要重截圖，仍等停手 140 毫秒 */if(mode!=='room'){if(matBuildTimer)return;matBuildTimer=setTimeout(()=>{matBuildTimer=0;matRebuild=true;build()},50);return}clearTimeout(matBuildTimer);matBuildTimer=setTimeout(()=>{matBuildTimer=0;matRebuild=true;build()},140)}
+function finishMatBuild(){clearTimeout(matBuildTimer);matBuildTimer=0;slidingMat=false;syncMatUi();matRebuild=true;build()}
+const _build=build;let buildQ=0;function wallFit(){wall.scale.set(w+mL+mR+2*GG()+50,h+mT+mB+2*GG()+50,1)}build=function(){if(!buildQ)buildQ=requestAnimationFrame(()=>{buildQ=0;const keep=matRebuild?{x:rotX,y:rotY,z:zoom,t:target.clone()}:null;matRebuild=false;_build();if(keep){rotX=keep.x;rotY=keep.y;zoom=keep.z;target.copy(keep.t)}wallFit();if(renderQ){cancelAnimationFrame(renderQ);renderQ=0}renderNow();if(mode==='room'){captureMatte();if(roomRaf){cancelAnimationFrame(roomRaf);roomRaf=0}drawRoomNow()}})};
+// 手機（舞台窄）預設就放大到框附近，框才有足夠的像素；按「－」可縮回看整個房間
+// 手機也可以縮到看得到整張房間照（上下左右不夠的地方由程式延伸牆面／地板補上），不再硬放大到鋪滿而把照片切掉一大塊
+function minZoom(){return 1}
+function defZoom(){return minZoom()}
+function pickRoom(i){roomIdx=i;const R=ROOMS[i];roomPos={x:R.ax,y:R.ay};roomZoom=defZoom();lightX=R.lx;document.querySelectorAll('#lightSeg button').forEach(x=>x.setAttribute('aria-pressed',Number(x.dataset.lx)===R.lx));$('shadow').value=R.sv;applyShadow();$('roomName').textContent=R.name;$('roomNote').textContent=R.note||'比例僅供參考，實際以現場為準。';document.querySelectorAll('#roomGrid .rm').forEach((x,j)=>x.setAttribute('aria-pressed',j===i));scheduleRoom(true)}
+function setMode(mm){mode=mm;document.body.classList.toggle('room',mm==='room');document.querySelectorAll('#modeSeg button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.mode===mm));if(mm==='room')pickRoom(roomIdx);else{light.position.set(view==='corner'?0:lightX,60,90);render()}}
+{const g=$('roomGrid');(EMBED?[]:ROOMS).forEach((R,i)=>{const b=document.createElement('button');b.className='rm';b.setAttribute('aria-pressed','false');b.setAttribute('aria-label',R.name);const im=document.createElement('img');im.src=R.src;im.alt='';const sp=document.createElement('span');sp.textContent=R.name;b.append(im,sp);b.onclick=()=>pickRoom(i);g.appendChild(b)})}
+// ---- 用自己拍的照片當房間背景 ----
+{const css=document.createElement('style');css.textContent='#mineDlg{border:1px solid var(--line2);border-radius:14px;background:var(--panel);color:var(--text);padding:16px;width:94vw;max-width:720px;max-height:94vh;overflow:auto}#mineDlg::backdrop{background:rgba(0,0,0,.72)}#mineDlg p{margin:0 0 10px;line-height:1.6;font-size:14px}#mineTip{color:var(--brass2);font-weight:600}#mineCv{width:100%;height:auto;display:block;border-radius:10px;cursor:crosshair;touch-action:manipulation}#mineLen{width:100%;min-height:46px;margin:6px 0 8px;padding:8px 12px;font:inherit;font-size:16px;color:var(--text);background:var(--bg2);border:1px solid var(--line2);border-radius:10px}.mbtns{display:flex;gap:10px;margin-top:12px}.mbtns button{flex:1;min-height:46px;border-radius:12px;border:1px solid var(--line2);background:none;color:var(--text);font:inherit;cursor:pointer}.mbtns #mineOk{background:var(--text);color:#141416;font-weight:600}.mbtns button:disabled{opacity:.4;cursor:default}';document.head.appendChild(css)}
+{const camIn=$('mineCamIn'),pickIn=$('minePickIn'),msg=$('mineMsg');let mineVer=0;
+ const say=(t,ok)=>{msg.textContent=t;msg.style.color=ok?'var(--brass2)':'#e9a48f'};
+ $('mineCam').onclick=()=>camIn.click();$('minePick').onclick=()=>pickIn.click();
+ async function loadPhoto(f){if(!f)return;if(f.size>40*1024*1024){say('請選擇 40MB 以下的照片。');return}const url=URL.createObjectURL(f);try{const im=new Image();im.src=url;await im.decode();const k=Math.min(1,2400/Math.max(im.naturalWidth,im.naturalHeight)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.naturalWidth*k));c.height=Math.max(1,Math.round(im.naturalHeight*k));c.getContext('2d').drawImage(im,0,0,c.width,c.height);say('',true);calibrate(c)}catch(_){say('這張照片打不開，請換一張（建議 JPG 或 PNG）。')}finally{URL.revokeObjectURL(url)}}
+ camIn.onchange=()=>{loadPhoto(camIn.files[0]);camIn.value=''};pickIn.onchange=()=>{loadPhoto(pickIn.files[0]);pickIn.value=''};
+ function calibrate(base){let d=$('mineDlg');if(!d){d=document.createElement('dialog');d.id='mineDlg';d.innerHTML='<p id="mineTip"></p><canvas id="mineCv"></canvas><label for="mineLen" style="display:block;margin-top:12px;font-size:14px">這兩點之間實際有多長（公分）</label><input id="mineLen" type="number" inputmode="decimal" min="5" max="1000" step="any" placeholder="例如：門的高度、桌子的寬度">'+'<p class="micro">請用你量過或知道的長度，量得越準，畫在牆上的大小越接近實際。</p><div class="mbtns"><button id="mineReset" type="button">重新點</button><button id="mineCancel" type="button">取消</button><button id="mineOk" type="button" disabled>完成</button></div>';document.body.appendChild(d)}
+  const cv=$('mineCv'),x=cv.getContext('2d'),tip=$('mineTip'),len=$('mineLen'),ok=$('mineOk');cv.width=base.width;cv.height=base.height;let pts=[];len.value='';
+  const ready=()=>{const n=Number(len.value);ok.disabled=!(pts.length===2&&isFinite(n)&&n>=5&&n<=1000)};
+  const paint=()=>{x.drawImage(base,0,0);const lw=Math.max(3,base.width/260),r=lw*2.6;x.lineWidth=lw;x.strokeStyle='#f0cf94';x.fillStyle='#f0cf94';if(pts.length===2){x.beginPath();x.moveTo(pts[0][0],pts[0][1]);x.lineTo(pts[1][0],pts[1][1]);x.stroke()}for(const p of pts){x.beginPath();x.arc(p[0],p[1],r,0,7);x.fill();x.strokeStyle='#141416';x.stroke();x.strokeStyle='#f0cf94'}tip.textContent=pts.length===0?'第 1 步：在照片上點第一個位置':pts.length===1?'第 2 步：點第二個位置':'第 3 步：填下面這兩點之間的實際長度';ready()};
+  cv.onclick=e=>{const r=cv.getBoundingClientRect();if(pts.length>=2)pts=[];pts.push([(e.clientX-r.left)/r.width*cv.width,(e.clientY-r.top)/r.height*cv.height]);paint()};
+  len.oninput=ready;$('mineReset').onclick=()=>{pts=[];paint()};$('mineCancel').onclick=()=>d.close();
+  ok.onclick=()=>{const n=Number(len.value),dist=Math.hypot(pts[0][0]-pts[1][0],pts[0][1]-pts[1][1]);if(dist<base.width*.04){tip.textContent='兩個點靠太近了，請重新點，距離遠一點會比較準';pts=[];paint();return}d.close();makeRoom(base,dist/n)};
+  paint();if(!d.open)d.showModal()}
+ function makeRoom(c,ppc){c.toBlob(b=>{if(!b){say('照片處理失敗，請再試一次。');return}const url=URL.createObjectURL(b),img=new Image();img.onload=()=>{const R={id:'mine',name:'我的空間',src:url,img,ppc,ax:c.width/2,ay:c.height*.42,lx:0,sv:30,ver:++mineVer,note:'比例依你點的兩點和填的長度換算，點得越準越接近實際；僅供搭配參考。'};try{const t=document.createElement('canvas');t.width=64;t.height=43;const tx=t.getContext('2d',{willReadFrequently:true});tx.drawImage(img,0,0,64,43);const px=Math.round(R.ax/c.width*64),py=Math.round(R.ay/c.height*43),dd=tx.getImageData(Math.max(0,px-4),Math.max(0,py-4),9,9).data;let r=0,g=0,bl=0;const n=dd.length/4;for(let i=0;i<dd.length;i+=4){r+=dd[i];g+=dd[i+1];bl+=dd[i+2]}R.wall=[r/n,g/n,bl/n]}catch(_){R.wall=[200,195,185]}
+   let idx=ROOMS.findIndex(q=>q.id==='mine');if(idx<0){idx=ROOMS.push(R)-1}else{try{URL.revokeObjectURL(ROOMS[idx].src)}catch(_){}ROOMS[idx]=R}
+   const g=$('roomGrid');let tile=g.querySelector('.rm[data-mine]');if(!tile){tile=document.createElement('button');tile.className='rm';tile.dataset.mine='1';tile.setAttribute('aria-pressed','false');tile.onclick=()=>pickRoom(ROOMS.findIndex(q=>q.id==='mine'));g.appendChild(tile)}tile.setAttribute('aria-label','我的空間');tile.replaceChildren();const ti=document.createElement('img');ti.src=url;ti.alt='';const sp=document.createElement('span');sp.textContent='我的空間';tile.append(ti,sp);
+   rc.key='';rc.sprKey='';say('已換成你的空間。可以拖曳移動畫框、＋／－ 縮放。',true);if(mode!=='room')setMode('room');pickRoom(idx)};img.onerror=()=>say('照片處理失敗，請再試一次。');img.src=url},'image/jpeg',.92)}}
+document.querySelectorAll('#modeSeg button').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+document.querySelectorAll('#lightSeg button').forEach(b=>b.addEventListener('click',()=>{if(mode==='room')scheduleRoom()}));
+$('shadow').addEventListener('input',()=>{if(mode==='room')drawRoom()});
+$('glass').addEventListener('change',()=>{if(mode==='room')scheduleRoom()});
+roomCanvas.onpointerdown=e=>{e.stopPropagation();try{roomCanvas.setPointerCapture(e.pointerId)}catch(_){}roomDrag={x:e.clientX,y:e.clientY}};
+roomCanvas.onpointermove=e=>{if(!roomDrag)return;e.stopPropagation();const iw=ROOMS[roomIdx].img.naturalWidth||1536,ih=ROOMS[roomIdx].img.naturalHeight||1024;roomPos.x=Math.max(0,Math.min(iw,roomPos.x+(e.clientX-roomDrag.x)*rc.dpr/rc.k));roomPos.y=Math.max(Math.max(0,-rc.oy/rc.k+20),Math.min(Math.min(ih,(rc.ch-rc.oy)/rc.k-20),roomPos.y+(e.clientY-roomDrag.y)*rc.dpr/rc.k));roomDrag={x:e.clientX,y:e.clientY};placeRoom()};
+roomCanvas.onpointerup=roomCanvas.onpointercancel=e=>{e.stopPropagation();roomDrag=null};
+roomCanvas.onwheel=e=>{e.preventDefault();e.stopPropagation();roomZoom=T.MathUtils.clamp(roomZoom*Math.exp(-e.deltaY*.001),minZoom(),3);drawRoom()};
+$('zin').onclick=()=>{roomZoom=Math.min(3,roomZoom*1.25);drawRoom()};$('zout').onclick=()=>{roomZoom=Math.max(minZoom(),roomZoom/1.25);drawRoom()};
+$('roomFit').onclick=()=>{roomZoom=1;drawRoom()};
+new ResizeObserver(()=>{if(mode==='room')drawRoom()}).observe(stage);
+{const orig=$('save').onclick;$('save').onclick=()=>{if(mode!=='room'||!matte){orig();return}const R=ROOMS[roomIdx],c=document.createElement('canvas');c.width=R.img.naturalWidth;c.height=R.img.naturalHeight;const x=c.getContext('2d'),sp=makeSprite(1,1.5);x.drawImage(R.img,0,0);if(sp){const dx=Math.round(roomPos.x-sp.ax),dy=Math.round(roomPos.y-sp.ay);occludeRoomLayer(sp.cv,1,-dx,-dy);x.drawImage(sp.cv,dx,dy)}saveFile(`松風閣_${R.name}_${w.toFixed(1)}x${h.toFixed(1)}cm.jpg`,c.toDataURL('image/jpeg',.92))}}
+/* ---- 120Hz：每個影格最多重畫一次；陰影貼圖不動時不重算；牆面陰影只鋪在框附近 ---- */
+const renderSync=render;let renderQ=0,shSig='';
+renderer.shadowMap.autoUpdate=false;
+function shadowSig(){return light.position.x+','+light.position.y+','+light.position.z+'|'+group.children.map(o=>o.id).join('.')+'|'+cornerGroup.children.map(o=>o.id).join('.')+'|'+group.visible+cornerGroup.visible+'|'+w+','+h+','+mL+','+mR+','+mT+','+mB}
+function renderNow(){const s=shadowSig();if(s!==shSig){shSig=s;renderer.shadowMap.needsUpdate=true}renderSync()}
+render=function(){if(!renderQ)renderQ=requestAnimationFrame(()=>{renderQ=0;renderNow()})};
+// 投射燈（展覽頂燈）：只在立體模式出現，房間疊合擷取時自動關掉，不碰攝影機與旋轉
+const SPOT={on:true,hemi:scene.children.find(o=>o.isHemisphereLight),h0:0,l0:light.intensity,f0:fill.intensity};SPOT.h0=SPOT.hemi.intensity;
+SPOT.light=new T.SpotLight(0xffe3b8,5,0,.62,.95,0);SPOT.light.castShadow=true;SPOT.light.shadow.mapSize.set(2048,2048);SPOT.light.shadow.bias=-.0004;SPOT.light.shadow.radius=5;SPOT.light.shadow.camera.near=20;SPOT.light.shadow.camera.far=600;
+SPOT.target=new T.Object3D();scene.add(SPOT.light,SPOT.target);SPOT.light.target=SPOT.target;
+SPOT.cv=document.createElement('canvas');SPOT.cv.width=SPOT.cv.height=512;{const g=SPOT.cv.getContext('2d'),r=g.createRadialGradient(256,256,0,256,256,256);r.addColorStop(0,'rgba(255,214,150,.95)');r.addColorStop(.3,'rgba(255,205,140,.55)');r.addColorStop(.6,'rgba(255,195,125,.18)');r.addColorStop(1,'rgba(255,190,120,0)');g.fillStyle=r;g.fillRect(0,0,512,512)}
+SPOT.tex=new T.CanvasTexture(SPOT.cv);SPOT.tex.colorSpace=T.SRGBColorSpace;
+SPOT.top=new T.SpotLight(0xfff0d2,6,0,.5,1,0);SPOT.top.castShadow=true;SPOT.top.shadow.mapSize.set(2048,2048);SPOT.top.shadow.bias=-.0004;SPOT.top.shadow.radius=7;SPOT.top.shadow.camera.near=10;SPOT.top.shadow.camera.far=600;SPOT.topT=new T.Object3D();scene.add(SPOT.top,SPOT.topT);SPOT.top.target=SPOT.topT;
+SPOT.cv2=document.createElement('canvas');SPOT.cv2.width=256;SPOT.cv2.height=512;{const g=SPOT.cv2.getContext('2d');g.translate(128,96);g.scale(1,3.6);const r=g.createRadialGradient(0,0,0,0,0,128);r.addColorStop(0,'rgba(255,226,175,.9)');r.addColorStop(.3,'rgba(255,214,150,.5)');r.addColorStop(.65,'rgba(255,228,180,.07)');r.addColorStop(1,'rgba(255,228,180,0)');g.fillStyle=r;g.fillRect(-128,-30,256,170);g.setTransform(1,0,0,1,0,0);g.globalCompositeOperation='destination-in';{const m=g.createLinearGradient(0,0,0,150);m.addColorStop(0,'rgba(0,0,0,0)');m.addColorStop(1,'rgba(0,0,0,1)');g.fillStyle=m;g.fillRect(0,0,256,512)}}
+SPOT.tex2=new T.CanvasTexture(SPOT.cv2);SPOT.tex2.colorSpace=T.SRGBColorSpace;SPOT.wash=new T.Mesh(new T.PlaneGeometry(1,1),new T.MeshBasicMaterial({map:SPOT.tex2,transparent:true,depthWrite:false,toneMapped:false,blending:T.AdditiveBlending}));SPOT.wash.position.z=-.45;SPOT.wash.renderOrder=-1;scene.add(SPOT.wash);
+// 框與作品是「照片貼圖、本身就亮」的材質，真燈照不動；改成直接在表面材質的顏色上加一道由上往下淡出的暖光（沒有任何浮在前面的貼片，轉任何角度都長在表面上）
+SPOT.u={on:{value:0},top:{value:0},H:{value:1},W:{value:1},amt:{value:.12}};
+function spotPatch(mat){if(!mat||mat.userData.spotP||!mat.isMaterial)return;mat.userData.spotP=1;const prev=mat.onBeforeCompile;mat.onBeforeCompile=function(sh,rr){if(prev)prev.call(this,sh,rr);Object.assign(sh.uniforms,{uSOn:SPOT.u.on,uSTop:SPOT.u.top,uSH:SPOT.u.H,uSW:SPOT.u.W,uSAmt:SPOT.u.amt});sh.vertexShader='varying vec3 vSWP;\n'+sh.vertexShader.replace('#include <project_vertex>','#include <project_vertex>\nvSWP=(modelMatrix*vec4(transformed,1.0)).xyz;');sh.fragmentShader='varying vec3 vSWP;uniform float uSOn,uSTop,uSH,uSW,uSAmt;\n'+sh.fragmentShader.replace('#include <dithering_fragment>','#include <dithering_fragment>\nif(uSOn>.5){float d=max(0.,uSTop-vSWP.y)/(.5*uSH);float fy=exp(-pow(d,1.6));float fx=pow(max(0.,sin(3.14159*(vSWP.x/uSW+.5))),.55);gl_FragColor.rgb+=vec3(1.,.88,.69)*uSAmt*fy*fx;}');};const ck=mat.customProgramCacheKey;mat.customProgramCacheKey=function(){return (ck?ck.call(this):'')+'|spot'};mat.needsUpdate=true}
+function spotPatchAll(){for(const g of [group,cornerGroup])g.traverse(o=>{if(o.isMesh){if(Array.isArray(o.material))o.material.forEach(spotPatch);else spotPatch(o.material)}})}
+SPOT.pool=new T.Mesh(new T.PlaneGeometry(1,1),new T.MeshBasicMaterial({map:SPOT.tex,transparent:true,depthWrite:false,toneMapped:false,blending:T.AdditiveBlending}));SPOT.pool.position.z=-.5;SPOT.pool.renderOrder=-1;scene.add(SPOT.pool);
+function applySpot(force){const on=SPOT.on&&mode==='3d'&&!force;SPOT.light.visible=on;SPOT.pool.visible=on;SPOT.top.visible=false;SPOT.u.on.value=on?1:0;SPOT.wash.visible=on;SPOT.hemi.intensity=SPOT.h0*(on?.22:1);light.intensity=SPOT.l0*(on?.12:1);fill.intensity=SPOT.f0*(on?.2:1);wall.material.opacity=on?.30:.14;if(!on)return;const W=w+mL+mR+2*GG(),H=h+mT+mB+2*GG();{const d=Math.max(110,Math.max(W,H)*1.8);SPOT.light.position.set(0,d,d);SPOT.target.position.set(0,0,0);SPOT.light.angle=Math.min(1.0,Math.atan((Math.max(W,H)*.95)/(d*1.4142)))};const S=Math.max(W,H)*3.2;SPOT.pool.scale.set(S*1.25,S,1);SPOT.top.position.set(0,H/2+Math.max(60,H*.55),Math.max(70,W*.9));SPOT.topT.position.set(0,-H*.15,0);SPOT.top.angle=Math.min(.9,Math.atan((Math.max(W,H)*.75)/SPOT.top.position.distanceTo(SPOT.topT.position)));SPOT.wash.scale.set(W*1.6,H*1.5,1);SPOT.wash.position.set(0,H*.05,-.45);SPOT.u.top.value=H/2;SPOT.u.H.value=H;SPOT.u.W.value=W}
+{const rn=renderNow;renderNow=function(){spotPatchAll();applySpot();rn()};for(const nm of ['captureMatte2','captureMatteOld']){const f=eval(nm);eval(nm+'=function(){applySpot(true);try{return f.apply(this,arguments)}finally{applySpot()}}')}}
+{const b=document.createElement('button');b.id='spotBtn';b.setAttribute('aria-pressed','true');b.innerHTML='<svg viewBox="0 0 24 24"><path d="M9 3h6l2 6H7z"/><path d="M8 13l-3 8M12 13v8M16 13l3 8"/></svg>投射燈';$('detail').after(b);b.onclick=()=>{SPOT.on=!SPOT.on;b.setAttribute('aria-pressed',SPOT.on);render()}}
+SPOT.fade=function(){if(!SPOT.pool.visible)return;const cz=Math.abs(camera.position.clone().sub(target).normalize().z),t=Math.min(1,Math.max(0,(cz-.3)/.45)),f=.55+.45*t*t*(3-2*t);SPOT.pool.material.opacity=f*.5;SPOT.wash.material.opacity=f*.5;wall.material.opacity=.14+.16*f};{const rr=renderer.render.bind(renderer);renderer.render=function(sc,cam){if(sc===scene)SPOT.fade();return rr(sc,cam)}}
+wallFit();applySpot();
+$('mat').addEventListener('input',()=>{slidingMat=true});$('mat').addEventListener('change',finishMatBuild);$('mat').addEventListener('pointerup',finishMatBuild);$('mat').addEventListener('pointercancel',finishMatBuild);
+{const orig2=$('save').onclick;$('save').onclick=()=>{if(mode!=='room')renderNow();orig2()}}
+window.frameSample.render=renderNow;window.frameSample.buildSync=()=>{_build();wallFit()};window.frameSample.captureMatte=captureMatte;window.frameSample.makeSprite=()=>makeSprite(rc.k||1,rc.dpr||1);window.frameSample.setMode=setMode;
+
+// 除錯面板：網址加 ?dbg=1 才顯示（用來在真手機上查畫框解析度）
+if(/[?&]dbg=1/.test(location.search)){const bx=document.createElement('pre');bx.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;margin:0;padding:6px 8px;background:rgba(0,0,0,.85);color:#9f9;font:10px/1.35 monospace;white-space:pre-wrap;pointer-events:none;max-height:34vh;overflow:hidden';document.body.appendChild(bx);const im=document.createElement('div');im.style.cssText='position:fixed;left:6px;top:122px;z-index:99998;pointer-events:none';const cA=document.createElement('canvas'),cB=document.createElement('canvas');im.append(cA);document.body.appendChild(im);let dk='';
+ setInterval(()=>{try{const Ly=rc.spr;if(Ly&&matte){const k2=matte.id+'|'+rc.sprKey;if(k2!==dk){dk=k2;cA.width=Ly.fr.width;cA.height=Ly.fr.height;cA.getContext('2d').drawImage(Ly.fr,0,0);cA.style.width=Ly.fr.width/rc.dpr+'px';}}bx.textContent=['dpr='+devicePixelRatio+' inner='+innerWidth+'x'+innerHeight+' screen='+screen.width+' mode='+mode,'cap2='+(cap2?'ok':'無')+' matte='+(matte?matte.W+'x'+matte.H+' pcm='+matte.pcm.toFixed(2):'無'),'rc.dpr='+rc.dpr+' k='+(rc.k||0).toFixed(3)+' roomZoom='+roomZoom.toFixed(2),'sprite畫布='+roomSpr.width+'x'+roomSpr.height+' 顯示='+roomSpr.style.width+' x '+roomSpr.style.height,'roomCanvas='+roomCanvas.width+'x'+roomCanvas.height,'baked='+baked,'log='+capLog.join(' | ')].join('\n')}catch(e){bx.textContent='dbg err '+e}},700)}
+// 手機：在下面點牆面／房間／燈光／卡紙色／尺寸，結果在上方的畫面，所以點完自動捲回畫框（畫框已經大半看得到就不動）
+// Preview stays visible on mobile; choosing an option does not scroll the page.
+{const bt=$('backTop'),sw=document.querySelector('.stagewrap');let past=false;const upd=()=>{bt.hidden=!(past&&innerWidth<=960)};new IntersectionObserver(es=>{const e=es[es.length-1];past=e.boundingClientRect.top<0&&e.intersectionRatio<.5;upd()},{threshold:[0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1]}).observe(stage);addEventListener('resize',upd);bt.onclick=()=>sw.scrollIntoView({behavior:'smooth',block:'start'})}
+// 全部接好才算載入完成：按鈕與面板由灰變亮
+
+// Dimension confirmation is an explicit user action, never inferred from a photo.
+function updateDimensionState(){
+ $('sizeCheck').dataset.confirmed=String(dimensionsConfirmed);
+ $('sizeState').textContent=dimensionsConfirmed
+  ?`已確認作品尺寸：${+w.toFixed(2)} × ${+h.toFixed(2)} 公分（依你填寫）。房間比例仍為估算。`
+  :'尺寸尚未確認。照片無法判斷實際大小，請依實物填寫寬、高，再確認。';
+ $('confirmSize').disabled=dimensionsConfirmed;
+ $('confirmSize').textContent=dimensionsConfirmed?'尺寸已確認':'確認以上是作品實際尺寸';
+ $('dimensionBadge').textContent=NOF?(dimensionsConfirmed?'作品尺寸':'作品尺寸・待確認'):(dimensionsConfirmed?'含框總尺寸':'含框總尺寸・待確認');
+ $('summarySizeState').textContent=dimensionsConfirmed?'已確認填寫；房間比例為估算':'示範尺寸，尚未確認';
+ $('save').disabled=!dimensionsConfirmed;
+ $('saveHelp').hidden=dimensionsConfirmed;$('goToSize').hidden=dimensionsConfirmed;
+}
+const mobileSteps=[...document.querySelectorAll('.panel>.step')];
+const mobileButtons=[...document.querySelectorAll('.mobile-nav button')];
+function showMobileStep(i){
+ document.body.classList.remove('preview-expanded');$('previewToggle').textContent='放大預覽';$('previewToggle').setAttribute('aria-expanded','false');
+ document.querySelector('.panel').dataset.activeStep=String(i);
+ mobileSteps.forEach((el,j)=>el.classList.toggle('mobile-active',i===j));
+ mobileButtons.forEach((el,j)=>el.setAttribute('aria-pressed',String(i===j)));
+ document.querySelector('.panel').scrollTop=0;
+}
+$('previewToggle').onclick=()=>{const expanded=document.body.classList.toggle('preview-expanded');$('previewToggle').textContent=expanded?'繼續調整':'放大預覽';$('previewToggle').setAttribute('aria-expanded',String(expanded))};
+mobileButtons.forEach(b=>b.onclick=()=>showMobileStep(Number(b.dataset.step)));document.querySelectorAll('.nextbtn').forEach(b=>b.onclick=()=>{const i=Number(b.dataset.next);if(innerWidth<=960)showMobileStep(i);else{const t=$('edit-step-'+i);t.scrollIntoView({behavior:'smooth',block:'start'})}});
+$('goToSize').onclick=()=>{
+ if(innerWidth<=960)showMobileStep(0);
+ $('sizeCheck').scrollIntoView({block:'nearest'});$('confirmSize').focus({preventScroll:true});
+};
+$('confirmSize').onclick=()=>{
+ const valid=['width','height'].every(id=>$(id).checkValidity()&&$(id).value!==''&&Number($(id).value)>=5&&Number($(id).value)<=200);
+ if(!valid){$('width').reportValidity();$('height').reportValidity();return}
+ if(!commitDimensions(pendingDimension)){pendingDimension=null;dimensionsConfirmed=false;updateDimensionState();return}
+ pendingDimension=null;dimensionsConfirmed=true;upMsg('',true);updateDimensionState();
+};
+for(const id of ['width','height'])$(id).addEventListener('input',()=>{pendingDimension=id;dimensionsConfirmed=false;updateDimensionState()});
+$('sizeChips').addEventListener('click',e=>{if(e.target.closest('button')){pendingDimension=null;dimensionsConfirmed=false;updateDimensionState()}});
+// Also invalidate on change for assistive input methods that do not emit input.
+for(const id of ['width','height'])$(id).addEventListener('change',()=>{pendingDimension=null;dimensionsConfirmed=false;updateDimensionState()});
+updateDimensionState();
+
+// ---- 木板與作品厚度 ----
+{const r=$('artT'),v=$('artTV'),b=$('boardOn');
+ const paint=()=>r.style.setProperty('--p',(r.value/r.max*100)+'%'),txt=()=>{v.textContent=artT<.05?'薄紙（不計厚度）':artT.toFixed(1)+' 公分'},sum=()=>{$('sumFloat').textContent=$('floatOn').checked?'白板 0.45＋木條 2 公分':'不加';$('sumBoard').textContent=b.checked?'加 4 公厘木板':'不加';$('sumArtT').textContent=artT<.05?'薄紙（不計）':artT.toFixed(1)+' 公分'};
+ r.addEventListener('input',()=>{artT=Math.round(Number(r.value)*10)/10;paint();txt();sum();placeArtT();render();if(mode==='room')scheduleRoom('fast')});
+ $('floatOn').addEventListener('change',()=>{sum();placeArtT();render();if(mode==='room')scheduleRoom()});
+ b.addEventListener('change',()=>{sum();if(kabanOn())build();placeArtT();render();if(mode==='room')scheduleRoom()});paint();txt();sum()}
+// ---- 卡板（上A1919 才有）----
+{const sw=$('kabanOn'),chips=[...document.querySelectorAll('#kabanH button')];
+ window.kabanSync=()=>{const ok=!NOF&&FR&&FR.frontLip;$('kabanBox').hidden=!ok;$('kabanCtl').hidden=!(ok&&KB.on);$('sumKaban').textContent=ok&&KB.on?'原木 寬0.7×高'+KB.h+' 公分':'不加'};
+ const redo=()=>{kabanSync();build();if(mode==='room')scheduleRoom()};
+ sw.addEventListener('change',()=>{KB.on=sw.checked;redo()});
+ chips.forEach(b=>b.addEventListener('click',()=>{KB.h=Number(b.dataset.kh);chips.forEach(x=>x.setAttribute('aria-pressed',x===b));redo()}));
+ kabanSync()}
+// ---- 框拉大 ----
+{const r=$('grow'),v=$('growV'),lk=$('growLock'),ctl=$('growCtl'),paint=()=>r.style.setProperty('--p',(r.value/r.max*100)+'%');
+ window.growSet=v=>{G=v;r.value=v;syncGrowUi()};
+ window.syncGrowUi=()=>{ctl.hidden=NOF;const on=G>0&&!NOF;v.textContent=G>0?'各邊 '+G+' 公分':'不拉大';$('sumGrow').textContent=on?'各邊 '+G+' 公分'+(growLock?'（作品鎖住）':'（作品跟著變大）'):'不拉大';paint()};
+ r.addEventListener('input',()=>{const was=G;G=Number(r.value);if(was===0&&G>0&&!$('boardOn').checked&&!(FR&&FR.L)){$('boardOn').checked=true;$('boardOn').dispatchEvent(new Event('change',{bubbles:true}))}syncGrowUi();queueMatBuild()});
+ r.addEventListener('change',()=>finishMatBuild());
+ lk.addEventListener('change',()=>{growLock=lk.checked;syncGrowUi();queueMatBuild()});
+ syncGrowUi()}
+// ---- 壓克力控制 ----
+{const g=$('glass'),more=$('acrMore'),gi=$('glassI'),giv=$('glassIV'),cmp=$('acrCmp'),kinds=[...document.querySelectorAll('#acrKind button')],kv=$('acrKindV'),kn=$('acrKindNote'),sp=document.createElement('div');
+const KN={sheet:['框內壓克力片','從前往後是壓克力、作品、選配浮板、木板，外圍是框。壓克力貼在作品上，從正面只看得到反光，按畫面下方的「拆開看層次」就看得到它在哪。'],box:['壓克力罩','立體作品用：整個罩住的透明盒，轉動時看得到透明的厚度與發亮的邊。罩的大小與厚度是示意，實際以訂製為準。']};
+const exb=document.createElement('button');exb.id='exBtn';exb.type='button';exb.setAttribute('aria-pressed','false');exb.innerHTML='<svg viewBox="0 0 24 24"><path d="M4 8l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4"/><path d="M4 16l8 4 8-4"/></svg>拆開看層次';stage.appendChild(exb);for(const ev of['pointerdown','pointermove','pointerup'])exb.addEventListener(ev,e=>e.stopPropagation());
+ACR.labels=[['frame','外框'],['acr','壓克力'],['mat','卡紙'],['art','作品'],['float','浮板'],['board','木板']].map(([k,tx])=>{const el=document.createElement('div');el.className='acrlab';el.textContent=tx;el.style.display='none';stage.appendChild(el);return{k,tx,el}});
+if(EMBED){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('acrlines');svg.setAttribute('aria-hidden','true');stage.appendChild(svg);ACR.callouts=svg}
+let exSaved=null,exRaf=0,exLast=0;const exLoop=now=>{exRaf=0;const dt=exLast?Math.min(.25,(now-exLast)/1000):1/60;exLast=now;const d=ACR.exT-ACR.ex;ACR.ex=Math.abs(d)<.004?ACR.exT:ACR.ex+d*(1-Math.exp(-13.4*dt));render();if(ACR.ex!==ACR.exT)exRaf=requestAnimationFrame(exLoop);else exLast=0};
+function setEx(v,now){if(v&&ACR.cmp)setCmp(false);if(v&&!exSaved){exSaved={x:rotX,y:rotY,z:zoom};rotX=.16;rotY=-.85;zoom=EMBED?embZoom():.78}else if(!v&&exSaved){rotX=exSaved.x;rotY=exSaved.y;zoom=exSaved.z;exSaved=null}ACR.exT=v?1:0;now=now||matchMedia('(prefers-reduced-motion:reduce)').matches;if(now)ACR.ex=ACR.exT;exb.setAttribute('aria-pressed',v);if(now)render();else if(!exRaf)exRaf=requestAnimationFrame(exLoop)}
+exb.addEventListener('click',()=>setEx(ACR.exT<.5));
+// 拆開看的時候改框、卡紙、尺寸會重算視角：重算完再回到拆開視角，不然層次會疊回去看不出來
+{const av=applyView;applyView=function(){av.apply(this,arguments);if(ACR.exT>.5&&exSaved){exSaved={x:rotX,y:rotY,z:zoom};rotX=.16;rotY=-.85;zoom=EMBED?embZoom():.78;render()}}}
+sp.id='acrSplit';sp.innerHTML='<span class="l">不加壓克力</span><span class="r">加壓克力</span><i></i>';sp.setAttribute('role','slider');sp.setAttribute('aria-label','對照分隔線');sp.tabIndex=0;stage.appendChild(sp);
+const paint=()=>gi.style.setProperty('--p',gi.value+'%'),name=()=>{const v=Number(gi.value);giv.textContent=v<34?'淡':v<67?'中':'強'};
+const place=()=>{sp.style.left=(ACR.split*100)+'%';sp.setAttribute('aria-valuenow',Math.round(ACR.split*100))};
+const glz=()=>{const sg=$('sumGlaze');if(sg)sg.textContent=!g.checked?'不加':ACR.kind==='box'?'壓克力罩（大小為示意）':'框內壓克力片'};
+const setMode=()=>{ACR.mode=g.checked?ACR.kind:'off';more.hidden=!g.checked;ACR.u.uI.value=gi.value/100;if(!g.checked&&ACR.cmp)setCmp(false);glz()};
+function setCmp(v){ACR.cmp=v;cmp.setAttribute('aria-pressed',v);sp.classList.toggle('on',v&&mode!=='room');place();render()}
+g.addEventListener('change',()=>{setMode();render()});
+kinds.forEach(b=>b.addEventListener('click',()=>{ACR.kind=b.dataset.k;kinds.forEach(x=>x.setAttribute('aria-pressed',x===b));kv.textContent=KN[ACR.kind][0];kn.textContent=KN[ACR.kind][1];setMode();render();if(mode==='room')scheduleRoom()}));
+gi.addEventListener('input',()=>{paint();name();glz();ACR.u.uI.value=gi.value/100;render();if(mode==='room')scheduleRoom('fast')});
+cmp.addEventListener('click',()=>{if(!g.checked)return;if(ACR.exT)setEx(false);setCmp(!ACR.cmp)});
+let dragging=false;const mv=e=>{const r=stage.getBoundingClientRect();ACR.split=Math.min(.97,Math.max(.03,(e.clientX-r.left)/r.width));place();render()};
+sp.addEventListener('pointerdown',e=>{e.stopPropagation();dragging=true;try{sp.setPointerCapture(e.pointerId)}catch(_){}mv(e)});
+sp.addEventListener('pointermove',e=>{if(dragging){e.stopPropagation();mv(e)}});
+sp.addEventListener('pointerup',e=>{dragging=false;e.stopPropagation()});sp.addEventListener('pointercancel',()=>{dragging=false});
+sp.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ACR.split=Math.min(.97,Math.max(.03,ACR.split+(e.key==='ArrowLeft'?-.03:.03)));place();render();e.preventDefault()}});
+const mo=new MutationObserver(()=>{sp.classList.toggle('on',ACR.cmp&&mode!=='room');if(mode==='room'&&(ACR.exT||ACR.ex))setEx(false,true)});mo.observe(document.body,{attributes:true,attributeFilter:['class']});
+paint();name();place();setMode();render();
+const sv0=$('save').onclick;$('save').onclick=function(){const was=ACR.cmp;ACR.cmp=false;try{return sv0.apply(this,arguments)}finally{ACR.cmp=was;if(was)render()}};
+if(window.frameSample)window.frameSample.acr={ACR,setView:(x,y)=>{rotX=x;rotY=y;render()}};
+/* 嵌入模式（集錦首頁用）：套 1.5 吋咖框＋壓克力片＋浮板（白板與背面兩條木條是同一層）＋木板，自動拆開；父頁用訊息控制拆開／合起來 */
+if(EMBED){
+ (async()=>{
+  try{
+   await applyFrame('brown');
+   for(const id of ['floatOn','boardOn','glass']){const e=$(id);e.checked=true;e.dispatchEvent(new Event('change',{bubbles:true}))}
+   try{SPOT.on=false;applySpot(true)}catch(e){console.warn('spot off failed',e)}
+   setEx(true,true);zoom=embZoom();await new Promise(requestAnimationFrame);renderNow();
+   parent.postMessage({type:'layers3d-ready'},location.origin);
+  }catch(e){console.warn('embed boot failed',e);parent.postMessage({type:'layers3d-error'},location.origin)}
+ })();
+ addEventListener('message',e=>{if(e.source!==parent||e.origin!==location.origin)return;const d=e.data||{};if(d.type==='layers3d-explode'){setEx(!!d.on);if(d.on){zoom=embZoom();render()}}});
+}
+
+}
+
+document.body.classList.add('live');
+</script>
+
+<!-- 2026-11-05 壓克力疊層間距修正（作品後退 .4、木板 RZ-1） -->
+<!-- 2026-11-05 15:xx 木板開關與作品厚度、卡紙四邊、拆開看層次獨立、拍照／選照片當房間背景 -->

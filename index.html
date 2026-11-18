@@ -1,72 +1,1075 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>裱框集錦｜松風閣</title>
-<meta name="description" content="松風閣裱框作品集錦：書法、膠彩、油畫、拼圖、絲巾、球衣、唐卡、屏風等各式裱框範例。">
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#faf7f2">
+<title>裱框集錦｜松風閣畫廊</title>
+<link rel="stylesheet" href="展覽四步.css?v=20261117-mobile2">
+<script src="展覽四步.js?v=20261117" defer></script>
+
 <style>
-:root{--bg:#f6f2ea;--ink:#2b2622;--mute:#7a6f63;--line:#ded6c8;--accent:#8a3b2a;--card:#fffdf9}
-@media (prefers-color-scheme:dark){:root{--bg:#1c1a17;--ink:#eee7da;--mute:#a89d8d;--line:#3a352e;--accent:#d98b6f;--card:#26231f}}
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
-header{padding:28px 16px 8px;text-align:center}
-header h1{margin:0;font-size:28px;letter-spacing:.2em;font-weight:600}
-header p{margin:6px 0 0;color:var(--mute);font-size:15px}
-nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 12px}
-.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.row2{margin-top:8px}.row2 .chip{padding:5px 12px;font-size:14px;min-height:34px;background:transparent}
-.row2 .chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:15px;cursor:pointer;min-height:40px}
-.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
-.chip small{opacity:.7;margin-left:4px}
-main{max-width:1280px;margin:0 auto;padding:14px 12px 60px}
-.count{color:var(--mute);font-size:14px;margin:4px 4px 12px}
-.grid{columns:2;column-gap:10px}
-@media(min-width:700px){.grid{columns:3}}@media(min-width:1000px){.grid{columns:4}}
-.card{break-inside:avoid;margin:0 0 10px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;display:block;width:100%;padding:0;text-align:left;color:inherit;font:inherit}
-.card img{display:block;width:100%;height:auto;background:var(--line)}
-.card span{display:block;padding:8px 10px 10px;font-size:14px;line-height:1.45}
-.card:focus-visible,.chip:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-#lb{position:fixed;inset:0;background:rgba(15,12,10,.94);display:none;flex-direction:column;z-index:20;color:#fff}
-#lb.on{display:flex}
-#lb .top{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;gap:10px}
-#lb .top b{font-weight:500;font-size:16px;line-height:1.4}
-#lb button{background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:999px;min-width:44px;min-height:44px;font-size:20px;cursor:pointer}
-#lb .stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;position:relative;padding:0 8px}
-#lb img{max-width:100%;max-height:100%;object-fit:contain}
-#lb .nav{position:absolute;top:50%;transform:translateY(-50%)}
-#lb .prev{left:8px}#lb .next{right:8px}
-#lb .info{padding:10px 16px 18px;font-size:14px;color:#d9d0c2;text-align:center}
-#lb .info a{color:#f0b9a3}
-footer{text-align:center;color:var(--mute);font-size:13px;padding:0 16px 40px}
+@font-face{font-family:'Noto Serif TC';src:url('NotoSerifTC-展覽補字.woff2?v=20261117') format('woff2');font-weight:700 900;font-display:swap}
+@font-face{font-family:Inter;src:url('InterVariable.woff2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Noto Sans TC';src:url('NotoSansTC-展覽補字.woff2?v=20261117all') format('woff2');font-weight:300 700;font-display:swap}
+/* 畫廊白牆：作品照片是主角，頁面本身安靜；一個松綠色 */
+:root{color-scheme:light;--wall:#faf7f2;--paper:#fff;--mat:#ece8df;--ink:#1c1a17;--mute:#5d5a52;--line:#ddd8cd;--pine:#1c1a17;--pine-d:#000;--pine-t:#e9e4d9;--warn:#6f5210;--warnbg:#f6eed7}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-padding-top:90px}
+body{margin:0;background:var(--wall);color:var(--ink);font:400 17px/1.75 Inter,'Noto Sans TC',sans-serif;overflow-x:hidden}
+button,summary,input{font:inherit}
+a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+a:focus-visible,button:focus-visible,summary:focus-visible,li:focus-visible{outline:3px solid var(--pine);outline-offset:3px}
+.step-title:focus,[tabindex="-1"]:focus,[tabindex="-1"]:focus-visible,.hero2-stage:focus,.hero2-stage:focus-visible{outline:none!important}
+/* 程式把焦點放到頁面標題（給螢幕閱讀器用）時，不顯示瀏覽器預設的藍色外框；按鈕和連結的鍵盤焦點框仍保留 */
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--pine);width:0;z-index:50}
+header{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 5vw;background:#faf7f2ee;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header a{color:inherit;text-decoration:none}
+header p{margin:0;font-size:15px;color:var(--mute)}
+header .brand-logo{display:block;height:48px;width:auto;max-width:52vw}
+header .nav-link{color:var(--pine);font-weight:600;font-size:15px;min-height:44px;display:inline-flex;align-items:center}
+header>a:first-child{display:inline-flex;align-items:center;min-height:44px}
+main{max-width:1120px;margin:0 auto;padding:6px 5vw 130px}
+/* 步驟列 */
+.steps{display:flex;margin:18px 0 6px;border-bottom:1px solid var(--line)}
+.step{flex:1;display:flex;align-items:center;gap:9px;padding:12px 4px 11px;color:var(--mute);text-decoration:none;font-size:16px;border-bottom:3px solid transparent;margin-bottom:-1px}
+.step>span:first-child{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:600;border:1px solid currentColor}
+a.step:hover{color:var(--pine)}
+.step.done{color:var(--ink)}.step.done>span:first-child{background:var(--pine-t);border-color:var(--pine-t);color:var(--pine)}
+.step.now{color:var(--ink);font-weight:700;border-bottom-color:var(--pine)}.step.now>span:first-child{background:var(--pine);border-color:var(--pine);color:#fff}
+.back{display:inline-flex;align-items:center;min-height:44px;color:var(--pine);text-decoration:none;font-weight:600;font-size:16px;margin:6px 0 0}
+.back:hover{text-decoration:underline}
+.step-title{margin:18px 0 6px;font-size:clamp(28px,4.4vw,40px);line-height:1.25;font-weight:700;letter-spacing:.01em}
+.sub{margin:0 0 20px;max-width:34em;color:var(--mute);font-size:18px}
+/* 第 1 步 */
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.pill{display:inline-flex;align-items:center;min-height:46px;padding:8px 18px;border:1px solid #bab4a6;border-radius:999px;background:var(--paper);color:var(--ink);text-decoration:none;font-size:17px}
+a.pill:hover{border-color:var(--pine);color:var(--pine)}
+.pill.on{background:var(--pine);border-color:var(--pine);color:#fff;font-weight:600}
+.pill small{margin-left:8px;font-size:14px;opacity:.8}
+.hint{margin:6px 0 0;color:var(--mute);font-size:16px}
+.works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;margin-top:22px}
+.wcard{display:block;color:inherit;text-decoration:none}
+.wcard .image-wrap{background:var(--mat);border-radius:4px;overflow:hidden}
+.wcard img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;padding:22px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.wcard:hover img{transform:scale(1.035)}
+.card-info{padding:14px 2px 0}
+.card-info b{display:block;font-size:22px;line-height:1.4}
+.card-info span{display:block;color:var(--mute);font-size:16px}
+.card-info .card-action{margin-top:6px;color:var(--pine);font-weight:700}
+.wcard:hover .card-action{text-decoration:underline}
+/* 第 2 步 */
+.method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:6px}
+.method-card{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:6px;color:inherit;text-decoration:none;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.method-card:hover{border-color:var(--pine);box-shadow:0 10px 26px #0000001a}
+.method-card strong{padding:18px 20px 0;font-size:21px;line-height:1.4}
+.method-card .desc{padding:4px 20px 0;color:var(--mute);font-size:16px}
+.method-card .desc.flow{padding-top:8px;color:var(--pine);font-size:15px}
+.method-card .method-count{margin-top:auto;padding:12px 20px 20px;color:var(--pine);font-weight:700;font-size:16px}
+.mini{height:330px;display:flex;justify-content:center;align-items:center;perspective:1100px;overflow:hidden;background:var(--mat)}
+.mini .stack{transform:rotateX(58deg) rotateZ(-34deg) scale(.4) translateY(200px);top:78px}
+/* 分層圖 */
+.stack{position:relative;width:190px;height:274px;transform-style:preserve-3d;--gap:3px}
+.stack.open{--gap:62px}
+.ly{position:absolute;inset:0;transform:translateZ(calc(var(--i)*var(--gap)));transition:transform .6s cubic-bezier(.2,.8,.2,1),outline-color .2s;outline:2px solid transparent;box-shadow:0 12px 22px #00000026}
+.ly.hl{outline-color:var(--pine)}
+.ly.frame{--t:20px;box-shadow:none;filter:drop-shadow(0 8px 8px #00000040)}
+.ly.frame.inner{inset:20px;--t:11px}.ly.frame.thin{--t:11px}
+.ly.frame .fb{position:absolute;background:url(images/tex_wood_h.jpg) center/cover}
+.ly.frame .fb.l,.ly.frame .fb.r{background-image:url(images/tex_wood_v.jpg)}
+.ly.frame.thin .fb{filter:brightness(1.55) saturate(.7)}
+.ly.frame.alu .fb{background:linear-gradient(135deg,#f2f2f0,#b9bbbd 45%,#e7e8e9 70%,#a9abad)}
+.ly.frame .fb.t{left:0;top:0;width:100%;height:var(--t);clip-path:polygon(0 0,100% 0,calc(100% - var(--t)) 100%,var(--t) 100%)}
+.ly.frame .fb.b{left:0;bottom:0;width:100%;height:var(--t);clip-path:polygon(var(--t) 0,calc(100% - var(--t)) 0,100% 100%,0 100%)}
+.ly.frame .fb.l{left:0;top:0;height:100%;width:var(--t);clip-path:polygon(0 0,100% var(--t),100% calc(100% - var(--t)),0 100%)}
+.ly.frame .fb.r{right:0;top:0;height:100%;width:var(--t);clip-path:polygon(0 var(--t),100% 0,100% 100%,0 calc(100% - var(--t)))}
+.ly.glass{background:linear-gradient(115deg,#ffffff66 0 28%,#ffffff12 28% 58%,#ffffff44 58% 68%,#ffffff0a 68%),#a9c6d733;border:1px solid #ffffffd9;box-shadow:0 0 0 1px #6f93ab66,0 14px 24px #0000001f}
+.ly.art{inset:16px;overflow:hidden;background:#c9bfa8}
+.ly.art img{position:absolute;left:50%;top:50%;width:150%;transform:translate(-50%,-50%)}
+.ly.fboard{inset:12px;background:#fbfaf6;box-shadow:0 10px 18px #0000002e;transform-style:preserve-3d}
+/* 浮板的白板和背面兩條木條是一體的：木條貼在白板背面，跟著白板一起動 */
+.ly.fboard .st{position:absolute;top:0;bottom:0;width:24px;background:url(images/tex_edge_v.jpg) center/cover;filter:saturate(.75) brightness(.92);box-shadow:0 8px 12px #00000040;transform:translateZ(calc(var(--gap,3px)*-.45))}
+.ly.fboard .st.l{left:22px}.ly.fboard .st.r{right:22px}
+.ly.riser{box-shadow:none}
+.ly.riser .st{position:absolute;top:12px;bottom:12px;width:24px;background:url(images/tex_edge_v.jpg) center/cover;filter:saturate(.75) brightness(.92);box-shadow:0 8px 12px #00000040}
+.ly.riser .st.l{left:34px}.ly.riser .st.r{right:34px}
+.ly.board{inset:6px;background:linear-gradient(135deg,#dac793,#cdb783);border:1px solid #b19d6b}
+.mpanel{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:20px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px;overflow:hidden;margin-top:10px}
+.mpanel h3{margin:0 0 4px;font-size:22px}
+.mpanel p{margin:4px 0 14px;color:var(--mute)}
+.btn{min-height:46px;padding:8px 24px;border:1px solid var(--pine);border-radius:999px;background:var(--pine);color:#fff;font-size:16px;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--pine-d)}
+.layerlist{list-style:none;margin:16px 0 0;padding:0}
+.layerlist li{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:4px;font-size:16px;cursor:pointer}
+.layerlist li:hover,.layerlist li.on{background:var(--pine-t)}
+.layerlist i{flex:none;width:14px;height:14px;border-radius:3px;border:1px solid #00000040}
+.warn{margin-top:16px;padding:8px 12px;border-radius:4px;background:var(--warnbg);color:var(--warn);font-size:14px;line-height:1.6}
+.scene{position:relative;perspective:1500px;height:520px;display:flex;justify-content:center;align-items:center}
+.mpanel .stack{transform:rotateX(60deg) rotateZ(-34deg) translate(-60px,175px) scale(.86)}
+.mpanel .stack.open{--gap:62px}
+/* 第 3、4 步 */
+.switch{margin:6px 0 4px}
+.view-heading{margin:44px 0 4px;font-size:24px;line-height:1.4}
+.view-heading small{margin-left:10px;font-size:15px;font-weight:400;color:var(--mute)}
+.view-help{margin:4px 0 16px;color:var(--mute);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.ph{padding:0;background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden;cursor:pointer;text-align:left;color:inherit;transition:border-color .2s,box-shadow .2s}
+.ph:hover{border-color:var(--pine);box-shadow:0 10px 26px #0000001a}
+.ph img{display:block;width:100%;height:440px;object-fit:contain;padding:14px;background:var(--mat)}
+.ph>span{display:block;padding:12px 16px 16px;font-size:16px;line-height:1.6}
+.ph em{display:inline-block;margin:4px 6px 0 0;padding:1px 9px;border-radius:4px;background:var(--pine-t);color:var(--pine);font-style:normal;font-size:14px}
+.ph em.none{background:var(--warnbg);color:var(--warn)}
+.photo-hint{display:block;margin-top:8px;color:var(--pine);font-size:14px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 0}
+.chip{min-height:48px;padding:10px 18px;border:1px solid #bab4a6;border-radius:999px;background:var(--paper);color:var(--ink);font-size:16px;cursor:pointer}
+.chip:hover{border-color:var(--pine)}
+.chip[aria-pressed=true]{background:var(--pine);border-color:var(--pine);color:#fff}
+.compare-status{margin:12px 0;color:var(--pine);font-size:16px;font-weight:600}
+.compare-scroll{overflow-x:auto;padding-bottom:12px}
+.cmp{display:grid;gap:18px}
+.cmp.n2{grid-template-columns:repeat(2,minmax(0,1fr))}.cmp.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cmp .col{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:12px;text-align:center}
+.cmp .col button{display:block;width:100%;padding:0;border:0;background:transparent;color:inherit;cursor:pointer}
+.cmp img{display:block;width:100%;height:440px;object-fit:contain;background:var(--mat)}
+.cmp b{display:block;margin:12px 0 2px;font-size:20px}
+.cmp small{color:var(--mute);font-size:15px}
+.notice{margin-top:32px;color:var(--mute)}
+.notice summary{cursor:pointer;min-height:44px;display:flex;align-items:center}
+.notice .grid{margin-top:12px}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:12px;justify-content:space-between;align-items:center;padding:12px 5vw;background:#faf7f2f2;backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.bar .back{margin:0}
+.next{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 28px;border-radius:4px;background:var(--pine);color:#fff;text-decoration:none;font-size:18px;font-weight:700}
+.next:hover{background:var(--pine-d)}
+.next.off{background:transparent;border:1px dashed #bab4a6;color:var(--mute);font-size:15px;font-weight:400}
+dialog{max-width:96vw;max-height:96vh;padding:0;border:0;background:transparent;overflow:visible;width:max-content}
+dialog::backdrop{background:#15110de6}
+dialog .box{position:relative;padding-top:52px;text-align:center}
+dialog img{max-width:94vw;max-height:74vh;object-fit:contain;border-radius:4px}
+dialog p{max-width:85vw;margin:10px auto 0;color:#eee;font-size:15px}
+dialog button{position:absolute;top:0;right:0;min-height:42px;padding:8px 20px;border:0;border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}
+#proto{max-width:1120px;margin:0 auto;padding:0 5vw 28px;color:var(--mute);font-size:13px}
+footer{display:flex;justify-content:space-between;gap:20px;margin:0 5vw;padding:24px 0 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+footer b{color:var(--ink);font-weight:600}
+/* 首頁第一眼：一張大的分層拆開圖 */
+.hero2{--strip:clamp(176px,24vh,300px);position:relative;height:calc(100vh - 84px);min-height:560px;max-height:820px}
+.hero2-copy{position:relative;z-index:3;padding-top:30px;pointer-events:none}
+.hero2-copy a,.hero2-copy button{pointer-events:auto}
+.hero2-copy h1{text-wrap:balance;margin:0;font-size:clamp(32px,4.4vw,84px);line-height:1.2;font-weight:700;letter-spacing:.01em}
+.hero2-copy p{margin:16px 0 0;max-width:min(22em,30vw);color:var(--mute);font-size:clamp(17px,1.3vw,24px)}
+.stats{display:flex;gap:clamp(26px,3.2vw,64px);margin-top:clamp(28px,6vh,72px)}
+.stats b{display:block;font-size:clamp(34px,3.6vw,68px);line-height:1;font-weight:700;letter-spacing:-.01em}
+.stats span{display:block;margin-top:8px;max-width:9em;font-size:clamp(14px,.95vw,17px);line-height:1.5;color:var(--mute)}
+.hero2-stage{position:absolute;inset:0 0 var(--strip) 0;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.hstack{position:absolute;left:60%;top:calc(54% + var(--dy,0px));width:190px;height:274px;margin:-137px 0 0 -95px;transform-style:preserve-3d;--rx:60deg;--rz:-34deg;--sc:1.2;transform:rotateX(var(--rx)) rotateZ(var(--rz)) scale(var(--sc));--gap:3px}
+.hstack.open{--gap:64px}
+.hstack.nt .ly,.hstack.nt .hsh{transition:none!important;animation:none!important}
+.hstack .ly{transition:transform 1.3s cubic-bezier(.2,.8,.2,1),opacity .3s}
+/* 特效：展間聚光、光束、飄浮微塵、地面影子、壓克力掃光、逐層落下 */
+body.home{background:radial-gradient(ellipse 58% 80% at 64% 50%,#fffdf9 0,#faf7f2 40%,#f2ede3 78%,#eae4d8 100%) fixed}
+body.home header{background:transparent;backdrop-filter:none;border-bottom-color:transparent;transition:background .3s,border-color .3s}
+body.home.scrolled header{background:#faf7f2ee;backdrop-filter:blur(10px);border-bottom-color:var(--line)}
+.hbeam{position:absolute;left:calc(64% - 45vw);top:-84px;width:90vw;height:108%;pointer-events:none;background:conic-gradient(from 180deg at 50% 0,#ffe9a800 0 158deg,#ffe9a84a 170deg,#ffe3909c 180deg,#ffe9a84a 190deg,#ffe9a800 202deg 360deg);-webkit-mask-image:linear-gradient(#000 0,#0000 92%);mask-image:linear-gradient(#000 0,#0000 92%);opacity:.8;animation:beam 7s ease-in-out infinite alternate}
+@keyframes beam{from{opacity:.55}to{opacity:.85}}
+.dust{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.dust i{position:absolute;width:4px;height:4px;border-radius:50%;background:#cdb06a;box-shadow:0 0 8px 3px #fff3c4;opacity:0;animation:mote var(--d) linear infinite var(--dl)}
+@keyframes mote{0%{opacity:0;transform:translate(0,0)}20%{opacity:.75}80%{opacity:.5}100%{opacity:0;transform:translate(var(--dx),-110px)}}
+.hsh{position:absolute;inset:-30px;transform:translateZ(calc(var(--gap)*-.3 - 14px));background:radial-gradient(closest-side,#00000085 0,#00000040 55%,#0000 100%);transition:transform 1.3s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.h-glass{overflow:hidden}
+.h-glass:after,.ly.glass:after{content:'';position:absolute;inset:-20% -80%;background:linear-gradient(105deg,#fff0 40%,#ffffffc8 50%,#fff0 60%);transform:translateX(-70%);animation:sheen 6s ease-in-out 2.4s infinite;pointer-events:none}
+.ly.glass{overflow:hidden}
+@keyframes sheen{0%{transform:translateX(-70%)}40%,100%{transform:translateX(70%)}}
+.h-art:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 28% 18%,#ffffff55,#fff0 55%);pointer-events:none}
+@keyframes drop{from{translate:0 0 300px;opacity:0}to{translate:0 0 0;opacity:1}}
+.hstack.enter .ly{animation:drop .8s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i)*.11s)}
+.hstack .ly{transition:transform 1.3s cubic-bezier(.2,.8,.2,1),translate .3s,outline-color .2s}
+.hstack .ly.hot{translate:0 0 26px;outline:2px solid #1c1a17;outline-offset:3px}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero2-copy h1{animation:rise .9s cubic-bezier(.2,.8,.2,1) .1s backwards}
+.hero2-copy p{animation:rise .9s cubic-bezier(.2,.8,.2,1) .3s backwards}
+.hero2-act{animation:rise .9s cubic-bezier(.2,.8,.2,1) .5s backwards}
+.h-frame{box-shadow:none;filter:drop-shadow(0 8px 8px #00000040)}
+.h-frame .fb{position:absolute;background:url(images/tex_wood_h.jpg) center/cover}
+.h-frame .fb.l,.h-frame .fb.r{background-image:url(images/tex_wood_v.jpg)}
+.h-frame .fb.t{left:0;top:0;width:100%;height:20px;clip-path:polygon(0 0,100% 0,calc(100% - 20px) 100%,20px 100%)}
+.h-frame .fb.b{left:0;bottom:0;width:100%;height:20px;clip-path:polygon(20px 0,calc(100% - 20px) 0,100% 100%,0 100%)}
+.h-frame .fb.l{left:0;top:0;height:100%;width:20px;clip-path:polygon(0 0,100% 20px,100% calc(100% - 20px),0 100%)}
+.h-frame .fb.r{right:0;top:0;height:100%;width:20px;clip-path:polygon(0 20px,100% 0,100% 100%,0 calc(100% - 20px))}
+.h-glass{background:linear-gradient(115deg,#ffffff66 0 28%,#ffffff12 28% 58%,#ffffff44 58% 68%,#ffffff0a 68%),#a9c6d733;border:1px solid #ffffffd9;box-shadow:0 0 0 1px #6f93ab66,0 14px 24px #0000001f}
+.h-art{inset:16px;overflow:hidden;background:#c9bfa8}
+.h-art img{position:absolute;left:50%;top:50%;width:150%;transform:translate(-50%,-50%)}
+.h-fboard{inset:12px;background:#fbfaf6;box-shadow:0 10px 18px #0000002e}
+.h-riser{box-shadow:none}
+.h-riser .st{position:absolute;top:12px;bottom:12px;width:24px;background:url(images/tex_edge_v.jpg) center/cover;filter:saturate(.75) brightness(.92);box-shadow:0 8px 12px #00000040}
+.h-riser .st.l{left:34px}.h-riser .st.r{right:34px}
+.h-board{inset:6px;background:linear-gradient(135deg,#dac793,#cdb783);border:1px solid #b19d6b}
+.hlead{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.hlead *{stroke:#1c1a17;stroke-width:1}
+.hlab{position:absolute;z-index:5;white-space:nowrap;font-size:17px;opacity:0;transition:opacity .5s,color .2s,transform .2s;pointer-events:none;padding:4px 10px 4px 0}
+.hlab b{display:inline-block;width:1.6em;font-weight:700}
+.hlab.hot{transform:translateX(6px);font-weight:700}
+.hlead{opacity:0;transition:opacity .5s}
+.hero2-stage.on .hlab,.hero2-stage.on .hlead{opacity:1}
+.hero2-stage.on .hlab{pointer-events:auto;cursor:default}
+.hlead .hl.hot *{stroke-width:2.4}
+.hlead .hl.hot circle{r:5}
+.hero2-act{position:static;margin-top:28px;z-index:3;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.hstrip{position:absolute;left:5vw;right:5vw;bottom:22px;z-index:3;animation:rise .9s cubic-bezier(.2,.8,.2,1) .8s backwards}
+.hstrip h3{margin:0 0 10px;display:flex;justify-content:space-between;align-items:baseline;font-size:15px;font-weight:600;color:var(--mute);letter-spacing:.04em}
+.hstrip h3 a{color:var(--ink);font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.hstrip h3 a:hover{text-decoration:underline}
+.hrow{display:flex;justify-content:space-between;gap:12px;overflow-x:auto;padding:2px 2px 14px;scrollbar-width:none}.hrow::-webkit-scrollbar{display:none}
+.hph{flex:none;padding:0;border:0;background:transparent;cursor:pointer}
+.hph img{display:block;height:calc(var(--strip) - 78px);width:auto;border-radius:2px;box-shadow:0 6px 16px #00000026;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.hph:hover img{transform:translateY(-5px);box-shadow:0 14px 24px #00000033}
+.go{position:relative;overflow:hidden;display:inline-flex;align-items:center;min-height:56px;padding:12px 32px;border-radius:2px;background:#1c1a17;color:#fff;text-decoration:none;font-size:18px;font-weight:700;transition:transform .2s,box-shadow .2s}
+.go:hover{background:#000;transform:translateY(-2px);box-shadow:0 10px 22px #0000003a}
+.go:after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,#fff0 35%,#ffffff55 50%,#fff0 65%);transform:translateX(-130%)}
+.go:hover:after{transform:translateX(130%);transition:transform .7s}
+.tog{min-height:56px;padding:12px 24px;border:1px solid #1c1a17;border-radius:2px;background:transparent;color:#1c1a17;font-size:16px;cursor:pointer}
+.tog:hover{background:#e9e4d9}
+@media(min-width:721px) and (min-aspect-ratio:1001/1000){.hero2{width:100vw;margin-left:calc(50% - 50vw);overflow-x:clip;max-height:none}.hero2.nostats .stats{display:none}.hero2-copy{padding-left:5vw}}
+@media(max-width:720px),(max-aspect-ratio:1/1){
+ .hero2{height:auto;min-height:0;max-height:none;padding-bottom:20px}
+ .hero2-copy{padding-top:14px}
+ .hero2-copy p{font-size:17px;max-width:none}
+ .hero2-stage{position:relative;inset:auto;height:540px;margin-top:6px}
+ .hstack.open{--gap:50px}
+ .hstack{left:36%;--sc:.8}
+ .hbeam{left:0;width:100%}
+ .hero2-act{margin-top:22px}.go{flex:1;justify-content:center}.tog{min-width:96px}
+ .hstrip{position:static;margin-top:8px}.hstrip h3{flex-direction:column;gap:0}.hrow{justify-content:flex-start}.hph img{height:clamp(96px,15vw,190px)}
+ .stats{gap:22px;margin-top:22px}.stats b{font-size:32px}.stats span{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.hstack .ly{transition:none!important}}
+.reveal{animation:arrive .6s cubic-bezier(.2,.8,.2,1) backwards}@keyframes arrive{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.wcard .image-wrap{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.wcard:hover .image-wrap{transform:translateY(-6px);box-shadow:0 22px 38px #00000026}
+.method-card:hover,.ph:hover{transform:translateY(-4px)}
+.mini .stack{--gap:var(--g,60px);transition:--gap .5s}
+.method-card:hover .mini .stack{--gap:calc(var(--g,60px)*1.4)}
+.mini .stack .ly,.mpanel .stack .ly{transition:transform .6s cubic-bezier(.2,.8,.2,1),outline-color .2s}
+@media(max-width:1000px){.cmp.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){
+ body{font-size:17px}
+ header{padding:12px 5vw}header p{display:none}header .brand-logo{height:38px}
+ .step{justify-content:center;gap:0;padding:10px 2px}.step:not(.now)>span:last-child{display:none}.step.now{flex:3;gap:8px}
+ .step-title{margin-top:14px}.sub{font-size:17px}
+ .works,.method-grid,.grid{grid-template-columns:1fr}
+ .works{gap:24px}.mini{height:250px}.ph img,.cmp img{height:360px}
+ .mpanel{grid-template-columns:1fr;padding:18px}.scene{height:500px;overflow:hidden}.mpanel .stack{transform:rotateX(60deg) rotateZ(-34deg) translate(-148px,215px) scale(.68)}.mpanel .stack.open{--gap:48px}
+ .cmp.n2,.cmp.n3{grid-template-columns:repeat(var(--cols),minmax(250px,1fr));min-width:calc(var(--cols)*260px)}
+ .bar{padding:10px 4vw}.next{flex:1;padding:12px 14px;font-size:17px}
+ footer{flex-direction:column;gap:6px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+/* 首頁往下捲的內容 */
+.h3d{position:absolute;top:0;bottom:0;left:34%;width:66%;height:100%;border:0;background:transparent;color-scheme:light;opacity:0;transition:opacity .9s ease}
+.h3d.ready{opacity:1}
+.h3wait{position:absolute;top:0;bottom:0;left:34%;width:66%;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:15px;letter-spacing:.1em;pointer-events:none;transition:opacity .5s}
+.h3d.ready~.h3wait{opacity:0}
+@media(max-width:720px),(max-aspect-ratio:1/1){.h3d,.h3wait{left:0;width:100%}}
+body.home .proto{margin-top:20px}
+.hm{margin-top:clamp(40px,6vw,90px)}
+.hm-sec{margin-top:clamp(64px,9vw,130px)}.hm-sec:first-child{margin-top:0}
+.hm-eyebrow{font-size:14px;letter-spacing:.18em;color:var(--mute);font-weight:600}
+.hm-sec h2{margin:6px 0 0;font-size:clamp(28px,3.6vw,52px);line-height:1.25;font-weight:700;text-wrap:balance}
+.hm-sec>p{margin:12px 0 0;color:var(--mute);max-width:36em}
+.hm-methods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:32px}
+.hm-m,.hm-t{display:flex;flex-direction:column;color:inherit;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden;text-align:left;padding:0;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .2s}
+.hm-m:hover,.hm-t:hover{transform:translateY(-6px);border-color:var(--pine);box-shadow:0 18px 34px #0000001f}
+.hm-img{display:block;background:var(--mat);aspect-ratio:1/1;overflow:hidden}
+.hm-img img{display:block;width:100%;height:100%;object-fit:contain;padding:16px;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.hm-m:hover img,.hm-t:hover img{transform:scale(1.04)}
+.hm-m b,.hm-t b{display:block;padding:16px 20px 0;font-size:21px;line-height:1.4}
+.hm-d{display:block;padding:4px 20px 0;color:var(--mute);font-size:16px}
+.hm-n{display:block;margin-top:auto;padding:12px 20px 18px;color:var(--pine);font-weight:700;font-size:15px}
+.hm-t .hm-d{padding-bottom:20px}
+.hm-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:32px}
+.hm-trio .hm-img{aspect-ratio:3/4}
+.hm-more{margin-top:28px!important}
+.hm-wall{columns:4 200px;column-gap:16px;margin-top:32px}
+.hm-wall button{display:block;width:100%;margin:0 0 18px;break-inside:avoid;padding:0;border:0;background:transparent;cursor:pointer;text-align:left;color:inherit}
+.hm-wall img{display:block;width:100%;height:auto;box-shadow:0 6px 16px #00000026;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.hm-wall button:hover img{transform:translateY(-5px);box-shadow:0 16px 28px #00000033}
+.hm-wall span{display:block;margin-top:8px;font-size:14px;line-height:1.5;color:var(--mute)}
+.hm-works{margin-top:30px}
+.hm-cats{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hm-cat{display:inline-flex;align-items:baseline;gap:8px;min-height:44px;padding:8px 16px;border:1px dashed #bab4a6;border-radius:999px;color:var(--mute);font-size:16px;text-decoration:none}
+.hm-cat small{font-size:13px}
+.hm-cat.on{border:1px solid var(--pine);color:var(--ink);font-weight:600;background:var(--paper)}
+.hm-cat.on:hover{background:var(--pine);color:#fff}
+.hm-cta{margin-top:clamp(64px,9vw,130px);margin-bottom:-130px;width:100vw;margin-left:calc(50% - 50vw);background:#1c1a17;color:#faf7f2;padding:clamp(56px,8vw,110px) 5vw;text-align:center}
+.hm-cta h2{margin:0;font-size:clamp(28px,3.6vw,52px);line-height:1.25;font-weight:700;text-wrap:balance}
+.hm-cta p{margin:14px 0 30px;color:#d2c8b8}
+.hm-cta .go{background:#faf7f2;color:#1c1a17}.hm-cta .go:hover{background:#fff}
+.rv .hm-rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv .hm-rv.in{opacity:1;transform:none}
+@media(min-width:1001px){.hm-methods.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1000px){.hm-methods{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.hm-methods,.hm-trio{grid-template-columns:1fr}.hm-wall{columns:2 140px;column-gap:12px}.hm-methods .hm-img,.hm-trio .hm-img{aspect-ratio:1/.82}.hm-img img{padding:12px}.hm-more .go{width:100%;justify-content:center}.hm-cta .go{width:100%;justify-content:center}}
+
+/* ===== 質感與特效層 2026-11-06 =====
+   依 awwwards-ui-design（層次、視差、遮罩、微互動、對比與減少動態）＋ awwwards-motion（彈簧 stiffness300／damping24、磁吸 0.1、顆粒 ≤3%、玻璃只用在深色底）。
+   配色維持墨黑＋紙白，不加任何新顏色；不碰 3D 攝影機與旋轉。 */
+:root{--spring:cubic-bezier(.34,1.56,.64,1);--out:cubic-bezier(.16,1,.3,1)}
+@supports (transition-timing-function:linear(0,1)){:root{--spring:linear(0,0.031,0.104,0.207,0.32,0.44,0.551,0.653,0.747,0.824,0.889,0.94,0.978,1.008,1.027,1.04,1.046,1.048,1.047,1.043,1.039,1.033,1.027,1.022,1.017,1.013,1.009,1.006,1.003,1.001,1,0.999,0.998,0.998,1)}}
+/* ① 顆粒：單色、3%、極慢跳動，消除大片色塊的塑膠感 */
+body:after{content:'';position:fixed;inset:-120px;z-index:90;pointer-events:none;opacity:.03;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.4 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain .9s steps(6) infinite}
+@keyframes grain{0%{translate:0 0}20%{translate:-40px 30px}40%{translate:30px -50px}60%{translate:-60px -20px}80%{translate:50px 40px}100%{translate:0 0}}
+/* ② 進度條：彈簧追蹤捲動（寬度改由 --pg 控制） */
+.progress{width:100%!important;transform:scaleX(var(--pg,0));transform-origin:0 50%;box-shadow:0 0 12px #1c1a1766}
+/* ③ 首頁第一屏：大字「層」鬼影、聚光、視差、逐字彈入、操作提示 */
+.ghost{position:absolute;left:62%;top:50%;z-index:0;translate:calc(-50% + var(--px,0)*26px) calc(-50% + var(--py,0)*18px - var(--sy,0)*.1px);font-size:clamp(300px,52vw,980px);line-height:1;font-weight:700;color:#1c1a17;opacity:.035;pointer-events:none;user-select:none;white-space:nowrap}
+.hero2-stage:before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(300px circle at var(--mx,70%) var(--my,50%),#ffffffd9,#fff0 100%)}
+.hbeam{translate:calc(var(--px,0)*-18px) 0}
+.dust{translate:calc(var(--px,0)*-34px) calc(var(--py,0)*-22px)}
+.hero2-copy{translate:calc(var(--px,0)*8px) calc(var(--sy,0)*-.18px);opacity:max(0,calc(1 - var(--sy,0)/720))}
+.hero2-copy h1{animation:none}
+.ch{display:inline-block}
+.hero2-copy h1 .ch{animation:chIn 1s var(--spring) backwards;animation-delay:calc(140ms + var(--k)*38ms)}
+@keyframes chIn{from{opacity:0;transform:translateY(.75em) rotate(5deg)}to{opacity:1;transform:none}}
+.stats b{font-variant-numeric:tabular-nums}
+.hhint{position:absolute;right:5vw;bottom:18px;z-index:4;display:flex;align-items:center;gap:12px;padding:10px 18px 10px 14px;border-radius:999px;background:#1c1a17f2;color:#faf7f2;font-size:14px;line-height:1.2;white-space:nowrap;pointer-events:none;opacity:0;transform:translateY(14px)}
+.hero2-stage.rdy .hhint{opacity:1;transform:none;transition:opacity .6s .9s,transform .9s var(--spring) .9s}
+.hero2-stage.used .hhint,body.scrolled .hhint{opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s}
+.hhint i{position:relative;flex:none;width:34px;height:14px;border-radius:99px;border:1px solid #faf7f288}
+.hhint i:after{content:'';position:absolute;left:3px;top:3px;width:6px;height:6px;border-radius:50%;background:#faf7f2;animation:drag 2.2s var(--spring) infinite alternate}
+@keyframes drag{to{translate:19px 0}}
+@media(hover:none){.hh-t{display:none}}
+@media(hover:hover){.hh-m{display:none}}
+/* 「合起來／拆開」按鈕：三條線隨狀態張開，文字滑動換字，點下有漣漪 */
+.tog{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;transition:background .3s,color .3s}
+.tg{display:inline-flex;width:26px;height:20px}
+.tg svg{width:100%;height:100%;overflow:visible;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.tg .a{transform-box:fill-box;transform-origin:center;transition:transform .6s var(--spring)}
+.tog[aria-pressed=true] .tg .a{transform:scaleX(-1)}
+.tog[aria-pressed=true]{background:#1c1a17;color:#faf7f2}
+.tog[aria-pressed=true]:hover{background:#000}
+.lbl{display:inline-block}
+.rp{position:absolute;border-radius:50%;background:currentColor;pointer-events:none;animation:rp .7s var(--out) forwards}
+@keyframes rp{from{scale:0;opacity:.22}to{scale:1;opacity:0}}
+.chip,.btn,.next{position:relative;overflow:hidden}
+.go{transition:background .2s,box-shadow .3s,transform .3s var(--spring)}
+/* 首頁開場：墨黑簾幕往上掀開（每次開瀏覽器只播一次） */
+#intro{position:fixed;inset:0;z-index:300;background:#1c1a17;color:#faf7f2;display:grid;place-content:center;gap:12px;text-align:center;pointer-events:none;animation:wipeUp .95s cubic-bezier(.76,0,.24,1) .8s forwards}
+#intro span{font-size:clamp(26px,4vw,52px);font-weight:700;letter-spacing:.24em;animation:chIn .9s var(--spring) backwards .1s}
+#intro small{font-size:14px;letter-spacing:.3em;color:#a8a69c;animation:chIn .9s var(--spring) backwards .3s}
+@keyframes wipeUp{to{clip-path:inset(0 0 100% 0)}}
+/* ④ 標題列：往下捲收起、往上捲回來；連結底線畫出 */
+body.home header{transition:background .3s,border-color .3s,transform .6s var(--spring)}
+body.home.hdr-hide header{transform:translateY(-110%)}
+header .nav-link{position:relative}
+header .nav-link:after{content:'';position:absolute;left:0;right:0;bottom:8px;height:1.5px;background:currentColor;scale:0 1;transform-origin:0 50%;transition:scale .5s var(--out)}
+header .nav-link:hover:after{scale:1 1}
+/* ⑤ 自訂游標（只有滑鼠才有；用 difference 在淺底變深、在深底變淺） */
+.cur{position:fixed;left:0;top:0;z-index:150;pointer-events:none;mix-blend-mode:difference;opacity:0;transition:opacity .25s}
+.cur.on{opacity:1}
+.cur.dot{width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#fff}
+.cur.ring{width:48px;height:48px;margin:-24px 0 0 -24px;display:grid;place-items:center}
+.cur.ring i{position:absolute;inset:0;border-radius:50%;border:1.5px solid #fff;transition:scale .5s var(--spring),background .25s,border-color .25s}
+.cur.ring.big i{scale:1.55}
+.cur.ring.lab i{scale:2;background:#fff}
+.cur.ring span{position:relative;color:#000;font-size:13px;font-weight:700;letter-spacing:.06em;opacity:0;scale:.6;transition:opacity .2s,scale .4s var(--spring)}
+.cur.ring.lab span{opacity:1;scale:1}
+.cur.ring.lab~.cur.dot{opacity:0}
+.cur.ring.press i{scale:.8}
+.cur.ring.lab.press i{scale:1.7}
+body:has(dialog[open]) .cur{opacity:0!important}
+/* ⑥ 區段進場：標題逐字、細線畫出、卡片依序彈入、圖片由下往上揭開 */
+.hm-eyebrow{display:flex;align-items:center;gap:14px}
+.hm-eyebrow:before{content:'';flex:none;width:48px;height:1.5px;background:currentColor;transform-origin:0 50%}
+.hm-rv.in .hm-eyebrow:before{animation:line 1.1s var(--out) .1s backwards}
+@keyframes line{from{scale:0 1}to{scale:1 1}}
+.hm-rv.in h2 .ch{animation:chIn .95s var(--spring) backwards;animation-delay:calc(160ms + var(--k)*28ms)}
+.hm-rv.in .hm-m,.hm-rv.in .hm-t,.hm-rv.in .hm-wall button,.hm-rv.in .wcard,.hm-rv.in .hm-cat{animation:cardIn 1s var(--spring) backwards;animation-delay:calc(var(--d,0)*75ms + 150ms)}
+@keyframes cardIn{from{opacity:0;transform:translateY(54px) scale(.95)}to{opacity:1;transform:none}}
+.hm-rv.in .hm-img{animation:wipe 1.1s cubic-bezier(.77,0,.18,1) backwards;animation-delay:calc(var(--d,0)*75ms + 250ms)}
+@keyframes wipe{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+.hm-rv.in .hm-img img{animation:imgZoom 1.5s var(--out) backwards;animation-delay:calc(var(--d,0)*75ms + 250ms)}
+@keyframes imgZoom{from{scale:1.32}to{scale:1}}
+.hm-rv.in .hm-wall img{animation:wipe 1.1s cubic-bezier(.77,0,.18,1) backwards;animation-delay:calc(var(--d,0)*75ms + 250ms)}
+/* ⑦ 卡片：3D 傾斜＋跟著滑鼠的反光（滑鼠才有；觸控不動） */
+@media(hover:hover) and (pointer:fine){
+ .hm-m,.hm-t,.method-card{position:relative;transform:perspective(900px) rotateX(var(--trx,0deg)) rotateY(var(--try,0deg)) translateY(var(--tty,0px));transition:box-shadow .35s,border-color .2s}
+ .hm-m:hover,.hm-t:hover,.method-card:hover{transform:perspective(900px) rotateX(var(--trx,0deg)) rotateY(var(--try,0deg)) translateY(var(--tty,0px))}
+ .hm-m:after,.hm-t:after,.method-card:after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(320px circle at var(--sx,50%) var(--sy2,0%),#ffffffa6,#fff0 62%);opacity:0;transition:opacity .35s}
+ .hm-m:hover:after,.hm-t:hover:after,.method-card:hover:after{opacity:.55}
+ .hm-wall:hover button:not(:hover) img{opacity:.4;filter:grayscale(.75)}
+ .hrow:hover .hph:not(:hover) img{opacity:.45;filter:grayscale(.7)}
+}
+.hm-wall img{transition:transform .5s var(--spring),box-shadow .35s,opacity .4s,filter .4s}
+.hph img{transition:transform .5s var(--spring),box-shadow .3s,opacity .4s,filter .4s}
+.wcard .image-wrap{transition:transform .5s var(--spring),box-shadow .35s}
+/* ⑧ 跑馬燈：大字做法名稱，速度跟著捲動，字會隨速度傾斜 */
+.mq{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;padding:clamp(14px,2.4vw,34px) 0;border-block:1px solid var(--line);user-select:none}
+.mq-track{display:flex;width:max-content;will-change:transform}
+.mq-g{display:flex;align-items:center;flex:none}
+.mq-i{padding:0 .3em;font-size:clamp(44px,8vw,128px);line-height:1.15;font-weight:700;white-space:nowrap}
+.mq-i:nth-child(4n+3){color:#1c1a172e}
+.mq-s{flex:none;width:.34em;height:.34em;font-size:clamp(44px,8vw,128px);background:#1c1a17;rotate:45deg;margin:0 .22em}
+/* ⑨ 結尾深色區：玻璃面板（玻璃只放在深底）、漂浮光團、跟著滑鼠的聚光 */
+.hm-cta{position:relative;overflow:hidden;isolation:isolate}
+.hm-cta:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(520px circle at var(--cx,50%) var(--cy,40%),#f1d9b824,#f1d9b800 62%)}
+.hm-cta .orb{position:absolute;z-index:-2;width:46vw;height:46vw;max-width:640px;max-height:640px;border-radius:50%;filter:blur(70px);pointer-events:none;animation:orbf 16s ease-in-out infinite alternate}
+.hm-cta:after{content:'';position:absolute;z-index:-2;right:-6vw;bottom:-12vw;width:44vw;height:44vw;border-radius:50%;background:radial-gradient(closest-side,#9f3b2b59,#9f3b2b00);pointer-events:none}
+.hm-cta .orb.a{left:-8vw;top:-18vw;background:#5a4230;opacity:.5}
+.hm-cta .orb.b{right:-10vw;bottom:-20vw;background:#2f2620;opacity:.8;animation-duration:21s;animation-delay:-6s}
+@keyframes orbf{from{translate:0 0;scale:1}to{translate:7vw 4vw;scale:1.18}}
+.hm-glass{position:relative;margin:0 auto;max-width:780px;padding:clamp(32px,5vw,64px);border-radius:8px;background:#ffffff0d;backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid #ffffff17;box-shadow:inset 0 1px 0 #ffffff26,0 24px 80px #00000040}
+.hm-cta .hm-glass p{color:#ddd2c1}
+/* ⑩ 放大看照片：背景模糊、說明改玻璃小膠囊 */
+dialog::backdrop{background:#15110dd9;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+dialog[open]::backdrop{animation:bd .5s ease backwards}
+@keyframes bd{from{opacity:0}}
+dialog img{box-shadow:0 40px 120px #000000a6}
+dialog p{display:block;width:fit-content;margin:14px auto 0;padding:9px 20px;border-radius:999px;background:#ffffff14;backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid #ffffff24;box-shadow:0 24px 80px #0000004d;font-weight:500}
+@media(max-width:720px){.cur{display:none}}
+@media(max-width:720px),(max-aspect-ratio:1/1){.hhint{right:auto;left:50%;top:6px;bottom:auto;translate:-50% 0}.ghost{left:50%}}
+@media(prefers-reduced-motion:reduce){body:after,#intro,.cur{display:none!important}.ghost{translate:-50% -50%}.hero2-copy{translate:none;opacity:1}.hbeam,.dust{translate:none}}
+
+/* ===== 第二輪：融入「我們家」的元素 2026-11-06 =====
+   來源（都查得到）：favicon.svg＝墨黑 #181816＋金 #aa8952 三角（松）＋印章紅 #9f3b2b 圓點；預約網站頁首＝Noto Serif TC 粗襯線；
+   正式 logo.svg（原檔，不改）；店裡真實木框／木屑邊照片（已在用）。墨黑仍是底，金只用細線、紅只用印章與小圓點（兩個點綴色，不再多）。
+   想還原：把下面 --gold／--seal 改回墨黑即可。 */
+:root{--seal:#9f3b2b;--gold:#aa8952;--serif:'Noto Serif TC','Songti TC','Source Han Serif TC','PingFang TC',serif}
+.hero2-copy h1,.hm-sec h2,.hm-cta h2,.step-title,.mq-i,.ghost{font-family:var(--serif);font-weight:900}
+.view-heading,.hm-m b,.hm-t b,.method-card strong,.card-info b,.mpanel h3,.cmp b{font-family:var(--serif);font-weight:700}
+/* 落款印章：標題尾端蓋一顆「松」，結尾區再蓋一顆；邊緣用雜訊扭一點，像真的蓋出來 */
+.seal{display:inline-grid;place-items:center;width:.78em;height:.78em;margin-left:.4em;vertical-align:.04em;background:var(--seal);color:#faf7f2;border-radius:.05em;rotate:-6deg;filter:url(#rough);mix-blend-mode:multiply;box-shadow:inset 0 0 0 .035em #faf7f255}
+.seal i{font:900 .62em/1 var(--serif);font-style:normal}
+@keyframes stamp{0%{opacity:0;scale:2.3;rotate:9deg}55%{opacity:1;scale:.88;rotate:-9deg}78%{scale:1.05}100%{scale:1;rotate:-6deg}}
+.hero2-copy .seal{animation:stamp .85s cubic-bezier(.3,1.4,.5,1) 1.5s backwards}
+.hm-glass .seal{position:absolute;right:clamp(16px,3vw,36px);top:clamp(16px,3vw,36px);width:clamp(44px,5vw,64px);height:clamp(44px,5vw,64px);font-size:clamp(44px,5vw,64px);margin:0;mix-blend-mode:normal;opacity:.94}
+.hm-rv.in .seal{animation:stamp .85s cubic-bezier(.3,1.4,.5,1) 1s backwards}
+/* 金色細線：展覽說明牌的味道 */
+.hm-eyebrow:before{background:var(--gold)}
+.stats>div{min-width:5.4em;padding-top:12px;border-top:1px solid var(--gold)}
+.hm-m:hover,.hm-t:hover,.method-card:hover,.ph:hover{border-color:var(--gold)}
+.hm-wall span{display:inline-block;margin-top:10px;padding-top:8px;border-top:1px solid var(--gold);font-family:var(--serif);font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.hhint i{border-color:#aa895299}.hhint i:after{background:var(--gold)}
+.hm-glass{border-color:#aa895238;box-shadow:inset 0 1px 0 #aa895260,0 24px 80px #00000040}
+dialog p{border-color:#aa895255;font-family:var(--serif)}
+/* 發布前驗收：相同品牌色，補載入失敗與鍵盤狀態。 */
+@media(max-width:600px){.hero2-copy .stats{display:none}.hero2-stage{height:clamp(360px,52svh,460px);margin-top:0}.hero2-copy p{margin-top:12px}.hero2-act{margin-top:16px}}
+
+[hidden]{display:none!important}.tog:disabled{opacity:.5;cursor:wait}
+.layerlist li{padding:0;display:block}.layerlist button{width:100%;padding:10px;border:0;background:transparent;color:inherit;display:flex;align-items:center;gap:10px;text-align:left;cursor:pointer}.layerlist button i{width:18px;height:18px;flex:none;border:1px solid #aaa}.layerlist button.on{background:var(--pine-t);font-weight:700}
+dialog button{min-height:44px}dialog{scrollbar-width:thin}header{padding-left:max(5vw,env(safe-area-inset-left));padding-right:max(5vw,env(safe-area-inset-right));-webkit-backdrop-filter:blur(10px)}.bar{padding-bottom:max(12px,env(safe-area-inset-bottom))}
+.h3-fallback{position:absolute;left:34%;top:0;width:66%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;padding:24px}.h3-fallback>img{width:100%;min-height:0;max-height:65%;object-fit:contain;mix-blend-mode:multiply}.h3-recover{text-align:center;font-size:15px}.h3-recover p{margin:0 0 12px}.h3-recover a{display:inline-flex;align-items:center;min-height:44px;margin:8px 12px;color:var(--ink)}.failed .hhint{display:none}.h3-fallback .tog{min-height:44px;padding:8px 16px}
+@media(max-width:720px),(max-aspect-ratio:1/1){.h3-fallback{left:0;width:100%;padding:16px;gap:4px}.h3-fallback>img{max-height:58%}.h3-recover{font-size:14px}.h3-recover p{margin-bottom:4px}}
+@media(prefers-reduced-motion:reduce){.rv .hm-rv{opacity:1;transform:none}}
+.progress{box-shadow:0 0 12px #aa895299}
+/* 跑馬燈分隔：logo 同款的「金色三角＋紅點」（favicon 的形狀） */
+.mq-s{width:.3em;height:.27em;margin:0 .26em;rotate:none;background:radial-gradient(circle at 50% 66%,var(--seal) 0 15%,#0000 16%),var(--gold);clip-path:polygon(50% 0,100% 100%,0 100%)}
+/* 開場簾幕：用正式 logo（白色版），下面一條金線畫出來、尾端一顆紅點 */
+#intro span,#intro small{display:none}
+#intro img{width:min(64vw,440px);height:auto;filter:brightness(0) invert(1);animation:chIn .9s var(--spring) backwards .1s}
+#intro .ln{display:block;position:relative;width:min(64vw,440px);height:1px;margin:24px auto 0;background:var(--gold);transform-origin:0 50%;animation:line 1s var(--out) .45s backwards}
+#intro .ln:after{content:'';position:absolute;right:-4px;top:-4px;width:9px;height:9px;border-radius:50%;background:var(--seal)}
+@media(max-width:900px){.hm-glass .seal{position:static;display:grid;width:44px;height:44px;font-size:44px;margin:0 auto 18px}}
+@media(prefers-reduced-motion:reduce){.seal{filter:url(#rough)}}
+
+/* 松與風：墨色松枝、細松針、金色流風；都是不攔操作的背景。 */
+.pine-wind{position:absolute;inset:0;overflow:hidden;pointer-events:none;user-select:none;z-index:0}
+.pine-sprig{position:absolute;color:var(--ink);opacity:.32;will-change:transform;transform-origin:100% 0;translate:calc(var(--px,0)*-9px) calc(var(--py,0)*-4px)}
+.pine-sprig.east{right:-8px;top:24px;width:clamp(240px,27vw,430px);animation:pineBreath 9s cubic-bezier(.37,0,.63,1) infinite alternate}
+.pine-sprig.west{left:clamp(-220px,-14vw,-120px);bottom:-40px;transform-origin:50% 50%;width:clamp(160px,18vw,290px);opacity:.16;scale:-1 -1;animation:pineBreath 11s cubic-bezier(.37,0,.63,1) -4s infinite alternate}
+.pine-sprig svg{display:block;width:100%;height:auto;overflow:visible}.pine-bough{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.pine-needles{fill:none;stroke:currentColor;stroke-width:1.15;stroke-linecap:round}
+.wind-ribbons{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--gold);stroke-width:1.2;opacity:.43}
+.wind-ribbons path{stroke-dasharray:100 590;animation:windFlow 17s linear infinite;vector-effect:non-scaling-stroke}
+.wind-ribbons path:nth-child(2){stroke-dasharray:54 650;animation-duration:21s;animation-delay:-8s;opacity:.65}
+.wind-ribbons path:nth-child(3){stroke-dasharray:30 740;animation-duration:24s;animation-delay:-13s;opacity:.5}
+.wind-needle{position:absolute;left:-8%;top:var(--ny);width:24px;height:2px;border-radius:100%;background:var(--ink);opacity:0;rotate:-28deg;animation:needleFloat var(--nd) linear infinite var(--nl)}
+.wind-needle:after{content:'';position:absolute;left:4px;top:1px;width:22px;height:1px;background:currentColor;transform-origin:0 0;rotate:18deg;color:var(--ink)}
+.wind-gust{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--gold);stroke-width:1.5;opacity:0}
+.wind-gust path{vector-effect:non-scaling-stroke;stroke-dasharray:120 800;stroke-dashoffset:300}
+.pine-wind.gusting .wind-gust{opacity:.65;animation:gustFade 1.6s linear both}
+.pine-wind.gusting .wind-gust path{animation:gustSweep 1.6s cubic-bezier(.16,1,.3,1) both}
+.pine-wind.gusting .wind-gust path:nth-child(2){animation-delay:80ms}
+@keyframes pineBreath{from{rotate:-1.5deg;transform:skewX(-.5deg)}to{rotate:2deg;transform:skewX(1.3deg)}}
+@keyframes windFlow{to{stroke-dashoffset:-1400}}
+@keyframes needleFloat{0%{translate:0 0;rotate:-28deg;opacity:0}12%{opacity:.25}48%{translate:50vw -24px;rotate:20deg}86%{opacity:.2}100%{translate:110vw 30px;rotate:78deg;opacity:0}}
+@keyframes gustSweep{from{stroke-dashoffset:300}to{stroke-dashoffset:-1400}}
+@keyframes gustFade{0%,100%{opacity:0}18%,65%{opacity:.65}}
+.pine-wind.paused *,body.fx-paused .pine-wind *{animation-play-state:paused!important}
+@media(max-width:720px),(max-aspect-ratio:1/1){.pine-sprig.east{width:210px;right:0;top:24px;opacity:.28}.pine-sprig.west{display:none}.wind-ribbons{opacity:.34}.wind-needle{width:18px}.wind-needle:nth-last-child(-n+2){display:none}}
+@media(prefers-reduced-motion:reduce){.pine-wind *{animation:none!important;will-change:auto!important}.pine-sprig{translate:none;rotate:0deg;transform:none}.wind-ribbons,.wind-needle,.wind-gust{display:none!important}}
+
+
+/* 編輯式首頁：大圖選做法 → 暖黑展牆 → 成品與框角 */
+.atelier{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center;margin-top:48px}
+.atelier-stage{background:#eae4d8;padding:clamp(16px,3vw,40px);border:1px solid #d7cbb6}
+.atelier-panel[hidden]{display:none}
+.atelier-photo{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;border:0;background:transparent;color:var(--mute);cursor:zoom-in;padding:0}
+.atelier-photo img{display:block;width:100%;height:clamp(300px,36vw,500px);object-fit:contain;filter:drop-shadow(0 16px 15px #35291b30)}
+.atelier-photo span{font-size:13px}
+.atelier-caption{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px}
+.atelier-no{font-size:14px;color:var(--mute);font-variant-numeric:tabular-nums}
+.atelier-caption .go{font-size:14px;padding:12px 16px}
+.atelier-choice{width:100%;display:grid;grid-template-columns:28px minmax(0,1fr) 24px;gap:16px;align-items:start;text-align:left;min-height:100px;padding:24px 8px;border:0;border-bottom:1px solid #cfc5b5;background:transparent;color:var(--ink);cursor:pointer;transition:padding .4s var(--spring),background .3s}
+.atelier-choice:first-child{border-top:1px solid #cfc5b5}
+.atelier-index{font-size:13px;color:var(--mute);padding-top:8px}
+.atelier-choice b{font:700 clamp(20px,2vw,29px)/1.4 var(--serif)}
+.atelier-desc{display:block;color:var(--mute);font-size:15px;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s,opacity .3s,margin .4s}
+.atelier-choice small{display:block;color:var(--mute);font-size:13px;margin-top:8px}
+.atelier-choice[aria-pressed=true]{padding-left:20px;padding-right:20px;background:#e9e1d2}
+.atelier-choice[aria-pressed=true] .atelier-desc{max-height:100px;opacity:1;margin-top:8px}
+.atelier-arrow{font-size:24px;transition:transform .4s var(--spring)}
+.atelier-choice:hover .atelier-arrow,.atelier-choice[aria-pressed=true] .atelier-arrow{transform:rotate(45deg)}
+.night-gallery{margin-top:clamp(64px,9vw,130px);width:100vw;margin-left:calc(50% - 50vw);padding:clamp(56px,7vw,104px) max(5vw,calc((100vw - 960px)/2));background:radial-gradient(ellipse at 50% 0,#443a2c,var(--ink) 75%);color:var(--wall)}
+.night-gallery .hm-sec{margin-top:0}.night-gallery .hm-eyebrow,.night-gallery .hm-sec>p{color:#d2c8b8}
+.night-gallery .hm-t{background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+.night-gallery .hm-img{background:transparent;aspect-ratio:3/4;overflow:visible}
+.night-gallery .hm-img img{padding:8px;filter:drop-shadow(0 20px 18px #0009)}
+.night-gallery .hm-t b{padding:24px 0 0;border-top:1px solid #aa895266;font-size:20px}
+.night-gallery .hm-t .hm-d{padding:8px 0 0;color:#d2c8b8;font-size:14px}
+.night-gallery .hm-t:after{display:none}
+.night-gallery .go{background:var(--wall);color:var(--ink)}
+.night-gallery :focus-visible{outline-color:#e6c990}
+.editorial-wall{display:grid;grid-template-columns:1.25fr 1fr;gap:48px 40px;margin-top:48px;align-items:start}
+.editorial-tile{padding:0;border:0;background:transparent;text-align:left;color:var(--ink);cursor:zoom-in;min-width:0}
+.editorial-tile:nth-child(2){margin-top:112px}.editorial-tile:nth-child(3){width:78%;justify-self:end}.editorial-tile:nth-child(4){margin-top:64px}
+.editorial-image{display:block;overflow:hidden;background:#e9e2d6;aspect-ratio:4/5;padding:24px}
+.editorial-image img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .6s var(--spring)}
+.detail .editorial-image{aspect-ratio:1/1;padding:0}.detail img{object-fit:cover;object-position:0 0;transform:scale(2.8);transform-origin:0 0}
+.editorial-tile:hover img{transform:scale(1.035)}.editorial-tile.detail:hover img{transform:scale(3)}
+.editorial-label{display:flex;align-items:baseline;gap:16px;margin-top:16px;border-top:1px solid #b5a07d;padding-top:12px;font-size:15px}
+.editorial-label i{font:400 12px Inter,sans-serif;color:var(--mute)}.editorial-label b{margin-left:auto}
+.photo-archive{margin-top:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.photo-archive summary{display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;min-height:72px;font-weight:600;list-style:none}
+.photo-archive summary::-webkit-details-marker{display:none}.photo-archive summary span{font-size:26px;transition:transform .3s}.photo-archive[open] summary span{transform:rotate(45deg)}
+.collection-entry{margin-top:32px}.collection-entry .wcard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(24px,5vw,64px);padding:32px;background:#eae4d8}
+.collection-entry .wcard .image-wrap{background:transparent}.collection-entry .wcard img{height:320px;aspect-ratio:auto;padding:0}
+.collection-entry .card-info b{font-size:clamp(24px,3vw,40px)}.collection-entry .card-info .card-action{margin-top:24px}
+@media(max-width:720px){.atelier{grid-template-columns:1fr;margin-top:24px;gap:24px}.atelier-stage{padding:20px}.atelier-photo img{height:330px}.atelier-choice{padding:18px 8px;min-height:80px}.atelier-caption .go{min-height:48px}.night-gallery{padding:48px 5vw}.night-gallery .hm-trio{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.night-gallery .hm-trio .hm-img{aspect-ratio:3/5}.night-gallery .hm-img img{padding:0}.night-gallery .hm-t b{font-size:15px;padding-top:16px}.night-gallery .hm-d{display:none}.editorial-wall{gap:28px 16px;margin-top:28px;grid-template-columns:1.1fr 1fr}.editorial-tile:nth-child(2){margin-top:64px}.editorial-tile:nth-child(4){margin-top:32px}.editorial-image{padding:12px}.editorial-label{font-size:13px;gap:8px}.collection-entry .wcard{grid-template-columns:1fr;padding:24px;gap:24px}.collection-entry .wcard img{height:260px}.collection-entry .card-info{padding:0}.photo-archive summary{font-size:15px}}
+@media(max-width:720px){.atelier-menu{grid-row:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.atelier-choice,.atelier-choice[aria-pressed=true]{grid-template-columns:18px minmax(0,1fr);padding:12px;gap:8px;min-height:80px;border:1px solid #cfc5b5}.atelier-choice b{font-size:16px}.atelier-choice .atelier-desc,.atelier-choice small,.atelier-arrow{display:none}.atelier-index{padding-top:3px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.atelier-choice,.atelier-desc,.atelier-arrow,.editorial-image img,.photo-archive summary span{transition:none}}
+
+
+/* 區塊外側的淡松枝：與內容一起捲動，保留48px閱讀空間。 */
+.hm-sec{position:relative;isolation:isolate}
+.section-air{position:absolute;top:132px;left:-244px;width:196px;height:260px;pointer-events:none;z-index:-1;opacity:.3;transform-origin:10% 40%;animation:airSway 18s ease-in-out infinite alternate;animation-play-state:paused}
+.section-air.right{left:auto;right:-236px;top:auto;bottom:72px;width:188px;opacity:.22;transform:scaleX(-1);transform-origin:50% 40%;animation-name:airSwayRight;animation-delay:-7s}
+.section-air svg{display:block;width:100%;height:100%;overflow:visible;fill:none;stroke:#7a8064;stroke-linecap:round;stroke-linejoin:round}
+.section-air .air-wind{stroke:#b39a6b;stroke-width:1;opacity:.55}
+.hm-sec.air-visible .section-air{animation-play-state:running}
+.fx-paused .section-air{animation-play-state:paused!important}
+@keyframes airSway{from{transform:translateY(0) rotate(-.6deg)}to{transform:translateY(-4px) rotate(.6deg)}}
+@keyframes airSwayRight{from{transform:scaleX(-1) translateY(0) rotate(.5deg)}to{transform:scaleX(-1) translateY(-3px) rotate(-.5deg)}}
+@media(max-width:1600px){.section-air{display:none}}
+@media(prefers-reduced-motion:reduce){.section-air{animation:none!important}}
+
+
+/* 展牆：深色區用乾淨俐落的直邊切開，上緣一條細金線，不做模糊漸層（11/9 番薯：漸層太難看）。 */
+.night-gallery{position:relative;isolation:isolate;background:none;padding-top:clamp(56px,7vw,104px);padding-bottom:clamp(56px,7vw,104px)}
+.night-gallery:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 0,#443a2c,var(--ink) 75%);box-shadow:inset 0 2px #aa8952}
+/* 首頁主按鈕：「選你的作品」放大、印章紅底＋金邊＋柔光，「合起來」退成淺色外框次要鈕（11/9 番薯：要更顯眼） */
+.hero2-act .go{min-height:68px;padding:14px 48px;font-size:21px;letter-spacing:.06em;background:var(--seal);color:#faf7f2;box-shadow:0 0 0 2px #aa8952,0 12px 28px #9f3b2b55}
+.hero2-act .go:hover{background:#b3432f;box-shadow:0 0 0 2px #c9a266,0 16px 34px #9f3b2b70}
+.hero2-act .tog,.hero2-act .tog[aria-pressed=true]{min-height:68px;background:transparent;color:#1c1a17;border:1px solid #1c1a1799}
+.hero2-act .tog:hover,.hero2-act .tog[aria-pressed=true]:hover{background:#e9e4d9}
+.hero2-act .tog .tg svg{stroke:#1c1a17}
+@media(max-width:720px){.hero2-act .go{min-height:64px;padding:12px 24px;font-size:19px}.hero2-act .tog,.hero2-act .tog[aria-pressed=true]{min-height:64px}}
+.header-actions{display:flex;align-items:center;gap:20px;flex:none}
+.sound-toggle{display:inline-flex;justify-content:center;align-items:center;width:44px;height:44px;padding:0;border:1px solid #b8ad99;border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;font-size:21px;line-height:1}
+.sound-toggle[aria-pressed=false]{color:var(--mute);background:#e7e1d6}
+.atelier-choice,.atelier-photo,.editorial-tile,.photo-archive summary,.sound-toggle{transition:scale .35s var(--spring),background .3s,padding .4s var(--spring)}
+.atelier-choice:active,.atelier-photo:active,.editorial-tile:active,.photo-archive summary:active,.sound-toggle:active{scale:.97}
+.atelier-choice[aria-pressed=true]{box-shadow:inset 3px 0 #aa8952}
+@media(max-width:720px){.header-actions{gap:8px}header{gap:8px}.night-gallery{padding-top:72px;padding-bottom:72px}}
+@media(prefers-reduced-motion:reduce){.atelier-choice,.atelier-photo,.editorial-tile,.photo-archive summary,.sound-toggle{transition:none;scale:1!important}}
+
 </style></head><body>
-<header><h1>裱框集錦</h1><p>松風閣 · 書畫、布品、球衣、立體件的裱框範例</p></header>
-<nav><div class="chips" id="chips" role="group" aria-label="作品種類"></div><div class="chips row2" id="chips2" role="group" aria-label="框的樣式"></div></nav>
-<main><div class="count" id="count"></div><div class="grid" id="grid"></div></main>
-<footer>範例照片取自松風閣官網裱框範例。實際效果依作品與選材而異，歡迎洽門市詢問。</footer>
-<div id="lb" role="dialog" aria-modal="true" aria-label="作品大圖"><div class="top"><b id="lbt"></b><button id="lbx" aria-label="關閉">✕</button></div>
-<div class="stage"><button class="nav prev" id="lbp" aria-label="上一張">‹</button><img id="lbi" alt=""><button class="nav next" id="lbn" aria-label="下一張">›</button></div><div class="info" id="lbinfo"></div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter></svg>
+<div class="progress" id="progress"></div><header><a href="#" aria-label="松風閣裱框集錦首頁"><img class="brand-logo" src="logo.svg" alt="松風閣畫廊 SONG FONG GALLERY"></a><p>裱框集錦 · 看見作品的更多可能</p><div class="header-actions"><button id="soundToggle" class="sound-toggle" type="button" aria-pressed="true" aria-label="古風音效已開啟，點一下關閉" title="古風音效開關"><span aria-hidden="true">♪</span></button><a class="nav-link" href="#">重新開始 ↺</a></div></header>
+<main id="app"></main><p class="proto" id="proto"></p><footer><b>松風閣畫廊 · 裱框集錦</b><span>作品 ／ 做法 ／ 成品 ／ 比一比</span></footer>
+<dialog id="lb" aria-label="成品照片放大" aria-describedby="lbt"><div class="box"><button id="lbx">關閉</button><img id="lbi" alt=""><p id="lbt"></p></div></dialog>
+<script src="data_新概念.js?v=20261117a"></script>
 <script>
-const ITEMS=[{"id":610,"t":"10 公尺全絹 手工裱褙","c":"膠彩・水彩","w":900,"h":676,"d":"2026-10-29","a":"畫作・相片","f":[]},{"id":609,"t":"奈良美智超大海報 | 木框","c":"奈良美智","w":675,"h":900,"d":"2026-10-28","a":"海報・拼圖","f":["木框"]},{"id":608,"t":"奈良美智海報 | 木框","c":"奈良美智","w":676,"h":900,"d":"2026-10-28","a":"海報・拼圖","f":["木框"]},{"id":606,"t":"奈良美智拼圖 | 冷表膜 立體框","c":"奈良美智","w":669,"h":900,"d":"2026-10-28","a":"海報・拼圖","f":["立體框"]},{"id":605,"t":"奈良美智海報 | 木框 加卡紙","c":"奈良美智","w":637,"h":900,"d":"2026-10-28","a":"海報・拼圖","f":["加卡紙","木框"]},{"id":604,"t":"奈良美智海報 | 木框","c":"奈良美智","w":676,"h":900,"d":"2026-10-28","a":"海報・拼圖","f":["木框"]},{"id":603,"t":"奈良美智海報 | 木框","c":"奈良美智","w":676,"h":900,"d":"2026-10-28","a":"海報・拼圖","f":["木框"]},{"id":602,"t":"奈良美智海報 | 鋁框 加卡紙","c":"奈良美智","w":676,"h":900,"d":"2026-10-28","a":"海報・拼圖","f":["加卡紙","鋁框"]},{"id":601,"t":"奈良美智 拼圖 | 平面框 加卡紙","c":"奈良美智","w":681,"h":900,"d":"2026-10-28","a":"海報・拼圖","f":["平面框","加卡紙"]},{"id":600,"t":"奈良美智海報 | 鋁框 加卡紙","c":"奈良美智","w":676,"h":900,"d":"2026-10-28","a":"海報・拼圖","f":["加卡紙","鋁框"]},{"id":599,"t":"我的英雄學院——原畫展對視海報","c":"海報・版畫","w":720,"h":900,"d":"2026-08-14","a":"海報・拼圖","f":[]},{"id":598,"t":"村上隆限量版畫——客製化立體懸浮圓框","c":"圓框・特殊外型","w":720,"h":900,"d":"2026-07-17","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":596,"t":"書法-日式榫接框","c":"書法・水墨","w":675,"h":900,"d":"2026-06-28","a":"書法・水墨","f":["榫接框"]},{"id":595,"t":"唐卡精緻榫接框","c":"唐卡・宗教","w":675,"h":900,"d":"2026-06-28","a":"宗教・唐卡","f":["榫接框"]},{"id":594,"t":"可替換式屏風框","c":"屏風","w":900,"h":565,"d":"2026-06-09","a":"捲軸・屏風","f":["屏風"]},{"id":593,"t":"世界最大拼圖 | 獨家類卷軸裱法","c":"拼圖","w":900,"h":675,"d":"2026-04-01","v":"ETZbbXgozPw","a":"海報・拼圖","f":["捲軸・掛軸"]},{"id":592,"t":"客製活動展牆","c":"展台・展牆","w":900,"h":810,"d":"2025-12-23","a":"特殊框型・展台","f":[]},{"id":591,"t":"拼圖-軟式裱法 | 可捲可掛","c":"拼圖","w":675,"h":900,"d":"2025-12-19","a":"海報・拼圖","f":[]},{"id":590,"t":"客制浮板立體框","c":"浮雕・標本・立體","w":675,"h":900,"d":"2025-12-17","a":"球衣・立體收藏","f":["立體框"]},{"id":589,"t":"客制浮板立體框","c":"拼圖","w":675,"h":900,"d":"2025-12-17","a":"海報・拼圖","f":["立體框"]},{"id":588,"t":"乾燥花","c":"球衣・立體件","w":900,"h":900,"d":"2025-12-17","a":"球衣・立體收藏","f":[]},{"id":587,"t":"球衣立體多元裱框","c":"球衣・立體件","w":735,"h":900,"d":"2025-12-17","a":"球衣・立體收藏","f":["立體框"]},{"id":586,"t":"雙面銅雕旋轉桌上屏風","c":"屏風","w":675,"h":900,"d":"2025-12-17","a":"捲軸・屏風","f":["屏風","雙面磁吸"]},{"id":585,"t":"大型唐卡立體框","c":"唐卡・宗教","w":675,"h":900,"d":"2025-12-17","a":"宗教・唐卡","f":["立體框"]},{"id":584,"t":"512X217公分超大卷軸","c":"捲軸・手捲","w":600,"h":900,"d":"2025-12-17","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":583,"t":"扇面立體浮板框","c":"書法・水墨","w":900,"h":675,"d":"2025-12-17","a":"書法・水墨","f":["立體框"]},{"id":582,"t":"日式傳統屏風-四曲一隻","c":"屏風","w":900,"h":675,"d":"2025-12-17","a":"捲軸・屏風","f":["屏風"]},{"id":581,"t":"唐卡｜掛軸｜宣和裱","c":"唐卡・宗教","w":380,"h":900,"d":"2025-10-22","a":"宗教・唐卡","f":["捲軸・掛軸"]},{"id":580,"t":"唐卡｜掛軸｜宣和裱","c":"唐卡・宗教","w":406,"h":900,"d":"2025-10-22","a":"宗教・唐卡","f":["捲軸・掛軸"]},{"id":579,"t":"唐卡｜懸浮立體框+小內框","c":"唐卡・宗教","w":736,"h":900,"d":"2025-10-22","a":"宗教・唐卡","f":["立體框","內框/L框"]},{"id":578,"t":"唐卡｜內外框｜鋁框＋內框","c":"唐卡・宗教","w":708,"h":900,"d":"2025-10-22","a":"宗教・唐卡","f":["內框/L框","鋁框"]},{"id":577,"t":"唐卡｜鋁框｜立體框","c":"唐卡・宗教","w":875,"h":872,"d":"2025-10-22","a":"宗教・唐卡","f":["立體框","鋁框"]},{"id":576,"t":"唐卡｜平面裱框","c":"唐卡・宗教","w":900,"h":881,"d":"2025-10-22","a":"宗教・唐卡","f":["平面框"]},{"id":575,"t":"特殊造型拼圖｜不規則｜立體懸浮裱框｜村上隆","c":"拼圖","w":894,"h":900,"d":"2025-10-21","a":"海報・拼圖","f":["立體框"]},{"id":574,"t":"三合一 懸浮立體拼圖裱框","c":"拼圖","w":900,"h":801,"d":"2025-10-21","a":"海報・拼圖","f":["立體框"]},{"id":573,"t":"村上隆拼圖｜立體懸浮裱框","c":"拼圖","w":900,"h":775,"d":"2025-10-21","a":"海報・拼圖","f":["立體框"]},{"id":572,"t":"圓形拼圖｜村上隆｜拼圖無框畫","c":"拼圖","w":722,"h":722,"d":"2025-10-21","a":"海報・拼圖","f":["圓框","無框畫"]},{"id":571,"t":"特殊造型拼圖｜不規則｜立體懸浮裱框｜撞色卡板","c":"拼圖","w":723,"h":900,"d":"2025-10-21","a":"海報・拼圖","f":["立體框"]},{"id":570,"t":"特殊造型拼圖｜不規則｜平面裱框","c":"拼圖","w":900,"h":656,"d":"2025-10-21","a":"海報・拼圖","f":["平面框"]},{"id":569,"t":"超大清明上河圖 | 裱框 | 掛畫","c":"海報・版畫","w":900,"h":590,"d":"2025-09-15","a":"海報・拼圖","f":[]},{"id":568,"t":"層櫃客製 | 安裝","c":"展台・展牆","w":506,"h":900,"d":"2025-09-15","a":"特殊框型・展台","f":[]},{"id":567,"t":"單片雙面 | 磁吸 | 屏風範例","c":"屏風","w":324,"h":900,"d":"2025-09-05","a":"捲軸・屏風","f":["屏風","雙面磁吸"]},{"id":566,"t":"單片雙面 | 磁吸 | 屏風範例","c":"海報・版畫","w":324,"h":900,"d":"2025-09-05","a":"海報・拼圖","f":["屏風","雙面磁吸"]},{"id":565,"t":"四片式屏風 | 空框","c":"屏風","w":675,"h":900,"d":"2025-09-05","a":"捲軸・屏風","f":["屏風"]},{"id":564,"t":"四片式屏風範例","c":"屏風","w":900,"h":675,"d":"2025-09-05","a":"捲軸・屏風","f":["屏風"]},{"id":563,"t":"卷軸範例","c":"捲軸・手捲","w":675,"h":900,"d":"2025-09-03","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":562,"t":"卷軸範例","c":"捲軸・手捲","w":300,"h":900,"d":"2025-09-03","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":561,"t":"驚雁 | 宣和裱","c":"捲軸・手捲","w":405,"h":900,"d":"2025-09-03","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":560,"t":"書法無框畫範例","c":"書法・水墨","w":675,"h":900,"d":"2025-09-03","a":"書法・水墨","f":["無框畫"]},{"id":559,"t":"對聯","c":"捲軸・手捲","w":675,"h":900,"d":"2025-09-03","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":558,"t":"配色範例","c":"膠彩・水彩","w":900,"h":675,"d":"2025-08-28","a":"畫作・相片","f":[]},{"id":557,"t":"雙面壓克力框","c":"海報・版畫","w":675,"h":900,"d":"2025-08-28","a":"海報・拼圖","f":["壓克力/玻璃","雙面磁吸"]},{"id":556,"t":"桌上型屏風裱框範例","c":"屏風","w":900,"h":675,"d":"2025-08-28","a":"捲軸・屏風","f":["屏風"]},{"id":554,"t":"榫接框型參考","c":"海報・版畫","w":675,"h":900,"d":"2025-08-28","a":"海報・拼圖","f":["榫接框"]},{"id":553,"t":"球衣範例","c":"球衣・立體件","w":819,"h":900,"d":"2025-08-28","a":"球衣・立體收藏","f":[]},{"id":552,"t":"二合一卷軸","c":"捲軸・手捲","w":818,"h":900,"d":"2025-08-28","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":551,"t":"立體窗花","c":"書法・水墨","w":900,"h":508,"d":"2025-08-28","a":"書法・水墨","f":["立體框"]},{"id":550,"t":"骨董窗花框","c":"書法・水墨","w":675,"h":900,"d":"2025-08-28","a":"書法・水墨","f":[]},{"id":549,"t":"立體","c":"海報・版畫","w":831,"h":900,"d":"2025-08-28","a":"海報・拼圖","f":["立體框"]},{"id":548,"t":"立體書法裱框","c":"書法・水墨","w":675,"h":900,"d":"2025-08-28","a":"書法・水墨","f":["立體框"]},{"id":547,"t":"立體紙雕","c":"球衣・立體件","w":718,"h":900,"d":"2025-08-28","a":"球衣・立體收藏","f":["立體框"]},{"id":546,"t":"超細榫接立體框","c":"榫接框・圓角框","w":675,"h":900,"d":"2025-08-28","a":"特殊框型・展台","f":["立體框","榫接框"]},{"id":545,"t":"銅板浮雕","c":"唐卡・宗教","w":900,"h":675,"d":"2025-08-28","a":"宗教・唐卡","f":[]},{"id":544,"t":"絲巾","c":"絲巾・布類","w":878,"h":900,"d":"2025-08-28","a":"絲巾・布類","f":[]},{"id":543,"t":"超大絲巾裱框","c":"絲巾・布類","w":687,"h":900,"d":"2025-08-28","a":"絲巾・布類","f":[]},{"id":542,"t":"黑絹範例","c":"捲軸・手捲","w":476,"h":900,"d":"2025-08-28","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":541,"t":"書法｜日式裱框","c":"書法・水墨","w":900,"h":580,"d":"2025-08-20","a":"書法・水墨","f":[]},{"id":540,"t":"手工噴漆框｜客製化圓框｜拼圖立體框","c":"拼圖","w":900,"h":887,"d":"2025-08-20","a":"海報・拼圖","f":["立體框","圓框"]},{"id":539,"t":"書法｜無框畫","c":"書法・水墨","w":899,"h":900,"d":"2025-08-20","a":"書法・水墨","f":["無框畫"]},{"id":538,"t":"代客書法｜裱框","c":"書法・水墨","w":442,"h":900,"d":"2025-08-14","a":"書法・水墨","f":[]},{"id":537,"t":"金鏟子","c":"浮雕・標本・立體","w":292,"h":900,"d":"2025-08-14","a":"球衣・立體收藏","f":[]},{"id":536,"t":"雷射雕刻｜文昌筆裱框","c":"浮雕・標本・立體","w":900,"h":717,"d":"2025-08-14","a":"球衣・立體收藏","f":[]},{"id":535,"t":"鋁板浮雕","c":"浮雕・標本・立體","w":900,"h":678,"d":"2025-08-14","a":"球衣・立體收藏","f":[]},{"id":534,"t":"代客書法裱框書法裱框","c":"書法・水墨","w":900,"h":478,"d":"2025-08-14","a":"書法・水墨","f":[]},{"id":532,"t":"立體件","c":"玻璃框・壓克力罩","w":675,"h":900,"d":"2025-08-14","a":"特殊框型・展台","f":["立體框","壓克力/玻璃"]},{"id":531,"t":"立體紀念品-網球/裱框","c":"浮雕・標本・立體","w":900,"h":549,"d":"2025-08-14","a":"球衣・立體收藏","f":["立體框"]},{"id":530,"t":"手捲","c":"捲軸・手捲","w":900,"h":374,"d":"2025-08-12","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":529,"t":"代客書法｜掛軸｜配色範例","c":"捲軸・手捲","w":405,"h":900,"d":"2025-08-12","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":528,"t":"黑絹｜掛軸","c":"捲軸・手捲","w":528,"h":900,"d":"2025-08-12","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":527,"t":"灰藍色絹布｜掛軸","c":"捲軸・手捲","w":465,"h":900,"d":"2025-08-12","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":526,"t":"細邊捲軸｜迷你掛軸","c":"捲軸・手捲","w":354,"h":900,"d":"2025-08-12","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":525,"t":"宣和裱","c":"捲軸・手捲","w":410,"h":900,"d":"2025-08-12","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":524,"t":"無邊柱捲軸","c":"捲軸・手捲","w":452,"h":900,"d":"2025-08-12","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":523,"t":"全開捲軸｜畫心拼接","c":"捲軸・手捲","w":354,"h":900,"d":"2025-08-12","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":522,"t":"雙面磁吸框/屏風","c":"屏風","w":600,"h":900,"d":"2025-08-12","a":"捲軸・屏風","f":["屏風","雙面磁吸"]},{"id":521,"t":"雙面磁吸屏風","c":"雙面磁吸框","w":900,"h":600,"d":"2025-08-12","a":"捲軸・屏風","f":["屏風","雙面磁吸"]},{"id":520,"t":"愛馬仕 絲巾裱框｜140*140cm","c":"絲巾・布類","w":900,"h":888,"d":"2025-08-12","a":"絲巾・布類","f":[]},{"id":519,"t":"書法加細框","c":"書法・水墨","w":900,"h":896,"d":"2025-08-12","a":"書法・水墨","f":["細框"]},{"id":518,"t":"球衣特殊裱框/木板卡紙/精緻噴漆/金邊","c":"其他特色做法","w":839,"h":900,"d":"2025-08-12","a":"特殊框型・展台","f":["加卡紙"]},{"id":517,"t":"球衣特殊裱框/木板卡紙/電腦割字/立體字/印刷品","c":"球衣・立體件","w":834,"h":900,"d":"2025-08-12","a":"球衣・立體收藏","f":["立體框","加卡紙"]},{"id":516,"t":"咖啡店顯示器/電視-裱框","c":"球衣・立體件","w":675,"h":900,"d":"2025-08-08","a":"球衣・立體收藏","f":[]},{"id":515,"t":"超大型媽祖神衣裱框","c":"唐卡・宗教","w":675,"h":900,"d":"2025-08-08","a":"宗教・唐卡","f":[]},{"id":514,"t":"扇子｜折扇｜立體框","c":"浮雕・標本・立體","w":900,"h":565,"d":"2025-08-07","a":"球衣・立體收藏","f":["立體框"]},{"id":513,"t":"村上隆花朵造型拼圖｜圓框","c":"拼圖","w":900,"h":900,"d":"2025-07-31","a":"海報・拼圖","f":["圓框"]},{"id":512,"t":"愛馬仕絲巾｜立體鋁框","c":"絲巾・布類","w":900,"h":896,"d":"2025-07-21","a":"絲巾・布類","f":["立體框","鋁框"]},{"id":511,"t":"Marimekko 印花布｜內外框","c":"絲巾・布類","w":418,"h":900,"d":"2025-07-17","a":"絲巾・布類","f":["內框/L框"]},{"id":510,"t":"三十三間堂｜一期一會｜底布外拉","c":"海報・版畫","w":849,"h":898,"d":"2025-07-17","a":"海報・拼圖","f":[]},{"id":509,"t":"三十三間堂｜一期一會｜底布外拉","c":"海報・版畫","w":828,"h":900,"d":"2025-07-17","a":"海報・拼圖","f":[]},{"id":508,"t":"拼圖｜跳色框｜冷裱熱壓","c":"拼圖","w":626,"h":900,"d":"2025-06-10","a":"海報・拼圖","f":[]},{"id":505,"t":"經典愛馬仕橘｜手工噴漆框｜立體框","c":"絲巾・布類","w":900,"h":888,"d":"2025-05-08","a":"絲巾・布類","f":["立體框"]},{"id":504,"t":"風之谷｜磁吸式｜可開合裱框","c":"海報・版畫","w":900,"h":900,"d":"2025-05-07","v":"HXaO5Qc0FrM","a":"海報・拼圖","f":["雙面磁吸"]},{"id":503,"t":"四角倒圓｜書法平面框","c":"書法・水墨","w":900,"h":538,"d":"2025-04-15","a":"書法・水墨","f":["平面框"]},{"id":502,"t":"球衣裱框","c":"球衣・立體件","w":713,"h":900,"d":"2025-04-14","a":"球衣・立體收藏","f":[]},{"id":500,"t":"魔法公主2合1立體浮板框","c":"海報・版畫","w":900,"h":692,"d":"2025-04-13","a":"海報・拼圖","f":["立體框"]},{"id":499,"t":"風之谷雙面壓克力透明框","c":"海報・版畫","w":638,"h":900,"d":"2025-04-13","a":"海報・拼圖","f":["壓克力/玻璃","雙面磁吸"]},{"id":492,"t":"風之谷｜9mm淺色實木細框","c":"海報・版畫","w":629,"h":900,"d":"2025-04-12","a":"海報・拼圖","f":["細框","木框"]},{"id":490,"t":"日本御守｜立體框","c":"浮雕・標本・立體","w":887,"h":900,"d":"2025-04-10","a":"球衣・立體收藏","f":["立體框"]},{"id":489,"t":"大藍閃蝶｜標本｜立體框","c":"浮雕・標本・立體","w":900,"h":717,"d":"2025-04-09","a":"球衣・立體收藏","f":["立體框"]},{"id":488,"t":"Human Made x KAWS Tiger Silk Rug｜地毯","c":"絲巾・布類","w":572,"h":900,"d":"2025-04-08","a":"絲巾・布類","f":[]},{"id":487,"t":"蝴蝶｜標本｜立體框｜手工榫接框｜雙面壓克力","c":"浮雕・標本・立體","w":898,"h":900,"d":"2025-04-07","a":"球衣・立體收藏","f":["立體框","壓克力/玻璃","雙面磁吸","榫接框"]},{"id":486,"t":"拼圖｜立體框｜草間彌生｜南瓜","c":"拼圖","w":900,"h":659,"d":"2025-04-07","a":"海報・拼圖","f":["立體框"]},{"id":485,"t":"膠彩｜立體手染框","c":"膠彩・水彩","w":900,"h":610,"d":"2025-04-07","a":"畫作・相片","f":["立體框"]},{"id":484,"t":"海樹珊瑚｜標本｜立體框","c":"浮雕・標本・立體","w":900,"h":871,"d":"2025-04-07","a":"球衣・立體收藏","f":["立體框"]},{"id":483,"t":"特殊造型拼圖｜嚕嚕咪｜立體框","c":"拼圖","w":643,"h":900,"d":"2025-04-07","a":"海報・拼圖","f":["立體框"]},{"id":482,"t":"特殊水墨掛軸","c":"捲軸・手捲","w":191,"h":900,"d":"2025-04-07","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":481,"t":"永樂屋｜手拭｜手帕｜方巾｜領巾｜手巾","c":"絲巾・布類","w":351,"h":900,"d":"2025-04-07","a":"絲巾・布類","f":[]},{"id":480,"t":"棒球海報｜陳傑憲親簽海報","c":"海報・版畫","w":669,"h":900,"d":"2025-04-07","a":"海報・拼圖","f":[]},{"id":479,"t":"毛巾｜棒球｜2024 GLOBAL CHAMPIONS台灣冠軍紀念巾｜TEAM TAIWAN","c":"絲巾・布類","w":900,"h":456,"d":"2025-04-07","a":"絲巾・布類","f":[]},{"id":478,"t":"水墨｜膠彩｜金潛紙｜立體框","c":"膠彩・水彩","w":450,"h":900,"d":"2025-04-07","a":"畫作・相片","f":["立體框"]},{"id":477,"t":"宮印｜平面框","c":"唐卡・宗教","w":900,"h":900,"d":"2025-04-02","a":"宗教・唐卡","f":["平面框"]},{"id":476,"t":"宮印｜平面框","c":"書法・水墨","w":900,"h":900,"d":"2025-04-02","a":"書法・水墨","f":["平面框"]},{"id":475,"t":"宮印｜平面框","c":"唐卡・宗教","w":900,"h":900,"d":"2025-04-02","a":"宗教・唐卡","f":["平面框"]},{"id":474,"t":"黃符｜內外框","c":"唐卡・宗教","w":900,"h":900,"d":"2025-04-02","a":"宗教・唐卡","f":["內框/L框"]},{"id":473,"t":"宮印｜大筆進財｜扁額｜立體框｜角花","c":"唐卡・宗教","w":900,"h":900,"d":"2025-04-02","a":"宗教・唐卡","f":["立體框"]},{"id":472,"t":"海報｜平面框","c":"唐卡・宗教","w":900,"h":900,"d":"2025-04-02","a":"宗教・唐卡","f":["平面框"]},{"id":471,"t":"福符｜平面框","c":"唐卡・宗教","w":900,"h":900,"d":"2025-04-02","a":"宗教・唐卡","f":["平面框"]},{"id":470,"t":"神衣｜立體框","c":"唐卡・宗教","w":900,"h":900,"d":"2025-04-02","a":"宗教・唐卡","f":["立體框"]},{"id":469,"t":"海報｜平面框","c":"唐卡・宗教","w":900,"h":900,"d":"2025-04-02","a":"宗教・唐卡","f":["平面框"]},{"id":468,"t":"紅綾｜紅綵｜立體框","c":"唐卡・宗教","w":900,"h":900,"d":"2025-04-02","a":"宗教・唐卡","f":["立體框"]},{"id":467,"t":"宮印｜平面框","c":"書法・水墨","w":900,"h":900,"d":"2025-04-02","a":"書法・水墨","f":["平面框"]},{"id":466,"t":"客製化底座","c":"展台・展牆","w":900,"h":900,"d":"2025-04-02","a":"特殊框型・展台","f":[]},{"id":465,"t":"二合一平面框｜卡紙包絹","c":"書法・水墨","w":900,"h":900,"d":"2025-04-02","a":"書法・水墨","f":["平面框","加卡紙"]},{"id":463,"t":"立體銅雕｜浮雕｜配件固定","c":"浮雕・標本・立體","w":900,"h":900,"d":"2025-04-02","a":"球衣・立體收藏","f":["立體框"]},{"id":462,"t":"絲巾｜ FENDI 平面框","c":"絲巾・布類","w":900,"h":839,"d":"2025-04-01","a":"絲巾・布類","f":["平面框"]},{"id":461,"t":"絲巾｜ Hermès愛馬仕 內外框","c":"絲巾・布類","w":900,"h":889,"d":"2025-04-01","a":"絲巾・布類","f":["內框/L框"]},{"id":460,"t":"絲巾｜ Hermès愛馬仕 透明壓克力框","c":"絲巾・布類","w":898,"h":900,"d":"2025-04-01","a":"絲巾・布類","f":["壓克力/玻璃"]},{"id":459,"t":"絲巾｜ Hermès愛馬仕 平面鋁框","c":"絲巾・布類","w":900,"h":897,"d":"2025-04-01","a":"絲巾・布類","f":["平面框","鋁框"]},{"id":458,"t":"絲巾｜ Hermès愛馬仕 內外框+立體框","c":"絲巾・布類","w":888,"h":900,"d":"2025-04-01","a":"絲巾・布類","f":["立體框","內框/L框"]},{"id":457,"t":"絲巾｜村上隆×多啦A夢 大尺寸方巾｜木板卡紙","c":"絲巾・布類","w":900,"h":896,"d":"2025-04-01","a":"絲巾・布類","f":["加卡紙"]},{"id":456,"t":"絲巾｜ Hermès愛馬仕 平面鋁框","c":"絲巾・布類","w":900,"h":885,"d":"2025-04-01","a":"絲巾・布類","f":["平面框","鋁框"]},{"id":455,"t":"絲巾｜Chanel 香奈兒 平面鋁框","c":"絲巾・布類","w":881,"h":900,"d":"2025-04-01","a":"絲巾・布類","f":["平面框","鋁框"]},{"id":454,"t":"絲巾｜Hermès愛馬仕 平面框+卡紙","c":"絲巾・布類","w":900,"h":899,"d":"2025-04-01","a":"絲巾・布類","f":["平面框","加卡紙"]},{"id":453,"t":"絲巾｜ Hermès愛馬仕 平面框","c":"絲巾・布類","w":875,"h":870,"d":"2025-04-01","a":"絲巾・布類","f":["平面框"]},{"id":452,"t":"絲巾｜DIOR 鋁框 （平面框）","c":"絲巾・布類","w":890,"h":900,"d":"2025-04-01","a":"絲巾・布類","f":["平面框","鋁框"]},{"id":451,"t":"風之谷 王蟲海報","c":"海報・版畫","w":694,"h":900,"d":"2025-03-26","a":"海報・拼圖","f":[]},{"id":450,"t":"風之谷 王蟲海報 立體漂浮框","c":"海報・版畫","w":668,"h":900,"d":"2025-03-26","a":"海報・拼圖","f":["立體框"]},{"id":449,"t":"風之谷 王蟲海報 鋁框","c":"海報・版畫","w":657,"h":900,"d":"2025-03-26","a":"海報・拼圖","f":["鋁框"]},{"id":448,"t":"大型裱件內襯 | 一體成形噴漆木板","c":"其他特色做法","w":900,"h":897,"d":"2025-03-25","a":"特殊框型・展台","f":[]},{"id":447,"t":"油畫布原作裱捲軸-範例","c":"其他特色做法","w":556,"h":900,"d":"2025-03-25","x":"1.出國展覽 攜帶方便~\n2.揭裱容易!\n3.利於收藏.不占空間~","a":"特殊框型・展台","f":["捲軸・掛軸"]},{"id":446,"t":"現代超細框","c":"書法・水墨","w":352,"h":900,"d":"2025-03-25","a":"書法・水墨","f":["細框"]},{"id":445,"t":"立體壓克力框","c":"浮雕・標本・立體","w":900,"h":900,"d":"2025-03-25","a":"球衣・立體收藏","f":["立體框","壓克力/玻璃"]},{"id":444,"t":"手染漸層絹布","c":"捲軸・手捲","w":145,"h":900,"d":"2025-03-25","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":443,"t":"無邊柱捲軸","c":"捲軸・手捲","w":99,"h":900,"d":"2025-03-25","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":442,"t":"桌上型屏風製作","c":"屏風","w":900,"h":900,"d":"2025-03-21","a":"捲軸・屏風","f":["屏風"]},{"id":441,"t":"版畫圓形框","c":"圓框・特殊外型","w":897,"h":900,"d":"2025-03-21","a":"特殊框型・展台","f":["圓框"]},{"id":440,"t":"特殊手工腳架","c":"玻璃框・壓克力罩","w":900,"h":714,"d":"2025-03-21","a":"特殊框型・展台","f":["壓克力/玻璃"]},{"id":439,"t":"風之谷 王蟲海報","c":"海報・版畫","w":684,"h":900,"d":"2025-03-21","a":"海報・拼圖","f":[]},{"id":438,"t":"風之谷 王蟲海報 立體漂浮框","c":"海報・版畫","w":665,"h":900,"d":"2025-03-21","a":"海報・拼圖","f":["立體框"]},{"id":437,"t":"風之谷 王蟲海報","c":"海報・版畫","w":677,"h":900,"d":"2025-03-21","a":"海報・拼圖","f":[]},{"id":436,"t":"風之谷 王蟲海報 立體漂浮框","c":"海報・版畫","w":663,"h":900,"d":"2025-03-21","a":"海報・拼圖","f":["立體框"]},{"id":435,"t":"風之谷 王蟲海報","c":"海報・版畫","w":648,"h":900,"d":"2025-03-21","a":"海報・拼圖","f":[]},{"id":434,"t":"風之谷 王蟲海報","c":"海報・版畫","w":622,"h":900,"d":"2025-03-21","a":"海報・拼圖","f":[]},{"id":433,"t":"風之谷 王蟲海報","c":"海報・版畫","w":645,"h":900,"d":"2025-03-21","a":"海報・拼圖","f":[]},{"id":432,"t":"風之谷 王蟲海報","c":"海報・版畫","w":662,"h":900,"d":"2025-03-21","a":"海報・拼圖","f":[]},{"id":431,"t":"上蓋磁吸式壓克力罩+底座","c":"玻璃框・壓克力罩","w":900,"h":900,"d":"2024-10-18","a":"特殊框型・展台","f":["壓克力/玻璃","雙面磁吸"]},{"id":430,"t":"大圓角特製","c":"榫接框・圓角框","w":900,"h":894,"d":"2024-10-18","a":"特殊框型・展台","f":["榫接框"]},{"id":429,"t":"大圓角特製","c":"榫接框・圓角框","w":900,"h":900,"d":"2024-10-18","a":"特殊框型・展台","f":["榫接框"]},{"id":428,"t":"特殊八角框","c":"榫接框・圓角框","w":900,"h":900,"d":"2024-09-20","a":"特殊框型・展台","f":["榫接框"]},{"id":427,"t":"羅盤立體框設計","c":"浮雕・標本・立體","w":900,"h":900,"d":"2024-09-20","a":"球衣・立體收藏","f":["立體框"]},{"id":425,"t":"磁磚證書框","c":"球衣・立體件","w":663,"h":900,"d":"2024-06-24","a":"球衣・立體收藏","f":[]},{"id":424,"t":"紙雕雙面磁吸框","c":"雙面磁吸框","w":900,"h":900,"d":"2024-06-24","a":"捲軸・屏風","f":["雙面磁吸"]},{"id":423,"t":"書法 | 榫接圓角框","c":"榫接框・圓角框","w":900,"h":900,"d":"2024-06-24","a":"特殊框型・展台","f":["榫接框"]},{"id":422,"t":"圓框+圓形木板卡紙","c":"圓框・特殊外型","w":900,"h":900,"d":"2024-06-24","a":"特殊框型・展台","f":["圓框","加卡紙"]},{"id":421,"t":"紅綾布","c":"書法・水墨","w":446,"h":900,"d":"2024-06-24","a":"書法・水墨","f":[]},{"id":420,"t":"立體球衣設計","c":"球衣・立體件","w":806,"h":900,"d":"2024-06-24","a":"球衣・立體收藏","f":["立體框"]},{"id":419,"t":"簽名球衣 | 增加美工設計","c":"球衣・立體件","w":799,"h":900,"d":"2024-06-24","a":"球衣・立體收藏","f":[]},{"id":418,"t":"急件卷軸","c":"捲軸・手捲","w":900,"h":900,"d":"2024-06-24","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":417,"t":"卡紙包絹","c":"書法・水墨","w":900,"h":693,"d":"2024-06-24","a":"書法・水墨","f":["加卡紙"]},{"id":416,"t":"手染雙面磁吸框","c":"雙面磁吸框","w":900,"h":900,"d":"2024-06-24","a":"捲軸・屏風","f":["雙面磁吸"]},{"id":414,"t":"絲巾立體框","c":"絲巾・布類","w":881,"h":900,"d":"2024-06-24","a":"絲巾・布類","f":["立體框"]},{"id":413,"t":"絲巾 | 特殊色 噴漆框","c":"絲巾・布類","w":900,"h":882,"d":"2024-06-24","a":"絲巾・布類","f":[]},{"id":412,"t":"客製 | 玻璃框 人形台","c":"玻璃框・壓克力罩","w":675,"h":900,"d":"2024-06-24","a":"特殊框型・展台","f":["壓克力/玻璃"]},{"id":411,"t":"客製 | 噴漆 圓角框","c":"榫接框・圓角框","w":900,"h":900,"d":"2024-06-24","a":"特殊框型・展台","f":["榫接框"]},{"id":410,"t":"客製圓柱形展台","c":"展台・展牆","w":900,"h":652,"d":"2024-05-03","a":"特殊框型・展台","f":[]},{"id":409,"t":"球衣雙面磁吸框","c":"雙面磁吸框","w":900,"h":678,"d":"2024-05-03","a":"捲軸・屏風","f":["雙面磁吸"]},{"id":408,"t":"雙面磁吸框","c":"雙面磁吸框","w":900,"h":900,"d":"2024-05-03","a":"捲軸・屏風","f":["雙面磁吸"]},{"id":407,"t":"玻璃框客製","c":"玻璃框・壓克力罩","w":854,"h":900,"d":"2024-05-01","a":"特殊框型・展台","f":["壓克力/玻璃"]},{"id":406,"t":"超細黃檀木榫接立體框","c":"榫接框・圓角框","w":900,"h":900,"d":"2024-05-01","a":"特殊框型・展台","f":["立體框","榫接框"]},{"id":405,"t":"特殊製作","c":"球衣・立體件","w":900,"h":612,"d":"2024-05-01","a":"球衣・立體收藏","f":[]},{"id":404,"t":"橢圓形框","c":"圓框・特殊外型","w":900,"h":675,"d":"2024-05-01","a":"特殊框型・展台","f":["圓框"]},{"id":403,"t":"特殊造型製作","c":"球衣・立體件","w":569,"h":900,"d":"2024-05-01","a":"球衣・立體收藏","f":[]},{"id":402,"t":"L形立體圓框","c":"圓框・特殊外型","w":686,"h":686,"d":"2024-05-01","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":401,"t":"客製立體圓框","c":"圓框・特殊外型","w":900,"h":899,"d":"2024-05-01","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":400,"t":"印章陳列收藏箱","c":"展台・展牆","w":900,"h":675,"d":"2024-05-01","a":"特殊框型・展台","f":[]},{"id":399,"t":"特製壓克力罩","c":"玻璃框・壓克力罩","w":900,"h":675,"d":"2024-05-01","a":"特殊框型・展台","f":["壓克力/玻璃"]},{"id":398,"t":"大形特殊製作","c":"球衣・立體件","w":900,"h":675,"d":"2024-05-01","a":"球衣・立體收藏","f":[]},{"id":397,"t":"書法榫接圓角框","c":"榫接框・圓角框","w":899,"h":900,"d":"2024-05-01","a":"特殊框型・展台","f":["榫接框"]},{"id":396,"t":"超薄立體榫接美背","c":"榫接框・圓角框","w":675,"h":900,"d":"2024-05-01","a":"特殊框型・展台","f":["立體框","榫接框"]},{"id":395,"t":"超大檜木盒","c":"錦盒・木盒","w":900,"h":507,"d":"2024-05-01","a":"特殊框型・展台","f":["錦盒"]},{"id":394,"t":"框改捲軸範例","c":"其他特色做法","w":630,"h":900,"d":"2024-05-01","a":"特殊框型・展台","f":["捲軸・掛軸"]},{"id":393,"t":"可攜組合式橫軸","c":"其他特色做法","w":900,"h":675,"d":"2024-05-01","a":"特殊框型・展台","f":["捲軸・掛軸"]},{"id":392,"t":"大圓角特製","c":"榫接框・圓角框","w":900,"h":892,"d":"2024-05-01","a":"特殊框型・展台","f":["榫接框"]},{"id":391,"t":"壁掛式半圓形展台製作","c":"展台・展牆","w":900,"h":816,"d":"2024-05-01","a":"特殊框型・展台","f":["圓框"]},{"id":390,"t":"榫接圓形實木框","c":"榫接框・圓角框","w":821,"h":821,"d":"2024-05-01","a":"特殊框型・展台","f":["圓框","榫接框","木框"]},{"id":389,"t":"羅盤納財鎮宅特殊作法","c":"浮雕・標本・立體","w":899,"h":900,"d":"2024-04-14","a":"球衣・立體收藏","f":[]},{"id":388,"t":"佛像浮雕立體框","c":"浮雕・標本・立體","w":900,"h":900,"d":"2024-04-14","a":"球衣・立體收藏","f":["立體框"]},{"id":387,"t":"超薄金色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2024-04-14","a":"特殊框型・展台","f":["圓框"]},{"id":386,"t":"二合一通屏","c":"捲軸・手捲","w":900,"h":900,"d":"2024-04-14","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":385,"t":"羅盤聚財排列特殊作法","c":"浮雕・標本・立體","w":900,"h":900,"d":"2024-04-14","a":"球衣・立體收藏","f":[]},{"id":384,"t":"紙雕雙面壓克力","c":"球衣・立體件","w":900,"h":675,"d":"2024-04-14","a":"球衣・立體收藏","f":["壓克力/玻璃","雙面磁吸"]},{"id":383,"t":"春聯防水上膜","c":"書法・水墨","w":806,"h":900,"d":"2024-04-14","a":"書法・水墨","f":[]},{"id":382,"t":"榫接圓角框","c":"榫接框・圓角框","w":675,"h":900,"d":"2024-04-12","a":"特殊框型・展台","f":["榫接框"]},{"id":381,"t":"花梨木榫接圓角框","c":"榫接框・圓角框","w":900,"h":900,"d":"2024-04-12","a":"特殊框型・展台","f":["榫接框"]},{"id":380,"t":"特殊客製屏風","c":"屏風","w":675,"h":900,"d":"2024-04-11","a":"捲軸・屏風","f":["屏風"]},{"id":379,"t":"銅雕浮雕裱框","c":"浮雕・標本・立體","w":900,"h":900,"d":"2024-04-11","a":"球衣・立體收藏","f":[]},{"id":378,"t":"龜殼立體框","c":"浮雕・標本・立體","w":900,"h":899,"d":"2024-04-11","a":"球衣・立體收藏","f":["立體框"]},{"id":377,"t":"特殊作法","c":"浮雕・標本・立體","w":900,"h":900,"d":"2024-04-11","a":"球衣・立體收藏","f":[]},{"id":376,"t":"立體浮雕裱框","c":"浮雕・標本・立體","w":900,"h":900,"d":"2024-04-11","a":"球衣・立體收藏","f":["立體框"]},{"id":375,"t":"神衣裱框","c":"浮雕・標本・立體","w":900,"h":899,"d":"2024-04-11","a":"球衣・立體收藏","f":[]},{"id":374,"t":"橢圓框-客製","c":"圓框・特殊外型","w":900,"h":900,"d":"2024-04-11","a":"特殊框型・展台","f":["圓框"]},{"id":373,"t":"斧頭~立體框","c":"浮雕・標本・立體","w":900,"h":900,"d":"2024-04-11","a":"球衣・立體收藏","f":["立體框"]},{"id":372,"t":"四開捲軸","c":"捲軸・手捲","w":900,"h":900,"d":"2024-04-11","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":371,"t":"雙色全絹裱卷軸","c":"捲軸・手捲","w":900,"h":900,"d":"2024-04-11","x":"框改軸獨家作法~","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":370,"t":"雙色上眉全絹裱_卷軸卷軸","c":"捲軸・手捲","w":900,"h":900,"d":"2024-04-11","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":369,"t":"立體框|圓框|書法","c":"圓框・特殊外型","w":900,"h":900,"d":"2024-01-26","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":368,"t":"平面框|卡紙挖孔","c":"油畫・壓克力","w":900,"h":900,"d":"2024-01-26","a":"畫作・相片","f":["平面框","加卡紙"]},{"id":367,"t":"立體框|浮板+底布","c":"絲巾・布類","w":900,"h":900,"d":"2024-01-26","a":"絲巾・布類","f":["立體框"]},{"id":366,"t":"鑽貼畫|平面框","c":"球衣・立體件","w":900,"h":900,"d":"2024-01-26","a":"球衣・立體收藏","f":["平面框"]},{"id":365,"t":"無框畫|布架","c":"油畫・壓克力","w":900,"h":900,"d":"2024-01-26","a":"畫作・相片","f":["無框畫"]},{"id":364,"t":"粉彩|平面框|內外框","c":"油畫・壓克力","w":900,"h":900,"d":"2024-01-26","a":"畫作・相片","f":["平面框","內框/L框"]},{"id":363,"t":"立體框|浮板+壓克力","c":"海報・版畫","w":900,"h":900,"d":"2024-01-26","a":"海報・拼圖","f":["立體框","壓克力/玻璃"]},{"id":362,"t":"平面框|冷表熱壓","c":"拼圖","w":900,"h":900,"d":"2024-01-26","a":"海報・拼圖","f":["平面框"]},{"id":361,"t":"平面框|裱褙+框","c":"書法・水墨","w":900,"h":900,"d":"2024-01-26","a":"書法・水墨","f":["平面框"]},{"id":360,"t":"平面框|鋁框","c":"油畫・壓克力","w":899,"h":900,"d":"2024-01-26","a":"畫作・相片","f":["平面框","鋁框"]},{"id":359,"t":"風之谷 | 超細(9mm)檀木-漂浮立體框","c":"海報・版畫","w":654,"h":900,"d":"2024-01-26","a":"海報・拼圖","f":["立體框"]},{"id":358,"t":"平面框|鋁框","c":"絲巾・布類","w":899,"h":900,"d":"2024-01-25","a":"絲巾・布類","f":["平面框","鋁框"]},{"id":357,"t":"平面框|木板+框","c":"油畫・壓克力","w":900,"h":900,"d":"2024-01-25","a":"畫作・相片","f":["平面框"]},{"id":355,"t":"平面框|雙卡紙挖圓","c":"絲巾・布類","w":847,"h":854,"d":"2024-01-25","a":"絲巾・布類","f":["平面框","加卡紙"]},{"id":349,"t":"紙雕特殊裱框｜加雙面壓克力","c":"球衣・立體件","w":425,"h":425,"d":"2023-08-23","a":"球衣・立體收藏","f":["壓克力/玻璃","雙面磁吸"]},{"id":348,"t":"油畫布輸出裱框","c":"油畫・壓克力","w":425,"h":425,"d":"2023-08-23","a":"畫作・相片","f":[]},{"id":347,"t":"PP相紙輸出裱框","c":"相片・證照","w":425,"h":425,"d":"2023-08-21","a":"畫作・相片","f":[]},{"id":346,"t":"PP相紙輸出裱框","c":"相片・證照","w":425,"h":425,"d":"2023-08-21","a":"畫作・相片","f":[]},{"id":345,"t":"獨創迷彩圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2023-08-11","a":"特殊框型・展台","f":["圓框"]},{"id":344,"t":"布 | 板架+立體框","c":"絲巾・布類","w":900,"h":900,"d":"2023-02-22","a":"絲巾・布類","f":["立體框"]},{"id":343,"t":"壓克力 | 壓克力罩","c":"油畫・壓克力","w":425,"h":425,"d":"2023-02-22","a":"畫作・相片","f":["壓克力/玻璃"]},{"id":342,"t":"巴黎鐵塔拼圖｜平面框","c":"拼圖","w":425,"h":425,"d":"2023-02-22","a":"海報・拼圖","f":["平面框"]},{"id":341,"t":"布｜平面框","c":"絲巾・布類","w":900,"h":900,"d":"2023-02-22","a":"絲巾・布類","f":["平面框"]},{"id":340,"t":"水墨 |平面框","c":"書法・水墨","w":425,"h":425,"d":"2023-02-22","a":"書法・水墨","f":["平面框"]},{"id":339,"t":"枝垂梅 | 小內框 | 實木立體框","c":"膠彩・水彩","w":900,"h":900,"d":"2023-02-22","a":"畫作・相片","f":["立體框","內框/L框","木框"]},{"id":338,"t":"蠟筆 | 鋁框做小內框 | 立體框","c":"膠彩・水彩","w":900,"h":900,"d":"2023-02-22","a":"畫作・相片","f":["立體框","內框/L框","鋁框"]},{"id":337,"t":"水彩 | 平面框","c":"膠彩・水彩","w":900,"h":900,"d":"2023-02-22","a":"畫作・相片","f":["平面框"]},{"id":336,"t":"拼圖 | 平面框","c":"拼圖","w":425,"h":425,"d":"2023-02-22","a":"海報・拼圖","f":["平面框"]},{"id":335,"t":"梵谷貓 | 立體框","c":"拼圖","w":425,"h":425,"d":"2023-02-22","a":"海報・拼圖","f":["立體框"]},{"id":334,"t":"戴珍珠耳環的少女貓 拼圖 | 立體框","c":"拼圖","w":425,"h":425,"d":"2023-02-21","a":"海報・拼圖","f":["立體框"]},{"id":333,"t":"貓咪 吻  拼圖 | 平面框","c":"拼圖","w":425,"h":425,"d":"2023-02-21","a":"海報・拼圖","f":["平面框"]},{"id":332,"t":"素描 | 平面框","c":"膠彩・水彩","w":900,"h":900,"d":"2023-02-21","a":"畫作・相片","f":["平面框"]},{"id":331,"t":"海報 | 平面框","c":"海報・版畫","w":900,"h":900,"d":"2023-02-21","a":"海報・拼圖","f":["平面框"]},{"id":330,"t":"海報 | 平面框","c":"海報・版畫","w":900,"h":900,"d":"2023-02-21","a":"海報・拼圖","f":["平面框"]},{"id":329,"t":"心經 | 小內框+角花 | 立體框","c":"球衣・立體件","w":425,"h":425,"d":"2023-02-21","a":"球衣・立體收藏","f":["立體框","內框/L框"]},{"id":328,"t":"喵喵系列版畫 | 立體框","c":"海報・版畫","w":900,"h":900,"d":"2023-02-21","a":"海報・拼圖","f":["立體框"]},{"id":327,"t":"海報 | 平面框","c":"海報・版畫","w":900,"h":900,"d":"2023-02-21","a":"海報・拼圖","f":["平面框"]},{"id":326,"t":"膠彩 | 手染色 | L框","c":"膠彩・水彩","w":900,"h":900,"d":"2023-02-21","a":"畫作・相片","f":["內框/L框"]},{"id":325,"t":"抽象 蠟筆 | 內外框","c":"膠彩・水彩","w":900,"h":900,"d":"2023-02-21","a":"畫作・相片","f":["內框/L框"]},{"id":324,"t":"水彩 四合一 | 平面框","c":"膠彩・水彩","w":900,"h":900,"d":"2023-02-21","a":"畫作・相片","f":["平面框"]},{"id":323,"t":"水墨 | 立體框","c":"書法・水墨","w":425,"h":425,"d":"2023-02-21","a":"書法・水墨","f":["立體框"]},{"id":322,"t":"梅花 水墨 | 平面框","c":"書法・水墨","w":425,"h":425,"d":"2023-02-21","a":"書法・水墨","f":["平面框"]},{"id":321,"t":"油畫 | 平面框","c":"油畫・壓克力","w":425,"h":425,"d":"2023-02-21","a":"畫作・相片","f":["平面框"]},{"id":320,"t":"油畫 | L框 |立體框","c":"油畫・壓克力","w":425,"h":425,"d":"2023-02-21","a":"畫作・相片","f":["立體框","內框/L框"]},{"id":319,"t":"油畫布輸出 | 無框畫","c":"油畫・壓克力","w":425,"h":425,"d":"2023-02-21","a":"畫作・相片","f":["無框畫"]},{"id":318,"t":"油畫布輸出 | 無框畫","c":"油畫・壓克力","w":425,"h":425,"d":"2023-02-21","a":"畫作・相片","f":["無框畫"]},{"id":317,"t":"史迪奇拼圖 | 圖壓框","c":"拼圖","w":425,"h":425,"d":"2023-02-18","a":"海報・拼圖","f":["圖壓框"]},{"id":316,"t":"水彩 | 鋁框 | 立體框","c":"膠彩・水彩","w":900,"h":900,"d":"2023-02-18","a":"畫作・相片","f":["立體框","鋁框"]},{"id":315,"t":"水墨 | 捲軸","c":"書法・水墨","w":425,"h":425,"d":"2023-02-18","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":314,"t":"水墨山巒 | 捲軸","c":"書法・水墨","w":425,"h":425,"d":"2023-02-18","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":313,"t":"水彩 | 鋁框+木框 | 立體框","c":"膠彩・水彩","w":900,"h":900,"d":"2023-02-17","a":"畫作・相片","f":["立體框","鋁框","木框"]},{"id":312,"t":"海報 | 平面框","c":"海報・版畫","w":900,"h":900,"d":"2023-02-17","a":"海報・拼圖","f":["平面框"]},{"id":311,"t":"郵票 | 卡紙挖洞 |平面框","c":"球衣・立體件","w":425,"h":425,"d":"2023-02-17","a":"球衣・立體收藏","f":["平面框","加卡紙"]},{"id":310,"t":"山水畫 | 單框","c":"書法・水墨","w":425,"h":425,"d":"2023-02-17","a":"書法・水墨","f":[]},{"id":309,"t":"灌籃高手海報 | 平面框","c":"海報・版畫","w":900,"h":900,"d":"2023-02-17","a":"海報・拼圖","f":["平面框"]},{"id":308,"t":"Hermes 愛馬仕絲巾 | 平面框","c":"絲巾・布類","w":900,"h":900,"d":"2023-02-17","a":"絲巾・布類","f":["平面框"]},{"id":307,"t":"奈良美智海報 | 鋁框","c":"海報・版畫","w":900,"h":900,"d":"2023-02-17","a":"海報・拼圖","f":["鋁框"]},{"id":306,"t":"拼圖 | 平面框","c":"拼圖","w":425,"h":425,"d":"2023-02-16","a":"海報・拼圖","f":["平面框"]},{"id":305,"t":"拼圖 | 立體框","c":"拼圖","w":425,"h":425,"d":"2023-02-16","a":"海報・拼圖","f":["立體框"]},{"id":304,"t":"沙畫 | 平面框","c":"海報・版畫","w":900,"h":900,"d":"2023-02-16","a":"海報・拼圖","f":["平面框"]},{"id":303,"t":"灌籃高手海報 | 平面框+卡紙","c":"海報・版畫","w":900,"h":900,"d":"2023-02-14","a":"海報・拼圖","f":["平面框","加卡紙"]},{"id":302,"t":"鈕扣作品 | 無框畫","c":"球衣・立體件","w":425,"h":425,"d":"2023-02-14","a":"球衣・立體收藏","f":["無框畫"]},{"id":301,"t":"鑽石貼 | 平面框","c":"球衣・立體件","w":425,"h":425,"d":"2023-02-14","a":"球衣・立體收藏","f":["平面框"]},{"id":300,"t":"Hermes 愛馬仕絲巾 | 立體框","c":"絲巾・布類","w":900,"h":900,"d":"2023-02-14","a":"絲巾・布類","f":["立體框"]},{"id":299,"t":"限量簽名球衣與小卡 | 平面框","c":"球衣・立體件","w":425,"h":425,"d":"2023-02-14","a":"球衣・立體收藏","f":["平面框"]},{"id":298,"t":"壞毛毛 | 雙面壓克力框","c":"海報・版畫","w":900,"h":900,"d":"2022-11-21","a":"海報・拼圖","f":["壓克力/玻璃","雙面磁吸"]},{"id":294,"t":"書法現代內外框","c":"書法・水墨","w":425,"h":425,"d":"2022-08-23","a":"書法・水墨","f":["內框/L框"]},{"id":292,"t":"手工榫接框 導圓角","c":"書法・水墨","w":425,"h":425,"d":"2022-08-23","a":"書法・水墨","f":["榫接框"]},{"id":291,"t":"絹本膠彩空裱加卡紙","c":"膠彩・水彩","w":900,"h":900,"d":"2022-08-23","a":"畫作・相片","f":["加卡紙"]},{"id":290,"t":"水墨實裱加膠膜","c":"書法・水墨","w":425,"h":425,"d":"2022-08-22","a":"書法・水墨","f":[]},{"id":288,"t":"水墨實裱","c":"書法・水墨","w":425,"h":425,"d":"2022-08-22","a":"書法・水墨","f":[]},{"id":287,"t":"紙本水墨裱立體框","c":"書法・水墨","w":425,"h":425,"d":"2022-08-22","a":"書法・水墨","f":["立體框"]},{"id":286,"t":"Dior 絲巾裱立體框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-29","a":"絲巾・布類","f":["立體框"]},{"id":285,"t":"Dior 絲巾裱框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-29","a":"絲巾・布類","f":[]},{"id":284,"t":"LV 絲巾裱框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-29","a":"絲巾・布類","f":[]},{"id":283,"t":"LV 絲巾裱框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-29","a":"絲巾・布類","f":[]},{"id":282,"t":"Hermes 愛馬仕絲巾裱立體框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-29","a":"絲巾・布類","f":["立體框"]},{"id":281,"t":"Hermes 愛馬仕絲巾裱框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-29","a":"絲巾・布類","f":[]},{"id":280,"t":"Hermes 愛馬仕絲巾裱框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-29","a":"絲巾・布類","f":[]},{"id":279,"t":"書法立體框","c":"書法・水墨","w":425,"h":425,"d":"2022-07-29","a":"書法・水墨","f":["立體框"]},{"id":278,"t":"Hermes 愛馬仕絲巾裱框｜鋁框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-27","a":"絲巾・布類","f":["鋁框"]},{"id":277,"t":"Hermes 愛馬仕絲巾裱框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-27","a":"絲巾・布類","f":[]},{"id":276,"t":"Hermes 愛馬仕絲巾裱框｜鋁框加卡紙","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-27","a":"絲巾・布類","f":["加卡紙","鋁框"]},{"id":275,"t":"Hermes 愛馬仕絲巾裱框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-27","a":"絲巾・布類","f":[]},{"id":274,"t":"雜貨店拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-27","a":"海報・拼圖","f":["立體框"]},{"id":273,"t":"幾米拼圖｜圖壓框","c":"浮雕・標本・立體","w":425,"h":425,"d":"2022-07-27","a":"海報・拼圖","f":["圖壓框"]},{"id":272,"t":"日本拼圖｜L框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["內框/L框"]},{"id":271,"t":"梵谷星夜拼圖｜內外框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["內框/L框"]},{"id":270,"t":"圖壓框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["圖壓框"]},{"id":269,"t":"圖壓框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["圖壓框"]},{"id":268,"t":"幾米拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["立體框"]},{"id":267,"t":"浮世繪拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["立體框"]},{"id":266,"t":"毓繡美術館覽限定拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["立體框"]},{"id":265,"t":"毓繡美術館覽限定拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["立體框"]},{"id":264,"t":"植物拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["立體框"]},{"id":263,"t":"幾米拼圖｜平面框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["平面框"]},{"id":262,"t":"經典酒瓶拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["立體框"]},{"id":261,"t":"獅子王拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["立體框"]},{"id":260,"t":"村上隆拼圖｜平面框加卡紙","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["平面框","加卡紙"]},{"id":259,"t":"村上隆拼圖｜平面框加卡紙","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["平面框","加卡紙"]},{"id":258,"t":"春之花束拼圖｜內外框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["內框/L框"]},{"id":257,"t":"雙面拼圖｜雙面壓克力框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["壓克力/玻璃","雙面磁吸"]},{"id":256,"t":"雙面拼圖｜雙面壓克力框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["壓克力/玻璃","雙面磁吸"]},{"id":255,"t":"草間彌生南瓜拼圖｜平面框","c":"拼圖","w":425,"h":425,"d":"2022-07-22","a":"海報・拼圖","f":["平面框"]},{"id":254,"t":"幾米拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":253,"t":"幾米拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":252,"t":"村上隆圓形拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框","圓框"]},{"id":251,"t":"魔女宅急便拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":250,"t":"四聯式幾米拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":249,"t":"巴黎鐵塔夜光拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":248,"t":"月球拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":247,"t":"奈良美智｜立體框","c":"奈良美智","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":246,"t":"奈良美智｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":245,"t":"奈良美智拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":244,"t":"幾米拼圖｜圖壓框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["圖壓框"]},{"id":243,"t":"幾米拼圖｜圖壓框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["圖壓框"]},{"id":242,"t":"浮世繪拼圖｜L框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["內框/L框"]},{"id":241,"t":"木質拼圖｜圓框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["圓框"]},{"id":240,"t":"米奇不規則拼圖","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":[]},{"id":238,"t":"Snoopy拼圖｜卡紙包絹","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["加卡紙"]},{"id":234,"t":"慕夏拼圖｜L框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["內框/L框"]},{"id":233,"t":"奈良美智拼圖｜圖壓框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["圖壓框"]},{"id":232,"t":"地球拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2022-07-21","a":"海報・拼圖","f":["立體框"]},{"id":231,"t":"Hermès絲巾作品裱框","c":"絲巾・布類","w":900,"h":900,"d":"2022-07-20","a":"絲巾・布類","f":[]},{"id":230,"t":"球衣與明星小卡 CNC客製化切割","c":"球衣・立體件","w":425,"h":425,"d":"2022-07-20","a":"球衣・立體收藏","f":[]},{"id":229,"t":"絲巾作品裱框","c":"絲巾・布類","w":900,"h":900,"d":"2021-12-03","a":"絲巾・布類","f":[]},{"id":228,"t":"羅盤裱框","c":"浮雕・標本・立體","w":425,"h":425,"d":"2021-12-03","a":"球衣・立體收藏","f":[]},{"id":227,"t":"限量球衣裱框","c":"球衣・立體件","w":425,"h":425,"d":"2021-12-03","a":"球衣・立體收藏","f":[]},{"id":225,"t":"絲巾作品裱框","c":"絲巾・布類","w":900,"h":900,"d":"2021-12-03","a":"絲巾・布類","f":[]},{"id":224,"t":"拼圖裱框｜立體框","c":"絲巾・布類","w":900,"h":900,"d":"2021-11-03","a":"海報・拼圖","f":["立體框"]},{"id":223,"t":"奈良美智海報裱框｜加卡紙","c":"海報・版畫","w":900,"h":900,"d":"2021-11-03","a":"海報・拼圖","f":["加卡紙"]},{"id":222,"t":"水墨作品裱框","c":"書法・水墨","w":425,"h":425,"d":"2021-11-03","a":"書法・水墨","f":[]},{"id":221,"t":"書法作品裱框","c":"書法・水墨","w":425,"h":425,"d":"2021-11-03","a":"書法・水墨","f":[]},{"id":219,"t":"KAWS卡片裱框｜加卡紙","c":"相片・證照","w":425,"h":425,"d":"2021-11-03","a":"畫作・相片","f":["加卡紙"]},{"id":218,"t":"KAWS版畫裱框","c":"海報・版畫","w":900,"h":900,"d":"2021-11-03","a":"海報・拼圖","f":[]},{"id":217,"t":"村上隆版畫｜立體白色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-11-03","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":216,"t":"抽象油畫｜立體銀色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-11-03","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":214,"t":"地球拼圖裱框｜鋁框","c":"拼圖","w":425,"h":425,"d":"2021-11-03","a":"海報・拼圖","f":["鋁框"]},{"id":213,"t":"書法作品裱框","c":"書法・水墨","w":425,"h":425,"d":"2021-11-03","a":"書法・水墨","f":[]},{"id":212,"t":"村上隆版畫｜加卡紙","c":"海報・版畫","w":900,"h":900,"d":"2021-11-03","a":"海報・拼圖","f":["加卡紙"]},{"id":211,"t":"村上隆版畫｜加卡紙","c":"海報・版畫","w":900,"h":900,"d":"2021-11-03","a":"海報・拼圖","f":["加卡紙"]},{"id":210,"t":"皮卡丘版畫｜加卡紙","c":"海報・版畫","w":900,"h":900,"d":"2021-11-03","a":"海報・拼圖","f":["加卡紙"]},{"id":209,"t":"村上隆版畫｜加卡紙","c":"海報・版畫","w":900,"h":900,"d":"2021-11-03","a":"海報・拼圖","f":["加卡紙"]},{"id":208,"t":"油畫左品裱框｜L框","c":"油畫・壓克力","w":425,"h":425,"d":"2021-11-03","a":"畫作・相片","f":["內框/L框"]},{"id":207,"t":"油畫左品裱框｜L框","c":"油畫・壓克力","w":425,"h":425,"d":"2021-11-03","a":"畫作・相片","f":["內框/L框"]},{"id":205,"t":"村上隆拼圖裱框｜立體框","c":"拼圖","w":425,"h":425,"d":"2021-11-03","a":"海報・拼圖","f":["立體框"]},{"id":204,"t":"Hermès絲巾作品裱框","c":"絲巾・布類","w":900,"h":900,"d":"2021-11-03","a":"絲巾・布類","f":[]},{"id":203,"t":"版畫作品｜加卡紙","c":"海報・版畫","w":900,"h":900,"d":"2021-11-03","a":"海報・拼圖","f":["加卡紙"]},{"id":202,"t":"Hermès絲巾作品裱框","c":"絲巾・布類","w":425,"h":425,"d":"2021-11-03","a":"絲巾・布類","f":[]},{"id":201,"t":"簽名球衣","c":"球衣・立體件","w":425,"h":425,"d":"2021-11-03","a":"球衣・立體收藏","f":[]},{"id":199,"t":"四字書法作品","c":"書法・水墨","w":425,"h":425,"d":"2021-11-03","a":"書法・水墨","f":[]},{"id":198,"t":"KAWS絲巾｜立體框","c":"絲巾・布類","w":425,"h":425,"d":"2021-11-03","a":"絲巾・布類","f":["立體框"]},{"id":196,"t":"Baby腳印紀念作品｜立體框","c":"膠彩・水彩","w":900,"h":900,"d":"2021-09-01","a":"畫作・相片","f":["立體框"]},{"id":194,"t":"鋁鑽八駿雕刻｜立體框","c":"球衣・立體件","w":425,"h":425,"d":"2021-09-01","a":"球衣・立體收藏","f":["立體框"]},{"id":193,"t":"水墨作品 ｜加壓克力","c":"拼圖","w":425,"h":425,"d":"2021-09-01","a":"海報・拼圖","f":["壓克力/玻璃"]},{"id":192,"t":"般若波羅密多心經｜立體框","c":"球衣・立體件","w":425,"h":425,"d":"2021-09-01","a":"球衣・立體收藏","f":["立體框"]},{"id":191,"t":"書法作品｜立體框","c":"書法・水墨","w":425,"h":425,"d":"2021-09-01","a":"書法・水墨","f":["立體框"]},{"id":190,"t":"林宗範拼圖｜立體框","c":"拼圖","w":425,"h":425,"d":"2021-09-01","a":"海報・拼圖","f":["立體框"]},{"id":189,"t":"白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-08-20","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":188,"t":"版畫作品 | 立體框","c":"海報・版畫","w":900,"h":900,"d":"2021-08-20","a":"海報・拼圖","f":["立體框"]},{"id":187,"t":"限量版球衣｜立體框","c":"球衣・立體件","w":425,"h":425,"d":"2021-08-20","a":"球衣・立體收藏","f":["立體框"]},{"id":186,"t":"村上隆拼圖｜圖壓框","c":"拼圖","w":425,"h":425,"d":"2021-08-20","a":"海報・拼圖","f":["圖壓框"]},{"id":183,"t":"布類活動式錶框","c":"絲巾・布類","w":425,"h":425,"d":"2021-08-20","a":"絲巾・布類","f":[]},{"id":182,"t":"水墨作品立體框｜加壓克力","c":"書法・水墨","w":425,"h":425,"d":"2021-08-20","a":"書法・水墨","f":["立體框","壓克力/玻璃"]},{"id":181,"t":"16合1抽象畫裱框","c":"油畫・壓克力","w":425,"h":425,"d":"2021-08-20","a":"畫作・相片","f":[]},{"id":180,"t":"書法作品裱框書法｜加壓克力","c":"書法・水墨","w":425,"h":425,"d":"2021-08-20","a":"書法・水墨","f":["壓克力/玻璃"]},{"id":179,"t":"書法作品裱框書法｜加壓克力","c":"書法・水墨","w":425,"h":425,"d":"2021-08-20","a":"書法・水墨","f":["壓克力/玻璃"]},{"id":178,"t":"書法作品裱框書法｜加壓克力","c":"書法・水墨","w":425,"h":425,"d":"2021-08-20","a":"書法・水墨","f":["壓克力/玻璃"]},{"id":177,"t":"海報裱框｜加壓克力","c":"海報・版畫","w":900,"h":900,"d":"2021-08-20","a":"海報・拼圖","f":["壓克力/玻璃"]},{"id":176,"t":"6合1抽象畫裱框","c":"油畫・壓克力","w":425,"h":425,"d":"2021-08-20","a":"畫作・相片","f":[]},{"id":175,"t":"16合1抽象畫裱框","c":"油畫・壓克力","w":425,"h":425,"d":"2021-08-20","a":"畫作・相片","f":[]},{"id":173,"t":"16合1抽象畫裱框","c":"油畫・壓克力","w":425,"h":425,"d":"2021-08-20","a":"畫作・相片","f":[]},{"id":172,"t":"限量版球衣立體框","c":"球衣・立體件","w":425,"h":425,"d":"2021-08-20","a":"球衣・立體收藏","f":["立體框"]},{"id":171,"t":"限量版球衣立體框","c":"球衣・立體件","w":425,"h":425,"d":"2021-08-20","a":"球衣・立體收藏","f":["立體框"]},{"id":170,"t":"限量版球衣立體框","c":"球衣・立體件","w":425,"h":425,"d":"2021-08-20","a":"球衣・立體收藏","f":["立體框"]},{"id":169,"t":"限量版球衣裱框","c":"球衣・立體件","w":425,"h":425,"d":"2021-08-20","a":"球衣・立體收藏","f":[]},{"id":168,"t":"客製化油畫裱框","c":"油畫・壓克力","w":425,"h":425,"d":"2021-08-20","a":"畫作・相片","f":[]},{"id":167,"t":"PP相紙輸出裱框","c":"相片・證照","w":425,"h":425,"d":"2021-07-01","a":"畫作・相片","f":[]},{"id":165,"t":"愛麗絲夢遊仙境拼圖裱框｜立體框｜鑽石膜","c":"拼圖","w":425,"h":425,"d":"2021-06-17","a":"海報・拼圖","f":["立體框"]},{"id":164,"t":"巴斯光年拼圖裱框｜圖壓框｜鑽石膜","c":"拼圖","w":425,"h":425,"d":"2021-06-17","a":"海報・拼圖","f":["圖壓框"]},{"id":163,"t":"油畫布輸出裱框","c":"油畫・壓克力","w":425,"h":425,"d":"2021-06-17","a":"畫作・相片","f":[]},{"id":161,"t":"風漸版畫裱框｜立體框","c":"海報・版畫","w":900,"h":900,"d":"2021-06-17","a":"海報・拼圖","f":["立體框"]},{"id":160,"t":"捲軸手工錦盒","c":"錦盒・木盒","w":900,"h":900,"d":"2021-06-15","a":"特殊框型・展台","f":["捲軸・掛軸","錦盒"]},{"id":159,"t":"二合一手工錦盒","c":"錦盒・木盒","w":900,"h":900,"d":"2021-06-15","a":"特殊框型・展台","f":["錦盒"]},{"id":158,"t":"大型三合一手工錦盒","c":"錦盒・木盒","w":900,"h":900,"d":"2021-06-15","a":"特殊框型・展台","f":["錦盒"]},{"id":157,"t":"小型手工錦盒","c":"錦盒・木盒","w":900,"h":900,"d":"2021-06-15","a":"特殊框型・展台","f":["錦盒"]},{"id":154,"t":"波羅密多心經書法裱框｜加卡紙｜加壓克力","c":"書法・水墨","w":425,"h":425,"d":"2021-06-15","a":"書法・水墨","f":["加卡紙","壓克力/玻璃"]},{"id":147,"t":"名家複合媒材作品｜掛軸","c":"書法・水墨","w":425,"h":425,"d":"2021-06-10","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":146,"t":"名畫作品｜拼色掛軸","c":"書法・水墨","w":425,"h":425,"d":"2021-06-10","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":139,"t":"水墨作品｜掛軸","c":"書法・水墨","w":425,"h":425,"d":"2021-06-10","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":138,"t":"書法作品｜掛軸","c":"書法・水墨","w":425,"h":425,"d":"2021-06-10","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":124,"t":"絹繃板架｜繃膠膜","c":"絲巾・布類","w":425,"h":425,"d":"2021-05-05","a":"絲巾・布類","f":[]},{"id":122,"t":"拼圖裱框｜加壓克力｜活動框","c":"拼圖","w":425,"h":425,"d":"2021-05-05","a":"海報・拼圖","f":["壓克力/玻璃"]},{"id":121,"t":"複合媒彩作品｜屏風","c":"屏風","w":900,"h":900,"d":"2021-05-03","a":"捲軸・屏風","f":["屏風"]},{"id":120,"t":"紙板類作品裱框｜無壓克力","c":"海報・版畫","w":900,"h":900,"d":"2021-05-03","a":"海報・拼圖","f":["壓克力/玻璃"]},{"id":115,"t":"心經竹簡裱框｜加角花 ｜立體框","c":"浮雕・標本・立體","w":900,"h":900,"d":"2021-04-30","a":"球衣・立體收藏","f":["立體框"]},{"id":114,"t":"富貴牡丹水墨畫裱框｜加壓克力","c":"書法・水墨","w":425,"h":425,"d":"2021-04-29","a":"書法・水墨","f":["壓克力/玻璃"]},{"id":113,"t":"山水水墨畫｜拼色掛軸","c":"書法・水墨","w":425,"h":425,"d":"2021-04-29","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":112,"t":"佛像複合媒材畫作｜掛軸","c":"書法・水墨","w":425,"h":425,"d":"2021-04-29","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":111,"t":"金剛般若波羅蜜經｜掛軸","c":"書法・水墨","w":425,"h":425,"d":"2021-04-29","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":110,"t":"書法作品掛軸","c":"書法・水墨","w":425,"h":425,"d":"2021-04-29","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":106,"t":"白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-27","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":105,"t":"流動畫｜立體銀色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-27","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":104,"t":"流動畫｜銀色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-27","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":103,"t":"白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-27","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":101,"t":"村上隆版畫｜白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-27","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":100,"t":"村上隆版畫｜白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-27","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":97,"t":"kwas磁盤作品裱框｜底部襯無酸卡","c":"球衣・立體件","w":425,"h":425,"d":"2021-04-26","a":"球衣・立體收藏","f":[]},{"id":96,"t":"書法作品裱框｜雙色絹布","c":"書法・水墨","w":425,"h":425,"d":"2021-04-26","a":"書法・水墨","f":[]},{"id":94,"t":"紙雕特殊裱框｜加雙面壓克力","c":"球衣・立體件","w":425,"h":425,"d":"2021-04-26","a":"球衣・立體收藏","f":["壓克力/玻璃","雙面磁吸"]},{"id":93,"t":"紙雕特殊裱框｜加雙面壓克力","c":"球衣・立體件","w":425,"h":425,"d":"2021-04-26","a":"球衣・立體收藏","f":["壓克力/玻璃","雙面磁吸"]},{"id":91,"t":"限量球衣裱框｜加壓克力","c":"球衣・立體件","w":425,"h":425,"d":"2021-04-26","a":"球衣・立體收藏","f":["壓克力/玻璃"]},{"id":88,"t":"觀自在作品｜黑色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":87,"t":"流動畫｜銀色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":86,"t":"村上隆版畫｜白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":85,"t":"油畫｜黑色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["圓框"]},{"id":84,"t":"人像版畫｜加卡紙｜簽名處挖孔","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["加卡紙","圓框"]},{"id":83,"t":"村上隆版畫｜加卡紙｜白色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["圓框","加卡紙"]},{"id":82,"t":"黑色立體圓框｜無壓克力","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框","壓克力/玻璃"]},{"id":81,"t":"黑色立體圓框｜無壓克力","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框","壓克力/玻璃"]},{"id":80,"t":"黑色立體圓框｜無壓克力","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框","壓克力/玻璃"]},{"id":79,"t":"黑色立體圓框｜無壓克力","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框","壓克力/玻璃"]},{"id":78,"t":"黑色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":76,"t":"村上隆版畫｜白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":75,"t":"鑽石貼作品｜黑色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["圓框"]},{"id":74,"t":"書法作品｜白色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["圓框"]},{"id":73,"t":"動物畫像｜黑色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["圓框"]},{"id":72,"t":"人物作品｜白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":71,"t":"村上隆版畫｜紅白立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":70,"t":"村上隆版畫｜白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-04-26","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":69,"t":"奈良美智海報裱框","c":"海報・版畫","w":900,"h":900,"d":"2021-03-13","a":"海報・拼圖","f":[]},{"id":68,"t":"草間彌生絲巾裱框 | 立體框","c":"絲巾・布類","w":425,"h":425,"d":"2021-03-13","a":"絲巾・布類","f":["立體框"]},{"id":67,"t":"one day海報裱框｜加壓克力","c":"海報・版畫","w":900,"h":900,"d":"2021-03-13","a":"海報・拼圖","f":["壓克力/玻璃"]},{"id":65,"t":"油畫作品 | 手染L框包邊","c":"油畫・壓克力","w":425,"h":425,"d":"2021-03-13","a":"畫作・相片","f":["內框/L框"]},{"id":63,"t":"膠彩作品 | 手染L框包邊","c":"膠彩・水彩","w":900,"h":900,"d":"2021-03-13","a":"畫作・相片","f":["內框/L框"]},{"id":62,"t":"版畫裱框 | 加卡紙","c":"海報・版畫","w":900,"h":900,"d":"2021-03-13","a":"海報・拼圖","f":["加卡紙"]},{"id":61,"t":"版畫裱框 | 立體框","c":"海報・版畫","w":900,"h":900,"d":"2021-03-13","a":"海報・拼圖","f":["立體框"]},{"id":60,"t":"村上隆版畫裱框 | 加卡紙","c":"海報・版畫","w":900,"h":900,"d":"2021-03-13","a":"海報・拼圖","f":["加卡紙"]},{"id":59,"t":"村上隆版畫裱框 | 加卡紙","c":"海報・版畫","w":900,"h":900,"d":"2021-03-13","a":"海報・拼圖","f":["加卡紙"]},{"id":58,"t":"油畫鋁板裱框 | 內外框加卡板 | 立體框","c":"油畫・壓克力","w":425,"h":425,"d":"2021-03-13","a":"畫作・相片","f":["立體框","內框/L框"]},{"id":57,"t":"拼圖裱框 | 圖壓框｜鑽石膜","c":"拼圖","w":425,"h":425,"d":"2021-03-13","a":"海報・拼圖","f":["圖壓框"]},{"id":55,"t":"書法作品｜掛軸通屏","c":"捲軸・手捲","w":900,"h":900,"d":"2021-03-13","a":"捲軸・屏風","f":["捲軸・掛軸"]},{"id":52,"t":"村上隆版畫裱框 | 立體框","c":"海報・版畫","w":900,"h":900,"d":"2021-03-13","a":"海報・拼圖","f":["立體框"]},{"id":51,"t":"村上隆版畫裱框 | 立體框","c":"海報・版畫","w":900,"h":900,"d":"2021-03-13","a":"海報・拼圖","f":["立體框"]},{"id":50,"t":"膠彩作品 | 立體框 | 手工框","c":"膠彩・水彩","w":900,"h":900,"d":"2021-03-13","a":"畫作・相片","f":["立體框"]},{"id":49,"t":"紙本設色 | 立體框","c":"膠彩・水彩","w":900,"h":900,"d":"2021-03-13","a":"畫作・相片","f":["立體框"]},{"id":47,"t":"膠彩作品 | 立體框 | 手工框","c":"膠彩・水彩","w":900,"h":900,"d":"2021-03-13","a":"畫作・相片","f":["立體框"]},{"id":46,"t":"村上隆版畫 | 白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2021-03-13","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":45,"t":"獨創迷彩圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2020-12-14","a":"特殊框型・展台","f":["圓框"]},{"id":39,"t":"村上隆版畫｜白色立體圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2020-08-17","a":"特殊框型・展台","f":["立體框","圓框"]},{"id":38,"t":"多張小品作品組成掛軸","c":"書法・水墨","w":425,"h":425,"d":"2020-02-12","a":"書法・水墨","f":["捲軸・掛軸"]},{"id":36,"t":"金鶴油畫作品裱框｜立體框","c":"油畫・壓克力","w":425,"h":425,"d":"2020-02-12","a":"畫作・相片","f":["立體框"]},{"id":35,"t":"扇形書法作品裱框","c":"書法・水墨","w":425,"h":425,"d":"2020-02-12","a":"書法・水墨","f":[]},{"id":33,"t":"KAWS限量瓷盤裱框","c":"球衣・立體件","w":425,"h":425,"d":"2019-08-24","a":"球衣・立體收藏","f":[]},{"id":28,"t":"編織作品｜白色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2019-06-19","a":"特殊框型・展台","f":["圓框"]},{"id":23,"t":"手工裱書卷","c":"浮雕・標本・立體","w":900,"h":495,"d":"2019-05-22","a":"球衣・立體收藏","f":[]},{"id":20,"t":"乾燥花裱框｜立體框","c":"球衣・立體件","w":425,"h":425,"d":"2019-05-20","a":"球衣・立體收藏","f":["立體框"]},{"id":17,"t":"故宮香港展出作品｜大型掛軸","c":"浮雕・標本・立體","w":506,"h":900,"d":"2019-05-20","a":"球衣・立體收藏","f":["捲軸・掛軸"]},{"id":6,"t":"高級明鏡框","c":"其他特色做法","w":425,"h":425,"d":"2019-05-18","x":"高級明鏡框5MM","a":"特殊框型・展台","f":[]},{"id":2,"t":"富貴花開｜雙面咖啡色圓框","c":"圓框・特殊外型","w":900,"h":900,"d":"2019-05-18","a":"特殊框型・展台","f":["圓框","雙面磁吸"]}];
-const AS=["海報・拼圖", "書法・水墨", "畫作・相片", "絲巾・布類", "球衣・立體收藏", "捲軸・屏風", "宗教・唐卡", "特殊框型・展台"],FS=["立體框", "平面框", "圓框", "加卡紙", "圖壓框", "無框畫", "壓克力/玻璃", "捲軸・掛軸", "屏風", "雙面磁吸", "榫接框", "細框", "內框/L框", "鋁框", "木框", "錦盒"];
-let cur="全部",fr="全部",list=[],idx=0;
-const $=s=>document.getElementById(s);
-const byA=()=>cur==="全部"?ITEMS:ITEMS.filter(i=>i.a===cur);
-function mk(c,arr,sel,cb){c.innerHTML="";arr.forEach(([n,k])=>{const b=document.createElement("button");b.className="chip";b.setAttribute("aria-pressed",n===sel);b.innerHTML=n+"<small>"+k+"</small>";b.onclick=()=>cb(n);c.appendChild(b)})}
-function chips(){const base=byA();
- mk($("chips"),[["全部",ITEMS.length]].concat(AS.map(n=>[n,ITEMS.filter(i=>i.a===n).length])),cur,n=>{cur=n;fr="全部";render();chips();window.scrollTo({top:0})});
- mk($("chips2"),[["全部框型",base.length]].concat(FS.map(n=>[n,base.filter(i=>i.f.includes(n)).length]).filter(x=>x[1]>0)),fr==="全部"?"全部框型":fr,n=>{fr=n==="全部框型"?"全部":n;render();chips()})}
-function render(){list=byA().filter(i=>fr==="全部"||i.f.includes(fr));
- $("count").textContent="共 "+list.length+" 件";
- $("grid").innerHTML=list.map((i,n)=>'<button class="card" data-n="'+n+'"><img loading="lazy" width="'+i.w+'" height="'+i.h+'" src="images/t'+i.id+'.jpg" alt="'+i.t.replace(/"/g,"&quot;")+'"><span>'+i.t+'</span></button>').join("")}
-$("grid").onclick=e=>{const b=e.target.closest(".card");if(b)open(+b.dataset.n)};
-function open(n){idx=(n+list.length)%list.length;const i=list[idx];
- $("lbt").textContent=i.t;$("lbi").src="images/b"+i.id+".jpg";$("lbi").alt=i.t;
- let h=i.a+(i.f.length?" · "+i.f.join("、"):"")+" · "+(idx+1)+" / "+list.length;if(i.x)h+="<br>"+i.x;if(i.v)h+='<br><a target="_blank" rel="noopener" href="https://youtu.be/'+i.v+'">看影片</a>';
- $("lbinfo").innerHTML=h;$("lb").classList.add("on");document.body.style.overflow="hidden"}
-function close(){$("lb").classList.remove("on");document.body.style.overflow=""}
-$("lbx").onclick=close;$("lbp").onclick=()=>open(idx-1);$("lbn").onclick=()=>open(idx+1);
-document.addEventListener("keydown",e=>{if(!$("lb").classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")open(idx-1);if(e.key==="ArrowRight")open(idx+1)});
-let sx=null;$("lb").addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});
-$("lb").addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60)open(idx+(dx<0?1:-1));sx=null});
-chips();render();
+const D=window.DATA,$=s=>document.getElementById(s);
+/* 番薯 11/6 指定：先只用王蟲海報；要放開別的作品，把下一行改成 null 即可 */
+const ALL_CATS=D.cats.map(c=>({...c}));
+/* 11/17 番薯說「好，開始接」＝官網 484 筆全放：改成 null（資料檔已由 接484筆_建資料.py 補齊）。要回到只放王蟲，改回 'wangchong'。 */
+const ONLY_WORK=null;
+const protoText=()=>'目前收錄官網 '+D.photos.length+' 張成品照、'+D.methods.length+' 種做法；做法只標標題上寫明的，其餘寫「做法待確認」。';
+if(ONLY_WORK){D.works=D.works.filter(w=>w.id===ONLY_WORK);D.photos=D.photos.filter(p=>p.work===ONLY_WORK);const used=new Set(D.photos.flatMap(p=>p.m));D.methods=D.methods.filter(m=>used.has(m.id));D.cats=ALL_CATS}
+const W=Object.fromEntries(D.works.map(w=>[w.id,w])),M=Object.fromEntries(D.methods.map(m=>[m.id,m])),C=Object.fromEntries(D.cats.map(c=>[c.id,c]));
+const LAYERCOLOR={frame:'#6b4a2f',glass:'#a9d3ea',art:'#c9bfa8',riser:'#c9a56a',fboard:'#f1eee6',board:'#cbbd9f'};
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+const st={cmp:null,open:false,view:'photos',key:null};
+let scrollFrame=0;addEventListener('scroll',()=>{if(!scrollFrame)scrollFrame=requestAnimationFrame(()=>{scrollFrame=0;document.body.classList.toggle('scrolled',scrollY>24)})},{passive:true});
+const photosOf=w=>D.photos.filter(p=>p.work===w);
+const worksOf=c=>D.works.filter(w=>w.cat===c);
+const methodsOf=w=>{const c={};photosOf(w).forEach(p=>p.m.forEach(m=>c[m]=(c[m]||0)+1));return D.methods.filter(m=>c[m.id]).map(m=>({...m,n:c[m.id]}))};
+// Assign a different real photo to every compared method; overlapping tags may need reassignment.
+function comparisonPhotos(w,ids){
+ if(!w||ids.length<2||ids.length>3||new Set(ids).size!==ids.length)return null;
+ const ps=photosOf(w.id),owners=new Map(),chosen=new Map();
+ function assign(id,seen){
+  for(const p of ps){
+   if(!p.m.includes(id)||seen.has(p.id))continue;
+   seen.add(p.id);const owner=owners.get(p.id);
+   if(owner===undefined||assign(owner,seen)){owners.set(p.id,id);chosen.set(id,p);return true}
+  }
+  return false;
+ }
+ for(const id of ids)if(!assign(id,new Set()))return null;
+ return ids.map(id=>chosen.get(id));
+}
+function comparisonStart(w,m){
+ if(!w)return null;
+ const ms=methodsOf(w.id),first=ms.find(k=>k.id===m?.id)||ms[0];
+ if(!first)return null;
+ for(const other of ms){const ids=[first.id,other.id];if(other.id!==first.id&&comparisonPhotos(w,ids))return ids}
+ return null;
+}
+const parse=()=>Object.fromEntries(new URLSearchParams(location.hash.slice(1)));
+const href=o=>'#'+new URLSearchParams(o).toString();
+const thumb=p=>'images/t'+p.id+'.jpg',big=p=>'images/b'+p.id+'.jpg';
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+function stepper(n,w,m,c){
+ const items=[['選作品',w?href({c:w.cat}):'#'],['選做法',w?href({w:w.id}):null],['看成品',w&&m?href({w:w.id,m:m.id}):null],['比一比',null]];
+ return '<nav class="steps" aria-label="目前在第 '+n+' 步，共 4 步">'+items.map(([t,link],i)=>{
+  const k=i+1,cls=k===n?'now':k<n?'done':'pend',inner=''+(k<n?'<span class="tick">✓</span>':'<span>'+k+'</span>')+'<span>'+t+'</span>';
+  return (k<n&&link)?'<a class="step done" href="'+link+'" aria-label="回到第 '+k+' 步：'+t+'">'+inner+'</a>':'<span class="step '+cls+'"'+(k===n?' aria-current="step"':'')+'>'+inner+'</span>'}).join('')+'</nav>';
+}
+const back=(link,label)=>'<a class="back" href="'+link+'">← '+label+'</a>';
+const head=(t,sub)=>'<h1 class="step-title" id="stepTitle" tabindex="-1">'+t+'</h1>'+(sub?'<p class="sub">'+sub+'</p>':'');
+const exhibitHead=(n,t,sub)=>'<div class="ex-heading"><div><p class="ex-kicker">松風閣・裱框選集 <span>／ '+['','選作品','選做法','看成品','比一比'][n]+'</span></p>'+head(t,sub)+'</div><span class="ex-chapter" aria-hidden="true">0'+n+'</span></div>';
+
+const workCard=(w,i)=>{const ps=photosOf(w.id),c=D.photos.find(p=>p.id===w.cover),ms=methodsOf(w.id);
+ return '<a class="wcard" href="'+href({w:w.id})+'"><div class="image-wrap"><img loading="lazy" src="'+thumb(c)+'" alt="'+esc(w.name)+'裱框範例"></div><div class="card-info"><b>'+esc(w.name)+'</b><span>'+ps.length+' 張照片　／　'+(ms.length?ms.length+' 種做法':'做法待確認')+'</span><span class="card-action">選這一件 →</span></div></a>'};
+
+const exhibitWorkCard=(w,i)=>{const ps=photosOf(w.id),c=D.photos.find(p=>p.id===w.cover),ms=methodsOf(w.id);
+ return '<a class="wcard" href="'+href({w:w.id})+'"><div class="image-wrap"><span class="ex-art-no" aria-hidden="true">'+String((i||0)+1).padStart(2,'0')+'</span><img loading="lazy" src="'+big(c)+'" alt="'+esc(w.name)+'裱框範例"><span class="ex-art-arrow" aria-hidden="true">↗</span></div><div class="card-info"><b>'+esc(w.name)+'</b><span>'+ps.length+' 張照片　／　'+(ms.length?ms.length+' 種已確認做法':'做法待確認')+'</span><span class="card-action">探索這件作品 →</span></div></a>'};
+function step1(cid){
+ const ok=D.cats.filter(k=>worksOf(k.id).length),cur=C[cid]&&worksOf(cid).length?C[cid]:ok[0];
+ return stepper(1)+exhibitHead(1,'每件作品，<br>都有另一種可能。','先選一件，看看裱框如何改變它的表情。')+
+ '<div class="ex-selection"><div class="ex-filter"><span class="ex-label">從作品種類開始</span><div class="pills" role="group" aria-label="作品種類">'+ok.map(k=>'<a class="pill'+(k.id===cur.id?' on':'')+'" href="'+href({c:k.id})+'"'+(k.id===cur.id?' aria-current="true"':'')+'>'+esc(k.name)+'<small>'+worksOf(k.id).length+'</small></a>').join('')+'</div><p class="hint">'+esc(cur.hint)+'</p></div><div class="ex-collection"><div class="ex-collection-title"><h2>'+esc(cur.name)+'</h2><span>'+String(worksOf(cur.id).length).padStart(2,'0')+' 件作品 ↓</span></div><div class="works">'+worksOf(cur.id).map(exhibitWorkCard).join('')+'</div></div></div>';
+}
+function miniStack(m){const L=m.layers,n=L.length;return '<div class="mini"><div class="stack open" style="--g:'+(n>4?50:64)+'px">'+L.map((l,i)=>layerEl(l,i,n,'images/t451.jpg')).join('')+'</div><span class="ex-model-note">裱框分層示意</span></div>'}
+function selectedWork(w){const p=D.photos.find(p=>p.id===w.cover);return '<aside class="ex-selected"><div class="ex-selected-image"><img class="ex-continuity" src="'+big(p)+'" alt="'+esc(w.name)+'"><span class="ex-wall-caption">你選的作品</span></div><div class="ex-selected-caption"><h2>'+esc(w.name)+'</h2>'+back(href({c:w.cat}),'換一件作品')+'</div></aside>'}
+function step2(w){
+ const ps=photosOf(w.id),other=ps.filter(p=>!p.m.length),known=methodsOf(w.id);
+ const photos=other.length?'<details class="notice ex-unconfirmed" id="ex-photo-section" tabindex="-1" open><summary>'+other.length+' 張實際成品照・做法待確認 ↗</summary><p>先看實際成品，裱框做法尚未逐張確認。點照片可以放大。</p><div class="grid">'+other.map(photoCard).join('')+'</div></details>':'';
+ const methods='<div class="method-grid">'+D.methods.map((m,i)=>{
+  const matches=ps.filter(p=>p.m.includes(m.id)),p=matches[0];
+  return '<a class="method-card" href="'+href({w:w.id,m:m.id})+'"><span class="ex-method-no">'+String(i+1).padStart(2,'0')+'</span>'+(p?'<div class="ex-method-preview"><img loading="lazy" src="'+thumb(p)+'" alt="'+esc(m.name)+'成品"></div>':miniStack(m))+'<div class="ex-method-copy"><strong>'+esc(m.name)+'</strong><span class="desc">'+esc(m.blurb)+'</span><span class="method-count">'+(matches.length?matches.length+' 張成品・看這種做法':'先看分層示意・成品待補')+' ↗</span></div></a>'}).join('')+'</div>';
+ const choices=known.length?'<p class="ex-label">為這件作品，探索 '+D.methods.length+' 種做法</p>'+methods:'<details class="ex-layer-details ex-other-methods"><summary><span><small>通用做法示意</small><b>認識其他做法</b></span><span class="ex-plus" aria-hidden="true">＋</span></summary><p class="view-help">以下是通用示意，不代表上方作品的實際結構；適合的做法以店內確認為準。</p>'+methods+'</details>';
+ const shortcuts=other.length?'<nav class="ex-method-shortcuts" aria-label="照片與做法捷徑"><button type="button" class="ex-jump" data-jump="methods">'+(known.length?'跳到做法 ↓':'跳到做法示意 ↓')+'</button></nav>':'';
+ const options=other.length?'<div id="ex-method-section" tabindex="-1"><button type="button" class="ex-jump ex-jump-back" data-jump="photos">回到照片 ↑</button>'+choices+'</div>':choices;
+ return stepper(2,w)+exhibitHead(2,known.length?'換一種框，<br>換一種表情。':'先看成品，<br>再認識做法。',known.length?'從實際成品找靈感，也可以打開分層，認識每一種做法。':'先從實際成品找靈感；做法尚未逐張確認，通用示意放在照片下方。')+shortcuts+'<div class="ex-method-layout">'+selectedWork(w)+'<div class="ex-methods">'+photos+options+'</div></div>';
+}
+
+function layerEl(l,i,n,src){
+  const [t,name]=l,z=n-1-i;
+  let mod='',inner='';
+  if(t==='frame'){
+    mod=(/內框/.test(name)?' inner':'')+(/鋁/.test(name)?' alu':'')+(/細實木/.test(name)?' thin':'');
+    inner='<i class="fb t"></i><i class="fb b"></i><i class="fb l"></i><i class="fb r"></i>';
+  }
+  if(t==='art')inner='<img src="'+(src||'images/b451.jpg')+'" alt="">';
+  if(t==='fboard')inner='<i class="st l"></i><i class="st r"></i>';
+  return '<div aria-hidden="true" class="ly '+t+mod+'" data-i="'+i+'" style="--i:'+z+'">'+inner+'</div>';
+}
+function methodPanel(m){
+  const L=m.layers,n=L.length;
+  return '<div class="mpanel"><div><h3>'+esc(m.name)+'</h3><p>'+esc(m.blurb)+'</p>'+
+    '<button class="btn" id="ex" aria-pressed="'+st.open+'">'+(st.open?'合起來':'分開來看')+'</button>'+
+    '<ul class="layerlist" id="ll">'+L.map((l,i)=>'<li><button type="button" data-i="'+i+'"><i style="background:'+LAYERCOLOR[l[0]]+'"></i>'+(i+1)+'　'+esc(l[1])+'</button></li>').join('')+'</ul>'+
+    '<div class="warn">這是示意圖，實際做法以店內為準。</div></div>'+
+    '<div class="scene"><div class="stack'+(st.open?' open':'')+'" id="stack">'+L.map((l,i)=>layerEl(l,i,n)).join('')+'</div></div></div>';
+}
+function photoCard(p){
+  const tags=p.m.length?p.m.map(id=>'<em>'+esc(M[id].name)+'</em>').join(''):'<em class="none">做法待確認</em>';
+  return '<button class="ph" data-id="'+p.id+'"><img loading="lazy" src="'+thumb(p)+'" alt="'+esc(p.t)+'"><span>'+esc(p.t)+'<br>'+tags+'<span class="photo-hint">點一下放大 ↗</span></span></button>';
+}
+
+/* 第 3 步：這種做法做好的樣子；下一步按鈕固定在畫面下方 */
+function step3(w,m){
+ const ps=photosOf(w.id),ms=methodsOf(w.id),shown=ps.filter(p=>p.m.includes(m.id));
+ const sw='<div class="pills switch" role="group" aria-label="換看別種做法">'+D.methods.map(k=>'<a class="pill'+(k.id===m.id?' on':'')+'" href="'+href({w:w.id,m:k.id})+'"'+(k.id===m.id?' aria-current="true"':'')+'>'+esc(k.name)+'</a>').join('')+'</div>';
+ const hero=shown.length?'<section class="ex-salon" aria-label="成品展牆"><div class="ex-salon-top"><span>成品展牆</span><span id="ex-shot-count">01 / '+String(shown.length).padStart(2,'0')+'</span></div><button class="ex-hero-photo" data-id="'+shown[0].id+'" aria-label="放大成品"><img class="ex-continuity" src="'+big(shown[0])+'" alt="'+esc(shown[0].t)+'"><span>放大看細節 ↗</span></button><div class="ex-shots" role="group" aria-label="選擇成品照片">'+shown.map((p,i)=>'<button data-shot="'+p.id+'" data-shot-index="'+i+'" aria-label="看第 '+(i+1)+' 張：'+esc(p.t)+'" aria-pressed="'+!i+'"><img loading="lazy" src="'+thumb(p)+'" alt=""></button>').join('')+'</div><p class="ex-shot-caption" id="ex-shot-caption">'+esc(shown[0].t)+'</p></section>':'<section class="ex-no-photo"><p class="ex-label">成品照片整理中</p><h2>先認識它的層次。</h2><p>這件作品還沒有「'+esc(m.name)+'」的成品照，下面的分層圖是做法示意。</p></section>';
+ let h=stepper(3,w,m)+exhibitHead(3,esc(m.name),'正在欣賞：'+esc(w.name))+sw+hero+
+ '<details class="ex-layer-details"><summary><span><small>從成品，走進細節</small><b>打開看看，裡面有哪些層次。</b></span><span class="ex-plus" aria-hidden="true">＋</span></summary><p class="view-help">這是通用做法示意，作品層使用王蟲海報，並非上方每件作品的實際結構。按「分開來看」，再點層的名字看位置。</p>'+methodPanel(m)+'</details>'+
+ (shown.length?'<h2 class="view-heading">每個角度，都值得細看。<small>'+shown.length+' 張成品</small></h2><div class="grid ex-photo-grid">'+shown.map(photoCard).join('')+'</div>':'');
+ const canCompare=!!comparisonStart(w,m);
+ if(!canCompare&&ms.length>=2)h+='<p class="notice" role="status">同一張成品照包含不同做法，目前沒有不同的成品照可並排比較。</p>';
+ return h+'<div class="bar">'+back(href({w:w.id}),'回到做法列表')+(canCompare?'<a class="next" href="'+href({w:w.id,m:m.id,s:4})+'">並排，看看差別 ↗</a>':'<span class="next off">'+(ms.length>=2?'暫無不同成品可比較':'目前未有兩種已確認做法可比較')+'</span>')+'</div>';
+}
+function step4(w,m){
+ const ps=photosOf(w.id),ms=methodsOf(w.id);
+ const initial=comparisonStart(w,m);if(!initial)return step3(w,m);
+ if(!st.cmp||st.cmp.w!==w.id||st.cmp.m!==m.id||!comparisonPhotos(w,st.cmp.sel))st.cmp={w:w.id,m:m.id,sel:initial,message:''};
+ const c=st.cmp.sel,pictures=comparisonPhotos(w,c);
+ return stepper(4,w,m)+exhibitHead(4,'並排之後，<br>感覺就不一樣了。',esc(w.name)+'・選 2 至 3 種做法，找出你喜歡的表情。')+
+ '<div class="ex-compare-controls"><div class="chips pick" role="group" aria-label="比較做法">'+ms.map(k=>'<button class="chip" data-c="'+k.id+'" aria-pressed="'+c.includes(k.id)+'">'+(c.includes(k.id)?'✓ ':'＋ ')+esc(k.name)+'</button>').join('')+'</div><label class="ex-size">照片大小 <input id="ex-compare-size" type="range" min="280" max="600" step="20" value="440"><span aria-hidden="true">− / ＋</span></label></div><p class="compare-status" role="status">已選 '+c.length+' 種'+(st.cmp.message?'　'+esc(st.cmp.message):'・點照片可放大，窄螢幕可左右滑動')+'</p><div class="compare-scroll ex-compare-wall"><div class="cmp n'+c.length+'" style="--cols:'+c.length+'">'+c.map((k,i)=>{const p=pictures[i];return '<div class="col" data-compare-key="'+k+'"><span class="ex-compare-no">0'+(i+1)+'</span><button data-id="'+p.id+'" aria-label="放大'+esc(M[k].name)+'範例"><img src="'+big(p)+'" alt="'+esc(p.t)+'"><b>'+esc(M[k].name)+'</b><small>'+esc(M[k].blurb)+'</small><span class="ex-enlarge">放大看細節 ↗</span></button></div>'}).join('')+'</div></div><p class="ex-footnote">照片取自實際案例，拍攝角度與光線可能不同；此處比較做法與整體感受，並非等比例尺寸模擬。</p>'+
+ '<div class="bar">'+back(href({w:w.id,m:m.id}),'回到「'+esc(m.name)+'」')+'<a class="next" href="'+href({c:w.cat})+'">探索下一件作品 ↗</a></div>';
+}
+
+/* 首頁：一張大的分層拆開圖，自動拆開，可點一下合起來／再拆開 */
+function heroStrip(){
+ const w=D.works.find(x=>photosOf(x.id).length);if(!w)return '';
+ const ps=photosOf(w.id),seen={},pick=[];
+ ps.forEach(p=>{const k=p.m[0]||'x';if(!seen[k]&&pick.length<8){seen[k]=1;pick.push(p)}});
+ ps.forEach(p=>{if(pick.length<8&&!pick.includes(p))pick.push(p)});
+ return '<div class="hstrip"><h3><span>已整理好的成品　'+esc(w.name)+'</span><a href="'+href({w:w.id})+'">看這件的全部做法 →</a></h3><div class="hrow">'+pick.map(p=>'<button class="hph" data-id="'+p.id+'" aria-label="放大：'+esc(p.t)+'"><img src="'+thumb(p)+'" alt="'+esc(p.t)+'" loading="lazy"></button>').join('')+'</div></div>';
+}
+/* 逐字拆開（標題彈入用）：英數連續字當一個單位；螢幕閱讀器讀整句，單字全部 aria-hidden */
+function kin(s){let k=0;const e=x=>x.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ return String(s).split('\n').map(line=>(line.match(/[A-Za-z0-9]+|[\s\S]/g)||[]).map(u=>u===' '?' ':'<span class="ch" style="--k:'+(k++)+'">'+e(u)+'</span>').join('')).join('<br>')}
+const zh=n=>'零一二三四五六七八九十'[n]||n;
+/* 松枝以原生向量描繪，不載入圖片／新函式庫。 */
+function pineWind(){
+ const fan=(x,y,angle,size)=>{let lines='';for(let i=0;i<13;i++){const a=(-168+i*14)*Math.PI/180,r=size*(.82+Math.sin(i*2.3)*.16);lines+='<path d="M0 4 Q'+(Math.cos(a)*r*.38).toFixed(1)+' '+(Math.sin(a)*r*.7).toFixed(1)+' '+(Math.cos(a)*r).toFixed(1)+' '+(Math.sin(a)*r).toFixed(1)+'"/>'}return '<g transform="translate('+x+' '+y+') rotate('+angle+')">'+lines+'</g>'};
+ const bough='<svg viewBox="0 0 400 250" aria-hidden="true"><g class="pine-bough"><path stroke-width="5" d="M410 -9 C346 22 320 62 277 91 S171 139 57 201"/><path stroke-width="2.4" d="M328 50 Q283 37 241 27 M279 90 Q258 119 265 157 M224 117 Q196 92 164 77 M169 144 Q150 176 151 205 M111 173 Q82 151 51 153"/></g><g class="pine-needles">'+[[59,198,-18,40],[109,170,-9,39],[163,144,12,45],[222,116,-15,43],[276,90,4,44],[328,48,12,38],[243,27,-15,36],[265,157,21,37],[164,77,-25,36],[151,205,2,33],[51,153,-22,32]].map(v=>fan(...v)).join('')+'</g></svg>';
+ const ribbons='<path d="M-140 380 C60 460 160 210 350 290 S660 480 1130 190"/><path d="M-90 425 C90 465 210 250 390 310 S770 405 1110 150"/><path d="M-100 165 C200 25 260 210 490 160 S790 30 1100 125"/>';
+ return '<div class="pine-wind" aria-hidden="true"><div class="pine-sprig east">'+bough+'</div><div class="pine-sprig west">'+bough+'</div><svg class="wind-ribbons" viewBox="0 0 1000 600" preserveAspectRatio="none">'+ribbons+'</svg><svg class="wind-gust" viewBox="0 0 1000 600" preserveAspectRatio="none">'+ribbons+'</svg>'+[18,42,68,82].map((y,i)=>'<i class="wind-needle" style="--ny:'+y+'%;--nd:'+(18+i*3)+'s;--nl:-'+(i*7+3)+'s"></i>').join('')+'</div>';
+}
+let pineWindObserver=null,gustFrame=0,gustTimer=0;
+function blowPineWind(){const el=document.querySelector('.pine-wind');if(!el||reduceMotion.matches||document.hidden)return;cancelAnimationFrame(gustFrame);clearTimeout(gustTimer);el.classList.remove('gusting');gustFrame=requestAnimationFrame(()=>{gustFrame=requestAnimationFrame(()=>{el.classList.add('gusting');gustTimer=setTimeout(()=>el.classList.remove('gusting'),1800)})})}
+function watchPineWind(){pineWindObserver?.disconnect();const el=document.querySelector('.pine-wind');if(!el)return;if('IntersectionObserver'in window){pineWindObserver=new IntersectionObserver(es=>el.classList.toggle('paused',!es[0].isIntersecting),{rootMargin:'80px'});pineWindObserver.observe(el)}}
+addEventListener('visibilitychange',()=>document.body.classList.toggle('fx-paused',document.hidden));
+document.addEventListener('pointerdown',e=>{if(e.target.closest('.hero2'))blowPineWind()},{passive:true});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.closest('.hero2 button'))blowPineWind()});
+addEventListener('blur',()=>{if(document.activeElement===$('h3d'))blowPineWind()});
+
+
+/* 每段自己的枝影，與段落一起移動；不再固定覆蓋整個視窗。 */
+let sideAirObserver=null;
+function initSideAir(){
+ sideAirObserver?.disconnect();
+ const fan=(x,y,r,size)=>{let needles='';for(let i=0;i<10;i++){const a=(-162+i*15)*Math.PI/180,length=size*(.72+Math.sin(i*1.6)*.2);needles+='<path d="M0 1 Q'+(Math.cos(a)*length*.35).toFixed(1)+' '+(Math.sin(a)*length*.8).toFixed(1)+' '+(Math.cos(a)*length).toFixed(1)+' '+(Math.sin(a)*length).toFixed(1)+'"/>'}return '<g transform="translate('+x+' '+y+') rotate('+r+')">'+needles+'</g>'};
+ const svg='<svg viewBox="0 0 240 300" aria-hidden="true"><path stroke-width="1.6" d="M12 76 C67 88 87 116 125 150 S169 187 204 201 M67 96 Q79 77 104 65 M111 138 Q101 165 76 180 M158 177 Q175 152 194 149"/><g stroke-width=".8">'+[[43,86,-18,26],[106,64,-8,32],[76,179,28,29],[129,151,-12,35],[194,148,8,30],[204,201,14,28]].map(v=>fan(...v)).join('')+'</g><path class="air-wind" d="M16 237 Q90 213 151 243 T231 245 M29 256 Q106 232 165 260"/></svg>';
+ const sections=[...document.querySelectorAll('.hm-sec')].filter((el,i)=>i===0||i===2);
+ sections.forEach(el=>{el.insertAdjacentHTML('beforeend','<div class="section-air" aria-hidden="true">'+svg+'</div><div class="section-air right" aria-hidden="true">'+svg+'</div>')});
+ if('IntersectionObserver'in window){sideAirObserver=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('air-visible',e.isIntersecting)),{threshold:0});sections.forEach(el=>sideAirObserver.observe(el))}
+}
+
+function home(){
+ $('proto').textContent=protoText();
+ let dust='';for(let i=0;i<6;i++)dust+='<i style="left:'+(34+Math.random()*58).toFixed(1)+'%;top:'+(18+Math.random()*66).toFixed(1)+'%;--d:'+(6+Math.random()*7).toFixed(1)+'s;--dl:-'+(Math.random()*9).toFixed(1)+'s;--dx:'+((Math.random()*60-30)|0)+'px"></i>';
+ return '<section class="hero2"><div class="hero2-copy"><h1 id="stepTitle" tabindex="-1" aria-label="看作品，怎麼一層一層裱出來"><span aria-hidden="true">'+kin('看作品，怎麼\n一層一層裱出來')+'<span class="seal"><i>松</i></span></span></h1><p>松風閣的裱框，從外框到木板，每一層都有它的用處。</p><div class="hero2-act"><a class="go" href="#c=poster">選你的作品 →</a><button class="tog" id="htog" aria-pressed="true"><i class="tg" aria-hidden="true"><svg viewBox="0 0 26 20" focusable="false"><g class="a al"><path d="M10 10H3M7 5.5L2.5 10L7 14.5"/></g><g class="a ar"><path d="M16 10H23M19 5.5L23.5 10L19 14.5"/></g></svg></i><span class="lbl">合起來</span></button></div><div class="stats"><div><b data-count="'+D.methods.length+'">'+D.methods.length+'</b><span>種做法</span></div><div><b data-count="'+D.photos.length+'">'+D.photos.length+'</b><span>張成品照</span></div></div></div><div class="hero2-stage" id="hs">'+pineWind()+'<div class="ghost" aria-hidden="true">層</div><div class="hbeam" aria-hidden="true"></div><div class="dust" aria-hidden="true">'+dust+'</div><iframe id="h3d" class="h3d" title="立體裱框：外框、壓克力、作品、浮板、木板一層一層拆開，可以用滑鼠或手指轉動" src="分層3D/index.html?embed=1&v=20261106-review" tabindex="-1"></iframe><div class="h3wait" role="status">立體模型載入中…</div><div class="h3-fallback" hidden><img src="images/layers-preview.png" alt="裱框分層示意：外框、壓克力、作品、浮板、木板"><div class="h3-recover"><p role="status">立體預覽暫時無法載入，先看分層示意。</p><button class="tog" id="h3retry" type="button">重試立體預覽</button><a href="#w=wangchong">先看成品照 →</a></div></div><div class="hhint" aria-hidden="true"><i></i><span class="hh-t">用滑鼠按住拖曳，轉動看看</span><span class="hh-m">用手指按住拖曳，轉動看看</span></div></div>'+heroStrip()+'</section>'+homeMore();
+}
+/* 首頁往下捲的內容：全部取自資料檔裡真實的做法、照片、作品，不編數字 */
+function homeMore(){
+ const pure=id=>D.photos.find(p=>p.m.length===1&&p.m[0]===id)||D.photos.find(p=>p.m.includes(id));
+ const cnt=id=>D.photos.filter(p=>p.m.includes(id)).length;
+ const sec=(eb,t,sub,body)=>'<section class="hm-sec hm-rv"><div class="hm-eyebrow">'+eb+'</div><h2>'+t+'</h2>'+(sub?'<p>'+sub+'</p>':'')+body+'</section>';
+ const featured=D.methods.map(m=>({m,p:pure(m.id)})).filter(x=>x.p);
+ const picker='<div class="atelier"><div class="atelier-stage" id="atelier-stage">'+featured.map(({m,p},i)=>'<div class="atelier-panel" id="atelier-'+m.id+'" '+(i?'hidden':'')+'><button class="atelier-photo" data-id="'+p.id+'" aria-label="放大：'+esc(m.name)+'"><img loading="lazy" src="'+big(p)+'" alt="'+esc(p.t)+'"><span>點照片，放大看細節 ↗</span></button><div class="atelier-caption"><span class="atelier-no">0'+(i+1)+' / 0'+featured.length+'</span><a class="go" href="'+href({w:p.work,m:m.id})+'">看這款怎麼做 →</a></div></div>').join('')+'</div><div class="atelier-menu" role="group" aria-label="選擇裱框做法">'+featured.map(({m,p},i)=>'<button class="atelier-choice" data-method="'+m.id+'" aria-controls="atelier-'+m.id+'" aria-pressed="'+!i+'"><span class="atelier-index">0'+(i+1)+'</span><span><b>'+esc(m.name)+'</b><span class="atelier-desc">'+esc(m.blurb)+'</span><small>'+cnt(m.id)+' 張成品照</small></span><span class="atelier-arrow" aria-hidden="true">↗</span></button>').join('')+'</div></div>';
+ const w0=D.works.find(x=>photosOf(x.id).length),trio=['float','alu','slim9'].map(id=>{const p=photosOf(w0.id).find(x=>x.m.length===1&&x.m[0]===id);return p&&{p,m:M[id]}}).filter(Boolean);
+ const cmp=trio.length>=2?'<div class="night-gallery">'+sec('02　比一比','同一張海報，換不同的框','同一件作品放進不同的框，氣氛差很多。點照片可以放大。','<div class="hm-trio">'+trio.map(({p,m})=>'<button class="hm-t" data-id="'+p.id+'" aria-label="放大：'+esc(m.name)+'"><span class="hm-img"><img loading="lazy" width="'+p.w+'" height="'+p.h+'" src="'+thumb(p)+'" alt="'+esc(p.t)+'"></span><b>'+esc(m.name)+'</b><span class="hm-d">'+esc(m.blurb)+'</span></button>').join('')+'</div><p class="hm-more"><a class="go" href="'+href({w:w0.id,m:trio[0].m.id,s:4})+'">自己選來並排比 →</a></p>')+'</div>': '';
+ const unclassified=D.photos.filter(p=>!p.m.length).length;
+ const tile=(p,i,detail=false)=>'<button class="editorial-tile '+(detail?'detail':'')+'" data-id="'+p.id+'" aria-label="放大：'+esc(p.t)+(detail?'，框角局部':'')+'"><span class="editorial-image"><img loading="lazy" width="'+p.w+'" height="'+p.h+'" src="'+big(p)+'" alt="'+esc(p.t)+(detail?'，框角局部':'')+'"></span><span class="editorial-label"><i>0'+(i+1)+'</i>'+esc(detail?'框角・近一點看':p.m.length?p.m.map(k=>M[k].name).join('、'):'做法待確認')+'<b aria-hidden="true">↗</b></span></button>';
+ const selection=[pure('float'),pure('slim9'),pure('acrylic2'),pure('alu')].filter(Boolean);
+ const wall='<div class="editorial-wall">'+selection.map((p,i)=>tile(p,i,i===1)).join('')+'</div><details class="photo-archive"><summary>展開全部 '+D.photos.length+' 張成品照 <span aria-hidden="true">＋</span></summary><div class="hm-wall">'+D.photos.map(p=>'<button data-id="'+p.id+'" aria-label="放大：'+esc(p.t)+'"><img loading="lazy" width="'+p.w+'" height="'+p.h+'" src="'+thumb(p)+'" alt="'+esc(p.t)+'"><span>'+esc(p.m.length?p.m.map(k=>M[k].name).join('、'):'做法待確認')+'</span></button>').join('')+'</div></details>';
+ const cats='<div class="hm-cats">'+D.cats.map(c=>worksOf(c.id).length?'<a class="hm-cat on" href="'+href({c:c.id})+'" title="'+esc(c.hint)+'">'+esc(c.name)+'<small>'+worksOf(c.id).length+' 件</small></a>':'<span class="hm-cat" title="'+esc(c.hint)+'">'+esc(c.name)+'<small>整理中</small></span>').join('')+'</div>';
+ const works='<div class="collection-entry">'+D.works.map(workCard).join('')+'</div>'+cats;
+ const mq=D.methods.map(m=>'<span class="mq-i">'+esc(m.name)+'</span><i class="mq-s"></i>').join('');
+ return '<div class="hm"><div class="mq" aria-hidden="true"><div class="mq-track"><div class="mq-g">'+mq+mq+'</div><div class="mq-g">'+mq+mq+'</div></div></div>'+sec('01　'+zh(D.methods.length)+'種做法','每一種，都做給你看','點一種，看它一層一層怎麼做出來，還有做好的樣子。',picker)
+  +cmp
+  +sec('03　成品照','遠看一幅畫，近看每個細節','點照片放大，看看框角、留白與作品之間的關係。'+(unclassified?'其中 '+unclassified+' 張做法待確認，先保留原照供你看。':'' ),wall)
+  +sec('04　選作品','從你的作品開始','選一件作品，直接看它有哪些做法。',works)
+  +'<section class="hm-cta hm-rv"><i class="orb a" aria-hidden="true"></i><i class="orb b" aria-hidden="true"></i><div class="hm-glass"><span class="seal" aria-hidden="true"><i>松</i></span><h2>找到你想裱的那一件</h2><p>從作品開始，一步一步看到它做好的樣子。</p><a class="go" href="#c=poster">選你的作品 →</a></div></section></div>';
+}
+const MQ=matchMedia('(max-width:720px), (max-aspect-ratio: 1/1)');
+/* 首頁第一屏：直接用「立體模擬框」同一套 3D（分層3D/index.html 是它的嵌入版）。1.5 吋咖框＋壓克力＋作品＋浮板（白板與背面兩條木條是同一層）＋木板 */
+function fitHero(){const hero=document.querySelector('.hero2'),cp=document.querySelector('.hero2-copy'),sp=document.querySelector('.hstrip');if(hero&&cp&&sp){hero.classList.remove('nostats');if(!MQ.matches&&cp.getBoundingClientRect().bottom>sp.getBoundingClientRect().top-14)hero.classList.add('nostats')}}
+const h3={open:true,ready:false,timer:0,observer:null};
+function h3fail(){if(!$('h3d')||h3.ready)return;clearTimeout(h3.timer);$('hs').classList.add('failed');$('hs').classList.remove('rdy');$('htog').disabled=true;document.querySelector('.h3-fallback').hidden=false;$('h3d').hidden=true;document.querySelector('.h3wait').hidden=true}
+function h3start(){const f=$('h3d');if(!f)return;h3.ready=false;$('hs').classList.remove('failed','rdy');document.querySelector('.h3-fallback').hidden=true;document.querySelector('.h3wait').hidden=false;f.hidden=false;f.classList.remove('ready');$('htog').disabled=true;clearTimeout(h3.timer);h3.timer=setTimeout(h3fail,12000);f.onerror=h3fail}
+
+function h3send(){const f=$('h3d');if(!f||!f.contentWindow)return;try{f.contentWindow.postMessage({type:'layers3d-explode',on:h3.open},location.origin)}catch(e){}}
+addEventListener('message',e=>{const f=$('h3d');if(!f||e.origin!==location.origin||e.source!==f.contentWindow||!e.data)return;if(e.data.type==='layers3d-ready'){h3.ready=true;clearTimeout(h3.timer);f.hidden=false;f.classList.add('ready');$('hs')?.classList.remove('failed');$('hs')?.classList.add('rdy');document.querySelector('.h3-fallback').hidden=true;document.querySelector('.h3wait').hidden=true;$('htog').disabled=false;h3send()}else if(e.data.type==='layers3d-error'){h3.ready=false;h3fail()}});
+function initHero(){
+ fitHero();h3.open=true;h3start();$('h3retry').onclick=()=>{h3start();const u=new URL($('h3d').src);u.searchParams.set('retry',Date.now().toString(36));$('h3d').src=u.href};
+ const t=$('htog'),lbl=t.querySelector('.lbl');lbl.textContent='合起來';t.setAttribute('aria-pressed','true');
+ /* 按鈕回饋：文字上滑換字（彈簧落定）、三條線張開／收攏、點下有漣漪、頁面下方跳出一句狀態 */
+ const swap=txt=>{if(reduceMotion.matches||!lbl.animate){lbl.textContent=txt;return}
+  lbl.animate([{opacity:1,translate:'0 0'},{opacity:0,translate:'0 -9px'}],{duration:140,easing:'ease-in'}).finished.then(()=>{lbl.textContent=txt;lbl.animate([{opacity:0,translate:'0 11px'},{opacity:1,translate:'0 0'}],{duration:480,easing:'cubic-bezier(.34,1.56,.64,1)'})}).catch(()=>{lbl.textContent=txt})};
+ t.onclick=()=>{h3.open=!h3.open;swap(h3.open?'合起來':'拆開');t.setAttribute('aria-pressed',h3.open);h3send();window.songfongFeedback?.notify(h3.open?'已拆開，一層一層看':'已合起來')};
+
+}
+addEventListener('resize',()=>{if($('hs'))fitHero()});
+
+/* 捲到才浮現；沒有 IntersectionObserver 或偏好減少動態就一開始全顯示 */
+function initReveal(){
+ const els=[...document.querySelectorAll('.hm-rv')];
+ if(!els.length)return;
+ if(reduceMotion.matches||!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}
+ document.documentElement.classList.add('rv');
+ h3.observer?.disconnect();const io=h3.observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
+ els.forEach(e=>io.observe(e));
+}
+function render(keep,quiet){
+ /* quiet＝原地更新（例如勾選／取消比較款式）：不播整頁位移淡入、也不重播卡片進場，畫面才不會跳 */
+ if(quiet){document.documentElement.dataset.inplace='1';setTimeout(()=>{delete document.documentElement.dataset.inplace},0)}
+ clearTimeout(h3.timer);h3.observer?.disconnect();
+ const q=parse(),y=scrollY,w=W[q.w],m=w&&M[q.m];
+ const key=(q.w||'')+'|'+(q.m||'');if(key!==st.key){st.view='photos';st.open=true;st.key=key}
+ let h;
+ $('proto').textContent=protoText();
+ if(!w)h=q.c?step1(q.c):home();
+ else if(!m)h=step2(w);
+ else h=(q.s==='4'&&comparisonStart(w,m))?step4(w,m):step3(w,m);
+ $('app').innerHTML=h;
+ document.body.dataset.exhibit=(!w&&!q.c)?'home':(!w?'1':!m?'2':q.s==='4'&&comparisonStart(w,m)?'4':'3');
+ document.body.classList.toggle('home',!w&&!q.c);
+ if(!w&&!q.c){initHero();initReveal();watchPineWind()}else{pineWindObserver?.disconnect();clearTimeout(gustTimer);cancelAnimationFrame(gustFrame)}
+ if(window.fxRender)fxRender(!w&&!q.c);
+ if(!quiet)document.querySelectorAll('.wcard,.method-card,.ph,.cmp .col').forEach((el,i)=>{el.style.animationDelay=Math.min(i,8)*70+'ms';el.classList.add('reveal')});
+ window.exhibitionRender?.(quiet);
+ if(keep)scrollTo({top:y,behavior:'instant'});
+ else{scrollTo({top:0,behavior:'instant'});$('stepTitle')?.focus({preventScroll:true})}
+ /* 保險：就算瀏覽器還在用舊版 互動回饋.js，這個微任務排在它的觀察器後面，在畫出任何一格之前就把整頁位移動畫取消 */
+ if(quiet)queueMicrotask(()=>{const a=$('app');a&&a.getAnimations().forEach(x=>x.cancel())});
+}
+function highlightLayer(li){document.querySelectorAll('#ll button,.ly').forEach(x=>x.classList.remove('on','hl'));if(li){li.classList.add('on');document.querySelector('.ly[data-i="'+li.dataset.i+'"]')?.classList.add('hl')}}
+document.addEventListener('click',e=>{
+ const li=e.target.closest('#ll button');if(li)highlightLayer(li);
+ const t=e.target.closest('button');if(!t)return;
+ /* MOBILE-JUMP: 捲動同一頁，不改 hash 或重建照片。 */
+ if(t.dataset.jump){
+  const target=$(t.dataset.jump==='methods'?'ex-method-section':'ex-photo-section');if(!target)return;
+  if(t.dataset.jump==='methods'){const detail=target.querySelector('.ex-other-methods');if(detail)detail.open=true}else target.open=true;
+  target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:reduceMotion.matches?'instant':'smooth'});return;
+ }
+ /* MOBILE-JUMP-END */
+ if(t.dataset.method){
+  const id=t.dataset.method;if(t.getAttribute('aria-pressed')==='true')return;
+  document.querySelectorAll('.atelier-choice').forEach(b=>b.setAttribute('aria-pressed',String(b===t)));
+  document.querySelectorAll('.atelier-panel').forEach(panel=>{panel.getAnimations().forEach(a=>a.cancel());panel.hidden=panel.id!=='atelier-'+id});
+  const panel=$('atelier-'+id);if(panel&&!reduceMotion.matches)panel.animate([{opacity:0,transform:'translateY(16px) scale(.98)'},{opacity:1,transform:'none'}],{duration:520,easing:'cubic-bezier(.22,1.2,.36,1)'});
+  return;
+ }
+ if(t.dataset.view){st.view=t.dataset.view;st.open=false;render(true);document.querySelector('[data-view="'+st.view+'"]')?.focus({preventScroll:true});return}
+ if(t.dataset.c){const s=st.cmp.sel,i=s.indexOf(t.dataset.c);st.cmp.message='';if(i>=0){if(s.length>2)s.splice(i,1);else st.cmp.message='至少要留 2 種才能比'}else if(s.length<3){const next=[...s,t.dataset.c];if(comparisonPhotos(W[st.cmp.w],next))s.push(t.dataset.c);else st.cmp.message='這些做法目前沒有不同的成品照可比較。'}else st.cmp.message='已經 3 種了，請先拿掉一種';render(true,true);document.querySelector('[data-c="'+t.dataset.c+'"]')?.focus({preventScroll:true});return}
+ if(t.id==='ex'){st.open=!st.open;t.setAttribute('aria-pressed',st.open);t.textContent=st.open?'合起來':'分開來看';$('stack').classList.toggle('open',st.open);return}
+ if(t.dataset.id)openLb(+t.dataset.id,t.querySelector('img'));
+});
+
+document.addEventListener('focusin',e=>{const li=e.target.closest('#ll button');if(li)highlightLayer(li)});
+document.addEventListener('mouseover',e=>{const li=e.target.closest('#ll button');document.querySelectorAll('#ll button,.ly').forEach(x=>x.classList.remove('on','hl'));if(li){li.classList.add('on');const l=document.querySelector('.ly[data-i="'+li.dataset.i+'"]');l&&l.classList.add('hl')}});
+function openLb(id,src,fromHistory=false){const p=D.photos.find(x=>x.id===id);if(!p)return;$('lbi').src=big(p);$('lbi').alt=p.t;$('lbt').textContent=p.t+(p.m.length?'｜'+p.m.map(k=>M[k].name).join('、'):'｜做法待確認');if(!$('lb').open)$('lb').showModal();if(!fromHistory)history.pushState({...history.state,songfongPhoto:{id,route:location.hash}},'',location.href);flipLb(src)}
+/* 放大看：大圖從你點的那張小圖「長出來」（位置＋大小接續，帶一點彈簧過衝） */
+function flipLb(src){const img=$('lbi');if(!src||!src.getBoundingClientRect||reduceMotion.matches||!img.animate)return;
+ const a=src.getBoundingClientRect();
+ img.decode().then(()=>requestAnimationFrame(()=>{const b=img.getBoundingClientRect();if(!a.width||!b.width)return;
+  img.animate([{transform:'translate('+(a.left+a.width/2-b.left-b.width/2)+'px,'+(a.top+a.height/2-b.top-b.height/2)+'px) scale('+(a.width/b.width)+')'},{transform:'none'}],{duration:640,easing:'cubic-bezier(.34,1.28,.5,1)'})})).catch(()=>{})}
+/* 放大照片佔一個同網址歷史位置；返回只關照片，不重畫底下頁面。 */
+let lbHistoryClosing=false;
+function syncLbHistory(){
+ lbHistoryClosing=false;const photo=history.state?.songfongPhoto;
+ if(photo&&photo.route===location.hash)openLb(photo.id,null,true);
+ else if($('lb').open)$('lb').close();
+}
+function closeLb(){
+ if(lbHistoryClosing)return;const photo=history.state?.songfongPhoto;
+ if(photo&&photo.route===location.hash){lbHistoryClosing=true;history.back()}
+ else $('lb').close();
+}
+$('lbx').onclick=closeLb;$('lb').addEventListener('click',e=>{if(e.target===$('lb'))closeLb()});
+$('lb').addEventListener('cancel',e=>{e.preventDefault();closeLb()});
+addEventListener('popstate',syncLbHistory);requestAnimationFrame(syncLbHistory);
+/* ===== 質感與特效層（2026-11-06）=====
+   一個 requestAnimationFrame 迴圈統一處理：游標、視差、進度條、跑馬燈、卡片傾斜、磁吸。
+   沒有東西在動時迴圈自己停下（跑馬燈在畫面外也停）。偏好減少動態＝整層不啟動。 */
+(function(){
+ const RM=reduceMotion,fine=matchMedia('(hover:hover) and (pointer:fine)'),clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+ const fx={sy:0,psy:0,hy:0,vel:0,mx:-200,my:-200,pxT:0,pyT:0,px:0,py:0,pg:0,moved:false,
+  ring:null,dot:null,rx:-200,ry:-200,pressed:false,mag:null,tilts:new Map(),hover:null,magnets:new Map(),
+  hero:null,stage:null,mq:null,mqVis:false,mqx:0,mqw:0,cta:null,ctaIn:false,raf:0,last:0,home:false};
+ const sp=(o,t,dt)=>{o.v+=(300*(t-o.x)-24*o.v)*dt;o.x+=o.v*dt;return Math.abs(t-o.x)+Math.abs(o.v)>.012};   /* 彈簧：stiffness 300、damping 24、mass 1 */
+ function kick(){if(!fx.raf)fx.raf=requestAnimationFrame(tick)}
+ function tick(now){
+  fx.raf=0;
+  const dt=Math.min(.04,Math.max(.001,(now-(fx.last||now))/1000));fx.last=now;let busy=false;
+  const sy=scrollY;fx.vel+=((sy-fx.psy)/dt-fx.vel)*Math.min(1,dt*9);fx.psy=sy;if(Math.abs(fx.vel)>3)busy=true;else fx.vel=0;
+  /* 捲動進度（彈簧追蹤） */
+  const max=document.documentElement.scrollHeight-innerHeight,pt=max>0?sy/max:0;fx.pg+=(pt-fx.pg)*Math.min(1,dt*10);
+  if(Math.abs(pt-fx.pg)>.0004)busy=true;$('progress').style.setProperty('--pg',fx.pg.toFixed(4));
+  /* 標題列：首頁往下捲收起、往上捲回來 */
+  if(fx.home){const d=sy-fx.hy;if(sy>260&&d>6)document.body.classList.add('hdr-hide');else if(d<-6||sy<160)document.body.classList.remove('hdr-hide');fx.hy=sy}
+  /* 首頁視差與聚光 */
+  if(fx.hero){const h=fx.hero;fx.px+=(fx.pxT-fx.px)*Math.min(1,dt*5);fx.py+=(fx.pyT-fx.py)*Math.min(1,dt*5);
+   if(Math.abs(fx.pxT-fx.px)+Math.abs(fx.pyT-fx.py)>.002)busy=true;
+   h.style.setProperty('--px',fx.px.toFixed(3));h.style.setProperty('--py',fx.py.toFixed(3));h.style.setProperty('--sy',String(Math.round(Math.min(sy,900))));
+   if(fx.moved&&fx.stage){const r=fx.stage.getBoundingClientRect();fx.stage.style.setProperty('--mx',(fx.mx-r.left).toFixed(0)+'px');fx.stage.style.setProperty('--my',(fx.my-r.top).toFixed(0)+'px')}}
+  /* 結尾深色區的聚光 */
+  if(fx.cta&&fx.ctaIn&&fx.moved){const r=fx.cta.getBoundingClientRect();fx.cta.style.setProperty('--cx',(fx.mx-r.left).toFixed(0)+'px');fx.cta.style.setProperty('--cy',(fx.my-r.top).toFixed(0)+'px')}
+  /* 游標：圓點貼著滑鼠，圓圈跟隨（碰到按鈕時被吸過去一點） */
+  if(fx.ring){let tx=fx.mx,ty=fx.my;if(fx.mag){tx=fx.mag.cx+(fx.mx-fx.mag.cx)*.32;ty=fx.mag.cy+(fx.my-fx.mag.cy)*.32}
+   fx.rx+=(tx-fx.rx)*Math.min(1,dt*18);fx.ry+=(ty-fx.ry)*Math.min(1,dt*18);
+   fx.ring.style.translate=fx.rx.toFixed(1)+'px '+fx.ry.toFixed(1)+'px';fx.dot.style.translate=fx.mx+'px '+fx.my+'px';
+   if(Math.abs(tx-fx.rx)+Math.abs(ty-fx.ry)>.3)busy=true}
+  /* 卡片傾斜＋反光 */
+  fx.tilts.forEach((s,el)=>{
+   const a=sp(s.rx,s.t.rx,dt),b=sp(s.ry,s.t.ry,dt),c=sp(s.ty,s.t.ty,dt);
+   if(s.live&&fx.moved){const r=s.rect,nx=clamp((fx.mx-r.left)/r.width,0,1),ny=clamp((fx.my-r.top)/r.height,0,1);
+    s.t.ry=(nx-.5)*10;s.t.rx=-(ny-.5)*10;s.t.ty=-6;el.style.setProperty('--sx',(nx*100).toFixed(0)+'%');el.style.setProperty('--sy2',(ny*100).toFixed(0)+'%')}
+   el.style.setProperty('--trx',s.rx.x.toFixed(2)+'deg');el.style.setProperty('--try',s.ry.x.toFixed(2)+'deg');el.style.setProperty('--tty',s.ty.x.toFixed(2)+'px');
+   if(a||b||c||s.live)busy=true;else{el.style.removeProperty('--trx');el.style.removeProperty('--try');el.style.removeProperty('--tty');fx.tilts.delete(el)}});
+  /* 主按鈕磁吸＋按下回彈（係數 0.1、上限 8px，與 互動回饋.js 一致） */
+  fx.magnets.forEach((s,el)=>{
+   if(s.live&&fx.moved){const r=s.rect,x=(fx.mx-r.left-r.width/2)*.1,y=(fx.my-r.top-r.height/2)*.1,k=Math.min(1,8/Math.max(.001,Math.hypot(x,y)));s.t.x=x*k;s.t.y=y*k}
+   s.t.s=s.down?.96:1;
+   const a=sp(s.x,s.t.x,dt),b=sp(s.y,s.t.y,dt),c=sp(s.s,s.t.s,dt);
+   el.style.translate=s.x.x.toFixed(2)+'px '+s.y.x.toFixed(2)+'px';el.style.scale=s.s.x.toFixed(4);
+   if(a||b||c||s.live||s.down)busy=true;else{el.style.translate='';el.style.scale='';fx.magnets.delete(el)}});
+  fx.moved=false;
+  /* 跑馬燈：基本速度＋捲動速度；字隨速度傾斜 */
+  if(fx.mq&&fx.mqVis&&!RM.matches){fx.mqx-=(34+Math.min(Math.abs(fx.vel),2400)*.26)*dt;if(fx.mqw&&fx.mqx<=-fx.mqw)fx.mqx+=fx.mqw;
+   fx.mq.style.transform='translate3d('+fx.mqx.toFixed(1)+'px,0,0) skewX('+clamp(-fx.vel*.004,-9,9).toFixed(2)+'deg)';busy=true}
+  if(busy)kick()}
+ /* —— 事件（全部只寫變數，實際動作留給 tick）—— */
+ addEventListener('scroll',kick,{passive:true});
+ addEventListener('resize',()=>{measureMq();kick()});
+ if(!RM.matches){
+  addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;fx.mx=e.clientX;fx.my=e.clientY;fx.moved=true;fx.pxT=(e.clientX/innerWidth-.5)*2;fx.pyT=(e.clientY/innerHeight-.5)*2;if(fx.ring&&!fx.ring.classList.contains('on')&&!fx.inFrame){fx.rx=e.clientX;fx.ry=e.clientY;fx.ring.classList.add('on');fx.dot.classList.add('on')}kick()},{passive:true});
+  document.documentElement.addEventListener('pointerleave',()=>{fx.pxT=fx.pyT=0;fx.ring?.classList.remove('on');fx.dot?.classList.remove('on');fx.tilts.forEach(s=>{s.live=false;s.t.rx=s.t.ry=s.t.ty=0});kick()});
+  document.addEventListener('pointerover',e=>{
+   const t=e.target;if(!(t instanceof Element))return;
+   /* 滑鼠進到 3D 視窗：自訂游標先退場，讓 3D 裡面自己的游標接手 */
+   fx.inFrame=t.id==='h3d';if(fx.ring){fx.ring.classList.toggle('on',!fx.inFrame&&fx.mx>0);fx.dot.classList.toggle('on',!fx.inFrame&&fx.mx>0)}
+   const ctaEl=t.closest('.hm-cta');fx.ctaIn=!!ctaEl;
+   if(!fine.matches)return;
+   const hov=t.closest('a,button,summary,[data-id],#ll button');
+   if(fx.ring){const lab=t.closest('.hph,.hm-wall button,.hm-t,.ph,.cmp .col button')?'放大':t.closest('.hm-m,.method-card')?'看分層':t.closest('.wcard')?'選這件':'';
+    fx.ring.classList.toggle('big',!!hov&&!lab);fx.ring.classList.toggle('lab',!!lab);fx.ring.querySelector('span').textContent=lab||fx.ring.querySelector('span').textContent;
+    const b=t.closest('.go,.tog,.btn,.next,.chip,.pill');if(b){const r=b.getBoundingClientRect();fx.mag={cx:r.left+r.width/2,cy:r.top+r.height/2}}else fx.mag=null}
+   /* 卡片傾斜 */
+   const tc=t.closest('.hm-m,.hm-t,.method-card');
+   fx.tilts.forEach((s,el)=>{if(el!==tc&&s.live){s.live=false;s.t.rx=s.t.ry=s.t.ty=0}});
+   if(tc&&!fx.tilts.get(tc)?.live){const s=fx.tilts.get(tc)||{rx:{x:0,v:0},ry:{x:0,v:0},ty:{x:0,v:0},t:{rx:0,ry:0,ty:0}};s.live=true;s.rect=tc.getBoundingClientRect();fx.tilts.set(tc,s)}
+   /* 主按鈕磁吸 */
+   const g=t.closest('.go');
+   fx.magnets.forEach((s,el)=>{if(el!==g&&s.live){s.live=false;s.t.x=s.t.y=0}});
+   if(g&&!fx.magnets.get(g)?.live){const s=fx.magnets.get(g)||{x:{x:0,v:0},y:{x:0,v:0},s:{x:1,v:0},t:{x:0,y:0,s:1}};s.live=true;s.rect=g.getBoundingClientRect();fx.magnets.set(g,s)}
+   kick()});
+  document.addEventListener('pointerdown',e=>{if(e.button!==0)return;fx.ring?.classList.add('press');const g=e.target.closest?.('.go');if(g){const s=fx.magnets.get(g);if(s){s.down=true;kick()}}});
+  const up=()=>{fx.ring?.classList.remove('press');fx.magnets.forEach(s=>{s.down=false});kick()};
+  addEventListener('pointerup',up);addEventListener('pointercancel',up);
+  /* 點按漣漪 */
+  document.addEventListener('click',e=>{const b=e.target.closest?.('.go,.tog,.btn,.next,.chip');if(!b)return;
+   const r=b.getBoundingClientRect(),d=Math.max(r.width,r.height)*2,x=e.detail?e.clientX-r.left:r.width/2,y=e.detail?e.clientY-r.top:r.height/2,s=document.createElement('span');
+   s.className='rp';s.setAttribute('aria-hidden','true');s.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(x-d/2)+'px;top:'+(y-d/2)+'px';b.appendChild(s);setTimeout(()=>s.remove(),750)});
+  /* 3D 視窗被點到（網頁失焦且焦點在 iframe）＝已經開始玩了，操作提示收起 */
+  addEventListener('blur',()=>{if(document.activeElement===$('h3d'))$('hs')?.classList.add('used')});
+  if(fine.matches){const dot=document.createElement('div'),ring=document.createElement('div');dot.className='cur dot';ring.className='cur ring';ring.innerHTML='<i></i><span></span>';
+   dot.setAttribute('aria-hidden','true');ring.setAttribute('aria-hidden','true');document.body.append(ring,dot);fx.ring=ring;fx.dot=dot}
+ }
+ /* 跑馬燈是否在畫面內 */
+ let mqIO=null;
+ function measureMq(){if(fx.mq)fx.mqw=fx.mq.firstElementChild?fx.mq.firstElementChild.getBoundingClientRect().width:0}
+ /* 每次畫面換新內容後呼叫（render 尾端） */
+ window.fxRender=function(home){
+  fx.home=home;document.body.classList.remove('hdr-hide');fx.hy=scrollY;
+  if(home)initSideAir();else sideAirObserver?.disconnect();
+  /* 區段標題逐字、卡片依序延遲 */
+  document.querySelectorAll('.hm-sec h2,.hm-cta h2').forEach(h=>{const t=h.textContent;h.setAttribute('aria-label',t);h.innerHTML='<span aria-hidden="true">'+kin(t)+'</span>'});
+  document.querySelectorAll('.hm-sec,.hm-cta').forEach(s=>s.querySelectorAll('.hm-m,.hm-t,.hm-wall button,.wcard,.hm-cat,.hm-img').forEach((el,i)=>{if(!el.classList.contains('hm-img'))el.style.setProperty('--d',Math.min(i,9))}));
+  fx.tilts.clear();fx.magnets.clear();
+  fx.hero=document.querySelector('.hero2');fx.stage=$('hs');fx.cta=document.querySelector('.hm-cta');
+  fx.mq=document.querySelector('.mq-track');fx.mqx=0;fx.mqVis=false;mqIO?.disconnect();
+  if(fx.mq){measureMq();mqIO=new IntersectionObserver(es=>{fx.mqVis=es[0].isIntersecting;if(fx.mqVis){fx.last=0;kick()}},{rootMargin:'80px'});mqIO.observe(fx.mq.parentElement)}
+  /* 首頁數字由 0 跳到真實數字（不過衝，避免出現比真實更大的數字） */
+  if(!RM.matches)document.querySelectorAll('[data-count]').forEach(b=>{const n=+b.dataset.count,t0=performance.now()+800;b.textContent='0';
+   (function f(now){const p=clamp((now-t0)/1300,0,1),v=Math.round(n*(1-Math.pow(1-p,4)));b.textContent=p>0?v:0;if(p<1)requestAnimationFrame(f);else b.textContent=n})(performance.now())});
+  /* 開場簾幕：這個瀏覽分頁第一次進首頁才播 */
+  let seen=false;try{seen=sessionStorage.getItem('sfIntro')==='1'}catch(e){}
+  if(home&&!seen&&!RM.matches){try{sessionStorage.setItem('sfIntro','1')}catch(e){}
+   const d=document.createElement('div');d.id='intro';d.setAttribute('aria-hidden','true');d.innerHTML='<img src="logo.svg" alt=""><i class="ln"></i>';document.body.append(d);setTimeout(()=>d.remove(),2200)}
+  kick()};
+})();
+
+/* 古琴感的短撥弦：本機合成、只在點選時播放，沒有背景音樂或外部音檔。 */
+(function(){
+ const toggle=$('soundToggle');let enabled=true,ctx=null,lastTone=-1e9;const qinBuffers=new Map();
+ try{enabled=localStorage.getItem('sfGallerySound')!=='off'}catch(e){}
+ const update=()=>{toggle.setAttribute('aria-pressed',String(enabled));toggle.setAttribute('aria-label',enabled?'古風音效已開啟，點一下關閉':'古風音效已關閉，點一下開啟');toggle.querySelector('span').textContent=enabled?'♪':'♩';toggle.title=enabled?'關閉古風音效':'開啟古風音效'};
+ update();
+ const QIN_SHIFT=2; /* 古琴整體升一個八度（原 82～196Hz 太低沉）；想回原音高改成 1 */
+ function pluck(freq,delay=0,level=1){
+  freq*=QIN_SHIFT;
+  try{
+   const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+   ctx=ctx||new AC();if(ctx.state==='suspended')ctx.resume().catch(()=>{});
+   const now=ctx.currentTime+delay;
+   const rate=ctx.sampleRate,key=rate+':'+freq;let buf=qinBuffers.get(key);
+   if(!buf){
+    const duration=1.3,length=Math.ceil(rate*duration);buf=ctx.createBuffer(1,length,rate);const data=buf.getChannelData(0);
+    let seed=218,low=0;const harmonics=[[1,1],[2,.30],[3,.18],[4,.08],[5,.03]];
+    for(let i=0;i<length;i++){
+     const t=i/rate;seed=(seed*16807)%2147483647;const noise=seed/2147483647*2-1;low+=.19*(noise-low);
+     const phase=2*Math.PI*freq*(t+.00009*Math.sin(2*Math.PI*4*t));let v=0;
+     for(const [k,amp] of harmonics)v+=amp*Math.sin(k*phase)*Math.exp(-t*(3.2+k*.65));
+     v+=.05*low*Math.exp(-t*65);data[i]=v*Math.min(1,t/.006)*Math.min(1,(duration-t)/.03);
+    }
+    qinBuffers.set(key,buf);
+   }
+   const voice=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),gain=ctx.createGain();voice.buffer=buf;
+   filter.type='lowpass';filter.frequency.value=2000;filter.Q.value=.5;gain.gain.value=.20*level;
+   voice.connect(filter);filter.connect(gain);gain.connect(ctx.destination);
+   voice.onended=()=>{voice.disconnect();filter.disconnect();gain.disconnect()};voice.start(now);
+  }catch(e){/* 音效不能影響原本按鈕操作 */}
+ }
+ /* 其他音色（都是本機即時合成）：木魚＝選擇／篩選；玉磬＝放大看圖；卷軸沙沙＝展開收合與關閉；風鈴＝音效開關 */
+ function audio(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;ctx=ctx||new AC();if(ctx.state==='suspended')ctx.resume().catch(()=>{});return ctx}
+ let noiseBuf=null;
+ function noise(c){if(noiseBuf&&noiseBuf.sampleRate===c.sampleRate)return noiseBuf;const n=c.sampleRate;noiseBuf=c.createBuffer(1,n,c.sampleRate);const d=noiseBuf.getChannelData(0);let s=77;for(let i=0;i<n;i++){s=(s*16807)%2147483647;d[i]=s/2147483647*2-1}return noiseBuf}
+ function knock(freq=720,level=1,delay=0){ /* 木魚：短而乾的「叩」 */
+  try{const c=audio();if(!c)return;const t=c.currentTime+delay;
+   const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.setValueAtTime(freq,t);o.frequency.exponentialRampToValueAtTime(freq*.55,t+.07);
+   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.34*level,t+.004);g.gain.exponentialRampToValueAtTime(.0001,t+.14);
+   o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.16);o.onended=()=>{o.disconnect();g.disconnect()};
+   const n=c.createBufferSource(),f=c.createBiquadFilter(),ng=c.createGain();n.buffer=noise(c);f.type='bandpass';f.frequency.value=freq*2.4;f.Q.value=1.6;
+   ng.gain.setValueAtTime(.12*level,t);ng.gain.exponentialRampToValueAtTime(.0001,t+.03);n.connect(f);f.connect(ng);ng.connect(c.destination);n.start(t,0,.05);n.onended=()=>{n.disconnect();f.disconnect();ng.disconnect()};
+  }catch(e){}
+ }
+ function bell(freq=880,level=1,delay=0){ /* 玉磬：高、亮、尾音拖長的金屬／玉石聲 */
+  try{const c=audio();if(!c)return;const t=c.currentTime+delay;
+   [[1,1,1.5],[2.76,.42,1.0],[5.4,.2,.6],[8.93,.08,.35]].forEach(([r,a,d])=>{
+    if(freq*r>3000)return; /* 太高的泛音刺耳，高於 3kHz 的直接略過 */
+    const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=freq*r;
+    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.16*a*level,t+.006);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+d+.05);o.onended=()=>{o.disconnect();g.disconnect()}});
+  }catch(e){}
+ }
+ function swish(dir=1,level=1,delay=0,dur=.26){ /* 卷軸／紙張的沙沙聲：dir=1 由低掃到高（打開），-1 由高掃到低（收起） */
+  try{const c=audio();if(!c)return;const t=c.currentTime+delay;
+   const n=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();n.buffer=noise(c);f.type='bandpass';f.Q.value=1.1;
+   const a=dir>0?400:1800,b=dir>0?1800:400;f.frequency.setValueAtTime(a,t);f.frequency.exponentialRampToValueAtTime(b,t+dur);
+   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.22*level,t+dur*.35);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+   n.connect(f);f.connect(g);g.connect(c.destination);n.start(t,0,dur+.05);n.onended=()=>{n.disconnect();f.disconnect();g.disconnect()};
+  }catch(e){}
+ }
+ function windchime(){ /* 風鈴：三個高音輕輕串過去，只給「音效已開啟」用 */
+  [523.25,659.25,783.99].forEach((f,i)=>bell(f,.6,i*.07));
+ }
+ toggle.addEventListener('click',()=>{enabled=!enabled;try{localStorage.setItem('sfGallerySound',enabled?'on':'off')}catch(e){}update();if(enabled)windchime()});
+ document.addEventListener('click',e=>{
+  const target=e.target.closest('button,a.go,a.next,a.wcard,a.method-card,a.nav-link,a.back,a.step.done,a.pill,a.hm-cat,summary');
+  if(!target||target===toggle||target.disabled||target.getAttribute('aria-disabled')==='true')return;
+  if(enabled){
+   const now=performance.now();if(now-lastTone>=75){lastTone=now;
+    const method=target.dataset.method,notes={float:98,alu:110,slim9:130.815,acrylic2:146.83};
+    /* 分類：①選做法＝古琴（每種做法一個音）②前進＝古琴上行 ③返回／重新開始＝古琴下行 ④篩選／分類＝木魚 ⑤放大看圖＝玉磬 ⑥關閉放大＝沙沙下行＋低琴 ⑦展開／收合＝卷軸沙沙 ⑧其他按鈕＝輕木魚 */
+    if(method){pluck(notes[method],0,1);pluck(notes[method]*2,.018,.12)}
+    else if(target.id==='lbx'){swish(-1,.8,0,.2);pluck(82.41,.03,.6)}
+    else if(target.dataset.id){bell(target.matches('.hm-t,.hph')?740:659.25,1)}
+    else if(target.id==='htog'||target.id==='ex'){const on=target.getAttribute('aria-pressed')==='true';swish(on?1:-1,1);knock(on?780:620,.5,on?.2:.0)}
+    else if(target.matches('summary')){const willOpen=!target.closest('details')?.open;swish(willOpen?1:-1,1);knock(willOpen?780:620,.5,willOpen?.2:0)}
+    else if(target.matches('.back,.step.done,.nav-link')){pluck(130.815,0,.7);pluck(98,.05,.65)}
+    else if(target.matches('.chip,.pill,.hm-cat')){knock(target.matches('.pill,.hm-cat')?680:780,1)}
+    else if(target.matches('a.go,a.next,a.wcard,a.method-card')){pluck(98,0,.7);pluck(130.815,.05,.6)}
+    else if(target.matches('a')){pluck(98,0,.7);pluck(130.815,.05,.6)}
+    else{knock(620,.7)}
+   }
+  }
+  if(!reduceMotion.matches&&target.matches('.atelier-choice,.atelier-photo,.editorial-tile,summary')&&target.animate){target.getAnimations().filter(a=>a.id==='tap-return').forEach(a=>a.cancel());const a=target.animate([{scale:'.97'},{scale:'1.012',offset:.65},{scale:'1'}],{duration:360,easing:'cubic-bezier(.22,1,.36,1)'});a.id='tap-return'}
+ });
+})();
+
+addEventListener('hashchange',()=>render(false));render(false);
 </script></body></html>
+
+<!-- 2026-11-06: installed design skills + adapted Aceternity feedback; local only. -->
+<link rel="stylesheet" href="./互動回饋.css?v=20261106a">
+<script src="./互動回饋.js?v=20261109a" data-scope="gallery"></script>
