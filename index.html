@@ -326,7 +326,7 @@ body:after{content:'';position:fixed;inset:-120px;z-index:90;pointer-events:none
 .stats b{font-variant-numeric:tabular-nums}
 .hhint{position:absolute;right:5vw;bottom:18px;z-index:4;display:flex;align-items:center;gap:12px;padding:10px 18px 10px 14px;border-radius:999px;background:#1c1a17f2;color:#faf7f2;font-size:14px;line-height:1.2;white-space:nowrap;pointer-events:none;opacity:0;transform:translateY(14px)}
 .hero2-stage.rdy .hhint{opacity:1;transform:none;transition:opacity .6s .9s,transform .9s var(--spring) .9s}
-.hero2-stage.used .hhint,body.scrolled .hhint{opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s}
+.hero2-stage.used .hhint,body.scrolled .hero2-stage.rdy .hhint,.hero2-stage.rdy.hint-done .hhint{opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s}
 .hhint i{position:relative;flex:none;width:34px;height:14px;border-radius:99px;border:1px solid #faf7f288}
 .hhint i:after{content:'';position:absolute;left:3px;top:3px;width:6px;height:6px;border-radius:50%;background:#faf7f2;animation:drag 2.2s var(--spring) infinite alternate}
 @keyframes drag{to{translate:19px 0}}
@@ -777,7 +777,7 @@ function h3fail(){if(!$('h3d')||h3.ready)return;clearTimeout(h3.timer);$('hs').c
 function h3start(){const f=$('h3d');if(!f)return;h3.ready=false;$('hs').classList.remove('failed','rdy');document.querySelector('.h3-fallback').hidden=true;document.querySelector('.h3wait').hidden=false;f.hidden=false;f.classList.remove('ready');$('htog').disabled=true;clearTimeout(h3.timer);h3.timer=setTimeout(h3fail,12000);f.onerror=h3fail}
 
 function h3send(){const f=$('h3d');if(!f||!f.contentWindow)return;try{f.contentWindow.postMessage({type:'layers3d-explode',on:h3.open},location.origin)}catch(e){}}
-addEventListener('message',e=>{const f=$('h3d');if(!f||e.origin!==location.origin||e.source!==f.contentWindow||!e.data)return;if(e.data.type==='layers3d-ready'){h3.ready=true;clearTimeout(h3.timer);f.hidden=false;f.classList.add('ready');$('hs')?.classList.remove('failed');$('hs')?.classList.add('rdy');document.querySelector('.h3-fallback').hidden=true;document.querySelector('.h3wait').hidden=true;$('htog').disabled=false;h3send()}else if(e.data.type==='layers3d-error'){h3.ready=false;h3fail()}});
+addEventListener('message',e=>{const f=$('h3d');if(!f||e.origin!==location.origin||e.source!==f.contentWindow||!e.data)return;if(e.data.type==='layers3d-ready'){h3.ready=true;clearTimeout(h3.timer);f.hidden=false;f.classList.add('ready');$('hs')?.classList.remove('failed');$('hs')?.classList.add('rdy');setTimeout(()=>$('hs')?.classList.add('hint-done'),8000);document.querySelector('.h3-fallback').hidden=true;document.querySelector('.h3wait').hidden=true;$('htog').disabled=false;h3send()}else if(e.data.type==='layers3d-error'){h3.ready=false;h3fail()}});
 function initHero(){
  fitHero();h3.open=true;h3start();$('h3retry').onclick=()=>{h3start();const u=new URL($('h3d').src);u.searchParams.set('retry',Date.now().toString(36));$('h3d').src=u.href};
  const t=$('htog'),lbl=t.querySelector('.lbl');lbl.textContent='合起來';t.setAttribute('aria-pressed','true');
